@@ -1,0 +1,125 @@
+// 
+.fancybox-slide--iframe .fancybox-content {
+    width: 800px;
+    height: 600px;
+    max-width: 80%;
+    max-height: 80%;
+    margin: 0;
+    border-radius: 5px;
+    position: relative;
+    @include screen('mobile') {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+.fancybox-button{
+    height: auto;
+}
+.fancybox-active{
+    position: fixed;
+}
+.lightboxblock {
+    padding: 20px;
+    .title {
+        font-size: 1.375em;
+        border-bottom: 1px solid #333;
+        padding-bottom: .5em;
+        padding-left: 1em;
+        color: #333;
+        font-size: 1.5em;
+        font-weight: 700;
+        position: relative;
+        &:before {
+            content: '';
+            width: 5px;
+            height: 25px;
+            background-color: #666;
+            position: absolute;
+            left: 0;
+            top: 0px;
+        }
+    }
+    .content {
+        margin-bottom: 20px;
+        .number, .date {
+            margin-bottom: 8px;
+            font-size: 0.938em;
+        }
+        .number {
+            background-color: #666;
+            padding: 2px 20px;
+            color: #fff;
+            display: inline-block;
+            border-radius: 50px;
+        }
+        .booklink {
+            margin-bottom: 8px;
+            a {
+                display: block;
+            }
+        }
+        .online_times, .intervals {
+            text-align: left;
+            margin: 0 0 10px;
+            font-size: 1em;
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #535353;
+            color: #fff;
+            border-radius: 5px;
+            @media(max-width: 480px) {
+                display: block;
+                width: 100%;
+            }
+            em {
+                padding: 0 8px;
+                font-size: 1.25em;
+                color: $color-red;
+                font-style: normal;
+                font-weight: 600;
+            }
+        }
+        // Welcome Back
+        .notice_block {
+            padding: 10px 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            @include screen('mobile') {
+                border: none;
+                padding: 10px 0px 0;
+            }
+        }
+        h4 {
+            margin: 0 0 10px 0;
+            padding: 0;
+            font-size: 1.125em;
+            color:#000;
+        }
+        .table_list {
+            margin-bottom: 20px;
+            background-color: #fff;
+            th {
+                background-color: #eee;
+                color: #333;
+            }
+            @include screen('mobile') {
+                td {
+                    border-bottom: 1px solid #e5e5e5 !important;
+                    padding: .5em 1em;
+                    &:last-child {
+                        border: none !important;
+                    }
+                }
+            }
+        }
+    }
+}
+// 燈箱連結
+.lightboxlink {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    z-index: 9999;
+}

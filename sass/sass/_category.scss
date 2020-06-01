@@ -1,0 +1,95 @@
+.category_block {
+    margin-bottom: 3em;
+}
+.category_title {
+    text-align: center;
+    color: #fff;
+    @include gradient(#0045a5, #00bdf0, horizontal);
+    padding: 10px;
+    margin: 0;
+    position: relative;
+
+    .collapse_btn {
+        position: absolute;
+        width: 2em;
+        height: 1.5em;
+        top: 7px;
+        right: 8px;
+        background-color: #fff;
+        border-radius: 4px;
+        &:before {
+            content: '';
+            border: 1px solid #666;
+            width: 16px;
+            height: 16px;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            transform: rotate(-45deg);
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            transition: .5s;
+            z-index: 8;
+        }
+        &.close {
+            &:before {
+                transform: rotate(135deg);
+                top: 0px;
+                
+            }
+        }
+    }
+}
+.category {
+    @extend %clearfix;
+    text-align: center;
+    margin: 0;
+    padding: 30px 0;
+    background-color: #e5e5e5;
+    h3 {
+        text-align: center;
+        color: #fff;
+        background-color: #666;
+        padding: 10px;
+        margin: 0 0 30px;
+    }
+    ul {
+        @include li-reset;
+        li {
+            margin: 0px 3px 8px 0px;
+            display: inline-block;
+        }
+    }
+    a {
+        background-color: #fff;
+        border: 1px solid #666;
+        padding: .4em 1em;
+        display: block;
+        color: #333;
+        @include box-sizing();
+        &:hover,
+        &:focus {
+            color: #FFF;
+            background-color: $secondaryColor;
+            border: 1px solid $secondaryColor;
+            box-shadow: none;
+        }
+        &.active {
+            color: #FFF;
+            background-color: $secondaryColor;
+            border: 1px solid $secondaryColor;
+            box-shadow: none;
+        }
+        span {
+            font-size: .813em;
+            &:before {
+                content: "(";
+                display: inline-block;
+            }
+            &:after {
+                content: ")";
+                display: inline-block;
+            }
+        }
+    }
+}

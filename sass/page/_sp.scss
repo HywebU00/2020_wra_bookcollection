@@ -1,0 +1,730 @@
+// 分館別 
+.annex_block {
+    width: 40%;
+    border-radius: 5px;
+    margin: 0 auto 30px;
+    text-align: center;
+    background-color: $primaryColor;
+    border: 1px solid #ccc;
+    padding: 8px;
+    color: #fff;
+    font-size: 1.125em;
+    transition: .5s;
+    @include screen('tablet') {
+        width: 60%;
+    }
+    @include screen('mobile') {
+        width: 80%;
+        border-radius: 5px;
+    }
+    @include screen('xs_mobile') {
+        width: 100%;
+    }
+    label {
+        margin: 10px 0 .5em 0;
+        display: inline-block;
+    }
+    .annex {
+        display: inline-block;
+        select {
+            width: 200px;
+        }
+    }
+}
+// 水利地理諮詢平台
+.information_platform {
+    margin-bottom: 30px;
+    iframe {
+        width: 100%;
+        height: 500px;
+    }
+}
+.connection_data {
+    padding: 10px 0 20px;
+    border-bottom: 1px solid #ccc;
+    h3 {
+        font-size: 1.125em;
+        font-weight: 500;
+        padding-left: 20px;
+        position: relative;
+        color: #333;
+        &:before {
+            content: '';
+            width: 5px;
+            height: 25px;
+            background-color: lighten($primaryColor, 20);
+            position: absolute;
+            left: 0;
+            top: 0px;
+        }
+    }
+    ul {
+        li {
+            color: #666;
+            margin-bottom: 8px;
+        }
+    }
+}
+// 條列文件
+.list_file_block {
+    margin-bottom: 50px;
+    .list_file {
+        display: block;
+        padding: 30px 0 30px;
+        border-bottom: 1px solid #ccc;
+    }
+    // 文件編號
+    .datatop {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: .938em;
+        @include screen('mobile') {
+            flex-wrap: wrap;
+        }
+        .data_sort {
+            padding: 3px 10px;
+            background-color: #333;
+            color: #fff;
+            margin: 0 10px 0 0;
+            flex: none;
+            display: inline-block;
+            border-radius: 4px;
+            @media(max-width: 400px) {
+                margin: 0 0 10px;
+            }
+        }
+        .GPNEBN_num {
+            flex: none;
+        }
+        .project_num {
+            text-align: right;
+            flex: auto;
+            @include screen('mobile') {
+                display: block;
+                width: 100%;
+                text-align: left;
+                margin-top: 10px;
+                padding: 5px 10px;
+                background-color: #eee;
+                border-radius: 4px;
+            }
+        }
+    }
+    // 書名連結
+    .booklink {
+        margin-bottom: 10px;
+        @include screen('mobile') {
+            margin-bottom: 20px;
+        }
+        a {
+            display: block;
+            font-size: 1.25em;
+            line-height: 1.5em;
+        }
+    }
+    // 作者出處
+    .databottom {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+        font-size: .938em;
+        // @include screen('mobile'){
+        //  display: block;
+        // }
+        >div {
+            position: relative;
+            @include screen('mobile') {
+                margin-bottom: 10px;
+                display: block;
+            }
+            &:before {
+                content: '';
+                width: 1px;
+                height: 15px;
+                background-color: #ccc;
+                position: absolute;
+                right: 0px;
+                top: 5px;
+            }
+            &:last-child {
+                &:before {
+                    display: none;
+                    @include screen('mobile') {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .author {
+            float: none;
+            width: 28%;
+        }
+        .publishing {
+            float: none;
+            width: 50%;
+            padding-left: 15px;
+        }
+        .publication_year {
+            float: none;
+            width: 20%;
+            padding-left: 15px;
+        }
+        @include screen('mobile') {
+            .author, .publishing, .publication_year {
+                float: auto;
+                width: 100%;
+                padding-left: 15px;
+                position: relative;
+                &:before {
+                    content: '';
+                    width: 8px;
+                    height: 8px;
+                    background-color: #666;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 0px;
+                    right: auto;
+                    top: 7px;
+                    display: block;
+                }
+            }
+        }
+    }
+    // 書目table
+    .bibliography_block {
+        margin: 0;
+        padding: 39px 0 0 0;
+        position: relative;
+    }
+    .collapse_btn {
+        position: absolute;
+        width: 50px;
+        height: 40px;
+        border: 1px solid #ccc;
+        display: block;
+        right: 0px;
+        top: 0px;
+        cursor: pointer;
+        &:before {
+            content: '';
+            border: 1px solid #666;
+            width: 16px;
+            height: 16px;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            transform: rotate(-45deg);
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            transition: .5s;
+        }
+        &.close {
+            &:before {
+                transform: rotate(135deg);
+                top: 5px;
+                left: 15px;
+            }
+        }
+    }
+    .bibliography {
+        border: 1px solid #ccc;
+        padding: 10px 0;
+        margin: 0;
+        clear: both;
+        float: none;
+        table {
+            border: none;
+            th {
+                border: none;
+                border-bottom: 1px solid #ccc;
+                background-color: transparent;
+            }
+            td {
+                border: none;
+                border-bottom: 1px solid #ccc;
+            }
+            tr:last-child {
+                td {
+                    border: none;
+                }
+            }
+        }
+        @include screen('mobile') {
+            padding: 0 15px;
+            tr {
+                border: none;
+                margin-bottom: 0px; // background-color: #333;
+            }
+            td {
+                border-bottom: 1px solid #e5e5e5 !important;
+                &:last-child {
+                    border: none !important;
+                }
+            }
+        }
+    }
+    // btnstyle
+    .stylebtn {
+        display: inline-block;
+        padding: 0.5em 1.5em;
+        color: #fff;
+        background-color: #999;
+        border-radius: .2em;
+    }
+    // 借閱中btn
+    .borrowing_btn {
+        background-color: darken($lightColor, 5);
+    }
+    // 預約btn、預借btn
+    .reservation_btn, .advance_btn {
+        background-color: $color-purple;
+        &:hover {
+            background-color: darken($color-purple, 10);
+        }
+    }
+    .inlibrary_btn {
+        background-color: darken($color-green, 10);
+    }
+    // 按鈕區
+    .btn_block {
+        input[type="button"] {
+            background-color: $secondaryColor;
+            border: 1px solid $secondaryColor;
+            transition: .5s !important;
+            &:hover {
+                border: 1px solid darken($secondaryColor, 5) !important;
+                background-color: darken($secondaryColor, 5);
+            }
+        }
+    }
+}
+// 說明書單
+.explanation {
+    background-color: #e5e5e5;
+    padding: 30px 40px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    h3 {
+        margin: 0 0 20px;
+        padding: 0;
+    }
+    ol {
+        margin: 0px 0 0 20px;
+        padding: 0;
+        li {
+            margin-bottom: 8px;
+        }
+    }
+}
+// 條件選擇
+.conditional_choice {
+    margin-bottom: 20px;
+    input, select {
+        width: auto;
+        vertical-align: middle;
+        margin: 0;
+    }
+    input[type="button"] {
+        padding: 0.4em 1.5em;
+    }
+}
+// 水利故事
+.special_pic {
+    margin: 20px 0 50px;
+    .img-container {
+        @include aspect-ratio(16, 9);
+        height: auto;
+    }
+    span.playbtn {
+        background-color: rgba(0, 0, 0, .6);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        // margin-top: calc(50% - 30px);
+        // margin-left: calc(50% - 30px);
+        display: block;
+        position: absolute;
+        transition: .5s;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        &:before {
+            content: '';
+            border: 12px solid #fff;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            position: absolute;
+            top: calc(50% - 12px);
+            left: calc(50% - 6px);
+        }
+    }
+}
+// 圖文影片list
+.special, .special_video {
+    margin-bottom: 2em;
+    // float 排版
+    @include clearfix;
+    position: relative;
+    .box {
+        display: block;
+        float: left;
+        width: 33.333%;
+        height: 300px;
+        // ------------------------------- test start
+        // width: calc(100% / 3);
+        // height: calc(100% / 3 * 3 / 4);
+        // ------------------------------- test end
+        box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1);
+        background: #000;
+        position: relative;
+        overflow: hidden;
+        // 色塊
+        &:before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            z-index: 1;
+            width: 100%;
+            height: 0;
+            background: rgba(102, 189, 0, .9);
+            // 上右下左
+            // clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            transform: skew(0, 0);
+            transition: height .6s ease,
+                transform .6s ease;
+        }
+        a {
+            position: absolute;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            span.cube {
+                display: inline-block;
+                width: 42px;
+                height: 42px;
+                background: rgba(102, 189, 0, 0.9);
+                position: relative;
+                font-size: 0;
+                left: 42px;
+                transition: .5s;
+                // transition: background .4s ease;
+                &:before, &:after {
+                    content: "";
+                    display: block;
+                    background: #fff;
+                    position: absolute;
+                }
+                &:before {
+                    width: 22px;
+                    height: 2px;
+                    left: calc(50% - 11px);
+                    top: calc(50% - 1px);
+                }
+                &:after {
+                    width: 2px;
+                    height: 22px;
+                    left: calc(50% - 1px);
+                    top: calc(50% - 11px);
+                }
+            }
+            span.counter, span.play {
+                display: block;
+                margin-left: 2.8em;
+                color: #fff;
+            }
+            span.counter {
+                padding-left: 1.75em;
+                background: url(../images/icon/icon_view_white.svg) left 50% no-repeat;
+                background-size: contain;
+                display: none;
+            }
+            span.play {
+                // box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,1);
+                background: rgba(0, 0, 0, .6);
+                border-radius: 3px;
+                margin-top: 1.25em;
+                padding: .5em 2em;
+                width: 150px;
+                opacity: 0;
+                transition: opacity .4s ease-in-out .4s;
+                display: none;
+                &:after {
+                    content: '';
+                    background: url(../images/icon/icon_arrow_right_white.svg) left 0 top 50% no-repeat;
+                    background-size: contain;
+                    display: inline-block;
+                    width: 16px;
+                    height: 16px;
+                    vertical-align: middle;
+                    margin-left: .5em;
+                }
+            }
+            span.playbtn {
+                background-color: rgba(0, 0, 0, .6);
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                // margin-top: calc(50% - 30px);
+                // margin-left: calc(50% - 30px);
+                display: block;
+                position: absolute;
+                transition: .5s;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                &:before {
+                    content: '';
+                    border: 12px solid #fff;
+                    border-top-color: transparent;
+                    border-right-color: transparent;
+                    border-bottom-color: transparent;
+                    position: absolute;
+                    top: calc(50% - 12px);
+                    left: calc(50% - 6px);
+                }
+            }
+            h3 {
+                padding: 1em 2em 0;
+                margin: 1.25em 0 .75em;
+                font-size: 1.35em;
+                line-height: 1.4;
+                color: #fff;
+                text-shadow: 0 0 2px rgba(58, 103, 6, 0.9);
+                transition: .5s;
+                &:before {
+                    content: "";
+                    display: block;
+                    width: 30px;
+                    height: 3px;
+                    background: #fff;
+                    margin-bottom: 1em;
+                    position: absolute;
+                    left: 2em;
+                    top: 1.7em;
+                    transition: height .4s ease width .2s ease .4s;
+                    // transition: width .2s ease .4s;
+                }
+            }
+            &:hover, &:focus {
+                transition: .5s;
+                span.cube {
+                    background: #fff;
+                    left: 65px;
+                    &:before, &:after {
+                        background: rgba(102, 189, 0, .9);
+                    }
+                }
+                span.play {
+                    opacity: 1;
+                }
+                span.playbtn {
+                    opacity: 1;
+                }
+                h3 {
+                    padding: 1em 2em 0 3em;
+                    &:before {
+                        content: "";
+                        width: 3px;
+                        height: 50%;
+                        transition: width .2s ease,
+                            height .4s ease .4s;
+                        // transition: width .2s ease;
+                    }
+                }
+            }
+        }
+        .img-container {
+            background: none;
+            height: 100%;
+            // @include aspect-ratio(4, 3);
+            img {
+                opacity: .6;
+            }
+        }
+        &:nth-child(1) {
+            height: 600px;
+            // .img-container{
+            //     @include aspect-ratio(1, 1);
+            // }
+        }
+        &:nth-child(2) {}
+        &:nth-child(3) {}
+        &:nth-child(4) {}
+        &:nth-child(5) {
+            width: 66.666%;
+            // ------------------------------- test start
+            // width: calc(100% / 3);
+            // height: calc(100% / 3 * 3 / 4);
+            // ------------------------------- test end
+            // 色塊
+            &:before {
+                top: -120px;
+            }
+        }
+        &:nth-child(6) {
+            height: 600px;
+            // ------------------------------- test start
+            // width: calc(100% / 3);
+            // height: calc(100% / 3 * 3 / 4 * 2);
+            // ------------------------------- test end
+            position: absolute;
+            bottom: 0;
+            left: 66.666%;
+            // .img-container{
+            //     @include aspect-ratio(1, 1.8);
+            // }
+        }
+        // hover
+        &:hover, &:focus {
+            .img-container {
+                img {
+                    opacity: 1;
+                }
+            }
+            // 色塊
+            &:before {
+                // 上右下左
+                // clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
+                height: 76%;
+                transform: skew(0, -15deg);
+            }
+            a {}
+        }
+    }
+}
+.special_video {
+    .box {}
+}
+@include screen('tablet') {
+    .special, .special_video {
+        .box {
+            height: 200px;
+            &:nth-child(1) {
+                height: 400px;
+            }
+            &:nth-child(2) {}
+            &:nth-child(3) {}
+            &:nth-child(4) {
+                width: 66.666%;
+            }
+            &:nth-child(5) {}
+            &:nth-child(6) {
+                height: 200px;
+            }
+            &:nth-child(4), &:nth-child(5) {
+                // 色塊
+                &:before {
+                    top: -90px;
+                }
+            }
+        }
+    }
+    .special {
+        .box {
+            a {
+                span.cube {
+                    float: right;
+                    left: 2em;
+                    top: 1.7em;
+                }
+                h3 {
+                    width: calc(100% - 42px);
+                    padding: 1em 2em 0;
+                    float: left;
+                    margin: 1.25em 0 .75em;
+                }
+                &:hover, &:focus {
+                    span.cube {}
+                    h3 {
+                        &:before {
+                            width: 30px;
+                            height: 3px;
+                        }
+                    }
+                    // 色塊
+                    &:before {
+                        height: 80%;
+                    }
+                }
+            }
+        }
+    }
+    .special_video {
+        .box {
+            a {
+                span.counter {}
+                span.play {
+                    opacity: 1;
+                    font-size: 0;
+                    width: 42px;
+                    height: 42px;
+                    border-radius: 0;
+                    background: rgba(102, 189, 0, .9);
+                    transition: background .4s ease;
+                    position: absolute;
+                    right: 1px;
+                    top: 76px;
+                    &:after {
+                        width: 42px;
+                        height: 42px;
+                        background: url(../images/icon/icon-play-whtie.svg) 50% 50% no-repeat;
+                    }
+                }
+                span.playbtn {
+                    right: 30px;
+                    left: auto;
+                    bottom: 30px;
+                    top: auto;
+                }
+                h3 {
+                    padding: 1em 3.2em 0 2em;
+                }
+                &:hover, &:focus {
+                    span.play {
+                        background: #fff;
+                        &:after {
+                            background: url(../images/icon/icon-play-green.svg) 50% 50% no-repeat;
+                        }
+                    }
+                    h3 {
+                        &:before {
+                            width: 30px;
+                            height: 3px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include screen('mobile') {
+    .special, .special_video {
+        .box {
+            width: 100% !important;
+            height: 200px !important;
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(6) {
+                // 色塊
+                &:before {
+                    top: -90px;
+                }
+            }
+            &:nth-child(6) {
+                position: sticky;
+                height: 200px;
+            }
+        }
+    }
+}
