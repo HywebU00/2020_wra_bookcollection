@@ -601,7 +601,7 @@
     z-index: 99;
     
     @include screen('xs_mobile'){
-        top: 280px;
+        top: 330px;
     }
     ul {
         margin: 0px;
@@ -646,7 +646,7 @@
                     height: 50px;
                     font-size: 1.25em;
                     text-align: center;
-                    background-color: $primaryColor;
+                    background-color:darken( $primaryColor, 10);
                     z-index: 0;
                     line-height: 50px;
                     transition: .5s;
@@ -654,7 +654,7 @@
                 }
                 &:hover, &:focus {
                     text-decoration: none;
-                    background-color: $primaryColor;
+                    background-color:darken( $primaryColor, 10);
                     box-shadow: none;
                     &:before {
                         right: 50px;
