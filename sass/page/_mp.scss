@@ -593,7 +593,7 @@
 }
 //快捷列
 .fastlink {
-    width: 55px;
+    width: 50px;
     position: fixed;
     right: 0px;
     top: 350px;
@@ -613,9 +613,9 @@
             position: relative;
             a {
                 display: block;
-                width: 55px;
-                height: 55px;
-                line-height: 55px;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
                 padding: 10px 2px;
                 text-align: center;
                 color: #fff;
@@ -634,8 +634,8 @@
                     bottom: 0;
                     left: 0;
                     z-index: 2;
-                    width: 32px;
-                    height: 32px;
+                    width: 35px;
+                    height: 35px;
                 }
                 &:before {
                     content: attr(title);
@@ -643,12 +643,12 @@
                     top: 0;
                     right: -120px;
                     width: 120px;
-                    height: 60px;
+                    height: 50px;
                     font-size: 1.25em;
                     text-align: center;
                     background-color: $primaryColor;
                     z-index: 0;
-                    line-height: 60px;
+                    line-height: 50px;
                     transition: .5s;
                     border-radius: 50px 0 0 50px;
                 }
@@ -657,7 +657,7 @@
                     background-color: $primaryColor;
                     box-shadow: none;
                     &:before {
-                        right: 60px;
+                        right: 50px;
                     }
                 }
                 span {
