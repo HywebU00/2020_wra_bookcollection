@@ -88,6 +88,9 @@ h3.title {
     color:#000;
     @include screen('mobile'){
         width: 100%;
+        a{
+            display: inline-block;
+        }
        
     }
 }
