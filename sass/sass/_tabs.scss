@@ -77,7 +77,7 @@
         font-weight: 400;
         font-size: 1.125em;
         @include screen('xs_mobile') {
-            background-color: #eee;
+            background-color: #ccc;
         }
         &:after {
             content: '';

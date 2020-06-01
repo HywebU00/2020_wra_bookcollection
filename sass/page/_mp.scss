@@ -593,17 +593,15 @@
 }
 //快捷列
 .fastlink {
-    width: 60px;
+    width: 55px;
     position: fixed;
     right: 0px;
     top: 350px;
     transition: .4s;
     z-index: 99;
-    @include screen('tablet') {
-        top: 400px;
-    }
-    @include screen('mobile') {
-        top: 450px;
+    
+    @include screen('xs_mobile'){
+        top: 280px;
     }
     ul {
         margin: 0px;
@@ -615,10 +613,10 @@
             position: relative;
             a {
                 display: block;
-                width: 60px;
-                height: 60px;
-                line-height: 60px;
-                padding: 10px 5px;
+                width: 55px;
+                height: 55px;
+                line-height: 55px;
+                padding: 10px 2px;
                 text-align: center;
                 color: #fff;
                 font-size: 0.875em;

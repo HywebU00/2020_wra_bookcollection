@@ -67,7 +67,6 @@ $(function() {
                 settings: {
                     slidesToShow: 4,
                     slidesToScroll: 1,
-                   
                 }
             }, {
                 breakpoint: 992,
@@ -76,23 +75,22 @@ $(function() {
                     slidesToScroll: 1,
                 }
             }, {
-                breakpoint:767,
+                breakpoint: 767,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 1,
                 }
             }, {
-                breakpoint:575,
+                breakpoint: 575,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll:1,
+                    slidesToScroll: 1,
                 }
-            }
-            , {
-                breakpoint:480,
+            }, {
+                breakpoint: 480,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll:1,
+                    slidesToScroll: 1,
                 }
             }
             // You can unslick at a given breakpoint now by adding:
@@ -199,7 +197,6 @@ $(function() {
                 settings: {
                     slidesToShow: 6,
                     slidesToScroll: 6,
-                   
                 }
             }, {
                 breakpoint: 992,
@@ -208,23 +205,22 @@ $(function() {
                     slidesToScroll: 5,
                 }
             }, {
-                breakpoint:767,
+                breakpoint: 767,
                 settings: {
                     slidesToShow: 4,
                     slidesToScroll: 4,
                 }
             }, {
-                breakpoint:575,
+                breakpoint: 575,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll:3,
+                    slidesToScroll: 3,
                 }
-            }
-            , {
-                breakpoint:480,
+            }, {
+                breakpoint: 480,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll:2,
+                    slidesToScroll: 2,
                 }
             }, {
                 breakpoint: 400,
@@ -238,19 +234,16 @@ $(function() {
             // instead of a settings object
         ]
     });
-
 });
-
 /*-----------------------------------*/
 /////////////modal設定/////////////
 /*-----------------------------------*/
 $(function() {
     $('#modal1').hide();
-   
     //先隱藏視窗
-    $('.modal').after('<div class="modal_overlay"></div>');                             //新增透明底
-    $('.modal').prepend('<button type="button" class="close">關閉</button>');           //新增關閉按鈕
-    $('.modal_overlay').hide();                                                         //隱藏透明底
+    $('.modal').after('<div class="modal_overlay"></div>'); //新增透明底
+    $('.modal').prepend('<button type="button" class="close">關閉</button>'); //新增關閉按鈕
+    $('.modal_overlay').hide(); //隱藏透明底
     // nokeyword按鈕動作
     $('#nokeyword').click(function(e) {
         $('.modal_overlay').fadeIn(100);
@@ -259,7 +252,7 @@ $(function() {
         e.preventDefault();
     });
     //關閉function
-    function closeModal(){
+    function closeModal() {
         $('#modal1').fadeOut();
         $('.modal_overlay').fadeOut();
         $('body').removeClass('noscroll');
@@ -268,60 +261,52 @@ $(function() {
     $('.modal_overlay').click(closeModal);
     $('.modal .close').click(closeModal);
     $('.modal .btn_grp input[type="submit"]').click(closeModal);
-
 });
-
 // 會員選單
-$(function(){
-    $('.name_login').click(function(){
+$(function() {
+    $('.name_login').click(function() {
         $('.member_menu').stop().slideToggle();
         $(this).stop().toggleClass('open');
     })
     // 如果點在外面
     $('.main').off().on('click touchend', function(e) {
         $('.member_menu').stop().slideUp();
-        
     });
-
-    $('.memberCtrl').click(function(){
+    $('.memberCtrl').click(function() {
         $('.member_menu').stop().slideToggle();
     })
 })
-
 // 往下滾
-$(function(){
+$(function() {
     $('.scrollDownbtn01').click(function() {
         $('body,html').stop(true, true).animate({ scrollTop: $('.mpdata').offset().top - 110 }, 0, 'easeOutExpo');
     });
     $('.scrollDownbtn02').click(function() {
         $('body,html').stop(true, true).animate({ scrollTop: $('.publications_block').offset().top - 90 }, 0, 'easeOutExpo');
     });
-    
 })
 // 收合書目table
-$(function(){
-    $('.bibliography_block .collapse_btn').click(function(){
+$(function() {
+    $('.bibliography_block .collapse_btn').click(function() {
         $(this).next('.bibliography').slideToggle()
         $(this).toggleClass('close');
         // $(this).parents('.list_file').siblings().find('.bibliography').show();
         // $(this).parents('.list_file').siblings().find('.collapse_btn').addClass('close');
     })
 })
-$(function(){
-    $('.category_block .collapse_btn').click(function(){
+$(function() {
+    $('.category_block .collapse_btn').click(function() {
         $('.category_block .category').slideToggle()
         $(this).toggleClass('close');
-        
     })
 })
-
 // 燈箱
-$(function(){
+$(function() {
     $('[data-fancybox]').fancybox({
-    toolbar  : false,
-    smallBtn : true,
-    iframe : {
-        preload : false
-    }
-})
+        toolbar: false,
+        smallBtn: true,
+        iframe: {
+            preload: false
+        }
+    })
 })
