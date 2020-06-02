@@ -103,6 +103,9 @@
     }
     .tabItem.active>a {
         background-color: #535353;
+        @include screen('xs_mobile'){
+             background-color:$secondaryColor;
+        }
     }
     .tabContent {
         text-align: left;
@@ -110,6 +113,8 @@
         height: 120px;
         @include screen('xs_mobile'){
             height: auto;
+            background-color: rgba(255, 255, 255, .7);
+            padding:20px 15px;
         }
     }
 }
