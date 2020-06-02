@@ -5,7 +5,7 @@
     max-width: 70%;
     max-height: 70%;
     margin: 0;
-    border-radius: 5px;
+    // border-radius: 5px;
     position: relative;
     @include screen('tablet') {
         max-width: 80%;
@@ -39,7 +39,7 @@
 // 
 .lightboxblock {
     padding: 20px;
-    border-radius: 5px;
+    // border-radius: 5px;
     .title {
         font-size: 1.375em;
         border-bottom: 1px solid #333;
@@ -153,9 +153,9 @@
     max-height: 70%;
     display: none;
     @include screen('mobile') {
-        min-width: 80%;
-        max-width: 80%;
-        max-height: 80%;
+        min-width: 90%;
+        max-width: 90%;
+        max-height: 90%;
     }
 }
 // 燈箱連結

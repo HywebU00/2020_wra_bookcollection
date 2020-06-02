@@ -234,6 +234,56 @@ $(function() {
             // instead of a settings object
         ]
     });
+    // cp圖片輪播
+    // 請放置customize.js
+    // 廣告輪播
+    $('.cppic').slick({
+        dots: true,
+        arrow: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        responsive: [{
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 1,
+                    
+                }
+            }, {
+                breakpoint:991,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1
+                }
+            }, {
+                breakpoint:767,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                }
+            }, {
+                breakpoint:575,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            }, {
+                breakpoint:480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
+
+
+    
 });
 /*-----------------------------------*/
 /////////////modal設定/////////////
@@ -310,3 +360,7 @@ $(function() {
         }
     })
 })
+$(function() {
+    $.fancybox.open($("#lightbox_style03"))
+})
+// $().ready(function() { $.fancybox.open($("#lightbox_style03")) })

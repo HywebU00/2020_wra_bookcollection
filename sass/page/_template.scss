@@ -69,7 +69,7 @@ body {
         padding-top: 60px;
     }
     >.container {
-        @include gutter(80px); //gutter 代表左右要留白
+        @include gutter(60px); //gutter 代表左右要留白
         background-color: #fff
     }
 }
