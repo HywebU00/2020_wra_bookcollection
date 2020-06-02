@@ -134,16 +134,14 @@ $(function() {
             // 第一層選單，可展開收合
             liHasChild_level1.off().on('click', function(e) {
                 $(this).siblings('li').find('ul').stop(true, true).slideUp('600', 'easeOutQuint');
-                if ($(this).children('ul').is(':visible')){
-                     $(this).children('ul').stop(true, true).slideUp('600', 'easeOutQuint');
-                     $(this).removeClass('open');
-
-                 } else {
-                     $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
-                     $(this).addClass('open');
-                     $(this).siblings('li').removeClass('open');
-                 } 
-
+                if ($(this).children('ul').is(':visible')) {
+                    $(this).children('ul').stop(true, true).slideUp('600', 'easeOutQuint');
+                    $(this).removeClass('open');
+                } else {
+                    $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
+                    $(this).addClass('open');
+                    $(this).siblings('li').removeClass('open');
+                }
                 // $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
             });
             // 第二層選單
@@ -162,6 +160,12 @@ $(function() {
             _body.off('touchmove');
             $('.m_search').hide();
             $('.language').find('ul').hide();
+            // 手機版將ㄊwow效果關掉
+            // $(function() {
+            //     if(('.wow').length>0){
+            //         $(this).removeClass('wow');
+            //     }
+            // });
         } else {
             /*-----------------------------------*/
             /////////////// PC版設定 /////////////
@@ -694,7 +698,7 @@ $(function() {
     $('a.goCenter').keydown(function(e) {
         if (e.which == 13) {
             $('#aC').focus();
-            $('html, body').stop(true, true).animate({ scrollTop: $('.main').find('.accesskey').offset().top - 150}, 800, 'easeOutExpo');
+            $('html, body').stop(true, true).animate({ scrollTop: $('.main').find('.accesskey').offset().top - 150 }, 800, 'easeOutExpo');
         }
     });
     /*-----------------------------------*/

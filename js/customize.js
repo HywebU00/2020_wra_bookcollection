@@ -328,6 +328,7 @@ $(function() {
         }
     })
 })
+// 燈相進頁面就打開
 $(function() {
     $.fancybox.open($("#lightbox_style03"))
 })
@@ -339,4 +340,3 @@ $(function() {
 //         $(this).removeClass('wow');
 //     }
 // });
-// $().ready(function() { $.fancybox.open($("#lightbox_style03")) })
