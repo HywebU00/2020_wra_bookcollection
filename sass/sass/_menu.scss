@@ -39,6 +39,7 @@
                         border-bottom: none;
                         border-left: none;
                         margin-bottom: .2em;
+                        transition: .5s;
                     }
                 }
             }
@@ -245,6 +246,13 @@
                         }
                     }
                 }
+                &.open {
+                    >a {
+                        &:after {
+                            transform: rotate(-135deg);
+                        }
+                    }
+                }
                 li {
                     background: #FFF;
                     a {
@@ -292,19 +300,16 @@
         ul {
             float: none;
             width: 90%;
-            margin:0 auto;
+            margin: 0 auto;
             padding: 0;
             overflow: hidden;
             list-style: none;
-           
             li {
                 float: left;
                 width: 50%;
-                margin:0;
+                margin: 0;
                 padding: 0;
-
                 @include box-sizing;
-                
                 a {
                     display: block;
                     height: 3em;
@@ -315,23 +320,20 @@
                     font-weight: bold;
                     text-decoration: none;
                     border: 1px solid rgba(255, 255, 255, .5);
-                   
                     @include box-sizing;
                     text-align: center;
-                    
                     &:hover,
                     &:focus {
                         background: darken($primaryColor, 20);
                     }
                 }
-                &.epaper{
-                     width: 100%;
-                     margin:0 0 10px ;
-                    a{
-                       background-color:darken($primaryColor, 15);
+                &.epaper {
+                    width: 100%;
+                    margin: 0 0 10px;
+                    a {
+                        background-color: darken($primaryColor, 15);
                         border: 1px solid darken($primaryColor, 15);
                         text-align: left;
-                        
                     }
                 }
             }

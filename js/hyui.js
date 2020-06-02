@@ -131,10 +131,20 @@ $(function() {
             liHasChild.on('touchstart', function() {
                 $(this).off('mouseenter,mouseleave');
             });
-            // 第一層選單
+            // 第一層選單，可展開收合
             liHasChild_level1.off().on('click', function(e) {
                 $(this).siblings('li').find('ul').stop(true, true).slideUp('600', 'easeOutQuint');
-                $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
+                if ($(this).children('ul').is(':visible')){
+                     $(this).children('ul').stop(true, true).slideUp('600', 'easeOutQuint');
+                     $(this).removeClass('open');
+
+                 } else {
+                     $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
+                     $(this).addClass('open');
+                     $(this).siblings('li').removeClass('open');
+                 } 
+
+                // $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
             });
             // 第二層選單
             liHasChild_level2.off().on('click', function(e) {

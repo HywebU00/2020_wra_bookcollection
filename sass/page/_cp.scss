@@ -29,6 +29,7 @@ h3.title {
             font-size: .938em;
             padding: 8px 10px;
             color: #fff;
+            
         }
         @include screen('mobile') {
             float: none;

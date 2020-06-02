@@ -2,7 +2,7 @@
 $(function() {
     // 首頁輪播
     $('.mpSlider').slick({
-        mobileFirst: true,
+        // mobileFirst: true,
         dots: true,
         arrow: true,
         infinite: true,
@@ -16,44 +16,16 @@ $(function() {
         ease: 'ease',
         prevArrow: '<div type="button"  tabindex="0" class="slick-prev Btn-prev"><a href="#">魚仔《想要回家》</a></div>',
         nextArrow: '<div type="button" tabindex="0"  class="slick-next Btn-next"><a href="#">曾文之眼藝文活動</a></div>',
+
+        responsive: [{
+            breakpoint: 767,
+            settings: {
+               vertical: false,
+              
+            }
+        }]
     });
     $(".slick-arrow").attr("tabindex", 0);
-    // 廣告輪播
-    // $('.adSlider').slick({
-    //     mobileFirst: true,
-    //     dots: false,
-    //     infinite: true,
-    //     speed: 300,
-    //     slidesToShow: 5,
-    //     slidesToScroll: 1,
-    //     autoplay: true,
-    //     arrow: true,
-    //     lazyLoaded: true,
-    //     lazyLoad: 'ondemand',
-    //     ease: 'ease',
-    //     responsive: [{
-    //         breakpoint: 1200,
-    //         settings: {
-    //             slidesToShow: 4,
-    //             slidesToScroll: 1,
-    //             arrows: true
-    //         }
-    //     }, {
-    //         breakpoint: 768,
-    //         settings: {
-    //             slidesToShow: 3,
-    //             slidesToScroll: 1,
-    //             arrows: true
-    //         }
-    //     }, {
-    //         breakpoint: 575,
-    //         settings: {
-    //             slidesToShow: 2,
-    //             slidesToScroll: 1,
-    //             arrows: true
-    //         }
-    //     }]
-    // });
     // 廣告輪播
     $('.adSlider').slick({
         dots: false,
@@ -249,28 +221,27 @@ $(function() {
                 settings: {
                     slidesToShow: 5,
                     slidesToScroll: 5,
-                    
                 }
             }, {
-                breakpoint:991,
+                breakpoint: 991,
                 settings: {
                     slidesToShow: 4,
                     slidesToScroll: 4
                 }
             }, {
-                breakpoint:767,
+                breakpoint: 767,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3
                 }
             }, {
-                breakpoint:575,
+                breakpoint: 575,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2
                 }
             }, {
-                breakpoint:480,
+                breakpoint: 480,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1
@@ -281,9 +252,6 @@ $(function() {
             // instead of a settings object
         ]
     });
-
-
-    
 });
 /*-----------------------------------*/
 /////////////modal設定/////////////
