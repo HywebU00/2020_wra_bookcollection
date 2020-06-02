@@ -331,4 +331,12 @@ $(function() {
 $(function() {
     $.fancybox.open($("#lightbox_style03"))
 })
+
+
+// 手機版將ㄊwow效果關掉
+// $(function() {
+//     if(('.wow').length>0){
+//         $(this).removeClass('wow');
+//     }
+// });
 // $().ready(function() { $.fancybox.open($("#lightbox_style03")) })
