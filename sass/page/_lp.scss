@@ -78,7 +78,7 @@
                     a {
                         position: relative;
                         padding-right: 140px;
-                        @include screen('xs_mobile'){
+                        @include screen('xs_mobile') {
                             padding-right: 0;
                         }
                     }
@@ -89,13 +89,13 @@
                 right: 0;
                 top: 0px;
                 width: 120px;
-                color:#666;
-                @include screen('xs_mobile'){
-                    position:relative;
-                    right:auto;
-                top:auto;
-                display: block;
-                padding-top: 8px;
+                color: #666;
+                @include screen('xs_mobile') {
+                    position: relative;
+                    right: auto;
+                    top: auto;
+                    display: block;
+                    padding-top: 8px;
                 }
             }
         }

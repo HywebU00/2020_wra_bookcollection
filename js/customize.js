@@ -16,12 +16,10 @@ $(function() {
         ease: 'ease',
         prevArrow: '<div type="button"  tabindex="0" class="slick-prev Btn-prev"><a href="#">魚仔《想要回家》</a></div>',
         nextArrow: '<div type="button" tabindex="0"  class="slick-next Btn-next"><a href="#">曾文之眼藝文活動</a></div>',
-
         responsive: [{
             breakpoint: 767,
             settings: {
-               vertical: false,
-              
+                vertical: false,
             }
         }]
     });
@@ -307,15 +305,15 @@ $(function() {
 $(function() {
     $('.bibliography_block .collapse_btn').click(function() {
         $(this).next('.bibliography').slideToggle()
-        $(this).toggleClass('close');
-        // $(this).parents('.list_file').siblings().find('.bibliography').show();
-        // $(this).parents('.list_file').siblings().find('.collapse_btn').addClass('close');
+        $(this).toggleClass('closebtn');
+        $(this).parents('.list_file').siblings().find('.bibliography').slideUp();
+        $(this).parents('.list_file').siblings().find('.collapse_btn').removeClass('closebtn');
     })
 })
 $(function() {
     $('.category_block .collapse_btn').click(function() {
         $('.category_block .category').slideToggle()
-        $(this).toggleClass('close');
+        $(this).toggleClass('closebtn');
     })
 })
 // 燈箱
@@ -333,7 +331,49 @@ $(function() {
     $.fancybox.open($("#lightbox_style03"))
 })
 
+$(function() {
 
+    //進階查詢資料 
+    $('.advancedbtn').click(function() {
+        $('.form_advanced').stop().slideDown(700);
+        $('.searchsystem .onlysearch').hide();
+        $('.searchsystem .onlysearchin').show();
+        $('.searchsystem .simple_search_btn').hide();
+        $('.searchsystem .simplebtn').show();
+        $('.searchsystem .advancedbtn').hide();
+    })
+    $('.simplebtn').click(function() {
+        $('.form_advanced').stop().slideUp(700);
+        $('.searchsystem .onlysearch').show();
+        $('.searchsystem .onlysearchin').hide();
+        $('.searchsystem .simple_search_btn').show();
+        $('.searchsystem .simplebtn').hide();
+        $('.searchsystem .advancedbtn').show();
+    })
+
+    // 出版年度
+    $("#slider-range").slider({
+        range: true,
+        min: 1900,
+        max: 2017,
+        values: [1900, 2017],
+        slide: function(event, ui) {
+            $("#amount").val(+ui.values[0] + " - " + ui.values[1]);
+        }
+    });
+    $("#amount").val($("#slider-range").slider("values", 0) + " - " + $("#slider-range").slider("values", 1));
+
+
+
+    // 分類list
+    $('.sortlist_block .sortlist').hide();
+    $('.sortlist_block h3').click(function() {
+        $(this).next('.sortlist').slideToggle();
+        $(this).parents().siblings().children('.sortlist').stop().slideUp();
+        $(this).children('a').toggleClass('turnicon');
+        $(this).parents().siblings().children('h3').children('a').removeClass('turnicon');
+    })
+})
 // 手機版將ㄊwow效果關掉
 // $(function() {
 //     if(('.wow').length>0){

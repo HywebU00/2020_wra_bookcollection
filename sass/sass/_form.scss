@@ -416,7 +416,7 @@ input[type="checkbox"]:checked {
     background-position: center center;
     background-size: 98%;
     box-shadow: $form-focus 0 0 0 1px;
-    @include border-radius(2px);
+    @include border-radius(4px);
 }
 input[type="radio"]:checked {
     box-shadow: #fff 0 0 0 3px inset, $form-focus 0 0 0 1px;

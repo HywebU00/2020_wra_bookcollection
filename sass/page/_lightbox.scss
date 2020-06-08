@@ -5,7 +5,7 @@
     max-width: 70%;
     max-height: 70%;
     margin: 0;
-    // border-radius: 5px;
+    // border-radius: 4px;
     position: relative;
     @include screen('tablet') {
         max-width: 80%;
@@ -39,7 +39,7 @@
 // 
 .lightboxblock {
     padding: 20px;
-    // border-radius: 5px;
+    // border-radius: 4px;
     .title {
         font-size: 1.375em;
         border-bottom: 1px solid #333;
@@ -87,7 +87,7 @@
             padding: 8px 15px;
             background-color: #535353;
             color: #fff;
-            border-radius: 5px;
+            border-radius: 4px;
             @media(max-width: 480px) {
                 display: block;
                 width: 100%;
@@ -104,7 +104,7 @@
         .notice_block {
             padding: 10px 20px 0;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 4px;
             margin-bottom: 20px;
             background-color: #fff;
             @include screen('mobile') {

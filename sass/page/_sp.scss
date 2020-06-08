@@ -1,7 +1,7 @@
 // 分館別 
 .annex_block {
     width: 40%;
-    border-radius: 5px;
+    border-radius: 4px;
     margin: 0 auto 30px;
     text-align: center;
     background-color: $primaryColor;
@@ -15,7 +15,6 @@
     }
     @include screen('mobile') {
         width: 80%;
-        border-radius: 5px;
     }
     @include screen('xs_mobile') {
         width: 100%;
@@ -130,19 +129,21 @@
             display: block;
             font-size: 1.25em;
             line-height: 1.5em;
+            &:hover{
+                text-decoration: underline;
+            }
         }
     }
     // 作者出處
     .databottom {
-        display: flex;
-        flex-wrap: wrap;
+        // display: flex;
+        // flex-wrap: wrap;
         margin-bottom: 10px;
         font-size: .938em;
-        // @include screen('mobile'){
-        //  display: block;
-        // }
+       
         >div {
-            position: relative;
+           display: inline-block;
+           position: relative;
             @include screen('mobile') {
                 margin-bottom: 10px;
                 display: block;
@@ -166,21 +167,21 @@
             }
         }
         .author {
-            float: none;
-            width: 28%;
+            padding: 0 15px 0 0;
+           
         }
         .publishing {
-            float: none;
-            width: 50%;
-            padding-left: 15px;
+            
+           
+            padding: 0 15px;
         }
-        .publication_year {
-            float: none;
-            width: 20%;
-            padding-left: 15px;
+        .publication_years {
+           
+            
+           padding: 0 15px;
         }
         @include screen('mobile') {
-            .author, .publishing, .publication_year {
+            .author, .publishing, .publication_years {
                 float: auto;
                 width: 100%;
                 padding-left: 15px;
@@ -228,7 +229,7 @@
             left: 15px;
             transition: .5s;
         }
-        &.close {
+        &.closebtn {
             &:before {
                 transform: rotate(135deg);
                 top: 5px;
@@ -242,6 +243,7 @@
         margin: 0;
         clear: both;
         float: none;
+        display: none;
         table {
             border: none;
             th {
@@ -279,7 +281,7 @@
         padding: 0.5em 1.5em;
         color: #fff;
         background-color: #999;
-        border-radius: .2em;
+        border-radius: 4px;
     }
     // 借閱中btn
     .borrowing_btn {
@@ -312,7 +314,7 @@
 .explanation {
     background-color: #e5e5e5;
     padding: 30px 40px;
-    border-radius: 5px;
+    border-radius: 4px;
     margin-bottom: 30px;
     h3 {
         margin: 0 0 20px;
@@ -454,7 +456,7 @@
             span.play {
                 // box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,1);
                 background: rgba(0, 0, 0, .6);
-                border-radius: 3px;
+                border-radius: 4px;
                 margin-top: 1.25em;
                 padding: .5em 2em;
                 width: 150px;

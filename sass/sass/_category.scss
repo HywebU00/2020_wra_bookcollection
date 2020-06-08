@@ -31,7 +31,7 @@
             transition: .5s;
             z-index: 8;
         }
-        &.close {
+        &.closebtn {
             &:before {
                 transform: rotate(135deg);
                 top: 0px;

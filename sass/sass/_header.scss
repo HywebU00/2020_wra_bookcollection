@@ -1,7 +1,7 @@
 //header
 .header {
     position: relative;
-    z-index: 99;
+    z-index: 10;
     background: #FFF;
     box-shadow: 0px 2px 5px RGBA(0, 0, 0, .2);
     position: fixed;
@@ -322,7 +322,7 @@
         top: 80px;
         left: 0;
         background-color: #eee;
-        border-radius: 0 2px 5px 5px;
+        border-radius: 0 0px 4px 4px;
         box-shadow: 0px 2px 5px RGBA(0, 0, 0, .2);
         text-align: center;
         display: none;
@@ -494,7 +494,7 @@
         width: 100%;
         position: relative;
         background-color: #fff;
-        border-radius: 5px;
+        border-radius: 4px;
         input {
             margin: 0;
             padding: .4em .5em .3em;
@@ -521,8 +521,7 @@
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: 20px;
-                outline: 1px solid transparent;
-                border: none;
+                border: 1px solid $secondaryColor;
                 display: block;
                 min-width: 0em !important;
                 position: absolute;
