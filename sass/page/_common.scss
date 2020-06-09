@@ -10,6 +10,7 @@
     @include box-sizing();
     @include screen('mobile') {
         padding: 20px 0;
+        background-color: transparent;
     }
     &.searchblackbg {
         background-color: rgba(0, 0, 0, .5);
@@ -314,14 +315,6 @@
     position: relative;
     background-color: #fff;
     display: flex;
-    h3.title {
-        margin: 0 0 10px;
-        padding: 0;
-        font-size: 1.188em;
-        color: $primaryColor;
-        font-weight: 500;
-        letter-spacing: 0.01em;
-    }
     .mainleftblock {
         flex: 0 0 200px;
         padding: 15px 0 30px;
@@ -336,17 +329,20 @@
             background-color: $color-gray;
         }
         @include screen('tablet') {
-            position: fixed;
-            left: -100%;
+            // position: fixed;
+            // left: -100%;
             top: 0;
             overflow-y: scroll;
             width: 100%;
-            padding: 50px 25px 70px 35px;
+            padding: 25px 25px 70px 35px;
             transition: .5s;
             height: 100%;
             display: none;
             background-color: #fff;
-            z-index: 11;
+            z-index: 12;
+            &:before{
+                display: none;
+            }
         }
         //關閉按鈕
         .close {
@@ -362,13 +358,22 @@
         // 
         .mainleftcontent {
             padding-right: 15px;
+            h3.title {
+                margin: 0 0 10px;
+                padding: 0;
+                font-size: 1.188em;
+                color: $primaryColor;
+                font-weight: 500;
+                letter-spacing: 0.01em;
+            }
+           
             &.fixed {
                 position: fixed;
-                top: 55px;
+                top: 80px;
                 overflow-y: scroll;
                 height: 100%;
                 @include box-sizing;
-                padding: 0 25px 70px;
+                padding: 0 15px 70px 0;
                 z-index: 9;
                 scrollbar-face-color: #eee; //（軸面顏色） 
                 scrollbar-highlight-color: #fff; //軸面左角邊顏色
@@ -377,6 +382,9 @@
                 scrollbar-darkshadow-color: #fff; //右立體邊顏色
                 scrollbar-arrow-color: #666; //箭頭顏色
                 scrollbar-track-color: #fff; //軸軌顏色
+                h3.title {
+                    margin-top: 15px;
+                }
             }
         }
     }
@@ -666,11 +674,11 @@ html .ui-button.ui-state-disabled:active {
         right: 0;
         left: 0;
         width: 100%;
-        z-index: 4;
+        z-index:11;
         a {
             display: block;
             text-align: center;
-            padding: 15px 8px;
+            padding: 10px 8px;
             background-image: none;
             background-color: #d5d5d5;
             color: #333;
@@ -729,7 +737,7 @@ html .ui-button.ui-state-disabled:active {
             vertical-align: middle;
             margin: 0px;
             float: left;
-            a{
+            a {
                 display: block;
                 width: 20px;
             }
@@ -810,9 +818,9 @@ html .ui-button.ui-state-disabled:active {
                     font-size: 0.938em;
                     line-height: 1em;
                     float: left;
-                    color:#333;
-                    &:hover{
-                        color:$aHover;
+                    color: #333;
+                    &:hover {
+                        color: $aHover;
                     }
                     &.here {
                         background-color: #707070;

@@ -160,17 +160,14 @@ $(function() {
             _body.off('touchmove');
             $('.m_search').hide();
             $('.language').find('ul').hide();
-
-
             //縮限查詢範圍
             $(window).on("load scroll resize", function(e) {
                 $('.mainleftcontent').removeClass('fixed');
+
             });
             $('.mainleftcontent').removeClass('fixed');
             $('.mainleftblock').css('position', 'fixed');
             $('.mainleftblock').css('left', '-100%');
-
-
             $('.limit_range').click(function() {
                 $('.mainleftblock').css('display', 'block');
                 $('.mainleftblock').css('left', '0');
@@ -180,6 +177,7 @@ $(function() {
                 $('.mainleftblock').css('left', '-100%');
                 $('body').removeClass('fix');
             })
+           
         } else {
             /*-----------------------------------*/
             /////////////// PC版設定 /////////////
@@ -211,7 +209,6 @@ $(function() {
                     $('.menu').find('li ul').hide();
                 }
             });
-
             //縮限查詢範圍
             $('.mainleftblock').css('position', 'relative');
             $('.mainleftblock').css('left', '0');
@@ -755,7 +752,7 @@ $(function() {
     $('.scroltable-nav-right').append('<div class="tablearrow_right"  style="display:none;"></div>');
     // 固定版頭
     function table_Arrow() {
-        if ($('table').parents('.table_list').length == 0 && $('table').parents('.fix_th_table').length == 0 && $('table').parents('.form_advanced').length == 0 && $(this).parent('form').length == 0 ) {
+        if ($('table').parents('.table_list').length == 0 && $('table').parents('.fix_th_table').length == 0 && $('table').parents('.form_advanced').length == 0 && $(this).parent('form').length == 0) {
             if ($('.scroltable-wrapper').length > 0) {
                 var stickyArrowTop = Math.floor($('.scroltable-wrapper').offset().top),
                     thisScroll = Math.floor($(this).scrollTop());

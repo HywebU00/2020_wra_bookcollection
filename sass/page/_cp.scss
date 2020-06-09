@@ -30,7 +30,6 @@ h3.title {
             padding: 8px 10px;
             color: #fff;
             height: 50px;
-
         }
         @include screen('mobile') {
             float: none;
@@ -449,13 +448,12 @@ div.tag {
 // cppic_slider
 .cppic_slider {
     h3 {
-            font-size: 1.5em;
-            padding: 12px 0px 15px 0px;
-            margin: 0.5em 0px 1.2em;
-            border-bottom: 1px solid $primaryColor;
-        }
+        font-size: 1.5em;
+        padding: 12px 0px 15px 0px;
+        margin: 0.5em 0px 1.2em;
+        border-bottom: 1px solid $primaryColor;
+    }
     .cppic {
-        
         @include gutter(70px);
         margin-bottom: 20px;
         @include screen('mobile') {
@@ -507,5 +505,171 @@ div.tag {
                 transition: .3s ease-out;
             }
         }
+    }
+}
+// 詳目頁
+.book_detaildata {
+    display: flex;
+    // flex-wrap: wrap;
+    padding: 30px 0;
+    @include screen('xs_mobile') {
+        display: block;
+    }
+    .book_detail {
+        flex: 0 0 260px;
+        .image {
+            width: 230px;
+            img {
+                width: 230px;
+            }
+        }
+        @include screen('mobile') {
+            flex: 0 0 160px;
+            .image {
+                width: 130px;
+                img {
+                    width: 130px;
+                }
+            }
+        }
+        @include screen('xs_mobile') {
+            width: 100%;
+            .image {
+                width: 130px;
+                margin:0 auto;
+                img {
+                    width: 130px;
+                }
+            }
+        }
+    }
+    .bookdata {
+        flex: auto;
+        @include screen('xs_mobile') {
+            width: 100%;
+        }
+        // 基本資料
+        .basicdata {
+            border-bottom: 1px dashed #ccc;
+            overflow: hidden;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            .GPNEBN_num {
+                float: left;
+                font-size: 0.938em;
+            }
+            .project_num {
+                float: right;
+                font-size: 0.938em;
+            }
+            @include screen('mobile') {
+                .GPNEBN_num, .project_num {
+                    float: none;
+                    font-size: 0.875em;
+                }
+            }
+            h3 {
+                display: block;
+                float: none;
+                clear: both;
+                margin: 5px 0;
+                font-size: 1.375em;
+                a {
+                    display: block;
+                }
+            }
+            .language_btn {
+                float: left;
+                text-align: left;
+                padding: 0;
+                a {
+                    color: #fff;
+                }
+            }
+            .pricing {
+                float: right;
+                margin-top: 5px;
+            }
+        }
+        // 基本項目 
+        .basiclist {
+            border-bottom: 1px dashed #ccc;
+            overflow: hidden;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            ul {
+                margin: 0;
+                padding: 0;
+                li {
+                    width: 32%;
+                    display: inline-block;
+                    margin: 0 0 10px;
+                    line-height: 1.6em;
+                    list-style-type: none;
+                    vertical-align: top;
+                    @include screen('tablet') {
+                        width: 48%;
+                    }
+                    @media(max-width: 380px){
+                        width: 100%;
+                    }
+                    span {
+                        font-size: 0.938em;
+                        display: block;
+                        color: #999;
+                    }
+                }
+            }
+        }
+        // 按鈕區
+        .btn_block {
+            input[type="button"] {
+                background-color: $secondaryColor;
+                border: 1px solid $secondaryColor;
+                transition: .5s !important;
+                &:hover {
+                    border: 1px solid darken($secondaryColor, 5) !important;
+                    background-color: darken($secondaryColor, 5);
+                }
+                &:last-of-type {
+                    margin-right: 30px;
+                }
+            }
+            .frequency_block {
+                display: inline-block;
+                span {
+                    margin-right: 30px;
+                    font-size: 0.938em;
+                    color: #333;
+                    position: relative;
+                    display: inline-block;
+                    &:before {
+                        content: '';
+                        width: 1px;
+                        height: 15px;
+                        background-color: #999;
+                        position: absolute;
+                        right: -15px;
+                        top: 8px;
+                    }
+                    &:last-child {
+                        &:before {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.book_datablock{
+    h4{
+        font-size: 1.313em;
+        margin:0 0 20px;
+        padding:0;
+    }
+    .bibliography{
+        display: block;
+        line-height: 1.45em;
     }
 }

@@ -72,10 +72,10 @@ $(function() {
     $('.cp_slider').slick({
         dots: true,
         infinite: true,
+        autoplay: true, //自動播放
         speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        autoplay: false,
+        slidesToShow: 6,
+        slidesToScroll: 6,
         autoplaySpeed: 1500,
         pauseOnHover: true,
         pauseOnFocus: true,
@@ -84,29 +84,36 @@ $(function() {
         lazyLoad: 'ondemand',
         ease: 'ease',
         responsive: [{
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                infinite: true,
-                dots: true
-            }
-        }, {
-            breakpoint: 545,
-            settings: {
-                arrows: true,
-                slidesToShow: 2,
-                slidesToScroll: 2
-            }
-        }, {
-            breakpoint: 480,
-            settings: {
-                arrows: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: false
-            }
-        }]
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 5,
+                }
+            }, {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4
+                }
+            }, {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            }, {
+                breakpoint: 575,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            }, {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }]
     });
     $('.cp_slider').slickLightbox({
         caption: 'caption',
@@ -392,6 +399,29 @@ $(function() {
             }
         })
     }
+})
+
+//左欄 資料fixed
+$(function() {
+    $(window).on("scroll resize", function() {
+        var mainleftblock = $(".mainleftblock");
+        let mainleftcontent = $(".mainleftcontent");
+        if (mainleftblock.length > 0 && mainleftcontent.length > 0) {
+            let myWidth = mainleftblock.width();
+            if ($(window).scrollTop() > mainleftblock.offset().top - 80) {
+                mainleftcontent.addClass('fixed');
+                mainleftcontent.css('width', myWidth);
+            } else {
+                mainleftcontent.removeClass('fixed');
+                mainleftcontent.removeAttr('style');
+            }
+        }
+        if ($(window).scrollTop() + document.documentElement.clientHeight > $("footer").offset().top) {
+            mainleftcontent.height($("footer").offset().top - $(window).scrollTop() - 120);
+        } else {
+            mainleftcontent.height(document.documentElement.clientHeight - 120);
+        }
+    })
 })
 // 手機版將ㄊwow效果關掉
 // $(function() {

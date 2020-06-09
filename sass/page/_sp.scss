@@ -129,7 +129,7 @@
             display: block;
             font-size: 1.25em;
             line-height: 1.5em;
-            &:hover{
+            &:hover {
                 text-decoration: underline;
             }
         }
@@ -140,10 +140,9 @@
         // flex-wrap: wrap;
         margin-bottom: 10px;
         font-size: .938em;
-       
         >div {
-           display: inline-block;
-           position: relative;
+            display: inline-block;
+            position: relative;
             @include screen('mobile') {
                 margin-bottom: 10px;
                 display: block;
@@ -168,17 +167,12 @@
         }
         .author {
             padding: 0 15px 0 0;
-           
         }
         .publishing {
-            
-           
             padding: 0 15px;
         }
         .publication_years {
-           
-            
-           padding: 0 15px;
+            padding: 0 15px;
         }
         @include screen('mobile') {
             .author, .publishing, .publication_years {
@@ -237,66 +231,6 @@
             }
         }
     }
-    .bibliography {
-        border: 1px solid #ccc;
-        padding: 10px 0;
-        margin: 0;
-        clear: both;
-        float: none;
-        display: none;
-        table {
-            border: none;
-            th {
-                border: none;
-                border-bottom: 1px solid #ccc;
-                background-color: transparent;
-            }
-            td {
-                border: none;
-                border-bottom: 1px solid #ccc;
-            }
-            tr:last-child {
-                td {
-                    border: none;
-                }
-            }
-        }
-        @include screen('mobile') {
-            padding: 0 15px;
-            tr {
-                border: none;
-                margin-bottom: 0px; // background-color: #333;
-            }
-            td {
-                border-bottom: 1px solid #e5e5e5 !important;
-                &:last-child {
-                    border: none !important;
-                }
-            }
-        }
-    }
-    // btnstyle
-    .stylebtn {
-        display: inline-block;
-        padding: 0.5em 1.5em;
-        color: #fff;
-        background-color: #999;
-        border-radius: 4px;
-    }
-    // 借閱中btn
-    .borrowing_btn {
-        background-color: darken($lightColor, 5);
-    }
-    // 預約btn、預借btn
-    .reservation_btn, .advance_btn {
-        background-color: $color-purple;
-        &:hover {
-            background-color: darken($color-purple, 10);
-        }
-    }
-    .inlibrary_btn {
-        background-color: darken($color-green, 10);
-    }
     // 按鈕區
     .btn_block {
         input[type="button"] {
@@ -310,6 +244,69 @@
         }
     }
 }
+// 書目表格
+.bibliography {
+    border: 1px solid #ccc;
+    padding: 10px 0;
+    margin: 0;
+    clear: both;
+    float: none;
+    display: none;
+    table {
+        border: none;
+        th {
+            border: none;
+            border-bottom: 1px solid #ccc;
+            background-color: transparent;
+        }
+        td {
+            border: none;
+            border-bottom: 1px solid #ccc;
+        }
+        tr:last-child {
+            td {
+                border: none;
+            }
+        }
+    }
+    @include screen('mobile') {
+        padding: 0 15px;
+        tr {
+            border: none;
+            margin-bottom: 0px; // background-color: #333;
+        }
+        td {
+            border-bottom: 1px solid #e5e5e5 !important;
+            &:last-child {
+                border: none !important;
+            }
+        }
+    }
+}
+// 表格中的按鈕
+// btnstyle
+.stylebtn {
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    color: #fff;
+    background-color: #999;
+    border-radius: 4px;
+}
+// 借閱中btn
+.borrowing_btn {
+    background-color: darken($lightColor, 5);
+}
+// 預約btn、預借btn
+.reservation_btn, .advance_btn {
+    background-color: $color-purple;
+    &:hover {
+        background-color: darken($color-purple, 10);
+    }
+}
+.inlibrary_btn {
+    background-color: darken($color-green, 10);
+}
+
 // 說明書單
 .explanation {
     background-color: #e5e5e5;
