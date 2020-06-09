@@ -330,9 +330,7 @@ $(function() {
 $(function() {
     $.fancybox.open($("#lightbox_style03"))
 })
-
 $(function() {
-
     //進階查詢資料 
     $('.advancedbtn').click(function() {
         $('.form_advanced').stop().slideDown(700);
@@ -350,7 +348,6 @@ $(function() {
         $('.searchsystem .simplebtn').hide();
         $('.searchsystem .advancedbtn').show();
     })
-
     // 出版年度
     $("#slider-range").slider({
         range: true,
@@ -362,9 +359,6 @@ $(function() {
         }
     });
     $("#amount").val($("#slider-range").slider("values", 0) + " - " + $("#slider-range").slider("values", 1));
-
-
-
     // 分類list
     $('.sortlist_block .sortlist').hide();
     $('.sortlist_block h3').click(function() {
@@ -373,6 +367,31 @@ $(function() {
         $(this).children('a').toggleClass('turnicon');
         $(this).parents().siblings().children('h3').children('a').removeClass('turnicon');
     })
+})
+//分頁
+$(function() {
+    $('.number01').click(function() {
+        $('.number01').hide();
+        $('.page').addClass('page02');
+    })
+    $('#closebtn').click(function() {
+        $('.number01').show();
+        $('.page').removeClass('page02');
+    })
+})
+$(function() {
+    if ($(".page").is(":visible")) {
+        $(window).scroll(function() {
+            var pageLeft = $(".page").offset().left;
+            var scrollTop = $(window).scrollTop();
+            var viewportHeight = $(window).height();
+            if ((scrollTop + viewportHeight) > ($("#showPage").offset().top + 50)) {
+                $(".page").removeClass("fixed");
+            } else {
+                $(".page").addClass("fixed");
+            }
+        })
+    }
 })
 // 手機版將ㄊwow效果關掉
 // $(function() {
