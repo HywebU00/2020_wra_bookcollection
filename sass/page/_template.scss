@@ -112,7 +112,7 @@ body {
         flex-wrap: wrap;
         padding: 60px 0 40px;
         @include screen('mobile') {
-            padding: 60px 0 20px;
+            padding: 50px 0 0px;
         }
         .unit_title {
             flex: none;
@@ -124,7 +124,8 @@ body {
             @include screen('mobile') {
                 width: 100%;
                 text-align: center;
-                margin: 0 0 20px;
+                margin: 0;
+                font-size: 2.125em;
             }
         }
         .search_content {

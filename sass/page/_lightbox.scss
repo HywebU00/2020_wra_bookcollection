@@ -148,9 +148,9 @@
     max-width: 500px;
     display: none;
     @include screen('mobile') {
-        min-width: 80%;
-        max-width: 80%;
-        max-height: 80%;
+        min-width: 90%;
+        max-width: 90%;
+        max-height: 90%;
     }
 }
 .commonlightbox_big {
