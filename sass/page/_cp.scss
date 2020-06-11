@@ -728,7 +728,7 @@ div.tag {
             right: -23px;
             transform: rotate(-90deg);
             top: 35%;
-            z-index: 99;
+            z-index: 10;
         }
         // .slick-prev.slick-disabled:before,
         // .slick-next.slick-disabled:before {
@@ -791,14 +791,52 @@ div.tag {
             height: auto;
             background-color: rgba(255, 255, 255, .7);
             padding: 20px 15px;
+            overflow: hidden
         }
         .leftblock_sort {
             width: 200px;
             float: left;
+
+            @include screen('mobile') {
+                float: none;
+                position: absolute;
+                left: -200px;
+                transition: .5s;
+                .sortlist {
+                    opacity: 0;
+                    transition: .5s;
+                }
+                &.open {
+                    left: -1px;
+                    .sortlist {
+                         opacity: 1;
+                        transition: .5s;
+                    }
+                }
+            }
         }
         .rightblock_map {
             width: calc(100% - 220px);
             float: right;
+            @include screen('mobile') {
+                width: 95%;
+            }
+        }
+        .conditional_options {
+            display: none;
+            @include screen('mobile') {
+                display: block;
+                position: absolute;
+                left: 200px;
+                top: 0px;
+                background-color: $lightColor;
+                border: 1px solid $lightColor;
+                color: #333;
+                border-left: none;
+                padding: 8px 10px;
+                line-height: 1.5em;
+                border-radius: 0 4px 4px 0;
+            }
         }
         // 標籤雲
         .sortlist {
@@ -806,8 +844,13 @@ div.tag {
             padding: 10px 15px;
             border-radius: 4px;
             overflow: hidden;
-            min-height: 430px;
+            height: 430px;
+            overflow-y: auto;
+            background-color: #fff;
             @include box-sizing;
+            @include screen('mobile'){
+                border-radius:0 0 4px 0;
+            }
             .title {
                 margin: 8px 0;
                 padding: 0px;
@@ -937,10 +980,26 @@ div.tag {
                 top: 0;
                 bottom: 0;
             }
+            @media(max-width: 680px){
+               float: none;
+               width: 100%;
+                &:before{
+                    width: 98%;
+                    height: 1px;
+                    right:0;
+                    bottom:0;
+                    top:auto;
+                    left:0;
+                }
+            }
         }
         .rightblock_tagcloud {
             width: 48%;
             float: right;
+            @media(max-width: 680px){
+               float: none;
+               width: 100%
+            }
         }
         .tagblock {
             padding: 10px 20px 30px;
@@ -987,7 +1046,7 @@ div.tag {
                                 position: absolute;
                                 top: 6px;
                                 right: 3px;
-                                z-index: 9;
+                                z-index: 1;
                                 width: 20px !important;
                                 height: 20px !important;
                             }

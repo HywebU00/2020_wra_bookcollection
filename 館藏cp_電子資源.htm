@@ -233,7 +233,7 @@
                                 <div class="GPNEBN_num">編號(GPN/EBN)：10109E0005</div>
                                 <div class="project_num">委辦計畫編號：MOEAWRA1080166</div>
                                 <h3><a href="javascript:;">希望，未來莫拉克風災教會我們的事</a></h3>
-                                <div class="btn_grp language_btn"><button class="btn btn-orange" data-fancybox data-src="#lightbox_chinese">中文摘要</button><button href="#" class="btn btn-orange" data-fancybox data-src="#lightbox_english">英文摘要</button></div>
+                                <div class="btn_grp language_btn "><button class="btn btn-orange btn-xs" data-fancybox data-src="#lightbox_chinese">中文摘要</button><button href="#" class="btn btn-orange btn-xs" data-fancybox data-src="#lightbox_english">英文摘要</button></div>
                                 <div class="pricing">定價：NT$250</div>
                             </div>
                             <!-- 燈箱中文摘要 start-->
@@ -480,10 +480,11 @@
                         <div class="tagcloud_block">
                             <div class="tabSet">
                                 <section class="tabs tagcloud">
-                                    <div class="tabItem active"><a href="#">館藏查詢</a></div>
+                                    <div class="tabItem active"><a href="javascript:;">館藏查詢</a></div>
                                     <!--選到的頁籤項目-->
                                     <div class="tabContent">
                                         <div class="leftblock_sort">
+                                            <div class="conditional_options">條件選項</div>
                                             <div class="sortlist">
                                                 <div class="sortlistblock">
                                                     <div class="title">依河川<span class="collapse_btn"></span></div>
@@ -495,6 +496,18 @@
                                                             </ul>
                                                         </label>
                                                         <label><input type="checkbox" name="" value="">二仁溪<span>(9)</span>
+                                                        </label>
+                                                        <label><input type="checkbox" name="" value="">卑南溪<span>(5)</span>
+                                                        </label>
+                                                        <label><input type="checkbox" name="" value="">知本溪溪<span>(1)</span>
+                                                        </label>
+                                                        <label><input type="checkbox" name="" value="">淡水河<span>(1)</span>
+                                                        </label>
+                                                        <label><input type="checkbox" name="" value="">卑南溪<span>(5)</span>
+                                                        </label>
+                                                        <label><input type="checkbox" name="" value="">知本溪溪<span>(1)</span>
+                                                        </label>
+                                                        <label><input type="checkbox" name="" value="">淡水河<span>(1)</span>
                                                         </label>
                                                         <label><input type="checkbox" name="" value="">卑南溪<span>(5)</span>
                                                         </label>
@@ -522,19 +535,19 @@
                                             <!-- 水利地理諮詢平台 end -->
                                         </div>
                                     </div>
-                                    <div class="tabItem"><a href="#">網站資訊</a></div>
+                                    <div class="tabItem"><a href="javascript:;">網站資訊</a></div>
                                     <div class="tabContent">
                                         <!-- 標籤 -->
                                         <div class="leftblock_tagcloud">
                                             <div class="tagblock">
                                                 <div class="title">所有標籤</div>
                                                 <ul>
-                                                    <li><a href="#">風災</a></li>
-                                                    <li><a href="#">重大水情</a></li>
-                                                    <li><a href="#">紀念圖書</a></li>
-                                                    <li><a href="#">河川整治</a></li>
-                                                    <li><a href="#">災害防治</a></li>
-                                                    <li><a href="#">人文歷史</a></li>
+                                                    <li><a href="javascript:;">風災</a></li>
+                                                    <li><a href="javascript:;">重大水情</a></li>
+                                                    <li><a href="javascript:;">紀念圖書</a></li>
+                                                    <li><a href="javascript:;">河川整治</a></li>
+                                                    <li><a href="javascript:;">災害防治</a></li>
+                                                    <li><a href="javascript:;">人文歷史</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -542,11 +555,11 @@
                                             <div class="tagblock">
                                                 <div class="title">我的標籤</div>
                                                 <ul>
-                                                    <li><a href="#" class="canclose_label">莫拉克<span class="close"></span></a></li>
-                                                    <li><a href="#" class="canclose_label">災害成果彙整<span class="close"></span></a></li>
-                                                    <li><a href="#" class="canclose_label">災後重建<span class="close"></span></a>
+                                                    <li><a href="javascript:;" class="canclose_label">莫拉克<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a></li>
+                                                    <li><a href="javascript:;" class="canclose_label">災害成果彙整<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a></li>
+                                                    <li><a href="javascript:;" class="canclose_label">災後重建<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a>
                                                     </li>
-                                                    <li><a href="#" class="canclose_label greenbtn greenbg">風災<span class="close"></span></a>
+                                                    <li><a href="javascript:;" class="canclose_label greenbtn greenbg">風災<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a>
                                                     </li>
                                                     <li><a href="javascript:;" class="addtagbtn"><img src="images/icon/icon_add.svg"></a></li>
                                                 </ul>
@@ -555,17 +568,30 @@
                                                     <div class="addtag"><input type="text" name="" value="若有多個標籤，請用#隔開" placeholder="若有多個標籤，請用#隔開" class="addinput">
                                                         <div class="addoption">
                                                             <ul>
-                                                                <li><a href="#">社會</a></li>
-                                                                <li><a href="#">統計</a></li>
-                                                                <li><a href="#">嚴肅議題</a></li>
-                                                                <li><a href="#">食譜</a></li>
-                                                                <li><a href="#">便當菜</a></li>
+                                                                <li><a href="javascript:;">社會</a></li>
+                                                                <li><a href="javascript:;">統計</a></li>
+                                                                <li><a href="javascript:;">嚴肅議題</a></li>
+                                                                <li><a href="javascript:;">食譜</a></li>
+                                                                <li><a href="javascript:;">便當菜</a></li>
                                                             </ul>
                                                         </div>
                                                     </div><button type="button" class="btn btn-red btn-xs addbtn">加入</button><a href="javascript:;" class="closebtn"><img src="images/icon/icon_close.svg"></a>
                                                 </div>
                                                 <!-- 增加標籤end -->
                                             </div>
+                                            <!-- 燈箱確認標籤刪除 start-->
+                                            <div class="lightboxblock commonlightbox_small" id="lightbox_tagdel">
+                                                <h3 class="title">確認標籤刪除</h3>
+                                                <div class="content">
+                                                    <p>是否確認刪除此標籤</p>
+                                                        <div class="btn_grp">
+                                                            <input data-fancybox-close name="" type="reset" value="取消" />
+                                                            <input  name="" type="submit" value="確定" />
+                                                        </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            <!-- 燈箱永久連結 end-->
                                         </div>
                                     </div>
                                 </section>

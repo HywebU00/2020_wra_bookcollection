@@ -221,7 +221,7 @@
             position: absolute;
             bottom: -20px;
             left: 47%;
-            z-index: 9;
+            z-index: 1;
         }
         @include screen('xs_mobile') {}
     }

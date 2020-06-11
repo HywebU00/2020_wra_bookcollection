@@ -443,6 +443,11 @@ $(function() {
         $('.addtagbtn').show();
         $('.addoption').hide();
     })
+
+    // 條件選項
+    $('.conditional_options').click(function(){
+        $('.leftblock_sort').toggleClass('open')
+    })
 })
 
 //分頁
