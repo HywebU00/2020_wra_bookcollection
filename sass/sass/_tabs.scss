@@ -103,18 +103,18 @@
     }
     .tabItem.active>a {
         background-color: #535353;
-        @include screen('xs_mobile'){
-             background-color:$secondaryColor;
+        @include screen('xs_mobile') {
+            background-color: $secondaryColor;
         }
     }
     .tabContent {
         text-align: left;
         padding: 20px 0;
         height: 120px;
-        @include screen('xs_mobile'){
+        @include screen('xs_mobile') {
             height: auto;
             background-color: rgba(255, 255, 255, .7);
-            padding:20px 15px;
+            padding: 20px 15px;
         }
     }
 }
@@ -127,9 +127,9 @@
             float: none;
             margin-right: -6px;
             font-size: 1.125em;
-            @include screen('xs_mobile'){
+            @include screen('xs_mobile') {
                 display: block;
-                margin:0 0 1px;
+                margin: 0 0 1px;
             }
         }
     }
@@ -147,19 +147,17 @@
             height: 20px;
             left: 0px;
             top: 30%;
-            @include screen('xs_mobile'){
+            @include screen('xs_mobile') {
                 display: none;
-
             }
         }
-        @include screen('mobile'){
+        @include screen('mobile') {
             padding: 16px 5px 14px;
         }
-        @include screen('xs_mobile'){
-             background-color: #535353;
-        color: #fff;
+        @include screen('xs_mobile') {
+            background-color: #535353;
+            color: #fff;
         }
-
     }
     .tabItem:first-child>a {
         &:after {
@@ -172,15 +170,60 @@
     }
     .tabItem.active>a {
         background-color: #535353;
-        @include screen('xs_mobile'){
+        @include screen('xs_mobile') {
             background-color: $primaryColor;
         }
     }
     .tabContent {
         padding: 15px 20px;
-        @include screen('xs_mobile'){
+        @include screen('xs_mobile') {
             background-color: #dde1e7;
             background-image: url('../images/publications_block_bg.jpg');
         }
     }
+}
+// 標籤雲
+.tagcloud_block {
+    padding: 40px 0 20px;
+    .tabSet {
+        margin: 0;
+    }
+    .tabItem>a {
+        background-color: #ccc;
+        color: #333;
+        position: relative;
+        font-weight: 400;
+        font-size: 1.125em;
+        overflow: visible;
+        padding: 25px 0 20px;
+        @include screen('xs_mobile') {
+            background-color: #ccc;
+        }
+    }
+    .tabItem:first-child>a {
+        &:after {
+            display: none;
+        }
+    }
+    .tabItem>a:hover {
+        background-color: #535353;
+        color: #fff;
+    }
+    .tabItem.active>a {
+        background-color: $primaryColor;
+        position: relative;
+        &:before {
+            content: '';
+            border: 10px solid $primaryColor;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            position: absolute;
+            bottom: -20px;
+            left: 47%;
+            z-index: 9;
+        }
+        @include screen('xs_mobile') {}
+    }
+    
 }

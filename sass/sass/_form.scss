@@ -21,11 +21,11 @@ select::-ms-expand {
 .form_grid {
     font-size: .938em;
     margin: .5em;
-    border-top: 1px solid #DDD;
+    // border-top: 1px solid #DDD;
     .form_grp {
-        border-bottom: 1px dashed #DDD;
+        border-bottom: 1px solid #DDD;
         overflow: hidden;
-        padding: .2em 0;
+        padding: .2em 0 .5em;
         // 閱讀條文
         &.agree {
             border-bottom: none;
@@ -53,6 +53,10 @@ select::-ms-expand {
         overflow: hidden;
         @include screen('mobile') {
             width: 100%;
+        }
+        &.form_content2{
+            width:100%;
+            float: none;
         }
         // 第二層的設定
         .form_grp {

@@ -225,6 +225,52 @@
         }
     }
 }
+.books_block {
+    .books {
+        .slick-prev {
+            background-image: url('../vendor/slick/icon_arrow_up.svg');
+            background-size: 60px 30px;
+            background-position: center;
+            background-color: transparent;
+            width: 60px !important;
+            height: 40px !important;
+            transform: rotate(-90deg);
+            right: auto;
+            left: -23px;
+            top: 30%;
+        }
+        .slick-next {
+            background-image: url('../vendor/slick/icon_arrow_down.svg');
+            background-size: 60px 30px;
+            background-position: center;
+            background-color: transparent;
+            width: 60px !important;
+            height: 40px !important;
+            right: -23px;
+            transform: rotate(-90deg);
+            top: 30%;
+        }
+        // 點點
+        // 點點
+        .slick-dots {
+            width: auto;
+            right: 0;
+            bottom: -35px;
+        }
+        .slick-dots {
+            line-height: 1.5em;
+        }
+        .slick-dots li {
+            margin: 0 10px;
+        }
+        .slick-dots li button:before {
+            background-color: #999;
+        }
+        .slick-dots li.slick-active button:before {
+            background: #fdb300;
+        }
+    }
+}
 // slick._scss
 // adSlider
 .adSlider {
@@ -304,7 +350,7 @@
         border-bottom: 1px solid $primaryColor;
     }
     background: #fff;
-    padding: 1em 0;
+    padding: 0;
     clear: both;
     .cp_slider {
         @include gutter;
@@ -338,7 +384,6 @@
             top: 35%;
             z-index: 99;
         }
-        
     }
     .img-container {
         margin: 0px 15px;
@@ -366,7 +411,6 @@
     .slick-dots {
         bottom: -60px !important;
         @include screen('mobile') {
-           
             padding: 0;
         }
         li {

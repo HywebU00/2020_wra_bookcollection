@@ -14,12 +14,13 @@ $btn-radius:.2em;
     background-color: $btn-bg;
     border: 1px solid $btn-bg;
     color: $btn-font-color;
+    transition: .5s;
     // text-shadow:1px 1px 1px RGBA(0,0,0,.3);
     @include border-radius($btn-radius);
     // @include gradient(lighten($btn-bg, 5), darken($btn-bg, 15), vertical);
     &:hover, &:focus {
-        background-color: darken($btn-bg, 10); // Old browsers
-        border: 1px solid darken($btn-bg, 10) !important;
+        background-color: darken($btn-bg, 15); // Old browsers
+        border: 1px solid darken($btn-bg, 15) !important;
         cursor: pointer;
         color: #FFF;
         outline:none;
@@ -111,5 +112,5 @@ $btn-radius:.2em;
     font-size: $font-size * .938; //15px
 }
 .btn-xs {
-    font-size: $font-size * .813; //12px
+    font-size: $font-size * .875; //14px
 }

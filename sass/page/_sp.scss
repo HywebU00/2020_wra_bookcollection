@@ -270,10 +270,12 @@
         }
     }
     @include screen('mobile') {
-        padding: 0 15px;
+        padding: 0;
+        border:none;
+
         tr {
-            border: none;
-            margin-bottom: 0px; // background-color: #333;
+            border: 1px solid #ccc;
+            margin-bottom: 20px; // background-color: #333;
         }
         td {
             border-bottom: 1px solid #e5e5e5 !important;
@@ -303,6 +305,7 @@
         background-color: darken($color-purple, 10);
     }
 }
+// 在館btn
 .inlibrary_btn {
     background-color: darken($color-green, 10);
 }

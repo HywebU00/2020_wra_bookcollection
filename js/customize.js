@@ -73,7 +73,7 @@ $(function() {
         dots: true,
         infinite: true,
         autoplay: true, //自動播放
-        speed: 500,
+        speed: 1000,
         slidesToShow: 6,
         slidesToScroll: 6,
         autoplaySpeed: 1500,
@@ -84,36 +84,36 @@ $(function() {
         lazyLoad: 'ondemand',
         ease: 'ease',
         responsive: [{
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 5,
-                    slidesToScroll: 5,
-                }
-            }, {
-                breakpoint: 991,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 4
-                }
-            }, {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3
-                }
-            }, {
-                breakpoint: 575,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                }
-            }, {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }]
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 5,
+                slidesToScroll: 5,
+            }
+        }, {
+            breakpoint: 991,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4
+            }
+        }, {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3
+            }
+        }, {
+            breakpoint: 575,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        }, {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }]
     });
     $('.cp_slider').slickLightbox({
         caption: 'caption',
@@ -218,7 +218,7 @@ $(function() {
         dots: true,
         arrow: true,
         infinite: true,
-        speed: 300,
+        speed: 1000,
         slidesToShow: 6,
         slidesToScroll: 6,
         responsive: [{
@@ -256,6 +256,47 @@ $(function() {
             // settings: "unslick"
             // instead of a settings object
         ]
+    });
+    //匯出
+    $('.bookexport').slick({
+        dots: false,
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        autoplay: false,
+        arrow: true,
+        responsive: [{
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 1,
+            }
+        }, {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 1,
+            }
+        }, {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+            }
+        }, {
+            breakpoint: 650,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            }
+        }, {
+            breakpoint: 450,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            }
+        }]
     });
 });
 /*-----------------------------------*/
@@ -374,7 +415,36 @@ $(function() {
         $(this).children('a').toggleClass('turnicon');
         $(this).parents().siblings().children('h3').children('a').removeClass('turnicon');
     })
+    // cp頁標籤雲 左欄分類
+    var _sortlist_btn = $('.sortlistblock .title .collapse_btn');
+    $('.sortlistblock').first().find('.collapse_btn').addClass('openbtn');
+    _sortlist_btn.click(function() {
+        $(this).parent('.title').next('.sortlist_options').slideToggle();
+        $(this).toggleClass('openbtn');
+        $(this).parents('.sortlistblock').siblings().find('.sortlist_options').slideUp();
+        $(this).parents('.sortlistblock').siblings().find('.collapse_btn').removeClass('openbtn')
+    })
+
+    // 增加標籤
+    $('.addtagbtn').click(function() {
+        $('.addtag_block').css('display', 'inline-block');
+        $(this).hide();
+    })
+    $('.addinput').click(function() {
+        $('.addoption').slideToggle();
+    })
+    $('.addbtn').click(function() {
+        $('.addtag_block').hide();
+        $('.addtagbtn').show();
+        $('.addoption').hide();
+    })
+    $('.closebtn').click(function() {
+        $('.addtag_block').hide();
+        $('.addtagbtn').show();
+        $('.addoption').hide();
+    })
 })
+
 //分頁
 $(function() {
     $('.number01').click(function() {
@@ -400,7 +470,6 @@ $(function() {
         })
     }
 })
-
 //左欄 資料fixed
 $(function() {
     $(window).on("scroll resize", function() {
