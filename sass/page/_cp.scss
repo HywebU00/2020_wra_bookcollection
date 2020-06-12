@@ -511,9 +511,21 @@ div.tag {
 .book_detaildata {
     display: flex;
     // flex-wrap: wrap;
-    padding: 30px 0;
+    padding: 40px 0 0;
+    position: relative;
+    margin-bottom: 30px;
     @include screen('xs_mobile') {
         display: block;
+    }
+    // 收藏
+    .book_collect {
+        position: absolute;
+        top: 10px;
+        right: 0px;
+        z-index: 9;
+        img {
+            width: 24px;
+        }
     }
     .book_detail {
         flex: 0 0 260px;
@@ -796,7 +808,6 @@ div.tag {
         .leftblock_sort {
             width: 200px;
             float: left;
-
             @include screen('mobile') {
                 float: none;
                 position: absolute;
@@ -809,7 +820,7 @@ div.tag {
                 &.open {
                     left: -1px;
                     .sortlist {
-                         opacity: 1;
+                        opacity: 1;
                         transition: .5s;
                     }
                 }
@@ -848,8 +859,8 @@ div.tag {
             overflow-y: auto;
             background-color: #fff;
             @include box-sizing;
-            @include screen('mobile'){
-                border-radius:0 0 4px 0;
+            @include screen('mobile') {
+                border-radius: 0 0 4px 0;
             }
             .title {
                 margin: 8px 0;
@@ -980,25 +991,25 @@ div.tag {
                 top: 0;
                 bottom: 0;
             }
-            @media(max-width: 680px){
-               float: none;
-               width: 100%;
-                &:before{
+            @media(max-width: 680px) {
+                float: none;
+                width: 100%;
+                &:before {
                     width: 98%;
                     height: 1px;
-                    right:0;
-                    bottom:0;
-                    top:auto;
-                    left:0;
+                    right: 0;
+                    bottom: 0;
+                    top: auto;
+                    left: 0;
                 }
             }
         }
         .rightblock_tagcloud {
             width: 48%;
             float: right;
-            @media(max-width: 680px){
-               float: none;
-               width: 100%
+            @media(max-width: 680px) {
+                float: none;
+                width: 100%
             }
         }
         .tagblock {

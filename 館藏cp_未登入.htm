@@ -33,7 +33,7 @@
     <!-- wrapper Start -->
     <div class="wrapper">
         <!-- header Start -->
-        <header class="header">
+        <header class="header login_before">
             <!-- 登入後，login_before拿掉 -->
             <div class="container">
                 <a class="accesskey" href="#aU" id="aU" accesskey="U" title="網站標題" tabindex="2">:::</a>
@@ -43,11 +43,11 @@
                 <!-- noscript -->
                 <noscript> 您的瀏覽器不支援JavaScript語法，JavaScript語法並不影響內容的陳述。您可使用按鍵盤上的Ctrl鍵+ (+)鍵放大/(-)鍵縮小來改變字型大小；回到上一頁可使用瀏覽器提供的 Alt+左方向鍵(←) 快速鍵功能；列印可使用瀏覽器提供的(Ctrl+P)功能。您的瀏覽器，不支援script語法，若您的瀏覽器無法支援請點選此超連結 <a href="#">網站導覽</a>
                 </noscript>
-                <div class="header_rightdata  header_login_rightdata">
+                <div class="header_rightdata">
                     <!-- 登入後這裡要加header_login_rightdata -->
                     <!-- 登入後member_name start-->
                     <div class="member_block">
-                        <div class="name_login"><a href="#">(資訊室) 陳奕玲，您好</a></div>
+                        <div class="name">本署同仁</div>
                     </div>
                     <!-- member_name end-->
                     <!-- menu Start -->
@@ -84,24 +84,6 @@
                     </nav>
                     <!-- navigation End -->
                 </div>
-                <!-- 登入後要加入此區塊 會員選單 start-->
-                <div class="member_menu">
-                    <div class="name_login">(資訊室) 陳奕玲，您好</div>
-                    <div class="datablock">
-                        <ul>
-                            <li><a href="#">我的個人書房</a></li>
-                            <li><a href="#">我的收藏</a></li>
-                            <li><a href="#">我的數位閱讀紀錄</a></li>
-                        </ul>
-                        <ul>
-                            <li class="bencolor"><a href="#">EBN服務</a></li>
-                        </ul>
-                        <ul>
-                            <li class="logout"><a href="#">登出</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- 會員選單  end-->
             </div>
         </header>
         <!-- header End -->
@@ -221,7 +203,7 @@
                     <!-- 書詳目資料 start-->
                     <div class="book_detaildata">
                         <!-- 收藏 start-->
-                        <div class="book_collect"><a href="#"><img src="images/book_collect01.png" alt="收藏"></a></div>
+                       <!--  <div class="book_collect"><a href="#"><img src="images/book_collect01.png" alt="收藏"></a></div> -->
                         <!-- 收藏 end-->
                         <!-- 左欄書 start-->
                         <div class="book_detail">
@@ -235,10 +217,10 @@
                             <!-- 基本資料  -->
                             <div class="basicdata">
                                 <div class="GPNEBN_num">編號(GPN/EBN)：10109E0005</div>
-                                <div class="project_num">委辦計畫編號：MOEAWRA1080166</div>
+                                <!-- <div class="project_num">委辦計畫編號：MOEAWRA1080166</div> -->
                                 <h3><a href="javascript:;">希望，未來莫拉克風災教會我們的事</a></h3>
-                                <div class="btn_grp language_btn "><button class="btn btn-orange btn-xs" data-fancybox data-src="#lightbox_chinese">中文摘要</button><button href="#" class="btn btn-orange btn-xs" data-fancybox data-src="#lightbox_english">英文摘要</button></div>
-                                <div class="pricing">定價：NT$250</div>
+                                <div class="btn_grp language_btn "><button class="btn btn-orange btn-xs" data-fancybox data-src="#lightbox_chinese">中文摘要</button><!-- <button href="#" class="btn btn-orange btn-xs" data-fancybox data-src="#lightbox_english">英文摘要</button> --></div>
+                                <!--  <div class="pricing">定價：NT$250</div> -->
                             </div>
                             <!-- 燈箱中文摘要 start-->
                             <div class="lightboxblock commonlightbox_small" id="lightbox_chinese">
@@ -265,75 +247,15 @@
                             </div>
                             <!-- 按鈕區 -->
                             <div class="btn_block">
-                                <input type="button" name="" value="下載PDF" class="btn btn-green"><input type="button" name="" value="線上閱讀" class="btn btn-green">
-                                <div class="frequency_block">
-                                    <span>點選次數：892</span><span>數位閱讀次數：228</span><span>下載次數：331</span>
-                                </div>
+                                 <input type="button" name="" value="下載PDF" class="btn btn-green"><input type="button" name="" value="線上閱讀" class="btn btn-green">
+                                <!-- <div class="frequency_block">
+                                    <span>點選次數：892</span>
+                                </div> -->
                             </div>
                         </div>
                         <!-- 右欄書的資料 end-->
                     </div>
                     <!-- 書詳目資料 end-->
-                    <!-- 中研院圖資 start-->
-                    <div class="book_datablock">
-                        <h4>中研院圖資</h4>
-                        <!-- cp_slider+slick_lightbox start-->
-                        <div class="lightbox_slider">
-                            <div class="cp_slider">
-                                <div class="img-container">
-                                    <a href="images/demo/06.jpg" data-caption="第1張圖說">
-                                        <img data-lazy="images/demo/06.jpg" alt="">
-                                        <noscript><img src="images/demo/06.jpg" alt=""></noscript>
-                                        <span class="caption">第1張圖說</span>
-                                    </a>
-                                </div>
-                                <div class="img-container">
-                                    <a href="images/demo/07.jpg" data-caption="第2張圖說">
-                                        <img data-lazy="images/demo/07.jpg" alt="">
-                                        <noscript><img src="images/demo/07.jpg" alt=""></noscript>
-                                        <span class="caption">第2張圖說</span>
-                                    </a>
-                                </div>
-                                <div class="img-container">
-                                    <a href="images/demo/08.jpg" data-caption="第3張圖說">
-                                        <img data-lazy="images/demo/08.jpg" alt="">
-                                        <noscript><img src="images/demo/08.jpg" alt=""></noscript>
-                                        <span class="caption">第3張圖說</span>
-                                    </a>
-                                </div>
-                                <div class="img-container">
-                                    <a href="images/demo/10.jpg" data-caption="第4張圖說">
-                                        <img data-lazy="images/demo/10.jpg" alt="">
-                                        <noscript><img src="images/demo/10.jpg" alt=""></noscript>
-                                        <span class="caption">第4張圖說</span>
-                                    </a>
-                                </div>
-                                <div class="img-container">
-                                    <a href="images/demo/12.jpg" data-caption="第5張圖說">
-                                        <img data-lazy="images/demo/12.jpg" alt="">
-                                        <noscript><img src="images/demo/12.jpg" alt=""></noscript>
-                                        <span class="caption">第5張圖說</span>
-                                    </a>
-                                </div>
-                                <div class="img-container">
-                                    <a href="images/demo/08.jpg" data-caption="第6張圖說">
-                                        <img data-lazy="images/demo/08.jpg" alt="">
-                                        <noscript><img src="images/demo/08.jpg" alt=""></noscript>
-                                        <span class="caption">第6張圖說</span>
-                                    </a>
-                                </div>
-                                <div class="img-container">
-                                    <a href="images/demo/12.jpg" data-caption="第7張圖說">
-                                        <img data-lazy="images/demo/12.jpg" alt="">
-                                        <noscript><img src="images/demo/12.jpg" alt=""></noscript>
-                                        <span class="caption">第7張圖說</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- cp_slider+slick_lightbox end-->
-                    </div>
-                    <!-- 中研院圖資 end-->
                     <!-- 館藏資訊 start -->
                     <div class="book_datablock">
                         <h4>館藏資訊</h4>
@@ -348,9 +270,9 @@
                                             <th>館藏地</th>
                                             <th>年代號</th>
                                             <th>狀態</th>
-                                            <th>借閱到期日</th>
+                                            
                                             <th>分館</th>
-                                            <th>預約</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -360,9 +282,9 @@
                                             <td class="aCenter">本所圖書室</td>
                                             <td class="aCenter">10803</td>
                                             <td class="aCenter"><span class="stylebtn inlibrary_btn">在館</span></td>
-                                            <td class="aCenter">2020/06/02</td>
+                                            
                                             <td class="aCenter">台北圖書室</td>
-                                            <td class="aCenter"> <button type="button" class="btn btn-purple disabled">我要預約</button></td>
+                                            
                                         </tr>
                                         <tr>
                                             <td class="aCenter"><input type="checkbox" name="" value=""></td>
@@ -370,9 +292,9 @@
                                             <td class="aCenter">本所圖書室</td>
                                             <td class="aCenter">10803</td>
                                             <td class="aCenter"><span class="stylebtn inlibrary_btn">在館</span></td>
-                                            <td class="aCenter">2020/06/02</td>
+                                           
                                             <td class="aCenter">第二河川局</td>
-                                            <td class="aCenter"> <button type="button" class="btn btn-purple ">我要預約</button></td>
+                                            
                                         </tr>
                                         <tr>
                                             <td class="aCenter"><input type="checkbox" name="" value=""></td>
@@ -380,9 +302,9 @@
                                             <td class="aCenter">本所圖書室</td>
                                             <td class="aCenter">10803</td>
                                             <td class="aCenter"><span class="stylebtn inlibrary_btn">在館</span></td>
-                                            <td class="aCenter">2020/06/02</td>
+                                            
                                             <td class="aCenter">第五河川局</td>
-                                            <td class="aCenter"> <button type="button" class="btn btn-purple">我要預約</button></td>
+                                            
                                         </tr>
                                     </tbody>
                                 </table>
@@ -484,7 +406,7 @@
                         <div class="tagcloud_block">
                             <div class="tabSet">
                                 <section class="tabs tagcloud">
-                                    <div class="tabItem active"><a href="javascript:;">館藏查詢</a></div>
+                                    <div class="tabItem active"><a href="javascript:;">水利標籤雲</a></div>
                                     <!--選到的頁籤項目-->
                                     <div class="tabContent">
                                         <div class="leftblock_sort">
@@ -539,64 +461,7 @@
                                             <!-- 水利地理諮詢平台 end -->
                                         </div>
                                     </div>
-                                    <div class="tabItem"><a href="javascript:;">網站資訊</a></div>
-                                    <div class="tabContent">
-                                        <!-- 標籤 -->
-                                        <div class="leftblock_tagcloud">
-                                            <div class="tagblock">
-                                                <div class="title">所有標籤</div>
-                                                <ul>
-                                                    <li><a href="javascript:;">風災</a></li>
-                                                    <li><a href="javascript:;">重大水情</a></li>
-                                                    <li><a href="javascript:;">紀念圖書</a></li>
-                                                    <li><a href="javascript:;">河川整治</a></li>
-                                                    <li><a href="javascript:;">災害防治</a></li>
-                                                    <li><a href="javascript:;">人文歷史</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="rightblock_tagcloud">
-                                            <div class="tagblock">
-                                                <div class="title">我的標籤</div>
-                                                <ul>
-                                                    <li><a href="javascript:;" class="canclose_label">莫拉克<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a></li>
-                                                    <li><a href="javascript:;" class="canclose_label">災害成果彙整<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a></li>
-                                                    <li><a href="javascript:;" class="canclose_label">災後重建<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a>
-                                                    </li>
-                                                    <li><a href="javascript:;" class="canclose_label greenbtn greenbg">風災<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a>
-                                                    </li>
-                                                    <li><a href="javascript:;" class="addtagbtn"><img src="images/icon/icon_add.svg"></a></li>
-                                                </ul>
-                                                <!-- 增加標籤start -->
-                                                <div class="addtag_block">
-                                                    <div class="addtag"><input type="text" name="" value="若有多個標籤，請用#隔開" placeholder="若有多個標籤，請用#隔開" class="addinput">
-                                                        <div class="addoption">
-                                                            <ul>
-                                                                <li><a href="javascript:;">社會</a></li>
-                                                                <li><a href="javascript:;">統計</a></li>
-                                                                <li><a href="javascript:;">嚴肅議題</a></li>
-                                                                <li><a href="javascript:;">食譜</a></li>
-                                                                <li><a href="javascript:;">便當菜</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div><button type="button" class="btn btn-red btn-xs addbtn">加入</button><a href="javascript:;" class="closebtn"><img src="images/icon/icon_close.svg"></a>
-                                                </div>
-                                                <!-- 增加標籤end -->
-                                            </div>
-                                            <!-- 燈箱確認標籤刪除 start-->
-                                            <div class="lightboxblock commonlightbox_small" id="lightbox_tagdel">
-                                                <h3 class="title">確認標籤刪除</h3>
-                                                <div class="content">
-                                                    <p>是否確認刪除此標籤</p>
-                                                    <div class="btn_grp">
-                                                        <input data-fancybox-close name="" type="reset" value="取消" />
-                                                        <input name="" type="submit" value="確定" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- 燈箱永久連結 end-->
-                                        </div>
-                                    </div>
+                                    
                                 </section>
                             </div>
                         </div>
