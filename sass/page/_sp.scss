@@ -95,6 +95,13 @@
         padding: 0px 0 30px;
         margin-bottom: 30px;
         border-bottom: 1px solid #ccc;
+        &:first-child {
+            .bibliography_block2 {
+                .bibliography {
+                    display: block;
+                }
+            }
+        }
     }
     // 文件編號
     .datatop {
@@ -220,10 +227,15 @@
         }
     }
     // 書目table
-    .bibliography_block {
+    .bibliography_block, .bibliography_block2 {
         margin: 0;
         padding: 39px 0 0 0;
         position: relative;
+    }
+    .bibliography_block2 {
+        .bibliography {
+            display: none;
+        }
     }
     .collapse_btn {
         position: absolute;
@@ -275,7 +287,7 @@
     margin: 0;
     clear: both;
     float: none;
-    display: none;
+    // display: none;
     table {
         border: none;
         th {
@@ -319,14 +331,23 @@
 }
 // 借閱中btn
 .borrowing_btn {
-    background-color: darken($lightColor, 5);
+    background-color: #f29d39;
 }
-// 預約btn、預借btn
-.reservation_btn, .advance_btn {
+// 逾期btn
+.overdue_btn {
+    background-color: $color-red;
+}
+// 預借btn
+.advance_btn {
     background-color: $color-purple;
-    &:hover {
-        background-color: darken($color-purple, 10);
-    }
+}
+// 預約btn
+.reservation_btn {
+    background-color: #963;
+}
+// 順位btn
+.rank_btn {
+    background-color: #c09;
 }
 // 在館btn
 .inlibrary_btn {
@@ -755,6 +776,244 @@
             &:nth-child(6) {
                 position: sticky;
                 height: 200px;
+            }
+        }
+    }
+}
+//我的書房
+.manual {
+    display: inline-block;
+    float: right;
+    margin: 15px 0;
+    a {
+        display: block;
+        background-color: $secondaryColor;
+        color: #fff;
+        padding: 5px 20px 5px 50px;
+        border-radius: 4px;
+        background-image: url('../images/manual_icon.svg');
+        background-size: 18px;
+        background-repeat: no-repeat;
+        background-position: 20px 8px;
+        &:hover {
+            background-color: darken($secondaryColor, 10);
+        }
+    }
+}
+// 借閱紀錄
+.bookrecord_block {
+    clear: both;
+    float: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 50px;
+    @include screen('mobile') {
+        display: block;
+    }
+    .borrow_record {
+        flex: 0 0 43%;
+        background-color: #eee;
+        border-radius: 4px;
+        padding: 0 20px 30px 0;
+        @include screen('mobile') {
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+    }
+    .reservation_record {
+        flex: 0 0 55%;
+        background-color: #eee;
+        border-radius: 4px;
+        padding: 0 20px 30px 0;
+        @include screen('mobile') {
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+    h3 {
+        font-size: 1.375em;
+        position: relative;
+        padding: 0 0 0 40px;
+        margin: 30px 0;
+        &:before {
+            content: '';
+            width: 22px;
+            height: 22px;
+            background-color: $primaryColor;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+    .data {
+        text-align: center;
+        color: #666;
+        display: flex;
+        margin: 0 20px 0 35px;
+        @include screen('tablet') {
+            flex-wrap: wrap;
+        }
+        div {
+            vertical-align: top;
+            margin: 0 5px 15px;
+            padding: 30px 20px 20px;
+            position: relative;
+            line-height: 1.8em;
+            font-size: 1.125em;
+            background-color: #fff;
+            border-radius: 10px;
+            text-align: center;
+            flex: auto;
+            @include box-sizing;
+            // @include screen('tablet'){
+            //     flex:0 0 45%;
+            // }
+            @media(max-width: 480px) {
+                display: block;
+                margin-bottom: 30px
+            }
+            em {
+                font-style: normal;
+                display: inline-block;
+            }
+            em.number {
+                font-size: 3.7em;
+                margin: 0 10px 25px;
+                font-style: normal;
+                font-weight: 700;
+                display: inlinblock;
+            }
+            span {
+                display: block;
+                padding: 2px 10px;
+                background-color: #ddd;
+            }
+        }
+    }
+}
+// 歷史紀錄
+.historical_record {
+    text-align: center;
+    margin-bottom: 50px;
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 15px;
+            a {
+                display: block;
+                background-color: $primaryColor;
+                color: #fff;
+                width: 190px;
+                height: 190px;
+                position: relative;
+                border-radius: 50%;
+                text-align: center;
+                font-size: 1.25em;
+                padding: 20px;
+                transition: .5s;
+                img {
+                    width: 80px;
+                    margin: 10px auto;
+                    display: block;
+                    margin-bottom: 10px;
+                }
+                &:hover {
+                    transform: scale(1.1);
+                    background-color: darken($primaryColor, 10);
+                }
+            }
+            @include screen('notebook') {
+                margin: 0px;
+            }
+            @include screen('tablet') {
+                margin: 0px;
+                a {
+                    width: 180px;
+                    height: 180px;
+                    font-size: 1.125em;
+                }
+            }
+        }
+    }
+}
+// 我的書房
+.mystudy_block {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    @include screen('mobile') {
+        flex-wrap: wrap;
+    }
+    div {
+        flex: 0 0 23%;
+        border: 1px solid #b5b5b5;
+        padding: 0px;
+        border-radius: 4px;
+        @include screen('mobile') {
+            flex: 0 0 48%;
+            margin-bottom: 20px;
+        }
+        @media(max-width: 400px) {
+            flex: 0 0 100%;
+        }
+        a {
+            display: block;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            color: #333;
+            padding: 20px;
+            @include box-sizing;
+            img {
+                width: 100px;
+                margin-bottom: 5px;
+                transition: .5s;
+            }
+            h3 {
+                margin: 0 0 10px;
+                padding: 10px;
+                border-bottom: 1px solid #ccc;
+            }
+            p {
+                color: #666;
+            }
+            &:hover {
+                img {
+                    width: 120px;
+                }
+            }
+        }
+        &:first-child {
+            a {
+                &:hover {
+                    color: $primaryColor;
+                }
+            }
+        }
+        &:nth-child(2) {
+            a {
+                &:hover {
+                    color: darken($secondaryColor, 10);
+                }
+            }
+        }
+        &:nth-child(3) {
+            a {
+                &:hover {
+                    color: darken($lightColor, 10);
+                }
+            }
+        }
+        &:nth-child(4) {
+            a {
+                &:hover {
+                    color: $color-red;
+                }
             }
         }
     }

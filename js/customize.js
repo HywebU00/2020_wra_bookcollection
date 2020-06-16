@@ -354,10 +354,21 @@ $(function() {
     $('.bibliography_block .collapse_btn').click(function() {
         $(this).next('.bibliography').slideToggle()
         $(this).toggleClass('closebtn');
-        $(this).parents('.list_file').siblings().find('.bibliography').slideUp();
-        $(this).parents('.list_file').siblings().find('.collapse_btn').removeClass('closebtn');
     })
 })
+// 收合書目table2 館藏查詢
+$('.bibliography_block2 .collapse_btn').addClass('closebtn');
+$('.list_file').first().children('.bibliography_block2').find('.collapse_btn').removeClass('closebtn');
+$(function() {
+    $('.bibliography_block2 .collapse_btn').click(function() {
+        $(this).next('.bibliography').slideToggle()
+        $(this).toggleClass('closebtn');
+        $(this).parents('.list_file').siblings().find('.bibliography').slideUp();
+        $(this).parents('.list_file').siblings().find('.collapse_btn').addClass('closebtn');
+    })
+})
+
+// 分類篩選
 $(function() {
     $('.category_block .collapse_btn').click(function() {
         $('.category_block .category').slideToggle()

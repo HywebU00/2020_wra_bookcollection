@@ -117,7 +117,7 @@
                 <div class="container">
                     <a class="accesskey" href="#aC" id="aC" accesskey="C" title="主要內容區">:::</a>
                     <div class="content">
-                        <h2 class="unit_title">暫存書單</h2>
+                        <h2 class="unit_title">我的借閱</h2>
                         <div class="search_content">
                             <div class="search">
                                 <div class="form_grp">
@@ -137,37 +137,19 @@
                 <div class="breadcrumb">
                     <ul>
                         <li><a href="#"><img src="images/home.png" alt="home"></a></li>
-                        <li>暫存書單</li>
+                        <li><a href="#">個人書房</a></li>
+                        <li>我的借閱</li>
                     </ul>
                 </div>
                 <!-- function功能區塊 -->
                 <div class="function">
                     <ul>
-                        <li><a href="#">回上一頁</a></li>
+                        <li><a href="個人書房.htm">回到我的書房</a></li>
                     </ul>
                 </div>
                 <!-- sp start -->
                 <div class="sp">
-                    <!-- 說明start -->
-                    <div class="explanation">
-                        <h3>線上暫存書單服務使用說明</h3>
-                        <ol>
-                            <li>【暫存書單】會顯示讀者在查詢過程中，點擇「暫存書單」圖示的館藏，内容可依各欄位排序。</li>
-                            <li>讀者所選取的館藏可依館藏狀態辦理「預借」或「預約」。</li>
-                            <li>讀者可以將書單匯出Excel。</li>
-                            <li>[刪除] 功能只是針對「暫存書單」裡之資料刪除，若要刪除已經「預借」或「預約」之資料，請到 [個人圖書館服務] 查詢取消。</li>
-                        </ol>
-                    </div>
-                    <!-- 說明end -->
-                    <!-- 條件選擇 start -->
-                    <div class="conditional_choice">
-                        <input type="button" name="" value="全部">
-                        <select id="" name="">
-                            <option value="">匯出書單</option>
-                            <option value="">刪除選取項目</option>
-                        </select>
-                    </div>
-                    <!-- 條件選擇 end -->
+                    
                     <!-- 條列文件 start -->
                     <div class="list_file_block">
                         <!-- 1 -->
@@ -190,11 +172,11 @@
                                     <table summary="">
                                         <thead>
                                             <tr>
-                                                <th>&nbsp;</th>
                                                 <th>登錄號</th>
                                                 <th>館藏地</th>
                                                 <th>年代號</th>
                                                 <th>狀態</th>
+                                                <th>借閱起訖日期</th>
                                                 <th>預約人數</th>
                                                 <th>分館別</th>
                                                 <th>&nbsp;</th>
@@ -202,15 +184,15 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="aCenter"><input type="checkbox" name="" value=""></td>
                                                 <td class="aCenter">FC035306</td>
                                                 <td class="aCenter">本所圖書室</td>
                                                 <td class="aCenter">10803</td>
                                                 <td class="aCenter"><span class="stylebtn borrowing_btn">借閱中</span></td>
-                                                <td class="aCenter">0</td>
-                                                <td class="aCenter">水利規劃試驗所</td>
+                                                <td class="aCenter">2020-03-30 11:34:12~<br> 2020-04-13 23:59:59</td>
+                                                <td class="aCenter"><span class="word_orange">1</span></td>
+                                                <td class="aCenter">第二河川局</td>
                                                 <td class="aCenter">
-                                                    <button type="button" class="btn btn-purple">我要預約</button>
+                                                    <button type="button" class="btn btn-orange disabled">續借</button>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -222,15 +204,15 @@
                         <!-- 2 -->
                         <div class="list_file">
                             <div class="datatop">
-                                <div class="data_sort">技術文件</div>
-                                <div class="GPNEBN_num">編號(GPN/EBN)：10109E0005</div>
+                                <div class="data_sort">一般圖書</div>
+                                <!-- <div class="GPNEBN_num">編號(GPN/EBN)：10109E0005</div> -->
                                 <!--  <div class="project_num">委辦計畫編號：MOEAWRA1080166</div> -->
                             </div>
-                            <div class="booklink"><a href="#">重要河川資源經理策略研究-以曾文溪為例(3/4)(內附光碟)=Strategic Study on Resources Management of Major Rivers - Application to Zengwen River (3/4)</a></div>
+                            <div class="booklink"><a href="#">50天的奇蹟莫拉克颱風災後林邊佳冬地區重整家園</a></div>
                             <div class="databottom">
-                                <div class="author">作者：中華防災協會</div>
-                                <div class="publishing">出版者：經濟部水利署</div>
-                                <div class="publication_years">出版年：108. 07</div>
+                                <div class="author">作者：行政院莫拉克颱風災後重建推動委員會</div>
+                                <div class="publishing">出版者：行政院莫拉克颱風災後重建推動委員會</div>
+                                <div class="publication_years">出版年：102. 07</div>
                             </div>
                             <!-- 書目table start-->
                             <div class="bibliography_block">
@@ -239,11 +221,11 @@
                                     <table summary="">
                                         <thead>
                                             <tr>
-                                                <th>&nbsp;</th>
                                                 <th>登錄號</th>
                                                 <th>館藏地</th>
                                                 <th>年代號</th>
                                                 <th>狀態</th>
+                                                <th>借閱起訖日期</th>
                                                 <th>預約人數</th>
                                                 <th>分館別</th>
                                                 <th>&nbsp;</th>
@@ -251,14 +233,15 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="aCenter"><input type="checkbox" name="" value=""></td>
                                                 <td class="aCenter">FC035306</td>
                                                 <td class="aCenter">本所圖書室</td>
                                                 <td class="aCenter">10803</td>
-                                                <td class="aCenter"><span class="stylebtn inlibrary_btn">在館</span></td>
+                                                <td class="aCenter"><span class="stylebtn borrowing_btn">借閱中</span></td>
+                                                <td class="aCenter">2020-03-30 11:34:12~<br>2020-04-13 23:59:59</td>
                                                 <td class="aCenter">0</td>
-                                                <td class="aCenter">水利規劃試驗所</td>
-                                                <td class="aCenter"><button type="button" class="btn btn-purple" data-fancybox data-src="#lightbox_style02">我要預借</button>
+                                                <td class="aCenter">台中辦公區</td>
+                                                <td class="aCenter">
+                                                    <button type="button" class="btn btn-orange" data-fancybox data-src="#lightbox_renew">續借</button>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -266,32 +249,31 @@
                                 </div>
                             </div>
                             <!--書目table end -->
-                            <!-- 我要預借燈箱 start-->
-                            <div class="lightboxblock commonlightbox_small" id="lightbox_style02">
-                                <h3 class="title">館藏預借成功</h3>
+                            <!-- 續借燈箱 start-->
+                            <div class="lightboxblock commonlightbox_small" id="lightbox_renew">
+                                <h3 class="title">確定續借</h3>
                                 <div class="content">
-                                    <div class="number">FC035306</div>
-                                    <div class="booklink"><a href="#">重要河川資源經理策略研究-以曾文溪為例(3/4)(內附光碟)=Strategic Study on Resources Management of Major Rivers - Application to Zengwen River (3/4)</a></div>
-                                    <div class="date">預借保留日期至2020/04/22</div>
+                                    <p>確定續借資料：<br> A0000129 50天的奇蹟莫拉克颱風災後林邊佳冬地區重整家園</p>
                                 </div>
                                 <div class="btn_grp">
+                                    <input data-fancybox-close name="" type="reset" value="取消" />
                                     <input data-fancybox-close name="" type="submit" value="確定" />
                                 </div>
                             </div>
-                            <!-- 我要預借燈箱 end-->
+                            <!-- 續借燈箱 end-->
                         </div>
                         <!-- 3 -->
                         <div class="list_file">
                             <div class="datatop">
-                                <div class="data_sort">技術文件</div>
+                                <div class="data_sort">一般圖書</div>
                                 <div class="GPNEBN_num">編號(GPN/EBN)：10109E0005</div>
-                                <div class="project_num">委辦計畫編號：MOEAWRA1080166</div>
+                                <!-- <div class="project_num">委辦計畫編號：MOEAWRA1080166</div> -->
                             </div>
-                            <div class="booklink"><a href="#">中央管河川砂石性質調查參考手冊調查範圍包含本署權管河川24條及跨省市河川2條</a></div>
+                            <div class="booklink"><a href="#">系集降雨預報應用於洪水預報之研究(2/2)附錄G、各河川局提供洪水預報檢討分析報告-潭美、康芮颱風以及0831豪雨事件--光碟版=A study to apply ensemble QPF with operational flood forecasting(2/2)</a></div>
                             <div class="databottom">
-                                <div class="author">作者：中華防災協會</div>
-                                <div class="publishing">出版者：經濟部水利署</div>
-                                <div class="publication_years">出版年：108. 07</div>
+                                <div class="author">作者：國立台灣大學</div>
+                                <div class="publishing">出版者：多采科技有限公司</div>
+                                <div class="publication_years">出版年：102. 07</div>
                             </div>
                             <div class="btn_block">
                                 <input type="button" name="" value="下載PDF" class="btn btn-green"><input type="button" name="" value="線上閱讀" class="btn btn-green">
@@ -303,11 +285,11 @@
                                     <table summary="">
                                         <thead>
                                             <tr>
-                                                <th>&nbsp;</th>
                                                 <th>登錄號</th>
                                                 <th>館藏地</th>
                                                 <th>年代號</th>
                                                 <th>狀態</th>
+                                                <th>借閱起訖日期</th>
                                                 <th>預約人數</th>
                                                 <th>分館別</th>
                                                 <th>&nbsp;</th>
@@ -315,14 +297,68 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="aCenter"><input type="checkbox" name="" value=""></td>
                                                 <td class="aCenter">FC035306</td>
                                                 <td class="aCenter">本所圖書室</td>
                                                 <td class="aCenter">10803</td>
-                                                <td class="aCenter"><span class="stylebtn inlibrary_btn">在館</span></td>
+                                                <td class="aCenter"><span class="stylebtn borrowing_btn">借閱中</span></td>
+                                                <td class="aCenter">2020-03-30 11:34:12~<br>2020-04-13 23:59:59</td>
                                                 <td class="aCenter">0</td>
-                                                <td class="aCenter">水利規劃試驗所</td>
-                                                <td class="aCenter"><button type="button" class="btn btn-purple">我要預約</button></td>
+                                                <td class="aCenter">台中辦公區</td>
+                                                <td class="aCenter">
+                                                    <button type="button" class="btn btn-orange">續借</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!--書目table end -->
+                        </div>
+                        <!-- 4 -->
+                        <div class="list_file">
+                            <div class="datatop">
+                                <div class="data_sort">技術文件</div>
+                                <div class="GPNEBN_num">編號(GPN/EBN)：10109E0005</div>
+                                <!-- <div class="project_num">委辦計畫編號：MOEAWRA1080166</div> -->
+                            </div>
+                            <div class="booklink"><a href="#">點石成金莫拉克颱風災後屏東石斑復養紀實</a></div>
+                            <div class="databottom">
+                                <div class="author">作者：國立台灣大學</div>
+                                <div class="publishing">出版者：多采科技有限公司</div>
+                                <div class="publication_years">出版年：102. 07</div>
+                            </div>
+                            <div class="btn_block">
+                                <input type="button" name="" value="下載PDF" class="btn btn-green"><input type="button" name="" value="線上閱讀" class="btn btn-green">
+                            </div>
+                            <!-- 書目table start-->
+                            <div class="bibliography_block">
+                                <div class="collapse_btn"></div>
+                                <div class="table_list bibliography">
+                                    <table summary="">
+                                        <thead>
+                                            <tr>
+                                                <th>登錄號</th>
+                                                <th>館藏地</th>
+                                                <th>年代號</th>
+                                                <th>狀態</th>
+                                                <th>借閱起訖日期</th>
+                                                <th>預約人數</th>
+                                                <th>分館別</th>
+                                                <th>&nbsp;</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="aCenter">FC035306</td>
+                                                <td class="aCenter">本所圖書室</td>
+                                                <td class="aCenter">10803</td>
+                                                <td class="aCenter"><span class="stylebtn overdue_btn">逾期 12 天</span></td>
+                                                <td class="aCenter">2020-03-30 11:34:12~<br>-04-13 23:59:59</td>
+                                                <td class="aCenter">0</td>
+                                                <td class="aCenter">台中辦公區</td>
+                                                <td class="aCenter">
+                                                    <button type="button" class="btn btn-orange disabled">續借</button>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>

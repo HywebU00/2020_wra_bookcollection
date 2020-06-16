@@ -28,6 +28,14 @@ table {
                 text-align: left;
             }
         }
+        &.num{
+            text-align: center;
+            width: 5%;
+        }
+        &.date{
+            text-align: center;
+            width: 10%;
+        }
     }
     th {
         background-color: #F3F3F3;
