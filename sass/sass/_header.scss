@@ -35,10 +35,9 @@
     &.login_before {
         >.container {
             .memberCtrl {
-                 @include screen('tablet'){
-                    display: none!important;
-                 }
-                
+                @include screen('tablet') {
+                    display: none !important;
+                }
             }
         }
     }
@@ -126,11 +125,11 @@
         font-weight: 500;
         position: absolute;
         left: 0;
-        @include screen('notebook'){
-            margin-left:10px; 
+        @include screen('notebook') {
+            margin-left: 10px;
         }
-        @include screen('tablet'){
-            margin-left:0; 
+        @include screen('tablet') {
+            margin-left: 0;
         }
         @include box-sizing;
         a {
@@ -300,16 +299,17 @@
                 border-left: none;
                 width: 8px;
                 height: 8px;
-                transform: rotate(-45deg);
-                position: absolute;
+                transform: rotate(135deg);
+                top: 5px;
                 right: 10px;
-                top: 10px;
+                position: absolute;
                 transition: .5s;
             }
             &.open {
                 &:after {
-                    transform: rotate(135deg);
-                    top: 5px;
+                    transform: rotate(-45deg);
+                    right: 10px;
+                    top: 10px;
                 }
             }
         }

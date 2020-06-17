@@ -298,9 +298,11 @@ $(function() {
             }
         }]
     });
-    /*-----------------------------------*/
-    /////////////modal設定/////////////
-    /*-----------------------------------*/
+});
+/*-----------------------------------*/
+/////////////modal設定/////////////
+/*-----------------------------------*/
+$(function() {
     $('#modal1').hide();
     //先隱藏視窗
     $('.modal').after('<div class="modal_overlay"></div>'); //新增透明底
@@ -323,7 +325,9 @@ $(function() {
     $('.modal_overlay').click(closeModal);
     $('.modal .close').click(closeModal);
     $('.modal .btn_grp input[type="submit"]').click(closeModal);
-    // 會員選單
+});
+// 會員選單
+$(function() {
     $('.name_login').click(function() {
         $('.member_menu').stop().slideToggle();
         $(this).stop().toggleClass('open');
@@ -335,33 +339,46 @@ $(function() {
     $('.memberCtrl').click(function() {
         $('.member_menu').stop().slideToggle();
     })
-    // 往下滾
+})
+// 往下滾
+$(function() {
     $('.scrollDownbtn01').click(function() {
         $('body,html').stop(true, true).animate({ scrollTop: $('.mpdata').offset().top - 110 }, 0, 'easeOutExpo');
     });
     $('.scrollDownbtn02').click(function() {
         $('body,html').stop(true, true).animate({ scrollTop: $('.publications_block').offset().top - 90 }, 0, 'easeOutExpo');
     });
-    // 收合書目table
+})
+// 收合書目table
+$(function() {
     $('.bibliography_block .collapse_btn').click(function() {
         $(this).next('.bibliography').slideToggle()
         $(this).toggleClass('closebtn');
     })
-    // 收合書目table2 館藏查詢
-    $('.bibliography_block2 .collapse_btn').addClass('closebtn');
-    $('.list_file').first().children('.bibliography_block2').find('.collapse_btn').removeClass('closebtn');
+})
+
+$(function() {
+// 收合書目table2 館藏查詢
+$('.bibliography_block2 .collapse_btn').addClass('closebtn');
+$('.list_file').first().children('.bibliography_block2').find('.collapse_btn').removeClass('closebtn');
+    
     $('.bibliography_block2 .collapse_btn').click(function() {
         $(this).next('.bibliography').slideToggle()
         $(this).toggleClass('closebtn');
         $(this).parents('.list_file').siblings().find('.bibliography').slideUp();
         $(this).parents('.list_file').siblings().find('.collapse_btn').addClass('closebtn');
     })
-    // 分類篩選
+})
+
+// 分類篩選
+$(function() {
     $('.category_block .collapse_btn').click(function() {
         $('.category_block .category').slideToggle()
         $(this).toggleClass('closebtn');
     })
-    // 燈箱
+})
+// 燈箱
+$(function() {
     $('[data-fancybox]').fancybox({
         toolbar: false,
         smallBtn: true,
@@ -369,8 +386,12 @@ $(function() {
             preload: false
         }
     })
-    // 燈相進頁面就打開
+})
+// 燈相進頁面就打開
+$(function() {
     $.fancybox.open($("#lightbox_style03"))
+})
+$(function() {
     //進階查詢資料 
     $('.advancedbtn').click(function() {
         $('.form_advanced').stop().slideDown(700);
@@ -416,16 +437,14 @@ $(function() {
         $(this).parents('.sortlistblock').siblings().find('.sortlist_options').slideUp();
         $(this).parents('.sortlistblock').siblings().find('.collapse_btn').removeClass('openbtn')
     })
-    // 條件選項
-    $('.conditional_options').click(function() {
-        $('.leftblock_sort').toggleClass('open')
-    })
+
     // 增加標籤
     // $('.addtag_block').hide();
     // $('.addtagbtn').click(function() {
     //     $('.addtag_block').css('display', 'inline-block');
     //     $(this).hide();
     // })
+
     // $('.addinput').click(function() {
     //     $('.addoption').slideToggle();
     // })
@@ -438,8 +457,39 @@ $(function() {
     //     $('.addtag_block').hide();
     //     $('.addtagbtn').show();
     //     $('.addoption').hide();
-    // })
-    //分頁
+    // });
+
+    // 條件選項
+    $('.conditional_options').click(function(){
+        $('.leftblock_sort').toggleClass('open')
+    })
+})
+// 增加標籤
+$(function(){
+    
+    $('.addtag_block').hide();
+    $('.addtagbtn').click(function() {
+        $('.addtag_block').css('display', 'inline-block');
+        $(this).hide();
+    })
+
+    $('.addinput').click(function() {
+        $('.addoption').slideToggle();
+    })
+    $('.addbtn').click(function() {
+        $('.addtag_block').hide();
+        $('.addtagbtn').show();
+        $('.addoption').hide();
+    })
+    $('.closebtn').click(function() {
+        $('.addtag_block').hide();
+        $('.addtagbtn').show();
+        $('.addoption').hide();
+    })
+})
+
+//分頁
+$(function() {
     $('.number01').click(function() {
         $('.number01').hide();
         $('.page').addClass('page02');
@@ -448,6 +498,8 @@ $(function() {
         $('.number01').show();
         $('.page').removeClass('page02');
     })
+})
+$(function() {
     if ($(".page").is(":visible")) {
         $(window).scroll(function() {
             var pageLeft = $(".page").offset().left;
@@ -460,7 +512,9 @@ $(function() {
             }
         })
     }
-    //左欄 資料fixed
+})
+//左欄 資料fixed
+$(function() {
     $(window).on("scroll resize", function() {
         var mainleftblock = $(".mainleftblock");
         let mainleftcontent = $(".mainleftcontent");
@@ -479,27 +533,6 @@ $(function() {
         } else {
             mainleftcontent.height(document.documentElement.clientHeight - 120);
         }
-    })
-});
-$(function(){
-    // 增加標籤
-    $('.addtagbtn').click(function() {
-        $('.addtag_block').css('display', 'inline-block');
-        $(this).hide();
-        $(this).parents('.list_file').siblings().find('.addtag_block').css('display', 'none')
-    })
-    $('.addinput').click(function() {
-        $('.addoption').slideToggle();
-    })
-    $('.addbtn').click(function() {
-        $('.addtag_block').hide();
-        $('.addtagbtn').show();
-        $('.addoption').hide();
-    })
-    $('.closebtn').click(function() {
-        $('.addtag_block').hide();
-        $('.addtagbtn').show();
-        $('.addoption').hide();
     })
 })
 // 手機版將ㄊwow效果關掉

@@ -117,7 +117,7 @@
                 <div class="container">
                     <a class="accesskey" href="#aC" id="aC" accesskey="C" title="主要內容區">:::</a>
                     <div class="content">
-                        <h2 class="unit_title">我的預約/預借</h2>
+                        <h2 class="unit_title">我的收藏</h2>
                     </div>
                 </div>
             </div>
@@ -128,7 +128,7 @@
                     <ul>
                         <li><a href="#"><img src="images/home.png" alt="home"></a></li>
                         <li><a href="#">個人書房</a></li>
-                        <li>我的預約/預借</li>
+                        <li>我的收藏</li>
                     </ul>
                 </div>
                 <!-- function功能區塊 -->
@@ -148,61 +148,72 @@
                                 <div class="GPNEBN_num">編號(GPN/EBN)：10109E0005</div>
                                 <!-- <div class="project_num">委辦計畫編號：MOEAWRA1080166</div> -->
                             </div>
-                            <div class="booklink"><a href="#">清水溪支流過溪河川區域局部變更土地異動清冊 右岸德興堤防河段(0K+000~0K+800)</a></div>
+                            <div class="booklink"><a href="#">希望，未來莫拉克風災教會我們的事</a></div>
                             <div class="databottom">
                                 <div class="author">作者：中華防災協會</div>
                                 <div class="publishing">出版者：經濟部水利署</div>
                                 <div class="publication_years">出版年：108. 07</div>
                             </div>
-                            <!-- 書目table start-->
-                            <div class="bibliography_block">
-                                <div class="collapse_btn"></div>
-                                <div class="table_list bibliography">
-                                    <table summary="">
-                                        <thead>
-                                            <tr>
-                                                <th>登錄號</th>
-                                                <th>館藏地</th>
-                                                <th>年代號</th>
-                                                <th>狀態</th>
-                                                <th>預借日期</th>
-                                                <th>保留日期</th>
-                                                <th>分館別</th>
-                                                <th>&nbsp;</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="aCenter">FC035306</td>
-                                                <td class="aCenter">圖書室</td>
-                                                <td class="aCenter">10803</td>
-                                                <td class="aCenter"><span class="stylebtn advance_btn">預借中</span></td>
-                                                <td class="aCenter">2020-03-30</td>
-                                                <td class="aCenter">2020-04-07</td>
-                                                <td class="aCenter">台中辦公區</td>
-                                                <td class="aCenter">
-                                                    <button type="button" class="btn btn-gray" data-fancybox data-src="#lightbox_advance">取消預借</button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                            <div class="btn_block">
+                                <input type="button" name="" value="下載PDF" class="btn btn-green"><input type="button" name="" value="線上閱讀" class="btn btn-green">
                             </div>
-                            <!--書目table end -->
-                            <!-- 預借燈箱 start-->
-                            <div class="lightboxblock commonlightbox_small" id="lightbox_advance">
-                                <h3 class="title">取消預借</h3>
+                            <!-- 標籤雲 -->
+                            <div class="tagblock">
+                                <!-- 收藏 start-->
+                                <div class="book_collect"><a href="#"><img src="images/book_collect01.png" alt="收藏"></a></div>
+                                <!-- 收藏 end-->
+                                <ul>
+                                    <li><a href="javascript:;" class="canclose_label">莫拉克<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a></li>
+                                    <li><a href="javascript:;" class="canclose_label">災害成果彙整<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a></li>
+                                    <li><a href="javascript:;" class="canclose_label">災後重建<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a>
+                                    </li>
+                                    <li><a href="javascript:;" class="canclose_label">風災<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a>
+                                    </li>
+                                    <li><a href="javascript:;" class="addtagbtn"><img src="images/icon/icon_add.svg"></a></li>
+                                </ul>
+                                <!-- 增加標籤start -->
+                                <div class="addtag_block">
+                                    <div class="addtag"><input type="text" name="" value="若有多個標籤，請用#隔開" placeholder="若有多個標籤，請用#隔開" class="addinput">
+                                        <div class="addoption">
+                                            <ul>
+                                                <li><a href="javascript:;">社會</a></li>
+                                                <li><a href="javascript:;">統計</a></li>
+                                                <li><a href="javascript:;">嚴肅議題</a></li>
+                                                <li><a href="javascript:;">食譜</a></li>
+                                                <li><a href="javascript:;">便當菜</a></li>
+                                            </ul>
+                                        </div>
+                                    </div><button type="button" class="btn btn-blue btn-xs addbtn">加入</button><a href="javascript:;" class="closebtn"><img src="images/icon/icon_close.svg"></a>
+                                </div>
+                                <!-- 增加標籤end -->
+                            </div>
+                            <!-- 燈箱確認標籤刪除 start-->
+                            <div class="lightboxblock commonlightbox_small" id="lightbox_tagdel">
+                                <h3 class="title">確認標籤刪除</h3>
                                 <div class="content">
-                                    <p>確定刪除預借資料：<br>
-                                        <div class="number">FC035306</div>重要河川資源經理策略研究-以曾文溪為例(3/4)(內附光碟)=Strategic Study on Resources Management of Major Rivers - Application to Zengwen River (3/4)
-                                    </p>
-                                </div>
-                                <div class="btn_grp">
-                                    <input data-fancybox-close name="" type="reset" value="取消" />
-                                    <input data-fancybox-close name="" type="submit" value="確定" />
+                                    <p>是否確認刪除此標籤</p>
+                                    <div class="btn_grp">
+                                        <input data-fancybox-close name="" type="reset" value="取消" />
+                                        <input name="" type="submit" value="確定" />
+                                    </div>
                                 </div>
                             </div>
-                            <!-- 預借燈箱 end-->
+                            <!-- 燈箱永久連結 end-->
+                            <!-- 刪除收藏 start -->
+                            <div class="del_collect_btn"><button type="button" class="btn btn-blue btn-xs" data-fancybox data-src="#lightbox_del_collect">刪除收藏</button></div>
+                            <!-- 刪除收藏 end -->
+                            <!-- 燈箱確認標籤刪除 start-->
+                            <div class="lightboxblock commonlightbox_small" id="lightbox_del_collect">
+                                <h3 class="title">刪除收藏</h3>
+                                <div class="content">
+                                    <p>確定刪除收藏資料：<br> 希望，未來莫拉克風災教會我們的事</p>
+                                    <div class="btn_grp">
+                                        <input data-fancybox-close name="" type="reset" value="取消" />
+                                        <input name="" type="submit" value="確定" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 燈箱永久連結 end-->
                         </div>
                         <!-- 2 -->
                         <div class="list_file">
@@ -217,47 +228,42 @@
                                 <div class="publishing">出版者：行政院莫拉克颱風災後重建推動委員會</div>
                                 <div class="publication_years">出版年：102. 07</div>
                             </div>
-                            <!-- 書目table start-->
-                            <div class="bibliography_block">
-                                <div class="collapse_btn"></div>
-                                <div class="table_list bibliography">
-                                    <table summary="">
-                                        <thead>
-                                            <tr>
-                                                <th>登錄號</th>
-                                                <th>館藏地</th>
-                                                <th>年代號</th>
-                                                <th>狀態</th>
-                                                <th>預借日期</th>
-                                                <th>保留日期</th>
-                                                <th>分館別</th>
-                                                <th>&nbsp;</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="aCenter">FC035306</td>
-                                                <td class="aCenter">圖書室</td>
-                                                <td class="aCenter">10803</td>
-                                                <td class="aCenter"><span class="stylebtn reservation_btn">預約到館，保留8天</span></td>
-                                                <td class="aCenter">2020-03-30</td>
-                                                <td class="aCenter">2020-04-07</td>
-                                                <td class="aCenter">台中辦公區</td>
-                                                <td class="aCenter">
-                                                    <button type="button" class="btn btn-gray" data-fancybox data-src="#lightbox_reservation">取消預約</button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                            <!-- 標籤雲 -->
+                            <div class="tagblock">
+                                <!-- 收藏 start-->
+                                <div class="book_collect"><a href="#"><img src="images/book_collect01.png" alt="收藏"></a></div>
+                                <!-- 收藏 end-->
+                                <ul>
+                                    <li><a href="javascript:;" class="canclose_label">莫拉克<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a></li>
+                                    <li><a href="javascript:;" class="canclose_label">災害成果彙整<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a></li>
+                                    <li><a href="javascript:;" class="canclose_label">災後重建<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a>
+                                    </li>
+                                    <li><a href="javascript:;" class="canclose_label">風災<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a>
+                                    </li>
+                                    <li><a href="javascript:;" class="addtagbtn"><img src="images/icon/icon_add.svg"></a></li>
+                                </ul>
+                                <!-- 增加標籤start -->
+                                <div class="addtag_block">
+                                    <div class="addtag"><input type="text" name="" value="若有多個標籤，請用#隔開" placeholder="若有多個標籤，請用#隔開" class="addinput">
+                                        <div class="addoption">
+                                            <ul>
+                                                <li><a href="javascript:;">社會</a></li>
+                                                <li><a href="javascript:;">統計</a></li>
+                                                <li><a href="javascript:;">嚴肅議題</a></li>
+                                                <li><a href="javascript:;">食譜</a></li>
+                                                <li><a href="javascript:;">便當菜</a></li>
+                                            </ul>
+                                        </div>
+                                    </div><button type="button" class="btn btn-blue btn-xs addbtn">加入</button><a href="javascript:;" class="closebtn"><img src="images/icon/icon_close.svg"></a>
                                 </div>
+                                <!-- 增加標籤end -->
                             </div>
-                            <!--書目table end -->
-                            <!-- 預約燈箱 start-->
-                            <div class="lightboxblock commonlightbox_small" id="lightbox_reservation">
-                                <h3 class="title">取消預約</h3>
+                            <!-- 續借燈箱 start-->
+                            <div class="lightboxblock commonlightbox_small" id="lightbox_renew">
+                                <h3 class="title">確定續借</h3>
                                 <div class="content">
-                                    <p>確定刪除預借資料：<br>
-                                        <div class="number">FC035306</div>重要河川資源經理策略研究-以曾文溪為例(3/4)(內附光碟)=Strategic Study on Resources Management of Major Rivers - Application to Zengwen River (3/4)
+                                    <p>確定續借資料：<br>
+                                        <div class="number">A0000129</div> 50天的奇蹟莫拉克颱風災後林邊佳冬地區重整家園
                                     </p>
                                 </div>
                                 <div class="btn_grp">
@@ -265,111 +271,22 @@
                                     <input data-fancybox-close name="" type="submit" value="確定" />
                                 </div>
                             </div>
-                            <!-- 預約燈箱 end-->
-                        </div>
-                        <!-- 3 -->
-                        <div class="list_file">
-                            <div class="datatop">
-                                <div class="data_sort">一般圖書</div>
-                                <div class="GPNEBN_num">編號(GPN/EBN)：10109E0005</div>
-                                <!-- <div class="project_num">委辦計畫編號：MOEAWRA1080166</div> -->
-                            </div>
-                            <div class="booklink"><a href="#">系集降雨預報應用於洪水預報之研究(2/2)附錄G、各河川局提供洪水預報檢討分析報告-潭美、康芮颱風以及0831豪雨事件--光碟版=A study to apply ensemble QPF with operational flood forecasting(2/2)</a></div>
-                            <div class="databottom">
-                                <div class="author">作者：國立台灣大學</div>
-                                <div class="publishing">出版者：多采科技有限公司</div>
-                                <div class="publication_years">出版年：102. 07</div>
-                            </div>
-                            <div class="btn_block">
-                                <input type="button" name="" value="下載PDF" class="btn btn-green"><input type="button" name="" value="線上閱讀" class="btn btn-green">
-                            </div>
-                            <!-- 書目table start-->
-                            <div class="bibliography_block">
-                                <div class="collapse_btn"></div>
-                                <div class="table_list bibliography">
-                                    <table summary="">
-                                        <thead>
-                                            <tr>
-                                                <th>登錄號</th>
-                                                <th>館藏地</th>
-                                                <th>年代號</th>
-                                                <th>狀態</th>
-                                                <th>預借日期</th>
-                                                <th>保留日期</th>
-                                                <th>分館別</th>
-                                                <th>&nbsp;</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="aCenter">FC035306</td>
-                                                <td class="aCenter">圖書室</td>
-                                                <td class="aCenter">10803</td>
-                                                <td class="aCenter"><span class="stylebtn reservation_btn">預約到館，保留8天</span></td>
-                                                <td class="aCenter">2020-03-30</td>
-                                                <td class="aCenter">2020-04-07</td>
-                                                <td class="aCenter">台中辦公區</td>
-                                                <td class="aCenter">
-                                                    <button type="button" class="btn btn-gray">取消預約</button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                            <!-- 續借燈箱 end-->
+                            <!-- 刪除收藏 start -->
+                            <div class="del_collect_btn"><button type="button" class="btn btn-blue btn-xs" data-fancybox data-src="#lightbox_del_collect">刪除收藏</button></div>
+                            <!-- 刪除收藏 end -->
+                            <!-- 燈箱確認標籤刪除 start-->
+                            <div class="lightboxblock commonlightbox_small" id="lightbox_del_collect">
+                                <h3 class="title">刪除收藏</h3>
+                                <div class="content">
+                                    <p>確定刪除收藏資料：<br> 希望，未來莫拉克風災教會我們的事</p>
+                                    <div class="btn_grp">
+                                        <input data-fancybox-close name="" type="reset" value="取消" />
+                                        <input name="" type="submit" value="確定" />
+                                    </div>
                                 </div>
                             </div>
-                            <!--書目table end -->
-                        </div>
-                        <!-- 4 -->
-                        <div class="list_file">
-                            <div class="datatop">
-                                <div class="data_sort">技術文件</div>
-                                <div class="GPNEBN_num">編號(GPN/EBN)：10109E0005</div>
-                                <!-- <div class="project_num">委辦計畫編號：MOEAWRA1080166</div> -->
-                            </div>
-                            <div class="booklink"><a href="#">點石成金莫拉克颱風災後屏東石斑復養紀實</a></div>
-                            <div class="databottom">
-                                <div class="author">作者：國立台灣大學</div>
-                                <div class="publishing">出版者：多采科技有限公司</div>
-                                <div class="publication_years">出版年：102. 07</div>
-                            </div>
-                            <div class="btn_block">
-                                <input type="button" name="" value="下載PDF" class="btn btn-green"><input type="button" name="" value="線上閱讀" class="btn btn-green">
-                            </div>
-                            <!-- 書目table start-->
-                            <div class="bibliography_block">
-                                <div class="collapse_btn"></div>
-                                <div class="table_list bibliography">
-                                    <table summary="">
-                                        <thead>
-                                            <tr>
-                                                <th>登錄號</th>
-                                                <th>館藏地</th>
-                                                <th>年代號</th>
-                                                <th>狀態</th>
-                                                <th>預借日期</th>
-                                                <th>保留日期</th>
-                                                <th>分館別</th>
-                                                <th>&nbsp;</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="aCenter">FC035306</td>
-                                                <td class="aCenter">圖書室</td>
-                                                <td class="aCenter">10803</td>
-                                                <td class="aCenter"><span class="stylebtn rank_btn">第二順位</span></td>
-                                                <td class="aCenter">2020-03-30</td>
-                                                <td class="aCenter">2020-04-07</td>
-                                                <td class="aCenter">台中辦公區</td>
-                                                <td class="aCenter">
-                                                    <button type="button" class="btn btn-gray">取消預約</button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <!--書目table end -->
+                            <!-- 燈箱永久連結 end-->
                         </div>
                         <!--  -->
                     </div>
