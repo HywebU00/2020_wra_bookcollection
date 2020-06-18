@@ -95,12 +95,35 @@ table {
                 margin: auto;
             }
         }
+        &.searchbtn {
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            margin: 0 auto;
+            background-color: lighten($color-orange, 30);
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 20px;
+                height: 20px;
+                margin: auto;
+            }
+        }
         &:hover {
             &.delbtn {
                 background-color: lighten($color-red, 15);
             }
             &.editbtn {
                 background-color: lighten($color-green, 15);
+            }
+            &.searchbtn {
+                background-color: lighten($color-orange, 15);
             }
         }
     }

@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="css/animate.css">
     <!-- 燈箱facybox -->
     <link rel="stylesheet" type="text/css" href="vendor/facybox/dist/jquery.fancybox.min.css">
+    <!-- 小鍵盤 -->
+    <link rel="stylesheet" href="vendor/keyboard/keyboard.css">
     <!-- hyUI css -->
     <link rel="stylesheet" href="css/hyui.css">
     <!-- favicon -->
@@ -117,7 +119,7 @@
                 <div class="container">
                     <a class="accesskey" href="#aC" id="aC" accesskey="C" title="主要內容區">:::</a>
                     <div class="content">
-                        <h2 class="unit_title">我的標籤</h2>
+                        <h2 class="unit_title">借閱歷史</h2>
                     </div>
                 </div>
             </div>
@@ -128,18 +130,34 @@
                     <ul>
                         <li><a href="#"><img src="images/home.png" alt="home"></a></li>
                         <li><a href="#">個人書房</a></li>
-                        <li>我的標籤</li>
+                        <li>借閱歷史</li>
                     </ul>
-                </div> <!-- function功能區塊 -->
+                </div>
+                <!-- function功能區塊 -->
                 <div class="function">
                     <ul>
-                        <li><a href="#">回上一頁</a></li>
+                        <li><a href="個人書房.htm">回到我的書房</a></li>
                     </ul>
                 </div>
                 <!-- sp start -->
                 <div class="sp">
-                    <!-- 標籤結果 -->
-                    <div class="tag_result">標籤名稱：<span>莫拉克</span></div>
+                    <!-- 查詢 start -->
+                    <div class="searchsystem historical_record_search">
+                        <div class="select_left">
+                            <select name="" id="selectSample">
+                                <option value="">提名</option>
+                                <option value="">書名</option>
+                                <option value="">作者</option>
+                                <option value="">出版社</option>
+                                <option value="">條碼號條碼號</option>
+                            </select>
+                        </div>
+                        <div class="form_search">
+                            <input type="text" name="" value="" placeholder="請輸入關鍵文字">
+                            <input type="button" name="" value="送出">
+                        </div>
+                    </div>
+                    <!-- 查詢 end -->
                     <!-- 條列文件 start -->
                     <div class="list_file_block">
                         <!-- 1 -->
@@ -155,118 +173,61 @@
                                 <div class="publishing">出版者：經濟部水利署</div>
                                 <div class="publication_years">出版年：108. 07</div>
                             </div>
-                            <!-- 標籤雲 -->
-                            <div class="tagblock">
-                                <!-- 收藏 start-->
-                                <div class="book_collect"><a href="#"><img src="images/book_collect01.png" alt="收藏"></a></div>
-                                <!-- 收藏 end-->
+                            <div class="btn_block">
+                                <input type="button" name="" value="下載PDF" class="btn btn-green"><input type="button" name="" value="線上閱讀" class="btn btn-green">
+                            </div>
+                            <div class="related_data">
                                 <ul>
-                                    <li><a href="javascript:;" class="canclose_label">莫拉克<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a></li>
+                                    <li>借閱次數：<em>1</em></li>
+                                    <li>借閱起訖日期：2020-03-03～2020-03-30</li>
                                 </ul>
                             </div>
-                            <!-- 燈箱確認標籤刪除 start-->
-                            <div class="lightboxblock commonlightbox_small" id="lightbox_tagdel">
-                                <h3 class="title">確認標籤刪除</h3>
-                                <div class="content">
-                                    <p>是否確認刪除此標籤</p>
-                                </div>
-                                <div class="btn_grp">
-                                    <input data-fancybox-close name="" type="reset" value="取消" />
-                                    <input name="" type="submit" value="確定" />
-                                </div>
-                            </div>
-                            <!-- 燈箱確認標籤刪除 end-->
-                            <!-- 取消標籤 start -->
-                            <div class="del_collect_btn"><button type="button" class="btn btn-blue btn-xs" data-fancybox data-src="#lightbox_del_tag">取消標籤</button></div>
-                            <!-- 取消標籤 end -->
-                            <!-- 燈箱確定取消標籤 start-->
-                            <div class="lightboxblock commonlightbox_small" id="lightbox_del_tag">
-                                <h3 class="title">確定取消標籤?</h3>
-                                <div class="content"></div>
-                                <div class="btn_grp">
-                                    <input data-fancybox-close name="" type="reset" value="取消" />
-                                    <input data-fancybox-close name="" type="submit" value="確定" />
-                                </div>
-                            </div>
-                            <!-- 燈箱確定取消標籤 end-->
                         </div>
                         <!-- 2 -->
                         <div class="list_file">
                             <div class="datatop">
                                 <div class="data_sort">非書媒體</div>
-                                <!-- <div class="GPNEBN_num">編號(GPN/EBN)：10109E0005</div> -->
-                                <!--  <div class="project_num">委辦計畫編號：MOEAWRA1080166</div> -->
-                            </div>
-                            <div class="booklink"><a href="#">莫拉克風災精華版-重建家園</a></div>
-                            <div class="databottom">
-                                <div class="author">作者：行政院莫拉克颱風災後重建推動委員會</div>
-                                <div class="publishing">出版者：行政院莫拉克颱風災後重建推動委員會</div>
-                                <div class="publication_years">出版年：102. 07</div>
-                            </div>
-                            <div class="btn_block">
-                                <input type="button" name="" value="下載PDF" class="btn btn-green"><input type="button" name="" value="線上閱讀" class="btn btn-green">
-                            </div>
-                            <!-- 標籤雲 -->
-                            <div class="tagblock">
-                                <!-- 收藏 start-->
-                                <!-- <div class="book_collect"><a href="#"><img src="images/book_collect01.png" alt="收藏"></a></div> -->
-                                <!-- 收藏 end-->
-                                <ul>
-                                    <li><a href="javascript:;" class="canclose_label">莫拉克<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a></li>
-                                </ul>
-                            </div>
-                            <!-- 取消標籤 start -->
-                            <div class="del_collect_btn"><button type="button" class="btn btn-blue btn-xs" data-fancybox data-src="#lightbox_del_tag">取消標籤</button></div>
-                            <!-- 取消標籤 end -->
-                            <!-- 燈箱確定取消標籤 start-->
-                            <div class="lightboxblock commonlightbox_small" id="lightbox_del_tag">
-                                <h3 class="title">確定取消標籤？</h3>
-                                <div class="content">
-                                </div>
-                                <div class="btn_grp">
-                                    <input data-fancybox-close name="" type="reset" value="取消" />
-                                    <input data-fancybox-close name="" type="submit" value="確定" />
-                                </div>
-                            </div>
-                            <!-- 燈箱確定取消標籤 end-->
-                        </div>
-                        <!-- 3 -->
-                        <div class="list_file">
-                            <div class="datatop">
-                                <div class="data_sort">一般圖書</div>
-                                <!-- <div class="GPNEBN_num">編號(GPN/EBN)：10109E0005</div> -->
+                                <div class="GPNEBN_num">編號(GPN/EBN)：10109E0005</div>
                                 <!--  <div class="project_num">委辦計畫編號：MOEAWRA1080166</div> -->
                             </div>
                             <div class="booklink"><a href="#">50天的奇蹟莫拉克颱風災後林邊佳冬地區重整家園</a></div>
                             <div class="databottom">
-                                <div class="author">作者：行政院莫拉克颱風災後重建推動委員會</div>
-                                <div class="publishing">出版者：行政院莫拉克颱風災後重建推動委員會</div>
+                                <div class="author">作者：財團法人台灣水利環境科技研究發展教育基金會</div>
+                                <div class="publishing">出版者：經濟部水利署</div>
                                 <div class="publication_years">出版年：102. 07</div>
                             </div>
-                            <!-- 標籤雲 -->
-                            <div class="tagblock">
-                                <!-- 收藏 start-->
-                                <!-- <div class="book_collect"><a href="#"><img src="images/book_collect01.png" alt="收藏"></a></div> -->
-                                <!-- 收藏 end-->
+                             <div class="btn_block">
+                                <input type="button" name="" value="下載PDF" class="btn btn-green"><input type="button" name="" value="線上閱讀" class="btn btn-green">
+                            </div>
+                            <div class="related_data">
                                 <ul>
-                                    <li><a href="javascript:;" class="canclose_label">莫拉克<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a></li>
-                                    <li><a href="javascript:;" class="canclose_label">災害復健<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a></li>
+                                    <li>借閱次數：<em>2</em></li>
+                                    <li>借閱起訖日期：2020-03-03～2020-03-30</li>
                                 </ul>
                             </div>
-                            <!-- 取消標籤 start -->
-                            <div class="del_collect_btn"><button type="button" class="btn btn-blue btn-xs" data-fancybox data-src="#lightbox_del_tag">取消標籤</button></div>
-                            <!-- 取消標籤 end -->
-                            <!-- 燈箱確定取消標籤 start-->
-                            <div class="lightboxblock commonlightbox_small" id="lightbox_del_tag">
-                                <h3 class="title">確定取消標籤？</h3>
-                                <div class="content">
-                                </div>
-                                <div class="btn_grp">
-                                    <input data-fancybox-close name="" type="reset" value="取消" />
-                                    <input data-fancybox-close name="" type="submit" value="確定" />
-                                </div>
+                        </div>
+                        <!-- 3-->
+                        <div class="list_file">
+                            <div class="datatop">
+                                <div class="data_sort">技術文件</div>
+                                <div class="GPNEBN_num">編號(GPN/EBN)：10109E0005</div>
+                                <!--  <div class="project_num">委辦計畫編號：MOEAWRA1080166</div> -->
                             </div>
-                            <!-- 燈箱確定取消標籤 end-->
+                            <div class="booklink"><a href="#">參與世界水文化資產系統策略規劃(內附光碟)Strategical Planning for Engaging World Water System Heritage Program</a></div>
+                            <div class="databottom">
+                                <div class="author">作者：財團法人台灣水利環境科技研究發展教育基金會</div>
+                                <div class="publishing">出版者：經濟部水利署</div>
+                                <div class="publication_years">出版年：102. 07</div>
+                            </div>
+                             <div class="btn_block">
+                               <!--  <input type="button" name="" value="下載PDF" class="btn btn-green"> --><input type="button" name="" value="線上閱讀" class="btn btn-green">
+                            </div>
+                            <div class="related_data">
+                                <ul>
+                                    <li>借閱次數：<em>3</em></li>
+                                    <li>借閱起訖日期：2020-03-03～2020-03-30</li>
+                                </ul>
+                            </div>
                         </div>
                         <!--  -->
                     </div>
@@ -329,6 +290,8 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <!-- 外掛 plugin js -->
     <script src="vendor/jquery.easing.min.js"></script><!-- ease -->
+    <!-- 小鍵盤 -->
+    <script type='text/javascript' src='vendor/keyboard/keyboard.js'></script>
     <script src="vendor/slick/slick.min.js "></script><!-- slick -->
     <script src="vendor/slick/slick-lightbox.js "></script><!-- slick lightbox -->
     <script src="vendor/lazyload/lazyload.js"></script><!-- lazyload -->

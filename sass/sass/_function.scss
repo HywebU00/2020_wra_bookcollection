@@ -31,8 +31,8 @@ div.function {
                 position: relative;
                 &:hover,
                 &:focus {
-                    background: $primaryColor;
-                    border-color:$primaryColor;
+                    background: darken($function_color, 35);
+                    border-color:darken($function_color, 35);
                     color: #fff;
                 }
             }

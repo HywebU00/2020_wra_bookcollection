@@ -13,6 +13,11 @@
          background-color: rgba(204, 204, 204, .5);
        
     }
+    &.historical_record_search{
+        background-color: rgba(204, 204, 204, .5);
+        margin:0 auto 40px;
+        padding:30px 20px;
+    }
     &.searchblackbg {
         background-color: rgba(0, 0, 0, .5);
     }
@@ -93,6 +98,26 @@
             &:hover {
                 border: 1px solid darken($secondaryColor, 5) !important;
                 background-color: darken($secondaryColor, 5);
+            }
+            &:focus {
+                box-shadow: 0px 0px 0px 3px #fdb300 inset;
+            }
+        }
+        input[type="button"] {
+            margin: 0;
+            background-color: $color-orange;
+            border: 1px solid $color-orange;
+            border-radius: 0 4px 4px 0;
+            flex: 0 0 50px;
+            
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 20px;
+            transition: .5s;
+            line-height: .5em;
+            &:hover {
+                border: 1px solid darken($color-orange, 5) !important;
+                background-color: darken($color-orange, 5);
             }
             &:focus {
                 box-shadow: 0px 0px 0px 3px #fdb300 inset;
