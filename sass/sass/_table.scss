@@ -7,7 +7,7 @@ table {
     }
     th,
     td {
-        padding: .5em;
+        padding: .8em .5em;
         text-align: left;
     }
     td {
@@ -28,11 +28,11 @@ table {
                 text-align: left;
             }
         }
-        &.num{
+        &.num {
             text-align: center;
             width: 5%;
         }
-        &.date{
+        &.date {
             text-align: center;
             width: 10%;
         }
@@ -54,9 +54,121 @@ table {
             background: #F5F5F5;
         }
     }
+    a {
+        &.delbtn {
+            display: block;
+            background-color: lighten($color-red, 25);
+            padding: 10px;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            margin: 0 auto;
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 12px;
+                height: 12px;
+                margin: auto;
+            }
+        }
+        &.editbtn {
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            margin: 0 auto;
+            background-color: lighten($color-green, 30);
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 20px;
+                height: 20px;
+                margin: auto;
+            }
+        }
+        &:hover {
+            &.delbtn {
+                background-color: lighten($color-red, 15);
+            }
+            &.editbtn {
+                background-color: lighten($color-green, 15);
+            }
+        }
+    }
 }
 .table_list {
+    a {
+        color: $linkColor !important;
+        &:hover {
+            color: $color-red !important;
+        }
+    }
     @include screen('mobile') {
+        background-color: transparent !important; //Force table to not be like tables anymore
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+            display: block;
+        }
+        thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        tr {
+            border: 1px solid #ccc;
+            margin-bottom: 10px; // background-color: #333;
+        }
+        td {
+            // Behave  like a "row"
+            border: none !important;
+            border-bottom: 1px solid #e5e5e5 !important;
+            position: relative;
+            padding-left: 35% !important;
+            white-space: normal;
+            text-align: left;
+            &:before {
+                content: attr(data-title);
+                position: absolute;
+                top: .5em;
+                left: .5em;
+                width: 30%;
+                padding-right: .3em .5em .5em 0;
+                white-space: nowrap;
+                text-align: left;
+                font-weight: bold;
+                color: darken($secondaryColor, 10);
+                font-size: 1.125em;
+                font-weight: 600;
+            }
+            &.num {
+                width: auto;
+                text-align: left;
+            }
+            &.date {
+                width: auto;
+                 text-align: left;
+            }
+        }
+        a {
+            &.delbtn, &.editbtn {
+                margin: 0;
+                 text-align: left;
+            }
+        }
+    }
+    @include screen('xs_mobile') {
         background-color: transparent !important; //Force table to not be like tables anymore
         thead,
         tbody,
@@ -81,18 +193,35 @@ table {
             position: relative;
             white-space: normal;
             text-align: left;
-             padding: .5em 1em;
+            padding: .5em 1em !important;
             &:before {
                 content: attr(data-title);
                 display: block;
                 white-space: nowrap;
                 text-align: left;
-                color:darken($secondaryColor, 10);
-                font-size:1.125em;
+                color: darken($secondaryColor, 10);
+                font-size: 1.125em;
                 font-weight: 600;
-                padding:.3em .5em .5em 0;
+                top: auto;
+                left: auto;
+                width: auto;
+                padding: .3em .5em .5em 0;
+                position: relative;
             }
-
+            &.num {
+                width: auto;
+                 text-align: left;
+            }
+            &.date {
+                width: auto;
+                 text-align: left;
+            }
+        }
+        a {
+            &.delbtn, &.editbtn {
+                margin: 0;
+                 text-align: left;
+            }
         }
     }
 }

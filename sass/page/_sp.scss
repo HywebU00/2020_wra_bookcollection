@@ -1049,3 +1049,26 @@
         }
     }
 }
+// 標籤結果
+.tag_result{
+    margin-bottom: 40px;
+    font-size: 1.25em;
+    position: relative;
+    padding-left: 20px;
+    &:before{
+        content: '';
+        border:10px solid #000;
+        border-top-color:transparent;
+        border-right-color:transparent;
+        border-bottom-color:transparent;
+        position: absolute;
+        left:0;
+        top:1px;
+    }
+    span{
+        padding:5px 15px;
+        border:1px solid #666;
+        border-radius: 4px;
+        font-size: 0.813em;
+    }
+}

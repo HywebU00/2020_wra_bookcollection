@@ -571,7 +571,6 @@
       // ===============
 
       $("body").addClass("fancybox-active");
-
       if (
         !$.fancybox.getInstance() &&
         firstItemOpts.hideScrollbar !== false &&
@@ -585,6 +584,7 @@
         );
 
         $("body").addClass("compensate-for-scrollbar");
+        // $('.header').addClass('fancybox')
       }
 
       // Build html markup and set references
@@ -2912,6 +2912,7 @@
         $("body").removeClass("fancybox-active compensate-for-scrollbar");
 
         $("#fancybox-style-noscroll").remove();
+        // $('.header').removeClass('fancybox')
       }
     },
 
