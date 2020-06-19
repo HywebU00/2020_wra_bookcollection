@@ -257,12 +257,13 @@ body {
 // 按鈕不能點選
 .disabled {
     pointer-events: none;
-    opacity: .4;
+    opacity: .5;
     box-shadow:
         none;
     cursor: not-allowed;
     -webkit-filter: grayscale(1);
 }
+
 // btn 顏色
 .greenbg {
     background-color: #82b41e !important;

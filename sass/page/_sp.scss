@@ -69,7 +69,7 @@
     display: block;
     overflow: hidden;
     text-align: right;
-    margin: 0;
+    margin:10px 0 ;
     padding: 0;
     span {
         display: inline-block;
@@ -293,27 +293,26 @@
         }
     }
     // 相關資料
-    .related_data{
-       width:50%;
+    .related_data {
+        width: 50%;
         // background-color:#eee;
-        border:1px solid #ccc;
-        border-radius:4px;
-        padding:20px;
-        margin:10px 0 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 20px;
+        margin: 10px 0 0;
         @include box-sizing(border-box);
-        @include screen('mobile'){
+        @include screen('mobile') {
             width: 100%;
         }
-        ul{
-            margin:0 0 0 20px;
-            padding:0;
-            li{
-               
+        ul {
+            margin: 0 0 0 20px;
+            padding: 0;
+            li {
                 margin-bottom: 5px;
-                em{
+                em {
                     font-style: normal;
-                    padding:0 5px;
-                    color:$color-orange;
+                    padding: 0 5px;
+                    color: $color-orange;
                 }
             }
         }
@@ -1076,25 +1075,83 @@
     }
 }
 // 標籤結果
-.tag_result{
+.tag_result {
     margin-bottom: 40px;
     font-size: 1.25em;
     position: relative;
     padding-left: 20px;
-    &:before{
+    &:before {
         content: '';
-        border:10px solid #000;
-        border-top-color:transparent;
-        border-right-color:transparent;
-        border-bottom-color:transparent;
+        border: 10px solid #000;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
         position: absolute;
-        left:0;
-        top:1px;
+        left: 0;
+        top: 1px;
     }
-    span{
-        padding:5px 15px;
-        border:1px solid #666;
+    span {
+        padding: 5px 15px;
+        border: 1px solid #666;
         border-radius: 4px;
         font-size: 0.813em;
+    }
+}
+// 電子書服務
+.eBook_service_block {
+    .form_grid {
+        display: flex;
+        flex-wrap: wrap;
+        .form_grp {
+            flex: 0 0 100%;
+            border-bottom: none;
+            &.form_grp_inline {
+                flex: 0 0 50%;
+                @include screen('xs_mobile') {
+                    flex: 0 0 100%;
+                }
+            }
+            .form_title {
+                display: block;
+                float: none;
+                width: 100%;
+                font-weight: bolder;
+                @include screen('xs_mobile') {
+                    padding-right: 0;
+                    padding-left: 0;
+                }
+            }
+            .form_content {
+                float: none;
+                width: 100%;
+                @include screen('xs_mobile') {
+                    padding-right: 0;
+                    padding-left: 0;
+                }
+            }
+        }
+        .btn_grp {
+            text-align: center;
+            flex: 0 0 100%;
+             padding:.5em 0;
+            &.lean_right {
+                text-align: right;
+                flex: 0 0 50%;
+            }
+            &.lean_left {
+                text-align: left;
+                flex: 0 0 50%;
+            }
+            @include screen('xs_mobile'){
+                &.lean_right, &.lean_left {
+                     flex: 0 0 100%;
+                }
+            }
+        }
+        .remind {
+            flex: 0 0 100%;
+            padding: 5px 15px;
+            background-color: lighten($lightColor, 45);
+        }
     }
 }

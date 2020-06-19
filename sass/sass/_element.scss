@@ -116,7 +116,9 @@ img.img-responsive {
 // 表單必填
 .necessary {
     color: red;
-    margin: 0px .2em;
+    margin: 0 .2em 0;
+    font-size: 1.375em;
+    vertical-align: middle;
 }
 
 .tooltip {

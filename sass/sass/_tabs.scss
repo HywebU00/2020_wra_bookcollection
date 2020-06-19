@@ -200,11 +200,49 @@
             background-color: #ccc;
         }
     }
-    .tabItem:first-child>a {
-        &:after {
-            display: none;
+    
+    .tabItem>a:hover {
+        background-color: #535353;
+        color: #fff;
+    }
+    .tabItem.active>a {
+        background-color: $primaryColor;
+        position: relative;
+        &:before {
+            content: '';
+            border: 10px solid $primaryColor;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            position: absolute;
+            bottom: -20px;
+            left: 47%;
+            z-index: 1;
+        }
+        @include screen('xs_mobile') {}
+    }
+    
+}
+// 電子書
+// 標籤雲
+.eBook_service {
+   
+    .tabSet {
+        margin: 0;
+    }
+    .tabItem>a {
+        background-color: #ccc;
+        color: #333;
+        position: relative;
+        font-weight: 400;
+        font-size: 1.125em;
+        overflow: visible;
+        padding: 25px 0 20px;
+        @include screen('xs_mobile') {
+            background-color: #ccc;
         }
     }
+    
     .tabItem>a:hover {
         background-color: #535353;
         color: #fff;

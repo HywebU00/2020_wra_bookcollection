@@ -10,7 +10,7 @@ $btn-radius:.2em;
 }
 
 // 按鈕的共用設定
-@mixin btn_setting($btn-bg:#0094e0, $btn-font-color:$btn-font-color) {
+@mixin btn_setting($btn-bg:#d9d9d9, $btn-font-color:$btn-font-color) {
     background-color: $btn-bg;
     border: 1px solid $btn-bg;
     color: $btn-font-color;
@@ -19,8 +19,8 @@ $btn-radius:.2em;
     @include border-radius($btn-radius);
     // @include gradient(lighten($btn-bg, 5), darken($btn-bg, 15), vertical);
     &:hover, &:focus {
-        background-color: darken($btn-bg, 15); // Old browsers
-        border: 1px solid darken($btn-bg, 15) !important;
+        background-color: darken($btn-bg, 10); // Old browsers
+        border: 1px solid darken($btn-bg, 10) !important;
         cursor: pointer;
         color: #FFF;
         outline:none;
@@ -101,8 +101,12 @@ $btn-radius:.2em;
 .btn-reset {
     @extend %btn;
     color:lighten($color-word,15);
+
 }
 .btn-primary {
+    @extend .btn-orange;
+}
+.btn-delete {
     @extend .btn-orange;
 }
 // 按鈕大小

@@ -433,27 +433,7 @@ $(function() {
     //     $('.addtagbtn').show();
     //     $('.addoption').hide();
     // })
-    //分頁
-    $('.number01').click(function() {
-        $('.number01').hide();
-        $('.page').addClass('page02');
-    })
-    $('#closebtn').click(function() {
-        $('.number01').show();
-        $('.page').removeClass('page02');
-    })
-    if ($(".page").is(":visible")) {
-        $(window).scroll(function() {
-            var pageLeft = $(".page").offset().left;
-            var scrollTop = $(window).scrollTop();
-            var viewportHeight = $(window).height();
-            if ((scrollTop + viewportHeight) > ($("#showPage").offset().top + 50)) {
-                $(".page").removeClass("fixed");
-            } else {
-                $(".page").addClass("fixed");
-            }
-        })
-    }
+    
     //左欄 資料fixed
     $(window).on("scroll resize", function() {
         var mainleftblock = $(".mainleftblock");
@@ -495,6 +475,29 @@ $(function(){
         $('.addtagbtn').show();
         $('.addoption').hide();
     })
+})
+$(function(){
+    //分頁
+    $('.number01').click(function() {
+        $('.number01').hide();
+        $('.page').addClass('page02');
+    })
+    $('#closebtn').click(function() {
+        $('.number01').show();
+        $('.page').removeClass('page02');
+    })
+    if ($(".page").is(":visible")) {
+        $(window).scroll(function() {
+            var pageLeft = $(".page").offset().left;
+            var scrollTop = $(window).scrollTop();
+            var viewportHeight = $(window).height();
+            if ((scrollTop + viewportHeight) > ($("#showPage").offset().top + 50)) {
+                $(".page").removeClass("fixed");
+            } else {
+                $(".page").addClass("fixed");
+            }
+        })
+    }
 })
 // 手機版將ㄊwow效果關掉
 // $(function() {

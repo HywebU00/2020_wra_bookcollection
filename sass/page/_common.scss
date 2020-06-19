@@ -336,6 +336,15 @@
     }
     // 
 }
+.eBook_service{
+    .searchsystem{
+        background-color: #eee;
+        margin-bottom: 20px;
+        .form_advanced{
+            display: block!important;
+        }
+    }
+}
 //分欄 
 .maincolumn {
     position: relative;
@@ -419,10 +428,10 @@
     }
     .mainrightblock {
         flex: auto;
-        padding: 15px 0 30px 30px;
+        padding: 10px 0 30px 30px;
         @include box-sizing;
         @include screen('tablet') {
-            padding: 15px 0 30px;
+            padding: 10px 0 30px;
         }
     }
 }
