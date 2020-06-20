@@ -250,7 +250,7 @@
     .member_block {
         display: inline-block;
         vertical-align: middle;
-        margin-right: 5px;
+        margin-right: 0px;
         position: relative;
         @include screen('tablet') {
             display: none;
@@ -258,19 +258,33 @@
         .name {
             padding: 0 0 0 30px;
             display: inline-block;
-            &:before {
-                content: '';
-                width: 25px;
-                height: 25px;
-                border-radius: 50%;
+            a{
+                display: block;
+                background-color: $secondaryColor;
+                color:#fff;
+                padding: 0 .5em 0 1.7em;
+                line-height: 2em;
                 background-image: url('../images/member_icon01.svg');
                 background-repeat: no-repeat;
-                background-position: center;
-                background-size: 10px;
-                position: absolute;
-                left: 0;
-                background-color: #999;
+                background-position: 10px center;
+                background-size: 12px;
+                &:hover{
+                    background-color:darken($secondaryColor, 10);
+                }
             }
+            // &:before {
+            //     content: '';
+            //     width: 25px;
+            //     height: 25px;
+            //     border-radius: 50%;
+            //     background-image: url('../images/member_icon01.svg');
+            //     background-repeat: no-repeat;
+            //     background-position: center;
+            //     background-size: 10px;
+            //     position: absolute;
+            //     left: 0;
+            //     background-color: #999;
+            // }
         }
         .name_login {
             padding: 0 30px;
