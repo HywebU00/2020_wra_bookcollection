@@ -38,12 +38,20 @@
             display: block !important;
         }
     }
+    
     &.login_before {
         >.container {
             .memberCtrl {
                 @include screen('tablet') {
                     display: none !important;
                 }
+            }
+            .colleaguesCtrl {
+                display:none;
+                @include screen('tablet') {
+                    display:block!important;
+                }
+               
             }
         }
     }
@@ -94,6 +102,28 @@
                 left: auto;
                 right: 61px;
                 z-index: 9;
+            }
+            @media(max-width: 480px) {
+                right: 0;
+                top: 61px;
+                background-size: 25px;
+                height: 50px !important;
+            }
+        }
+        .colleaguesCtrl {
+            display: none;
+            right: 61px;
+            @extend %mobileCtrlBtn;
+            background-color: $secondaryColor;
+            background-image: url('../images/member_icon01.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 30px;
+            @include screen('tablet') {
+                left: auto;
+                right: 61px;
+                z-index: 9;
+                display: none !important;
             }
             @media(max-width: 480px) {
                 right: 0;
@@ -258,18 +288,18 @@
         .name {
             padding: 0 0 0 30px;
             display: inline-block;
-            a{
+            a {
                 display: block;
                 background-color: $secondaryColor;
-                color:#fff;
+                color: #fff;
                 padding: 0 .5em 0 1.7em;
                 line-height: 2em;
                 background-image: url('../images/member_icon01.svg');
                 background-repeat: no-repeat;
                 background-position: 10px center;
                 background-size: 12px;
-                &:hover{
-                    background-color:darken($secondaryColor, 10);
+                &:hover {
+                    background-color: darken($secondaryColor, 10);
                 }
             }
             // &:before {
