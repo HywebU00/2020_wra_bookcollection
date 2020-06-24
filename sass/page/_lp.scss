@@ -89,7 +89,7 @@
             span.unit {
                 position: absolute;
                 right: 0;
-                top: 0px;
+                top: 1em;
                 width: 120px;
                 color: #666;
                 @include screen('xs_mobile') {

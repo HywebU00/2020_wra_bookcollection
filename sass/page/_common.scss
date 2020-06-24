@@ -78,7 +78,7 @@
             margin: 12px 10px;
             vertical-align: middle;
             cursor: pointer;
-            width: 25px;
+            width: auto;
             height: 16px;
             @include screen('xs_mobile') {
                 display: none;
@@ -93,7 +93,7 @@
             background-image: url('../images/search_icon2.svg');
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: 20px;
+            background-size: 20px 20px;
             transition: .5s;
             &:hover {
                 border: 1px solid darken($secondaryColor, 5) !important;
@@ -112,7 +112,7 @@
             
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: 20px;
+            background-size: 20px 20px;
             transition: .5s;
             line-height: .5em;
             &:hover {
@@ -681,7 +681,7 @@ html .ui-button.ui-state-disabled:active {
                         background-image: url(../images/icon/icon_add.svg);
                         background-position: center;
                         background-repeat: no-repeat;
-                        background-size: 10px;
+                        background-size: 10px 10px;
                         background-color: #ccc;
                         width: 18px;
                         height: 18px;

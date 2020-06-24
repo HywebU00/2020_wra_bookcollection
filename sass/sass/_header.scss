@@ -38,7 +38,6 @@
             display: block !important;
         }
     }
-    
     &.login_before {
         >.container {
             .memberCtrl {
@@ -47,11 +46,10 @@
                 }
             }
             .colleaguesCtrl {
-                display:none;
+                display: none;
                 @include screen('tablet') {
-                    display:block!important;
+                    display: block !important;
                 }
-               
             }
         }
     }
@@ -97,7 +95,7 @@
             background-image: url('../images/member_icon01.svg');
             background-repeat: no-repeat;
             background-position: center;
-            background-size: 30px;
+            background-size: 30px 30px;
             @include screen('tablet') {
                 left: auto;
                 right: 61px;
@@ -106,7 +104,7 @@
             @media(max-width: 480px) {
                 right: 0;
                 top: 61px;
-                background-size: 25px;
+                background-size: 25px 25px;
                 height: 50px !important;
             }
         }
@@ -118,7 +116,7 @@
             background-image: url('../images/member_icon01.svg');
             background-repeat: no-repeat;
             background-position: center;
-            background-size: 30px;
+            background-size: 30px 30px;
             @include screen('tablet') {
                 left: auto;
                 right: 61px;
@@ -128,7 +126,7 @@
             @media(max-width: 480px) {
                 right: 0;
                 top: 61px;
-                background-size: 25px;
+                background-size: 25px 25px;
                 height: 50px !important;
             }
         }
@@ -142,7 +140,7 @@
                 width: 40px;
                 height: 40px;
                 background: url(../images/basic/icon_search.png) no-repeat center center;
-                background-size: 28px;
+                background-size: 28px 28px;
                 opacity: .6;
                 content: "";
                 position: absolute;
@@ -297,7 +295,7 @@
                 background-image: url('../images/member_icon01.svg');
                 background-repeat: no-repeat;
                 background-position: 10px center;
-                background-size: 12px;
+                background-size: 12px 12px;
                 &:hover {
                     background-color: darken($secondaryColor, 10);
                 }
@@ -336,7 +334,7 @@
                 background-image: url('../images/member_icon01.svg');
                 background-repeat: no-repeat;
                 background-position: center;
-                background-size: 10px;
+                background-size: 10px 10px;
                 position: absolute;
                 left: -3px;
                 top: -2px;
@@ -496,7 +494,7 @@
                 background-image: url('../images/member_icon01.svg');
                 background-repeat: no-repeat;
                 background-position: center;
-                background-size: 13px;
+                background-size: 13px 13px;
                 position: absolute;
                 left: 0px;
                 top: -2px;
@@ -570,7 +568,7 @@
                 background-color: $secondaryColor;
                 background-repeat: no-repeat;
                 background-position: center;
-                background-size: 20px;
+                background-size: 20px 20px;
                 border: 1px solid $secondaryColor;
                 display: block;
                 min-width: 0em !important;
@@ -672,7 +670,7 @@
                     // max-width:none;
                     // min-width:none;
                     background: url(../images/basic/icon_search.png) no-repeat center center;
-                    background-size: 24px;
+                    background-size: 24px 24px;
                     border: none;
                     display: inline-block;
                     // margin-left: -50px !important;

@@ -71,10 +71,10 @@
         }
     }
     .content {
-        margin-bottom: 20px;
-        max-height: calc(100vh - 230px);
+        margin-bottom: 0px;
+        // max-height: calc(100vh - 230px);
         min-height: 50px;
-        padding: 0 0em 1.5em 0em;
+        padding: 0;
         // overflow-y: auto;
         line-height: 1.9em;
         .number, .date {
