@@ -58,7 +58,7 @@
         left: -50px;
         text-align: right;
         display: inline-block;
-        line-height: 4.5em;
+        line-height: 1.2em;
         &:hover, &:focus {
             box-shadow: none;
         }
@@ -75,7 +75,7 @@
     .slick-prev {
         // top: 0px;
         background-position: left top;
-        padding: 0px 0 0 0 !important;
+        padding: 0px 0 0 18px !important;
         top: 20% !important;
         @include screen('tablet') {
             top: 10px;
@@ -89,7 +89,7 @@
     .slick-next {
         background-image: url('../vendor/slick/icon_arrow_down.svg');
         right: auto;
-        padding: 0px 0 0px 0 !important;
+        padding: 0px 0 0px 18px !important;
         background-position: left bottom;
         top: auto;
         bottom: 0;
@@ -103,7 +103,7 @@
     }
     .slick-prev>a, .slick-next>a {
         display: block;
-        width: 40px !important;
+        width: 20px !important;
         @include screen('mobile') {
             font-size: 0;
         }
