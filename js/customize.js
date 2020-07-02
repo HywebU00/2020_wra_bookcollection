@@ -442,7 +442,8 @@ $(function() {
             let myWidth = mainleftblock.width();
             if ($(window).scrollTop() > mainleftblock.offset().top - 80) {
                 mainleftcontent.addClass('fixed');
-                mainleftcontent.css('width', myWidth);
+                // mainleftcontent.css('width', myWidth);
+                mainleftcontent.css('width', 100%);
             } else {
                 mainleftcontent.removeClass('fixed');
                 mainleftcontent.removeAttr('style');
