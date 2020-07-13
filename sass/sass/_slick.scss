@@ -106,6 +106,7 @@
         width: 20px !important;
         @include screen('mobile') {
             font-size: 0;
+             width: 40px !important;
         }
     }
     .slick-prev>a:focus,
@@ -152,6 +153,42 @@
         right: -23px;
         transform: rotate(-90deg);
         top: 40%;
+    }
+    // 點點
+    .slick-dots {
+        width: auto;
+        right: 0;
+        bottom: 15px;
+    }
+    .slick-dots li button:before {
+        background-color: #999;
+    }
+}
+// 影音
+.special_pic {
+    .slick-prev {
+        background-image: url('../vendor/slick/icon_arrow_up.svg');
+        background-size: 60px 30px;
+        background-position: center;
+        background-color: rgba(255, 255, 255,.5);
+        width: 60px !important;
+        height: 40px !important;
+        transform: rotate(-90deg);
+        right: auto;
+        left: 0px;
+        top: 46%;
+
+    }
+    .slick-next {
+        background-image: url('../vendor/slick/icon_arrow_down.svg');
+        background-size: 60px 30px;
+        background-position: center;
+         background-color: rgba(255, 255, 255,.5);
+        width: 60px !important;
+        height: 40px !important;
+        right: 0px;
+        transform: rotate(-90deg);
+        top: 46%;
     }
     // 點點
     .slick-dots {

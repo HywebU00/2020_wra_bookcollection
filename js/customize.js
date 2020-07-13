@@ -23,6 +23,18 @@ $(function() {
             }
         }]
     });
+    // 水利故事輪播
+    $('.special_pic').slick({
+    dots: true,
+    arrow: true,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    fade: true,
+    lazyLoad: 'ondemand',
+    ease : 'ease'
+});
+    // 
     $(".slick-arrow").attr("tabindex", 0);
     // 廣告輪播
     $('.adSlider').slick({

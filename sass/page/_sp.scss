@@ -448,8 +448,8 @@
     }
     span.playbtn {
         background-color: rgba(0, 0, 0, .6);
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
         border-radius: 50%;
         // margin-top: calc(50% - 30px);
         // margin-left: calc(50% - 30px);
@@ -463,12 +463,12 @@
         margin: auto;
         &:before {
             content: '';
-            border: 12px solid #fff;
+            border: 15px solid #fff;
             border-top-color: transparent;
             border-right-color: transparent;
             border-bottom-color: transparent;
             position: absolute;
-            top: calc(50% - 12px);
+            top: calc(50% - 14px);
             left: calc(50% - 6px);
         }
     }
