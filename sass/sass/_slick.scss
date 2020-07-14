@@ -175,7 +175,7 @@
         height: 40px !important;
         transform: rotate(-90deg);
         right: auto;
-        left: 0px;
+        left: -10px;
         top: 46%;
 
     }
@@ -183,12 +183,15 @@
         background-image: url('../vendor/slick/icon_arrow_down.svg');
         background-size: 60px 30px;
         background-position: center;
-         background-color: rgba(255, 255, 255,.5);
+        background-color: rgba(255, 255, 255,.4);
         width: 60px !important;
         height: 40px !important;
-        right: 0px;
+        right: -10px;
         transform: rotate(-90deg);
         top: 46%;
+    }
+    .slick-prev:hover, .slick-next:hover{
+        background-color: rgba(255, 255, 255,.8);
     }
     // 點點
     .slick-dots {
