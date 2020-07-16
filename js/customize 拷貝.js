@@ -2,16 +2,19 @@
 $(function() {
     // 首頁輪播
     $('.mpSlider').slick({
+        // mobileFirst: true,
         dots: true,
         arrow: true,
         infinite: true,
-        vertical: true,
+        vertical: true, //垂直滑動
         autoplaySpeed: 3000,
+        // speed: 500,
         autoplay: true,
+        // fade: true,  淡入
         lazyLoaded: true,
         lazyLoad: 'ondemand',
         ease: 'ease',
-        prevArrow: '<div type="button"  tabindex="0" class="slick-prev Btn-prev"><a href="#">魚仔想要回家回家</a></div>',
+        prevArrow: '<div type="button"  tabindex="0" class="slick-prev Btn-prev"><a href="#">魚仔《想要回家》</a></div>',
         nextArrow: '<div type="button" tabindex="0"  class="slick-next Btn-next"><a href="#">曾文之眼藝文活動</a></div>',
         responsive: [{
             breakpoint: 767,
@@ -20,6 +23,18 @@ $(function() {
             }
         }]
     });
+    // 水利故事輪播
+    $('.special_pic').slick({
+    dots: true,
+    arrow: true,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    fade: true,
+    lazyLoad: 'ondemand',
+    ease : 'ease'
+});
+    // 
     $(".slick-arrow").attr("tabindex", 0);
     // 廣告輪播
     $('.adSlider').slick({
@@ -430,6 +445,7 @@ $(function() {
     //     $('.addtagbtn').show();
     //     $('.addoption').hide();
     // })
+    
     //左欄 資料fixed
     $(window).on("scroll resize", function() {
         var mainleftblock = $(".mainleftblock");
@@ -439,6 +455,7 @@ $(function() {
             if ($(window).scrollTop() > mainleftblock.offset().top - 80) {
                 mainleftcontent.addClass('fixed');
                 // mainleftcontent.css('width', myWidth);
+                
             } else {
                 mainleftcontent.removeClass('fixed');
                 mainleftcontent.removeAttr('style');
@@ -451,7 +468,7 @@ $(function() {
         }
     })
 });
-$(function() {
+$(function(){
     // 增加標籤
     $('.addtagbtn').click(function() {
         $('.addtag_block').css('display', 'inline-block');
@@ -472,7 +489,7 @@ $(function() {
         $('.addoption').hide();
     })
 })
-$(function() {
+$(function(){
     //分頁
     $('.number01').click(function() {
         $('.number01').hide();

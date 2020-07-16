@@ -76,10 +76,8 @@
         // top: 0px;
         background-position: left top;
         padding: 0px 0 0 18px !important;
-        top: 20% !important;
-        @include screen('tablet') {
-            top: 10px;
-        }
+        top: 70px !important;
+        
         @include screen('mobile') {
             top: 45% !important;
             background-position: center;
@@ -92,7 +90,7 @@
         padding: 0px 0 0px 18px !important;
         background-position: left bottom;
         top: auto;
-        bottom: 0;
+        bottom:-20px;
         @include screen('mobile') {
             top: 45% !important;
             background-image: url('../vendor/slick/icon_arrow_right_inverse2.svg');
