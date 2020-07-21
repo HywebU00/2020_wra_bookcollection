@@ -454,7 +454,7 @@ div.tag {
         border-bottom: 1px solid $primaryColor;
     }
     .cppic {
-        @include gutter(70px);
+        @include gutter(0px);
         margin-bottom: 20px;
         @include screen('mobile') {
             @include gutter();

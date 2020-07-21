@@ -50,6 +50,7 @@
 .lightboxblock {
     padding: 20px;
     // border-radius: 4px;
+    display: none;
     .title {
         font-size: 1.375em;
         border-bottom: 1px solid #333;
@@ -153,6 +154,7 @@
         }
     }
 }
+
 // 共用小燈箱
 .commonlightbox_small {
     min-width: 400px;
