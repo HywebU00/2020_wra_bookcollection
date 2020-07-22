@@ -463,8 +463,14 @@
         margin: 0 0;
         &.line3 {
             ul {
-                -webkit-line-clamp: 3;
+                // -webkit-line-clamp: 3;
                 height: 5em;
+            }
+        }
+        &.line0 {
+            ul {
+                // -webkit-line-clamp: initial;
+                height:auto;
             }
         }
         h3 {
@@ -480,14 +486,10 @@
             overflow: hidden;
             text-overflow: ellipsis;
             line-height: 1.5em;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
+            // display: -webkit-box;
+            // -webkit-line-clamp: 2;
+            // -webkit-box-orient: vertical;
             height: 3.5em;
-            // @media (max-width: 1400px){
-            //       -webkit-line-clamp: 3;
-            //        height: 5em;
-            //  }
             li {
                 list-style-type: none;
                 display: inline-block;

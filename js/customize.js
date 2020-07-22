@@ -24,7 +24,6 @@ $(function() {
     //     }]
     // });
     // 水利故事輪播
-
     // 
     $('.special_pic').slick({
         dots: true,
@@ -512,18 +511,30 @@ $(function() {
         })
     }
 })
-$(function(){
+// 標籤雲判斷
+$(function() {
     var containerW = $('.tag_cloud').parents('.container').width();
     if (containerW <= 1200) {
-            $('.tag_cloud').addClass('line3');
-        } else {
-            $('.tag_cloud').reomveClass('line3');
-        }
+        $('.tag_cloud').addClass('line3');
+    } else {
+        $('.tag_cloud').reomveClass('line3');
+    }
     // $(window).on('load resize', function () {
-        
     // });
 })
-// 手機版將ㄊwow效果關掉
+
+// 標籤雲更多
+$(function(){
+    $('.tag_cloud > .more > a').click(function(){
+        $('.tag_cloud').toggleClass('line0'); 
+        $(this).parents('.col').siblings().children('.tag_cloud').removeClass('line0')
+
+    })
+})
+
+
+
+// 手機版將wow效果關掉
 // $(function() {
 //     if(('.wow').length>0){
 //         $(this).removeClass('wow');
