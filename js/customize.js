@@ -24,16 +24,18 @@ $(function() {
     //     }]
     // });
     // 水利故事輪播
+
+    // 
     $('.special_pic').slick({
-    dots: true,
-    arrow: true,
-    infinite: true,
-    speed: 500,
-    autoplay: true,
-    fade: true,
-    lazyLoad: 'ondemand',
-    ease : 'ease'
-});
+        dots: true,
+        arrow: true,
+        infinite: true,
+        speed: 500,
+        autoplay: true,
+        fade: true,
+        lazyLoad: 'ondemand',
+        ease: 'ease'
+    });
     // 
     $(".slick-arrow").attr("tabindex", 0);
     // 廣告輪播
@@ -445,7 +447,6 @@ $(function() {
     //     $('.addtagbtn').show();
     //     $('.addoption').hide();
     // })
-    
     //左欄 資料fixed
     $(window).on("scroll resize", function() {
         var mainleftblock = $(".mainleftblock");
@@ -455,7 +456,6 @@ $(function() {
             if ($(window).scrollTop() > mainleftblock.offset().top - 80) {
                 mainleftcontent.addClass('fixed');
                 // mainleftcontent.css('width', myWidth);
-                
             } else {
                 mainleftcontent.removeClass('fixed');
                 mainleftcontent.removeAttr('style');
@@ -468,7 +468,7 @@ $(function() {
         }
     })
 });
-$(function(){
+$(function() {
     // 增加標籤
     $('.addtagbtn').click(function() {
         $('.addtag_block').css('display', 'inline-block');
@@ -489,7 +489,7 @@ $(function(){
         $('.addoption').hide();
     })
 })
-$(function(){
+$(function() {
     //分頁
     $('.number01').click(function() {
         $('.number01').hide();
@@ -511,6 +511,17 @@ $(function(){
             }
         })
     }
+})
+$(function(){
+    var containerW = $('.tag_cloud').parents('.container').width();
+    if (containerW <= 1200) {
+            $('.tag_cloud').addClass('line3');
+        } else {
+            $('.tag_cloud').reomveClass('line3');
+        }
+    // $(window).on('load resize', function () {
+        
+    // });
 })
 // 手機版將ㄊwow效果關掉
 // $(function() {
