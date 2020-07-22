@@ -560,7 +560,7 @@
             }
         }
         button {
-            &[type="submit"] {
+            &[type="submit"], &[type="button"] {
                 font-size: 0em;
                 width: 50px !important;
                 height: 100%;
