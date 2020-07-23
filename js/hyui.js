@@ -917,7 +917,7 @@ $(function() {
     //         threshold: -200
     //     });
     // }
-     var lazyLoadInstance = new LazyLoad({
+    var lazyLoadInstance = new LazyLoad({
         elements_selector: "img.lazy",
         placeholder: '/images/basic/placeholder.gif',
         effect: "fadeIn",
