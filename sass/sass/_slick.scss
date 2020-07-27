@@ -70,6 +70,7 @@
             background-size: 40px 19px;
             width: 40px !important;
             height: 40px !important;
+
         }
     }
     .slick-prev {
@@ -102,9 +103,11 @@
     .slick-prev>a, .slick-next>a {
         display: block;
         width: 20px !important;
+        transition: 0;
         @include screen('mobile') {
             font-size: 0;
              width: 40px !important;
+             display: none;
         }
     }
     .slick-prev>a:focus,
