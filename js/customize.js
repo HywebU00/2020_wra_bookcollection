@@ -1,28 +1,28 @@
 // 自行加入的JS請寫在這裡
 $(function() {
     // 首頁輪播
-    // $('.mpSlider').slick({
-    //     // mobileFirst: true,
-    //     dots: true,
-    //     arrow: true,
-    //     infinite: true,
-    //     vertical: true, //垂直滑動
-    //     autoplaySpeed: 3000,
-    //     // speed: 500,
-    //     autoplay: true,
-    //     // fade: true,  淡入
-    //     lazyLoaded: true,
-    //     lazyLoad: 'ondemand',
-    //     ease: 'ease',
-    //     prevArrow: '<div type="button"  tabindex="0" class="slick-prev Btn-prev"><a href="#">魚仔《想要回家》</a></div>',
-    //     nextArrow: '<div type="button" tabindex="0"  class="slick-next Btn-next"><a href="#">曾文之眼藝文活動</a></div>',
-    //     responsive: [{
-    //         breakpoint: 767,
-    //         settings: {
-    //             vertical: false,
-    //         }
-    //     }]
-    // });
+    $('.mpSlider').slick({
+        // mobileFirst: true,
+        dots: true,
+        arrow: true,
+        infinite: true,
+        vertical: true, //垂直滑動
+        autoplaySpeed: 3000,
+        // speed: 500,
+        autoplay: true,
+        // fade: true,  淡入
+        lazyLoaded: true,
+        lazyLoad: 'ondemand',
+        ease: 'ease',
+        prevArrow: '<div type="button"  tabindex="0" class="slick-prev Btn-prev"><a href="#">魚仔《想要回家》</a></div>',
+        nextArrow: '<div type="button" tabindex="0"  class="slick-next Btn-next"><a href="#">曾文之眼藝文活動</a></div>',
+        responsive: [{
+            breakpoint: 767,
+            settings: {
+                vertical: false,
+            }
+        }]
+    });
     // 水利故事輪播
     // 
     $('.special_pic').slick({
