@@ -276,9 +276,12 @@
     .container {
         padding-left: 70px;
         display: flex;
-        flex-wrap: wrap;
+       
         @include screen('mobile') {
             padding: 0 30px;
+            flex-wrap: wrap;
+      
+
         }
     }
     .col {
@@ -290,10 +293,9 @@
         }
     }
     .col:nth-child(2) {
-        width: calc(100% - 40%);
-        flex: auto;
+       flex: 1 1 60%;
         @include screen('mobile') {
-            width: 100%;
+            flex: 1 1 100%;
             order: -1;
         }
     }

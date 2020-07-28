@@ -522,18 +522,13 @@ $(function() {
     // $(window).on('load resize', function () {
     // });
 })
-
 // 標籤雲更多
-$(function(){
-    $('.tag_cloud > .more > a').click(function(){
-        $('.tag_cloud').toggleClass('line0'); 
+$(function() {
+    $('.tag_cloud > .more > a').click(function() {
+        $('.tag_cloud').toggleClass('line0');
         $(this).parents('.col').siblings().children('.tag_cloud').removeClass('line0')
-
     })
 })
-
-
-
 // 手機版將wow效果關掉
 // $(function() {
 //     if(('.wow').length>0){
