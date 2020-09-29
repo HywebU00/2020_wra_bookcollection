@@ -356,6 +356,11 @@
             border-bottom: 1px solid #ccc;
             max-width: 100px;
             @include text-overflow;
+            br{
+                @include screen('mobile'){
+                    display: none;
+                }
+            }
 
         }
         tr:last-child {
@@ -384,11 +389,12 @@
 // btnstyle
 .stylebtn {
     display: inline-block;
-    padding: 0.5em 1em;
+    padding: 0.5em ;
     color: #fff;
     background-color: #999;
     border-radius: 4px;
-    white-space: nowrap;
+    @include text-overflow;
+
 }
 // 借閱中btn
 .borrowing_btn {
