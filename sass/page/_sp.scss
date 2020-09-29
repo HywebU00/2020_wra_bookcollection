@@ -396,9 +396,15 @@
     @include text-overflow;
     max-width: 120px;
     transition: .5s;
+    @include screen('mobile') {
+        max-width: 100%
+    }
     &:hover {
         max-width: 500px;
         white-space: normal;
+        @include screen('mobile') {
+            max-width: 100%
+        }
     }
 }
 // 借閱中btn
