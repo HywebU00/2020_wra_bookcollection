@@ -395,6 +395,7 @@
     border-radius: 4px;
     @include text-overflow;
     max-width: 120px;
+    transition: .5s;
     &:hover {
         max-width: 500px;
         white-space: normal;
