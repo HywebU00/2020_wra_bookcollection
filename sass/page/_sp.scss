@@ -494,6 +494,13 @@
             left: calc(50% - 6px);
         }
     }
+    // 影片
+    video{
+        width:100%;
+        min-height: 500px;
+         margin:0;
+         padding:0;
+    }
 }
 // 圖文影片list
 .special, .special_video {
