@@ -276,12 +276,9 @@
     .container {
         padding-left: 70px;
         display: flex;
-       
         @include screen('mobile') {
             padding: 0 30px;
             flex-wrap: wrap;
-      
-
         }
     }
     .col {
@@ -293,7 +290,7 @@
         }
     }
     .col:nth-child(2) {
-       flex: 1 1 60%;
+        flex: 1 1 60%;
         @include screen('mobile') {
             flex: 1 1 100%;
             order: -1;
@@ -472,7 +469,7 @@
         &.line0 {
             ul {
                 // -webkit-line-clamp: initial;
-                height:auto;
+                height: auto;
             }
         }
         h3 {
@@ -597,10 +594,16 @@
     .bookimage {
         margin-bottom: 10px;
         height: 188px;
+        position: relative;
         img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
             max-width: 130px;
             max-height: 188px;
-            margin: 0 auto;
+            margin: auto;
             border: 1px solid #ccc;
         }
     }
