@@ -153,7 +153,7 @@
     h1 {
         // float: left;
         width: 380px;
-        margin: 10px 0;
+        margin: 8px 0;
         padding: 0;
         font-size: 1.375em;
         font-weight: 500;
@@ -173,13 +173,13 @@
             span {
                 color: #000;
                 position: absolute;
-                top: 35px;
-                left: 65px;
+                top: 40px;
+                left: 70px;
             }
         }
         img {
             display: block;
-            width: 190px;
+            width: 220px;
         }
         @include screen('tablet') {
             width: 100%;
