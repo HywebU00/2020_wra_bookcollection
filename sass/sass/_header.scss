@@ -179,7 +179,7 @@
         }
         img {
             display: block;
-            width: 220px;
+            width: 216px;
         }
         @include screen('tablet') {
             width: 100%;
@@ -188,39 +188,30 @@
             font-size: 1.188em;
             a {
                 span {
-                    top: 32px;
-                    left: 70px;
+                    top: 35px;
+                    left: 81px;
                 }
             }
             img {
-                transform: scale(.8);
+                transform: scale(.70);
             }
         }
         @include screen('mobile') {
             font-size: 1.125em;
             a {
                 span {
-                    top: 32px;
-                    left: 60px;
+                    top: 35px;
+                    left: 83px;
                 }
             }
             img {
-                margin-left: -10px;
+                // margin-left: -10px;
             }
         }
         @media(max-width: 400px) {
             font-size: .938em;
-            a {
-                span {
-                    top: 32px;
-                    left: 50px;
-                }
-            }
-            img {
-                transform: scale(.65);
-                margin-left: -25px;
-                margin-top: -5px;
-            }
+            
+            
         }
     }
     .header_rightdata {
