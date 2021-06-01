@@ -520,7 +520,7 @@
     }
     p {
         padding: 0;
-        margin: 0 0px 15px;
+        margin: 0 0 15px;
         text-align: center;
         clear: both;
         color: #333;
@@ -556,7 +556,21 @@
         padding: 3px 5px;
         text-align: center;
     }
+
+
+    // 2021強化案 ////////////////////
+    h3{            font-size: 1em;
+        margin: 0 0 5px;
+        padding: 0; text-align: left;
 }
+    .range{
+        display: flex; align-items: center; justify-content: space-between;
+        input[type="tel"], input[type="text"]{ flex: 1 1 40%;padding: 6px 3px; font-weight: normal;}
+        span{ white-space: nowrap;padding:0 3px;}
+    }
+    input[type="button"]{margin: 5px 0 0;}
+}
+
 .ui-widget.ui-widget-content {
     border: none;
     background-color: #e5e5e5;
