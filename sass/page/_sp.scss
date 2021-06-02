@@ -739,6 +739,49 @@
 }
 .special_video {
     .box {}
+
+    .funcIcon {
+      position: absolute;right: 0;bottom: 0;z-index: 4; padding: 8px;
+      transform: translateY(100%);
+      transition: .3s;
+        // outline: 1px solid red;
+        ul,li{list-style: none; margin: 0;padding: 0;}
+        ul{overflow: hidden;}
+        li{ float: left; padding: 3px;
+            &>button {
+              display: block;
+              width: 42px;
+              height: 42px;
+              border-radius: 50%;
+              background-color: #fff;
+              background-repeat: no-repeat;
+              background-size: 24px;
+              background-position: center center;
+              border: none !important;
+              padding: 0;
+              margin: 0;
+              min-width: 0;
+              transition: box-shadow .2s;
+                &:hover{ 
+                    box-shadow: rgb(102, 189, 0) 0 0 0 1px, #fff 0 0 0 3px;
+                    // background-color: rgb(102, 189, 0); 
+                    border: none !important;
+                }
+            }
+
+            &.checked{
+                &>button{
+                    background-color: rgb(102, 189, 0);
+                }
+            }
+
+            &.bookmark>button{ background-image: url(../images/bookexport_icon01.svg);}
+            &.like>button{ background-image: url(../images/book_collect02.png);}
+            &.list>button{ background-image: url(../images/book_collect02.png);}
+        }
+    }
+    a:hover .funcIcon,
+    a:focus .funcIcon{ transform: translateY(0);}
 }
 @include screen('tablet') {
     .special, .special_video {
@@ -988,13 +1031,16 @@
 .historical_record {
     text-align: center;
     margin-bottom: 50px;
+    outline: 1px dashed pink;
     ul {
-        margin: 0;
-        padding: 0;
-        li {
-            display: inline-block;
-            margin: 0 10px;
-            padding: 15px;
+        margin: 0; padding: 0; list-style: none;
+        display: flex; flex-flow: row wrap; justify-content: space-between;
+        li {outline: 1px dashed blue;
+            flex: 1 1 20%;
+            min-width: 210px;
+            // display: inline-block;
+            // margin: 0 10px;
+            padding: 15px 0;
             a {
                 display: block;
                 background-color: $primaryColor;
@@ -1006,12 +1052,12 @@
                 text-align: center;
                 font-size: 1.25em;
                 padding: 20px;
-                transition: .5s;
+                margin: 0 auto;
+                transition: .35s;
                 img {
                     width: 80px;
-                    margin: 10px auto;
+                    margin: 10px auto 15px;
                     display: block;
-                    margin-bottom: 15px;
                 }
                 &:hover {
                     transform: scale(1.1);
@@ -1019,15 +1065,34 @@
                 }
             }
             @include screen('notebook') {
-                margin: 0px;
+                margin: 0;
             }
             @include screen('tablet') {
-                margin: 0px;
+                margin: 0;
                 a {
                     width: 180px;
                     height: 180px;
                     font-size: 1.125em;
                 }
+            }
+
+        }
+// 20210531
+        @media screen and (max-width: 1120px){
+            justify-content: center;
+            li{
+                flex: 0 0 33%;
+            }
+        }
+        @media screen and (max-width: 760px){
+            li{ 
+                min-width: calc(50vw - 30px);
+            }
+        }
+        @media screen and (max-width: 460px){
+            display: block;
+            li{ 
+                min-width: 0;
             }
         }
     }

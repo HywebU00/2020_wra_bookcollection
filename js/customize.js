@@ -363,11 +363,14 @@ $(function() {
         $(this).parents('.list_file').siblings().find('.bibliography').slideUp();
         $(this).parents('.list_file').siblings().find('.collapse_btn').addClass('closebtn');
     })
+
     // 分類篩選
-    $('.category_block .collapse_btn').click(function() {
-        $('.category_block .category').slideToggle()
-        $(this).toggleClass('closebtn');
-    })
+    // 不需要做開合效果 20210531
+    // $('.category_block .collapse_btn').click(function() {
+    //     $('.category_block .category').slideToggle(); 2
+    //     $(this).toggleClass('closebtn');
+    // })
+
     // 燈箱
     $('[data-fancybox]').fancybox({
         toolbar: false,
@@ -466,7 +469,60 @@ $(function() {
             mainleftcontent.height(document.documentElement.clientHeight - 120);
         }
     })
+
+
+
+    /*-----------------------------------*/
+    ///////////////// 20210531 ////////////
+    /*-----------------------------------*/
+    // 從 hyui.js 複製過來的變數
+    var _window = $(window),
+        ww = _window.outerWidth(),
+        wh = _window.height(),
+        _body = $('body'),
+        wwNormal = 1400,
+        wwMedium = 992,
+        wwSmall = 768,
+        wwxs = 576;
+
+    var resizeTimer;
+    _window.resize(function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            ww = _window.outerWidth();
+
+        }, 50);
+    });
+
+
+    var _editable = $('.editable');
+    _editable.each(function(){
+        let _this = $(this);
+        let _textarea = _this.find('textarea');
+        let _editBtn  = _this.find('.editThis');
+        let _submitBtn  = _this.find('.submit');
+
+        _editBtn.click(function(){
+            $(this).hide();
+            _submitBtn.show();
+            _textarea.removeAttr('readonly');
+        })
+        _submitBtn.click(function () {
+            $(this).hide();
+            _editBtn.show();
+            _textarea.attr('readonly', 'readonly').scrollTop(0);
+        })
+
+    })
 });
+
+
+
+
+
+
+
+/////////////////////////////////////////
 $(function() {
     // 增加標籤
     $('.addtagbtn').click(function() {

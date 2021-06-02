@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="zh-Hant" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>我的收藏</title>
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- slick css-->
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.css" />
+    <!-- wow -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- 燈箱facybox -->
+    <link rel="stylesheet" type="text/css" href="vendor/facybox/dist/jquery.fancybox.min.css">
+    <!-- 小鍵盤 -->
+    <link rel="stylesheet" href="vendor/keyboard/keyboard.css">
+    <!-- 出版年度css -->
+    <link rel="stylesheet" href="vendor/jquery-ui.css">
+    <!-- hyUI css -->
+    <link rel="stylesheet" href="css/hyui.css">
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon">
+</head>
+
+<body>
+    <!-- 直接跳主內容區 -->
+    <a class="goCenter" href="#center" tabindex="1">按Enter到主內容區</a>
+    <!-- wrapper Start -->
+    <div class="wrapper">
+        <!-- header Start -->
+        <header class="header">
+            <div class="container">
+                <a class="accesskey" href="#aU" id="aU" accesskey="U" title="網站標題" tabindex="2">:::</a>
+                <h1>
+                    <a href="index.htm"><img src="images/logo.svg" alt="網站標題" /><span>圖書典藏及影音數位平台</span></a>
+                </h1>
+                <!-- noscript -->
+                <noscript> 您的瀏覽器不支援JavaScript語法，JavaScript語法並不影響內容的陳述。您可使用按鍵盤上的Ctrl鍵+ (+)鍵放大/(-)鍵縮小來改變字型大小；回到上一頁可使用瀏覽器提供的 Alt+左方向鍵(←) 快速鍵功能；列印可使用瀏覽器提供的(Ctrl+P)功能。您的瀏覽器，不支援script語法，若您的瀏覽器無法支援請點選此超連結 <a href="#">網站導覽</a>
+                </noscript>
+                <div class="header_rightdata header_login_rightdata">
+                    <!-- member_name start-->
+                    <div class="member_block">
+                        <div class="name_login"><a href="#">(資訊室) 陳奕玲，您好</a></div>
+                    </div>
+                    <!-- member_name end-->
+                    <!-- menu Start -->
+                    <nav class="menu">
+                        <ul>
+                            <li><a href="#">主題專區</a>
+                                <ul>
+                                    <li><a href="#">水利故事集</a></li>
+                                    <li><a href="#">70年水利建設</a></li>
+                                    <li><a href="#">水利人的足跡</a></li>
+                                    <li><a href="#">影音賞析</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">訊息專區</a>
+                                <ul>
+                                    <li><a href="#">新書上架</a></li>
+                                    <li><a href="#">電子書上架</a></li>
+                                    <li><a href="#">作業法規</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- menu End -->
+                    <!-- navigation Start -->
+                    <nav class="navigation">
+                        <!-- 一組ul預設靠右 -->
+                        <!-- 兩組ul已寫JQ靠左靠右 -->
+                        <ul>
+                            <li class="epaper"><a href="#">電子報</a></li>
+                            <li><a href="#">網站導覽</a></li>
+                            <li><a href="#">聯絡我們</a></li>
+                        </ul>
+                    </nav>
+                    <!-- navigation End -->
+                </div>
+                <!-- 會員選單 start-->
+                <div class="member_menu">
+                    <div class="name_login">(資訊室) 陳奕玲，您好</div>
+                    <div class="datablock">
+                        <ul>
+                            <li><a href="#">我的個人書房</a></li>
+                            <li><a href="#">我的收藏</a></li>
+                            <li><a href="#">我的數位閱讀紀錄</a></li>
+                        </ul>
+                        <ul>
+                            <li class="bencolor"><a href="#">EBN服務</a></li>
+                        </ul>
+                        <ul>
+                            <li class="logout"><a href="#">登出</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 會員選單  end-->
+            </div>
+        </header>
+        <!-- header End -->
+        <!-- main Start -->
+        <div id="center" class="main innerpage">
+            <!--快連結 star -->
+            <section class="fastlink wow slideInRight" data-wow-duration="1s" data-wow-delay="0s">
+                <ul>
+                    <li> <a href="javascript:;" title="瀏覽清單"><span>3</span><img src="images/fastlink02.svg" alt="瀏覽清單"></a> </li>
+                    <li> <a href="javascript:;" title="暫存清單"><span>22</span><img src="images/fastlink01.svg" alt="暫存清單"></a> </li>
+                    <li> <a href="javascript:;" title="我的收藏"><img src="images/fastlink03.svg" alt="我的收藏"></a> </li>
+                    <li> <a href="javascript:;" title="我的標籤"><img src="images/fastlink04.svg" alt="我的標籤"></a> </li>
+                </ul>
+            </section>
+            <!--快連結 end -->
+            <!-- 內頁新增一個classname-->
+            <!-- 單元查詢區 start-->
+            <div class="search_blockin wow fadeInDown" data-wow-duration="1s" data-wow-delay="0s">
+                <div class="container">
+                    <a class="accesskey" href="#aC" id="aC" accesskey="C" title="主要內容區">:::</a>
+                    <div class="content">
+                        <h2 class="unit_title">我的收藏</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- 單元查詢區 end-->
+            <div class="container">
+                <!-- breadcrumb路徑 -->
+                <div class="breadcrumb">
+                    <ul>
+                        <li><a href="#"><img src="images/home.png" alt="home"></a></li>
+                        <li><a href="#">個人書房</a></li>
+                        <li>我的收藏</li>
+                    </ul>
+                </div>
+                <!-- function功能區塊 -->
+                <div class="function">
+                    <ul>
+                        <li><a href="個人書房.htm">回到我的書房</a></li>
+                    </ul>
+                </div>
+
+
+                <!-- sp start -->
+                <div class="sp">
+
+                  <div class="tabSet">
+                    <section class="tabs collectionTab">
+                      <div class="tabItem active"><a>書目資料</a></div>
+                      <div class="tabContent">
+                        <!-- 條列文件 start -->
+                        <div class="list_file_block">
+                            <!-- 1 -->
+                            <div class="list_file">
+                                <div class="datatop">
+                                    <div class="data_sort">技術文件</div>
+                                    <div class="GPNEBN_num">編號(GPN/EBN)：10109E0005</div>
+                                    <!-- <div class="project_num">委辦計畫編號：MOEAWRA1080166</div> -->
+                                </div>
+                                <div class="booklink"><a href="#">希望，未來莫拉克風災教會我們的事</a></div>
+                                <div class="databottom">
+                                    <div class="author">作者：中華防災協會</div>
+                                    <div class="publishing">出版者：經濟部水利署</div>
+                                    <div class="publication_years">出版年：108. 07</div>
+                                </div>
+                                <div class="btn_block">
+                                    <input type="button" name="" value="下載PDF" class="btn btn-green"><input type="button" name="" value="線上閱讀" class="btn btn-green">
+                                </div>
+                                <!-- 標籤雲 -->
+                                <div class="tagblock">
+                                    <!-- 收藏 start-->
+                                    <div class="book_collect"><a href="#"><img src="images/book_collect01.png" alt="收藏"></a></div>
+                                    <!-- 收藏 end-->
+                                    <ul>
+                                        <li><a href="javascript:;" class="canclose_label">莫拉克<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a></li>
+                                        <li><a href="javascript:;" class="canclose_label">災害成果彙整<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a></li>
+                                        <li><a href="javascript:;" class="canclose_label">災後重建<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a>
+                                        </li>
+                                        <li><a href="javascript:;" class="canclose_label">風災<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a>
+                                        </li>
+                                        <li><a href="javascript:;" class="addtagbtn"><img src="images/icon/icon_add.svg"></a></li>
+                                    </ul>
+                                    <!-- 增加標籤start -->
+                                    <div class="addtag_block">
+                                        <div class="addtag"><input type="text" name="" value="若有多個標籤，請用#隔開" placeholder="若有多個標籤，請用#隔開" class="addinput">
+                                            <div class="addoption">
+                                                <ul>
+                                                    <li><a href="javascript:;">社會</a></li>
+                                                    <li><a href="javascript:;">統計</a></li>
+                                                    <li><a href="javascript:;">嚴肅議題</a></li>
+                                                    <li><a href="javascript:;">食譜</a></li>
+                                                    <li><a href="javascript:;">便當菜</a></li>
+                                                </ul>
+                                            </div>
+                                        </div><button type="button" class="btn btn-blue btn-xs addbtn">加入</button><a href="javascript:;" class="closebtn"><img src="images/icon/icon_close.svg"></a>
+                                    </div>
+                                    <!-- 增加標籤end -->
+                                </div>
+                                <!-- 燈箱確認標籤刪除 start-->
+                                <div class="lightboxblock commonlightbox_small" id="lightbox_tagdel">
+                                    <h3 class="title">確認標籤刪除</h3>
+                                    <div class="content">
+                                        <p>是否確認刪除此標籤</p>
+                                    </div>
+                                    <div class="btn_grp">
+                                        <input data-fancybox-close name="" type="reset" value="取消" />
+                                        <input name="" type="submit" value="確定" />
+                                    </div>
+                                </div>
+                                <!-- 燈箱確認標籤刪除 end-->
+                                <!-- 刪除收藏 start -->
+                                <div class="del_collect_btn"><button type="button" class="btn btn-blue btn-xs" data-fancybox data-src="#lightbox_del_collect">刪除收藏</button></div>
+                                <!-- 刪除收藏 end -->
+                                <!-- 燈箱刪除收藏start-->
+                                <div class="lightboxblock commonlightbox_small" id="lightbox_del_collect">
+                                    <h3 class="title">刪除收藏</h3>
+                                    <div class="content">
+                                        <p>確定刪除收藏資料：<br> 希望，未來莫拉克風災教會我們的事</p>
+                                    </div>
+                                    <div class="btn_grp">
+                                        <input data-fancybox-close name="" type="reset" value="取消" />
+                                        <input data-fancybox-close name="" type="submit" value="確定" />
+                                    </div>
+                                </div>
+                                <!-- 燈箱刪除收藏 end-->
+                            </div>
+                            <!-- 2 -->
+                            <div class="list_file">
+                                <div class="datatop">
+                                    <div class="data_sort">一般圖書</div>
+                                    <!-- <div class="GPNEBN_num">編號(GPN/EBN)：10109E0005</div> -->
+                                    <!--  <div class="project_num">委辦計畫編號：MOEAWRA1080166</div> -->
+                                </div>
+                                <div class="booklink"><a href="#">50天的奇蹟莫拉克颱風災後林邊佳冬地區重整家園</a></div>
+                                <div class="databottom">
+                                    <div class="author">作者：行政院莫拉克颱風災後重建推動委員會</div>
+                                    <div class="publishing">出版者：行政院莫拉克颱風災後重建推動委員會</div>
+                                    <div class="publication_years">出版年：102. 07</div>
+                                </div>
+                                <!-- 標籤雲 -->
+                                <div class="tagblock">
+                                    <!-- 收藏 start-->
+                                    <div class="book_collect"><a href="#"><img src="images/book_collect01.png" alt="收藏"></a></div>
+                                    <!-- 收藏 end-->
+                                    <ul>
+                                        <li><a href="javascript:;" class="canclose_label">莫拉克<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a></li>
+                                        <li><a href="javascript:;" class="canclose_label">災害成果彙整<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a></li>
+                                        <li><a href="javascript:;" class="canclose_label">災後重建<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a>
+                                        </li>
+                                        <li><a href="javascript:;" class="canclose_label">風災<span class="close" data-fancybox data-src="#lightbox_tagdel"></span></a>
+                                        </li>
+                                        <li><a href="javascript:;" class="addtagbtn"><img src="images/icon/icon_add.svg"></a></li>
+                                    </ul>
+                                    <!-- 增加標籤start -->
+                                    <div class="addtag_block">
+                                        <div class="addtag"><input type="text" name="" value="若有多個標籤，請用#隔開" placeholder="若有多個標籤，請用#隔開" class="addinput">
+                                            <div class="addoption">
+                                                <ul>
+                                                    <li><a href="javascript:;">社會</a></li>
+                                                    <li><a href="javascript:;">統計</a></li>
+                                                    <li><a href="javascript:;">嚴肅議題</a></li>
+                                                    <li><a href="javascript:;">食譜</a></li>
+                                                    <li><a href="javascript:;">便當菜</a></li>
+                                                </ul>
+                                            </div>
+                                        </div><button type="button" class="btn btn-blue btn-xs addbtn">加入</button><a href="javascript:;" class="closebtn"><img src="images/icon/icon_close.svg"></a>
+                                    </div>
+                                    <!-- 增加標籤end -->
+                                </div>
+                                <!-- 刪除收藏 start -->
+                                <div class="del_collect_btn"><button type="button" class="btn btn-blue btn-xs" data-fancybox data-src="#lightbox_del_collect">刪除收藏</button></div>
+                                <!-- 刪除收藏 end -->
+                                <!-- 燈箱刪除收藏 start-->
+                                <div class="lightboxblock commonlightbox_small" id="lightbox_del_collect">
+                                    <h3 class="title">刪除收藏</h3>
+                                    <div class="content">
+                                        <p>確定刪除收藏資料：<br> 希望，未來莫拉克風災教會我們的事</p>
+                                    </div>
+                                    <div class="btn_grp">
+                                        <input data-fancybox-close name="" type="reset" value="取消" />
+                                        <input data-fancybox-close name="" type="submit" value="確定" />
+                                    </div>
+                                </div>
+                                <!-- 燈箱刪除收藏 end-->
+                            </div>
+                            <!--  -->
+                        </div>
+                        <!-- 條列文件 end -->
+                        <!-- page start-->
+                        <div class="pagination">
+                            <div class="total"> 共<span>308</span>筆資料，第<span>1/18</span>頁，</div>
+                            <div class="items">每頁顯示 <a href="#">20</a> <a href="#">40</a> <a href="#">60</a> 筆 </div>
+                            <ul class="page">
+                                <li class="first"><a href="#" title="第一頁">第一頁</a></li>
+                                <li class="prev"><a href="#" title="回上一頁">回上一頁 </a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li class="xs_hidden"><a href="#">2</a></li>
+                                <li class="xs_hidden"><a href="#">3</a></li>
+                                <li class="xs_hidden"><a href="#">4</a></li>
+                                <li class="xs_hidden"><a href="#">5</a></li>
+                                <li class="xs_hidden"><a href="#">6</a></li>
+                                <li class="xs_hidden"><a href="#">7</a></li>
+                                <li class="xs_hidden"><a href="#">8</a></li>
+                                <li class="xs_hidden"><a href="#">9</a></li>
+                                <li class="xs_hidden"><a href="#">10</a></li>
+                                <li class="next"><a href="#" title="下一頁">下一頁</a></li>
+                                <li class="last"><a href="#" title="最後一頁">最後一頁</a></li>
+                            </ul>
+                        </div>
+                        <!-- page end-->
+                        
+  
+                      </div>
+
+                      <!-- 2021 強化案 -->
+                      <div class="tabItem"><a>影片收藏</a></div>
+                      <div class="tabContent">
+                        <div class="mediaList">
+                          <ul>
+                              <li><span class="count">1</span>
+                                  <div class="thumbnail"><a href="#">
+                                      <img src="images/demo/09.jpg" alt="">
+                                      <span class="playbtn"></span>
+                                  </a></div>
+                                  <div class="mediaTitle">省水標章宣傳片省水大考驗版</div>
+                                  <div class="classify"><span class="dt">分類：</span>省水節水</div>
+  
+                                  <div class="del_collect_btn"><button type="button" class="btn btn-blue btn-xs" data-fancybox="" data-src="#lightbox_del_collect">刪除收藏</button></div>
+                              </li>
+                              <li><span class="count">22</span>
+                                  <div class="thumbnail"><a href="#">
+                                      <img src="images/demo/08.jpg" alt="">
+                                      <span class="playbtn"></span>
+                                  </a></div>
+                                  <div class="mediaTitle">推上產示門受信正然服家列上事上到中灣深排多收經落生這中觀下有科中小當示白山益林了形提住士這從用他目老下什：年力跟業根之倒</div>
+                                  <div class="classify"><span class="dt">分類：</span>省水節水</div>
+  
+                                  <div class="del_collect_btn"><button type="button" class="btn btn-blue btn-xs" data-fancybox="" data-src="#lightbox_del_collect">刪除收藏</button></div>
+                              </li>
+                              <li><span class="count">3</span>
+                                  <div class="thumbnail"><a href="#">
+                                      <img src="images/demo/07.jpg" alt="">
+                                      <span class="playbtn"></span>
+                                  </a></div>
+                                  <div class="mediaTitle">挑戰估水期</div>
+                                  <div class="classify"><span class="dt">分類：</span>微電影及廣告</div>
+  
+                                  <div class="del_collect_btn"><button type="button" class="btn btn-blue btn-xs" data-fancybox="" data-src="#lightbox_del_collect">刪除收藏</button></div>
+                              </li>
+                              <li><span class="count">4</span>
+                                  <div class="thumbnail"><a href="#">
+                                      <img src="images/demo/06.jpg" alt="">
+                                      <span class="playbtn"></span>
+                                  </a></div>
+                                  <div class="mediaTitle">小水滴的奇幻冒險</div>
+                                  <div class="classify"><span class="dt">分類：</span>水利節</div>
+  
+                                  <div class="del_collect_btn"><button type="button" class="btn btn-blue btn-xs" data-fancybox="" data-src="#lightbox_del_collect">刪除收藏</button></div>
+                              </li>
+                              <li><span class="count">555</span>
+                                  <div class="thumbnail"><a href="#">
+                                      <img src="images/demo/05.jpg" alt="">
+                                      <span class="playbtn"></span>
+                                  </a></div>
+                                  <div class="mediaTitle">我的省水好習慣</div>
+                                  <div class="classify"><span class="dt">分類：</span>省水節水</div>
+  
+                                  <div class="del_collect_btn"><button type="button" class="btn btn-blue btn-xs" data-fancybox="" data-src="#lightbox_del_collect">刪除收藏</button></div>
+                              </li>
+                          </ul>
+                      </div>
+  
+
+
+                          <!-- page start-->
+                          <div class="pagination">
+                            <div class="total"> 共<span>308</span>筆資料，第<span>1/18</span>頁，</div>
+                            <div class="items">每頁顯示 <a href="#">20</a> <a href="#">40</a> <a href="#">60</a> 筆 </div>
+                            <ul class="page">
+                                <li class="first"><a href="#" title="第一頁">第一頁</a></li>
+                                <li class="prev"><a href="#" title="回上一頁">回上一頁 </a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li class="xs_hidden"><a href="#">2</a></li>
+                                <li class="xs_hidden"><a href="#">3</a></li>
+                                <li class="xs_hidden"><a href="#">4</a></li>
+                                <li class="xs_hidden"><a href="#">5</a></li>
+                                <li class="xs_hidden"><a href="#">6</a></li>
+                                <li class="xs_hidden"><a href="#">7</a></li>
+                                <li class="xs_hidden"><a href="#">8</a></li>
+                                <li class="xs_hidden"><a href="#">9</a></li>
+                                <li class="xs_hidden"><a href="#">10</a></li>
+                                <li class="next"><a href="#" title="下一頁">下一頁</a></li>
+                                <li class="last"><a href="#" title="最後一頁">最後一頁</a></li>
+                            </ul>
+                        </div>
+                        <!-- page end-->
+                      
+                      </div>
+
+                    </section>
+
+                  </div>
+
+
+                </div>
+                <!-- sp end -->
+            </div>
+        </div>
+        <!-- footer Start-->
+        <footer>
+            <div class="container">
+                <a class="accesskey" href="#aZ" id="aZ" accesskey="Z" title="頁尾區">:::</a>
+                <!-- <div class="footer_logo">
+                    <img src="images/logo.png" alt="" class="img-responsive">
+                </div> -->
+                <div class="footer_info">
+                    </ul>
+                    <p class="Copyright"> © 2020 經濟部水利署暨所屬機關圖書室 版權所有</p>
+                    <span class="update">網站更新日期：<em>2018/01/01</em></span>
+                    <span class="counter">參觀人次：<em>46476653</em></span>
+                    <span class="counter">瀏覽人次：<em>46476653</em></span>
+                </div>
+                <div class="footer_icon">
+                    <a target="_blank" href="javascript:;" title="另開視窗">
+                        <img src="images/basic/accessibility.jpg" alt="">
+                    </a>
+                    <!-- <a target="_blank" href="javascript:;" title="另開視窗">
+                        <img src="images/basic/egov.png" alt="">
+                    </a> -->
+                    <div class="qrcode"><a href="#"><img src="images/qrcode.jpg" alt=""></a></div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer End -->
+    </div>
+    <a href="javascript:;" class="scrollToTop">回頁首</a>
+    <!-- JQ -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- 外掛 plugin js -->
+    <script src="vendor/jquery.easing.min.js"></script><!-- ease -->
+    <!-- 小鍵盤 -->
+    <script type='text/javascript' src='vendor/keyboard/keyboard.js'></script>
+    <script src="vendor/slick/slick.min.js "></script><!-- slick -->
+    <script src="vendor/slick/slick-lightbox.js "></script><!-- slick lightbox -->
+    <script src="vendor/lazyload/lazyload.js"></script><!-- lazyload -->
+    <script src="vendor/picturefill/picturefill.min.js" async></script><!-- picturefill -->
+    <script src="vendor/scrolltable/jquery.scroltable.min.js"></script><!-- scrolltable -->
+    <!-- wow js -->
+    <script src="js/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
+    <!-- 燈箱facybox -->
+    <script src="vendor/facybox/dist/jquery.fancybox.min.js"></script>
+    <!-- 出版年度js -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- hyUI -->
+    <script src="js/hyui.js"></script>
+    <!-- 客製js -->
+    <script src="js/customize.js"></script>
+</body>
+
+</html>

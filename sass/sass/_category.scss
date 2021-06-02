@@ -1,84 +1,155 @@
 .category_block {
     margin-bottom: 3em;
-}
-.category_title {
-    text-align: center;
-    color: #fff;
-    @include gradient(#0045a5, #00bdf0, horizontal);
-    padding: 10px;
-    margin: 0;
-    position: relative;
+    padding:30px 20px;
+    background-color: #e3e6e5;
 
-    .collapse_btn {
-        position: absolute;
-        width: 2em;
-        height: 1.5em;
-        top: 7px;
-        right: 8px;
-        background-color: #fff;
-        border-radius: 4px;
-        &:before {
-            content: '';
-            border: 1px solid #666;
-            width: 16px;
-            height: 16px;
-            border-bottom-color: transparent;
-            border-left-color: transparent;
-            transform: rotate(-45deg);
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            transition: .5s;
-            z-index: 8;
+    
+    // 20205131
+    .category{ margin-top: 1em;}
+
+    @media screen and (max-width: 550px){
+        padding: 20px 15px;
+        .category{ margin: 5px 0 -5px;
+        
+            .blockHead{position: relative; padding: 15px 5px 5px; margin: 0;
+                cursor: pointer;
+                // &:hover, &:focus{background-color: #666;}
+                &::after{content: ''; position: absolute; right: 8px;top: 15px; width: 12px; height: 12px; border: 2px solid #000; transform: rotate(45deg); border-left: none; border-top: none;}
+            }
+
+            ul{ padding-top: 0; display: block;}
         }
-        &.closebtn {
-            &:before {
-                transform: rotate(135deg);
-                top: 0px;
-                
+    }
+
+
+    .videoSearch{ display: flex;  align-items: center;
+        input[type="text"]{ flex: 1 1 80%;margin:0 5px;
+            padding: 0 3em 0 .5em; height: 2.61em;
+            border: none !important;
+        }
+        input[type="button"], input[type="submit"]{flex: 0 0 auto;
+            width: 2.2em;height: 2.2em; border-radius: 2px;
+            padding: 0; margin: 0; border: none;min-width: 0;
+            overflow: hidden;text-indent: -20em;
+            margin-left: -2.7em; line-height: 1;
+
+            background:$secondaryColor url(../images/search_icon2.svg) no-repeat center center;
+            background-size: 26px;
+
+            &:hover, &:focus{
+                border: none !important;
+                background-color: darken($secondaryColor, 10);
             }
         }
+        input[type="reset"]{ flex: 0 0 auto; width: 4em;
+             background-color: #fff;
+             margin: 0 5px 0 8px;
+            padding: 0 .9em; border: none; min-width: 0;height: 2.2em;
+
+            &:hover{ background-color: $primaryColor;
+                border: none !important;
+                box-shadow: none;
+                transition:'background-color' .2s;
+            }
+            
+        }
     }
+
+
 }
+// .category_title {
+//     text-align: center;
+//     color: #fff;
+//     @include gradient(#0045a5, #00bdf0, horizontal);
+//     padding: 10px;
+//     margin: 0;
+//     position: relative;
+
+//     .collapse_btn {
+//         position: absolute;
+//         width: 2em;
+//         height: 1.5em;
+//         top: 7px;
+//         right: 8px;
+//         background-color: #fff;
+//         border-radius: 4px;
+//         &:before {
+//             content: '';
+//             border: 1px solid #666;
+//             width: 16px;
+//             height: 16px;
+//             border-bottom-color: transparent;
+//             border-left-color: transparent;
+//             transform: rotate(-45deg);
+//             position: absolute;
+//             top: 10px;
+//             right: 10px;
+//             transition: .5s;
+//             z-index: 8;
+//         }
+//         &.closebtn {
+//             &:before {
+//                 transform: rotate(135deg);
+//                 top: 0px;
+                
+//             }
+//         }
+//     }
+// }
 .category {
     @extend %clearfix;
-    text-align: center;
+    // text-align: center;
     margin: 0;
-    padding: 30px 0;
-    background-color: #e5e5e5;
-    h3 {
-        text-align: center;
-        color: #fff;
-        background-color: #666;
-        padding: 10px;
-        margin: 0 0 30px;
+    // 20210531
+    // padding: 30px 0;
+    // background-color: #e5e5e5;
+    // h3 {
+    //     text-align: center;
+    //     color: #fff;
+    //     background-color: #666;
+    //     padding: 10px;
+    //     margin: 0 0 30px;
+    // }
+    .blockHead{
+        display: block; font-weight: bold;
+        margin: 0 5px 3px;
     }
-    ul {
+
+    ul { margin: 0; padding: 0;
         @include li-reset;
         li {
-            margin: 0px 3px 8px 0px;
-            display: inline-block;
+            margin: 3px;
+            float: left;
+            // display: inline-block;
+            text-align: center;
         }
     }
     a {
-        background-color: #fff;
-        border: 1px solid #666;
+        background-color: #a9afab;
+        border-radius: 2px;
+        // border: 1px solid #666;
         padding: .4em 1em;
         display: block;
-        color: #333;
+        color: #fff;
+        transition: .2s;
         @include box-sizing();
         &:hover,
         &:focus {
             color: #FFF;
-            background-color: $secondaryColor;
-            border: 1px solid $secondaryColor;
-            box-shadow: none;
+            // background-color: $secondaryColor;
+            // border: 1px solid $secondaryColor;
+            box-shadow: #888e89 0 0 0 2px;
+            background-color: #888e89;
+            // background: #fff;
         }
         &.active {
             color: #FFF;
+            // background-color: $secondaryColor;
             background-color: $secondaryColor;
-            border: 1px solid $secondaryColor;
-            box-shadow: none;
+            // border: 1px solid $secondaryColor;
+            // box-shadow: none;
+
+            &:hover, &:focus{box-shadow: $secondaryColor 0 0 0 2px;}
         }
         span {
             font-size: .813em;

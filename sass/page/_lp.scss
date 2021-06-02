@@ -118,3 +118,242 @@
         }
     }
 }
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// 2021 強化案  //////////////////////////////////////////////////////////////
+
+// 功能 button 組
+.funcBtnGp{
+    ul, li{margin: 0;padding: 0; list-style: none;}
+    ul{ display: flex; flex-flow: row wrap;}
+    li{ flex: 0 0 auto; margin: 2px;
+        a{display: block; text-decoration: none;
+            padding: 0 .7em;
+            height: 2.2em; line-height: 2.2;
+            background: $secondaryColor; color: #fff;  border-radius: 3px;
+        }
+    }
+}
+
+// 編輯圖示
+button.editThis, button.submit{ padding: 0; margin: 0; min-width: 0; 
+    width: 40px; line-height:40px; height: 40px; 
+    border-radius:50%; border: none !important;
+    transition: .2s;
+    &:hover, &:focus{background-color: $secondaryColor;
+        box-shadow: $secondaryColor 0 0 0 2px;
+    }
+}
+button.editThis{ 
+    background: #eee url(../images/icon/icon_edit.svg)  no-repeat 6px 5px;
+    background-size: 72%;
+}
+button.submit { 
+    background: $secondaryColor url(../images/icon/icon_check.svg)  no-repeat 7px 8px;
+    background-size: 65%;
+}
+
+
+
+
+// 我的播放清單 //////////////////////////////////////////////////////////////
+.mediaList{
+    &>ul{list-style: none; margin: 0; padding: 0;}
+    &>ul>li{margin: 0; padding: 0;
+        position: relative;border: 1px solid #bbb;margin-bottom: 15px;
+        .count{position: absolute; left: 3px;top: 3px; height: 1.8em; line-height: 1.8; padding: 0 .4em; min-width: 1.8em; 
+            background: rgba(0,0,0,.7); color: #fff;
+            border-radius: .9em; z-index: 9; text-align: center;
+        }
+    }
+    .thumbnail{ position: relative;
+        width: 100%; height: calc(60vw - 36px);
+        margin:0 0 10px;background: #000; box-shadow: none;overflow: hidden;a{display: block; width: 100%; height: 100%;}img{display: block; width: 100%; height: 100%; object-fit: cover;}
+
+        .playbtn{ position: absolute;top: 50%;left: 50%; transform: translate(-50%, -50%);}
+
+        a:hover .playbtn,
+        a:focus .playbtn{background-color: rgba(0,0,0,.9); transform: translate(-50%, -50%) scale(1.1);}
+    }
+    .mediaTitle{margin: 20px  10px 10px; font-size: 1.25em; line-height: 1.5;
+    }
+    .classify{ margin:10px;
+        .dt{display: inline-block; color: $color-hr; font-size: .9em;}
+    }
+    .funcBtnGp{margin: 8px;}
+
+
+    @media screen and (min-width: 700px){
+        &>ul>li{clear: both; margin-left: 2.7em; 
+            .count{margin-left: -2.5em; top: 0; left: 0;width: 2em; text-align: right;
+                padding: 0; font-size: 1.15em; line-height: 1; height: auto;
+                background: none; color: $color-word;
+                 border-radius: 0;
+            }
+
+            &::after{content: ''; display: block; clear: both;}
+        }
+        .thumbnail{ 
+            float: left; width: 360px; height: 216px; 
+            margin: 0 15px 0 0;
+        }
+
+        .mediaTitle, .classify{ margin-left: 375px;}
+        .mediaTitle{
+            margin-top: 10px;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .funcBtnGp{
+            margin: 0 0 0 375px;
+            position: absolute;right: 8px; bottom: 10px;
+        }
+    }
+
+
+    // 播放圖示
+    .playbtn {
+        background-color: rgba(0, 0, 0, .6);
+        width: 56px;height: 56px;border-radius: 50%;
+        position: absolute;
+        transition: .2s;
+        &::before {
+            content: '';
+            border-style: solid;
+            border-width: 12px 0 12px 17px;
+            border-color: transparent transparent transparent #fff;
+            position: absolute;
+            top: 50%;left: 50%;
+            margin: -12px auto auto -5px;
+        }
+    }
+
+
+}
+
+
+
+
+
+
+// 播放清單（標題、說明、縮圖等） ////////////////////////////////////////////////////////////////////////////////////
+.aboutThisPlayList{
+    margin: 10px -15px 30px; padding: 15px;
+    border-bottom: 3px solid #ddd;
+   
+    .thumbnail{ position: relative;
+        margin:0 0 10px;
+        width: 100%; height: calc(60vw - 36px);
+        box-shadow: none; overflow: hidden;
+        img{display: block; width: 100%; height: 100%; object-fit: cover;}
+
+    }
+
+    // 有幾部影片
+    .length{ position: absolute; right: 0; bottom: 0; line-height: 1;
+        padding: 4px 12px;
+        background:rgba(0,0,0,.6); color: #fff; 
+        em{display: inline-block; margin-right: .2em; font-weight: bold; font-style: normal;}
+    }
+
+
+
+    // 兩個文字編輯區，標題和說明 ////
+    .pListName, .description{ position: relative;
+        textarea{overflow: hidden; overflow-y: scroll;
+            padding: 5px; margin: 0; 
+            line-height: inherit; resize: none;
+            &:read-only{
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                background: #fff; color: $color-word; 
+                border-color: transparent; cursor: default;
+                &:focus{ border-color: transparent; box-shadow: none;}
+            }
+        }
+        button.submit{ display: none;}
+    }
+
+    // 標題
+    .pListName{
+        padding-right: 52px; min-height: 44px; margin-left: -6px;
+        font-size: 1.4em; line-height: 1.4; font-weight: bold;
+        textarea{ height:3.1em; 
+            &:read-only{
+                -webkit-line-clamp: 2;
+            }
+        }
+        button.editThis, button.submit{position: absolute; right: 2px;top: 2px;}
+    }
+    // 播放清單說明
+    .description{ 
+        margin: 0 auto 0 -6px; padding: 15px 0 0; line-height: 1.6;
+        textarea{ height:5.3em;
+            &:read-only{
+                -webkit-line-clamp: 3;
+            }
+        }
+        &::before{content: attr(data-title)"：";
+            display: inline-block; color: $color-hr;
+            margin-left: 6px; line-height: 1;
+        }
+        button.editThis, button.submit{ position: absolute; right: 2px;top: 2px;}
+    }
+    .time{ margin-top: 1em;
+        color: $color-hr; font-size: .9em;
+        time{ color: $color-word;}
+    }
+
+
+    @media screen and (min-width: 700px){
+        margin: 1px auto 30px; padding:20px 0 30px;
+        
+        .thumbnail{ float: left; 
+            margin: 0 10px 0 0;
+            width: 360px; height: 216px; 
+        }
+        .pListName{margin: -6px 0 0 auto; overflow: hidden;}
+        .description{margin: 0 0 0 auto; overflow: hidden;}
+        .pListName, .description{
+            textarea{padding:5px 3px; margin:2px;}
+        }
+        .description textarea { width:calc(100% - 4px);}
+        .time{ margin-left: 375px;}
+
+        .funcBtnGp{overflow: hidden;
+            ul{float: right;}
+        }
+
+    }
+}
+
+
+// 我的收藏 //////////////////////////////////////////
+// 加入頁籤效果和「影片收藏」頁籤
+.collectionTab{position: relative;
+    .tabItem{font-size: 1.125em; padding-bottom: 10px;position: relative; 
+        a{ padding: 0; height: 3em; ; line-height: 3;
+            font-weight: normal;
+            &::before{content: ''; display: none;
+                border-style: solid;
+                border-width: 10px 10px 0;
+                border-color:$primaryColor transparent transparent;
+                position: absolute; bottom: 0; left: 50%; margin-left: -10px;
+            }
+
+            &:hover{ background-color: #666;}
+        }
+
+        &.active{
+            a{
+                &:hover{background: $primaryColor;}
+                &::before{ display: block;}
+            }
+        } 
+    }
+}
