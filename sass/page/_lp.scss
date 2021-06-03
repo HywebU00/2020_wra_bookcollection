@@ -122,6 +122,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // 2021 強化案  //////////////////////////////////////////////////////////////
+$lightGray: #dfdfdf;
 
 // 功能 button 組
 .funcBtnGp{
@@ -129,9 +130,13 @@
     ul{ display: flex; flex-flow: row wrap;}
     li{ flex: 0 0 auto; margin: 2px;
         a{display: block; text-decoration: none;
-            padding: 0 .7em;
+            padding: 0 .8em;
             height: 2.2em; line-height: 2.2;
             background: $secondaryColor; color: #fff;  border-radius: 3px;
+
+            &:hover{
+               background-color: darken($secondaryColor, 5);
+            }
         }
     }
 }
@@ -154,9 +159,10 @@ button.submit {
     background-size: 65%;
 }
 
+
 .mediaList, .playList{
-    // 播放圖示
-    .playbtn {
+    
+    .playbtn {// 播放圖示
         background-color: rgba(0, 0, 0, .6);
         width: 56px;height: 56px;border-radius: 50%;
         position: absolute;
@@ -190,60 +196,80 @@ button.submit {
 // 我的播放清單 //////////////////////////////////////////////////////////////
 .mediaList{
     &>ul{list-style: none; margin: 0; padding: 0;}
-    &>ul>li{margin: 0; padding: 0;
-        position: relative;border: 1px solid #bbb;margin-bottom: 15px;
-        .count{position: absolute; left: 3px;top: 3px; height: 1.8em; line-height: 1.8; padding: 0 .4em; min-width: 1.8em; 
-            background: rgba(0,0,0,.7); color: #fff;
-            border-radius: .9em; z-index: 9; text-align: center;
+    &>ul>li{position: relative;margin: 0 0 15px; padding: 0 0 10px;
+        box-shadow: #ccc 0 0 0 1px;
+        .count{
+            position: absolute; left: 3px;top: 3px; 
+            height: 1.8em; line-height: 1.8; padding: 0 .4em; min-width: 1.8em; 
+            background: rgba(0,0,0,.7); color: #fff;border-radius: 4px;
+            text-align: center; z-index: 9;
         }
+        button.btn{margin: 8px 10px 0; float: right;}
+        &::after{content: ''; display: block; clear: both;}
+
+        input[type="checkbox"]{position: absolute; left: 6px;top: 6px; z-index: 9; box-shadow: rgba(255,255,255,.5) 0 0 0 4px;}
     }
     .thumbnail{ position: relative;
         width: 100%; height: calc(60vw - 36px);
         margin:0 0 10px;background: #000; box-shadow: none;overflow: hidden;a{display: block; width: 100%; height: 100%;}img{display: block; width: 100%; height: 100%; object-fit: cover;}
-
-
     }
-    .mediaTitle{margin: 20px  10px 10px; font-size: 1.25em; line-height: 1.5;
+    .mediaTitle{
+        margin:10px; padding-bottom: 8px; 
+        font-size: 1.25em; line-height: 1.5;
+        border-bottom: 1px solid $lightGray;
     }
-    .classify{ margin:10px;
-        .dt{display: inline-block; color: $color-hr; font-size: .9em;}
-    }
-    .funcBtnGp{margin: 8px;}
-
-
-    @media screen and (min-width: 700px){
-        &>ul>li{clear: both; margin-left: 2.7em; 
-            .count{margin-left: -2.5em; top: 0; left: 0;width: 2em; text-align: right;
-                padding: 0; font-size: 1.15em; line-height: 1; height: auto;
-                background: none; color: $color-word;
-                 border-radius: 0;
-            }
-
-            &::after{content: ''; display: block; clear: both;}
+    .basicInfo{
+        margin: 0 10px;
+        line-height: 1.4;
+        dt{display: inline-block; margin: 0; 
+            color: $color-hr; font-size: .9em;
+            &::after{content: '：';}
         }
+        dd{display: inline; margin: 0;word-break: break-word;}
+        &>div{margin: 0;
+            &+div{margin-top: .5em;}
+
+        }
+
+    }
+
+
+    @media screen and (min-width: $screen-sm){
+        &>ul>li{ clear: both; padding:5px 5px 5px 2.7em; position: relative;
+            .count{
+                top: 5px; left: 0; padding: 0;height: auto; min-width: 2em;
+                font-size: 1.15em; line-height: 1; text-align: right;
+                background: none; color: $color-word;
+            }
+            button.btn{
+                position: absolute;right: 10px; bottom: 10px;
+                margin: 0;float: none;
+            }
+            input[type="checkbox"]{ left: 0; transform: translateX(50%);}
+
+            padding-bottom: 55px; // 預留高度給絕對定位的 button.btn
+
+        }
+
         .thumbnail{ 
             float: left; width: 360px; height: 216px; 
-            margin: 0 15px 0 0;
+            margin: 0 15px -50px 0; // -50px 修正減回預留的高度
         }
 
-        .mediaTitle, .classify{ margin-left: 375px;}
+        .mediaTitle, .basicInfo{ margin-left: 375px;}
         .mediaTitle{
-            margin-top: 10px;
-            margin-bottom: 15px;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+            margin-top: 5px; margin-bottom: 15px;
+            // display: -webkit-box;
+            // -webkit-line-clamp: 3;
+            // -webkit-box-orient: vertical;
+            // overflow: hidden;
         }
-        .funcBtnGp{
-            margin: 0 0 0 375px;
-            position: absolute;right: 8px; bottom: 10px;
-        }
+
     }
+}
 
-
-
-
+.tabContent .mediaList {
+    margin-left: -20px; margin-right: -20px;
 }
 
 
@@ -251,25 +277,25 @@ button.submit {
 
 
 
-// 播放清單（標題、說明、縮圖等） ////////////////////////////////////////////////////////////////////////////////////
+// 播放清單資訊（標題、說明、縮圖等） ////////////////////////////////////////////////////////////////////////////////////
 .aboutThisPlayList{
-    margin: 10px -15px 30px; padding: 15px;
-    border-bottom: 3px solid #ddd;
+    // margin: 10px -15px 30px; padding: 15px;
+    margin: 0 0 30px; padding: 0 0 15px;
+    border-bottom: 3px solid $lightGray;
    
-    .thumbnail{ position: relative;
-        margin:0 0 10px;
+    .thumbnail{ 
+        position: relative;margin:0 0 10px;
         width: 100%; height: calc(60vw - 36px);
         box-shadow: none; overflow: hidden;
         img{display: block; width: 100%; height: 100%; object-fit: cover;}
     }
 
     // 有幾部影片
-    .length{ position: absolute; right: 0; bottom: 0; line-height: 1;
-        padding: 4px 12px;
+    .length{ position: absolute; right: 0; bottom: 0; 
+        line-height: 1;padding: 4px 12px;
         background:rgba(0,0,0,.6); color: #fff; 
         em{display: inline-block; margin-right: .2em; font-weight: bold; font-style: normal;}
     }
-
 
 
     // 兩個文字編輯區，標題和說明 ////
@@ -291,9 +317,9 @@ button.submit {
 
     // 標題
     .pListName{
-        padding-right: 52px; min-height: 44px; margin-left: -6px;
+        padding-right: 52px; min-height: 44px;
         font-size: 1.4em; line-height: 1.4; font-weight: bold;
-        textarea{ height:3.1em; 
+        textarea{ height:3.2em; margin-left: -6px;
             &:read-only{
                 -webkit-line-clamp: 2;
             }
@@ -302,13 +328,14 @@ button.submit {
     }
     // 播放清單說明
     .description{ 
-        margin: 0 auto 0 -6px; padding: 15px 0 0; line-height: 1.6;
-        textarea{ height:5.3em;
+        margin: 0 auto; padding: 15px 0 0; line-height: 1.6;
+        textarea{ height:5.3em; margin-left: -6px;
             &:read-only{
                 -webkit-line-clamp: 3;
             }
         }
-        &::before{content: attr(data-title)"：";
+        &::before{
+            content: attr(data-title)"：";
             display: block; margin: 0 0 .5em;
             color: $color-hr; line-height: 1;
         }
@@ -336,19 +363,16 @@ button.submit {
 
 
     @media screen and (min-width: 700px){
-        margin: 1px auto 30px; padding:20px 0 30px;
+        margin: 1px auto 30px; padding:10px 0 30px;
         
         .thumbnail{ float: left; 
-            margin: 0 10px 0 0;
+            margin: 0 15px 0 0;
             width: 360px; height: 216px; 
         }
-        .pListName{margin: -6px 0 0 auto; overflow: hidden;}
-        .description{margin: 0 0 0 auto; overflow: hidden;}
-        .pListName, .description{
-            textarea{padding:5px 3px; margin:2px;}
-        }
-        .description textarea { width:calc(100% - 4px);}
-        .tail{ margin-left: 370px;}
+        .pListName{margin: -4px 0 0 375px;}
+        .description{margin: 0 0 0 375px; }
+        .description textarea { width: 100%;}
+        .tail{ margin-left: 375px;}
 
     }
 }
@@ -418,3 +442,31 @@ button.submit {
     .playList{ margin: -10px -20px 0;}
 
 }
+
+
+.iframe_v{ margin: 20px -30px;
+    iframe{ display: block;
+        width: 100%; height: 60vw;
+    }
+    @media screen and (min-width: $screen-sm){
+        margin: 20px auto;
+        iframe{
+            height: calc(60vw - 36px);
+            outline: 1px solid gray;
+        }
+    }
+    @media screen and (min-width: $screen-md){
+        iframe{max-height: 684px;}
+    }
+}
+
+// // 格線系統
+// $grid-columns: 12 !default; //格線欄位數
+// $grid-gutter-width: 30px !default; //左右padding
+// $container-max: 1200px !default; //container最大寬
+
+// //mediaquery
+// $screen-lg: 1400px !default; //電腦
+// $screen-md: 992px !default; //平板
+// $screen-sm: 768px !default; //手機
+// $screen-xs: 576px !default; //極小尺寸
