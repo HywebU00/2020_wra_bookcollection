@@ -370,6 +370,30 @@ $(function() {
     //     $('.category_block .category').slideToggle(); 2
     //     $(this).toggleClass('closebtn');
     // })
+    // 行動版時「分類篩選」做開合效果 20210607
+    var _filterByCate = $('.category_block').find('.category');
+    _filterByCate.each(function(){
+        _this = $(this);
+        _this.find('.blockHead').append('<button class="ctrl" type="button"></button>');
+        let _slideCtrl = _this.find('.ctrl');
+        let _slideBlock = _this.find('ul');
+        _slideCtrl.click( function(){
+            if(_slideBlock.is(':visible')){
+                _slideBlock.slideUp();
+                $(this).removeClass('toClose')
+            } else {
+                _slideBlock.slideDown();
+                $(this).addClass('toClose');
+            }
+        });
+
+        let _cateItem = _slideBlock.find('li');
+        _slideCtrl.text(_cateItem.filter('.active').find('a').text());
+        _cateItem.find('a').click(function(){
+            _slideCtrl.text($(this).text());
+            $(this).parent().addClass('active').siblings().removeClass('active');
+        })
+    })
 
     // 燈箱
     $('[data-fancybox]').fancybox({
@@ -490,11 +514,16 @@ $(function() {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function() {
             ww = _window.outerWidth();
-
-        }, 50);
+            if (ww >= wwSmall) {
+                _filterByCate.find('ul').removeAttr('style');
+                _filterByCate.find('.ctrl').removeClass('toClose');
+            }
+        }, 150);
     });
 
-
+    //////////////////////////////////////////////////////////////////
+    // 20210531 新增 /////////////////////////////////////////////////
+    // 2021 編輯播放清單名稱和說明文字 ///////////////////////////////
     var _editable = $('.editable');
     _editable.each(function(){
         let _this = $(this);
@@ -514,6 +543,40 @@ $(function() {
         })
 
     })
+
+
+    // 2021 通用開合效果 ///////////////////////////////
+    var _toggleCtrl = $('.toggleCtrl');
+    var _toggleArea = $('.toggleArea');
+    var slideSpeed = 500;
+    _toggleCtrl.each(function(){
+        let _this = $(this);
+        let _target = _toggleArea.filter(_this.attr('data-targetId'));
+
+        _this.click(function(){
+            if ( _target.is(':visible') ){
+                _target.stop(true, false).slideUp(slideSpeed);
+                _this.removeClass('toClose');
+            } else {
+                _target.stop(true, false).slideDown(slideSpeed);
+                _this.addClass('toClose');
+            }
+        })
+
+        // 針對有「送出、取消」等 button 的 slide
+        if ( _target.find('.btn_grp').length > 0) {
+            let _otherToggleCtrl = _toggleArea.find('.btn_grp').find('input[data-toggleClose]');
+            _otherToggleCtrl.click(function(){
+                _target.slideUp(slideSpeed, function(){
+                    _this.removeClass('toClose');
+                });
+            })
+        }
+
+
+    })
+
+
 });
 
 

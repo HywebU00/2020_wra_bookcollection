@@ -738,13 +738,11 @@
     }
 }
 .special_video {
-    .box {}
 
-    .funcIcon {
+    .funcIcons {
       position: absolute;right: 0;bottom: 0;z-index: 4; padding: 8px;
       transform: translateY(100%);
       transition: .3s;
-        // outline: 1px solid red;
         ul,li{list-style: none; margin: 0;padding: 0;}
         ul{overflow: hidden;}
         li{ float: left; padding: 3px;
@@ -753,35 +751,39 @@
               width: 42px;
               height: 42px;
               border-radius: 50%;
-              background-color: #fff;
-              background-repeat: no-repeat;
-              background-size: 24px;
-              background-position: center center;
+              background:#fff url(../images/funcIcon.svg) no-repeat 1px 1px;
+              background-size: 90px;
               border: none !important;
               padding: 0;
               margin: 0;
               min-width: 0;
-              transition: box-shadow .2s;
+              transition: box-shadow .25s;
                 &:hover{ 
-                    box-shadow: rgb(102, 189, 0) 0 0 0 1px, #fff 0 0 0 3px;
-                    // background-color: rgb(102, 189, 0); 
+                    box-shadow: $secondaryColor 0 0 0 3px;
                     border: none !important;
                 }
             }
 
-            &.checked{
+            &.active{
                 &>button{
-                    background-color: rgb(102, 189, 0);
+                    background-color: $secondaryColor;
+                    &:hover{ 
+                        box-shadow: #fff 0 0 0 3px;
+                    }    
                 }
             }
 
-            &.bookmark>button{ background-image: url(../images/bookexport_icon01.svg);}
-            &.like>button{ background-image: url(../images/book_collect02.png);}
-            &.list>button{ background-image: url(../images/book_collect02.png);}
+            &.rList>button{ background-position: 1px 1px;}
+            &.like>button{background-position: 1px -49px;}
+            &.pList>button{ background-position: 1px -99px;}
+            &.rList.active>button{ background-position: -49px 1px;}
+            &.like.active>button{background-position: -49px -49px;}
+            &.pList.active>button{ background-position: -49px -99px;}
+
         }
     }
-    a:hover .funcIcon,
-    a:focus .funcIcon{ transform: translateY(0);}
+    a:hover .funcIcons,
+    a:focus .funcIcons{ transform: translateY(0);}
 }
 @include screen('tablet') {
     .special, .special_video {
