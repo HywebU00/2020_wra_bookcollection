@@ -207,7 +207,7 @@ button.submit {
         button.btn{margin: 8px 10px 0; float: right;}
         &::after{content: ''; display: block; clear: both;}
 
-        input[type="checkbox"]{position: absolute; left: 6px;top: 6px; z-index: 9; box-shadow: rgba(255,255,255,.5) 0 0 0 4px;}
+        input[type="checkbox"]{position: absolute; left: 6px;top: 6px; z-index: 9; box-shadow: rgba(255,255,255,.5) 0 0 0 3px;}
     }
     .thumbnail{ position: relative;
         width: 100%; height: calc(60vw - 36px);
@@ -235,17 +235,17 @@ button.submit {
 
 
     @media screen and (min-width: $screen-sm){
-        &>ul>li{ clear: both; padding:5px 5px 5px 2.7em; position: relative;
+        &>ul>li{ clear: both; padding:5px; margin-left: 3em; position: relative;
             .count{
-                top: 5px; left: 0; padding: 0;height: auto; min-width: 2em;
+                top: 5px; left: -2.5em; padding: 0;height: auto; min-width: 2em;
                 font-size: 1.15em; line-height: 1; text-align: right;
-                background: none; color: $color-word;
+                background: none; color: $color-word; font-weight: bold;
             }
             button.btn{
                 position: absolute;right: 10px; bottom: 10px;
                 margin: 0;float: none;
             }
-            input[type="checkbox"]{ left: 0; transform: translateX(50%);}
+            input[type="checkbox"]{ left: -1.8em; }
 
             padding-bottom: 55px; // 預留高度給絕對定位的 button.btn
 
@@ -417,6 +417,28 @@ button.submit {
         .description{margin-left: 0;}
 
         & + .aboutThisPlayList{margin-top: 30px;}
+    }
+    li{
+        .btn_block{
+            text-align: right;
+            button{position: relative; padding-left: 36px; padding-right: .6em;
+                &::before{content: '';position: absolute; left: 3px; top: 3px; bottom: 3px;
+                    width: 30px;border-radius: 3px;
+                    background-color: rgba(255,255,255,.5);
+                    background-repeat: no-repeat;
+                    background-size: 70%;
+                    background-position: center center;
+                }
+                &.playAll::after{ position: absolute; left: 13px; top: 12px;
+                    content: ''; width: 0;height: 0; 
+                    border-width: 7px 0 7px 10px; border-style: solid;
+                    border-color: transparent transparent transparent #000;
+                }
+                &.edit::before{ background-image: url(../images/icon/icon_edit.svg);}
+                &.share::before{ background-image: url(../images/basic/icon_share.png);}
+                &.delete::before{ background-image: url(../images/icon/icon_trash.svg);}
+            }
+        }
     }
 
 

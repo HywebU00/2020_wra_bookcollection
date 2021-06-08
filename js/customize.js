@@ -636,7 +636,7 @@ $(function() {
     if (containerW <= 1200) {
         $('.tag_cloud').addClass('line3');
     } else {
-        $('.tag_cloud').reomveClass('line3');
+        $('.tag_cloud').removeClass('line3');
     }
     // $(window).on('load resize', function () {
     // });

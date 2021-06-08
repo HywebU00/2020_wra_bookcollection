@@ -1029,76 +1029,67 @@
         }
     }
 }
+
+
+
+
 // 歷史紀錄
 .historical_record {
-    text-align: center;
-    margin-bottom: 50px;
-    outline: 1px dashed pink;
-    ul {
-        margin: 0; padding: 0; list-style: none;
-        display: flex; flex-flow: row wrap; justify-content: space-between;
-        li {outline: 1px dashed blue;
-            flex: 1 1 20%;
-            min-width: 210px;
-            // display: inline-block;
-            // margin: 0 10px;
-            padding: 15px 0;
-            a {
-                display: block;
-                background-color: $primaryColor;
-                color: #fff;
-                width: 190px;
-                height: 190px;
-                position: relative;
+    text-align: center; margin-bottom: 50px;
+    ul {display: flex; flex-flow: row wrap; justify-content: center;
+        margin: 0 -10px; padding: 0; list-style: none; line-height: 1.3;
+        li { flex: 0 0 50%;
+            padding:3vw 0; margin: 0; 
+            font-size: 1.25em;
+
+            a { display: block; position: relative;
+                // width: 190px; height: 190px;
+                padding: 20px; margin: 0 auto;
+                width: 40vw; height: 40vw;
+                max-width: 210px; max-height: 210px;
                 border-radius: 50%;
-                text-align: center;
-                font-size: 1.25em;
-                padding: 20px;
-                margin: 0 auto;
+                background-color: $primaryColor; color: #fff;
                 transition: .35s;
-                img {
-                    width: 80px;
-                    margin: 10px auto 15px;
-                    display: block;
+                img { display: block; position: relative; top: 50%;
+                    margin: 0 auto 20%;
+                    width: 55%; height: 55%; object-fit: contain;
+                    transform: translateY(-72%);
                 }
                 &:hover {
                     transform: scale(1.1);
                     background-color: darken($primaryColor, 10);
                 }
             }
-            @include screen('notebook') {
-                margin: 0;
-            }
-            @include screen('tablet') {
-                margin: 0;
-                a {
-                    width: 180px;
-                    height: 180px;
-                    font-size: 1.125em;
-                }
-            }
+        }
+    }
+    @media screen and (max-width: 360px){
+        ul li {flex-basis: 100%;
+            a{width: 70vw; height: 70vw;}
+        }
+    }
 
-        }
-// 20210531
-        @media screen and (max-width: 1120px){
-            justify-content: center;
-            li{
-                flex: 0 0 33%;
+    @media screen and (min-width: $screen-xs + 50px){
+        ul{ 
+            li{flex-basis: 33%; padding:2vw 0;
+                a{width: 28vw; height: 28vw;}
             }
         }
-        @media screen and (max-width: 760px){
-            li{ 
-                min-width: calc(50vw - 30px);
-            }
-        }
-        @media screen and (max-width: 460px){
-            display: block;
-            li{ 
-                min-width: 0;
+    }
+
+    @media screen and (min-width: $screen-md){
+        ul{
+            li{flex-basis:20%; padding:20px 0;font-size: 1.125em;
+                a{width: 17vw; height: 17vw;}
             }
         }
     }
 }
+
+
+
+
+
+
 // 我的書房
 .mystudy_block {
     display: flex;
