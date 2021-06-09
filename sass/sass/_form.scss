@@ -39,6 +39,7 @@ select::-ms-expand {
     .form_title {
         float: left;
         width: $form_title_width;
+        // clear: left;
         @include gutter();
         padding-top: 5px;
         @include screen('mobile') {
@@ -203,7 +204,17 @@ select::-ms-expand {
                 }
             }
         }
+
+        // 20210609
+        input[type="text"], input[type="email"], textarea{width: 100%;}
+        &::after{content: ''; display: block; clear: both; height: 5px;}
+
     }
+
+    // 20210609
+    .btn_grp{ clear: both; }
+
+
 }
 //---------------------------------------------form setting--------//
 form {
