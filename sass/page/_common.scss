@@ -7,10 +7,11 @@
     overflow: hidden;
     background-color: rgba(255, 255, 255, .7);
     border-radius: 4px;
+    box-shadow:#ccc 0 0 0 1px inset;
     @include box-sizing();
     @include screen('mobile') {
         padding: 20px;
-         background-color: rgba(204, 204, 204, .5);
+        background-color: rgba(204, 204, 204, .5);
        
     }
     &.historical_record_search{
@@ -22,38 +23,33 @@
         background-color: rgba(0, 0, 0, .5);
     }
     .select_left {
-        float: left;
-        width: 27%;
-        margin: 0;
+        float: left;width: 30%;margin: 0;
         select {
+            height: 40px;
+            line-height: 2.2em;
+            font-size: 1em;
             background-color: #fff;
             border-radius: 4px 0 0 4px;
-            border: none;
-            font-size: 1em;
-            height: 40px;
+            border: 1px solid #ccc ;
             box-shadow: none;
-            line-height: 2.2em;
-            border: none !important;
-            border: 1px solid #ccc !important;
             &:focus {
-                box-shadow: 0px 0px 0px 3px #fdb300 inset;
+                box-shadow: 0 0 0 2px #fdb300 inset;
+                border-color: #fdb300;
             }
         }
     }
     .form_search {
-        float: left;
-        background-color: #fff;
-        width: 73%;
-        margin: 0 auto 5px;
+        float: left; display: flex; justify-content: space-between;
+        width: 70%; height: 40px;
+        margin: 0 auto 5px; padding: 0;
         text-align: left;
-        padding: 0px;
-        overflow: hidden;
-        height: 40px;
-        box-shadow: none;
-        border: 1px solid #ccc !important;
-        border-left: none !important;
+        // overflow: hidden;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-left: none;
         border-radius: 0 4px 4px 0;
-        display: flex;
+        box-shadow: none;
+        
         input[type="text"] {
             border-radius: 0;
             border: none;
@@ -64,19 +60,21 @@
             margin: 0;
             height: 39px;
             color: #333;
+            background: transparent;
             &.nobtn {
                 width: 89%;
             }
             &:focus {
-                box-shadow: 0px 0px 0px 3px #fdb300 inset;
+                box-shadow: 0 0 0 3px #fdb300 inset;
+                border-color: transparent;
             }
         }
         input {
             padding: 15px;
         }
         .keyboardInputInitiator {
-            margin: 12px 10px;
-            vertical-align: middle;
+            margin: 12px 4px 0;
+            vertical-align: top;
             cursor: pointer;
             width: auto;
             height: 16px;
@@ -84,23 +82,28 @@
                 display: none;
             }
         }
-        input[type="submit"] {
-            margin: 0;
+        input[type="submit"], input.simple_search_btn {
+            margin: 2px; padding: 0 !important;
             background-color: $secondaryColor;
-            border: 1px solid $secondaryColor;
-            border-radius: 0 4px 4px 0;
-            flex: 0 0 50px;
+            border: none !important;
+            // border: 1px solid $secondaryColor;
+            // border-radius: 0 4px 4px 0;
+            // flex: 0 0 50px;
+            flex: 0 0 36px;
+            border-radius: 4px;
+            min-width: 0;
             background-image: url('../images/search_icon2.svg');
             background-repeat: no-repeat;
-            background-position: center 10px;
+            background-position: center center;
             background-size: 20px 20px;
-            transition: .5s;
+            transition: .2s;
             &:hover {
                 border: 1px solid darken($secondaryColor, 5) !important;
                 background-color: darken($secondaryColor, 5);
             }
             &:focus {
-                box-shadow: 0px 0px 0px 3px #fdb300 inset;
+                box-shadow: 0 0 0 3px #fdb300 inset;
+                border: none !important;
             }
         }
         input[type="button"] {
@@ -120,9 +123,18 @@
                 background-color: darken($color-orange, 5);
             }
             &:focus {
-                box-shadow: 0px 0px 0px 3px #fdb300 inset;
+                box-shadow: 0 0 0 3px #fdb300 inset;
             }
         }
+        .duration{ flex: 1 1 60%; 
+            input[type="text"]{
+                width: 5em; height: 34px;
+                padding: 0 5px; margin:2px;
+                border:1px solid #e5e5e5; border-radius: 3px;
+                &:focus{ border-color: #fdb300; outline: none; box-shadow:#fdb300 0 0 0 1px inset;}
+            }
+        }
+
         // placeholder
         ::-webkit-input-placeholder {
             /* Chrome */
@@ -258,7 +270,7 @@
                 box-shadow: none;
                 line-height: 2.2em;
                 &:focus {
-                    box-shadow: 0px 0px 0px 3px #fdb300 inset;
+                    box-shadow: 0 0 0 3px #fdb300 inset;
                 }
             }
         }
@@ -303,7 +315,7 @@
                 a {
                     display: block;
                     &:focus {
-                        box-shadow: 0px 0px 0px 3px #fdb300;
+                        box-shadow: 0 0 0 3px #fdb300;
                     }
                 }
             }
@@ -325,7 +337,7 @@
             }
             input {
                 &:focus {
-                    box-shadow: 0px 0px 0px 3px #fdb300;
+                    box-shadow: 0 0 0 3px #fdb300;
                 }
             }
         }
@@ -593,16 +605,16 @@ html .ui-button.ui-state-disabled:active {
 .ui-slider .ui-slider-handle {
     width: 17px;
     height: 25px;
-    &:focus {
-        // border:2px solid $lightColor;
-    }
+    // &:focus {
+    //     // border:2px solid $lightColor;
+    // }
 }
 .ui-slider-horizontal .ui-slider-handle {
     top: -.45em;
 }
 //分類區塊
 .sort_block {
-    margin: 20px 0 0px;
+    margin: 20px 0 0;
     .sortlist_block {
         border-top: 1px solid #d5d5d5;
         margin: 0 0 10px;
@@ -610,7 +622,7 @@ html .ui-button.ui-state-disabled:active {
         h3 {
             color: #666;
             font-size: 1.188em;
-            margin: 0px 0 10px;
+            margin: 0 0 10px;
             padding: 0;
             position: relative;
             font-weight: 500;
@@ -648,7 +660,7 @@ html .ui-button.ui-state-disabled:active {
             @include box-sizing;
             h4 {
                 margin: 8px 0;
-                padding: 0px;
+                padding: 0;
                 font-size: 1em;
                 color: $linkColor;
                 border-radius: 20px;
@@ -693,7 +705,7 @@ html .ui-button.ui-state-disabled:active {
                 margin: 15px 0 5px;
                 a {
                     display: block;
-                    padding: 0px 20px 0 25px;
+                    padding: 0 20px 0 25px;
                     text-align: left;
                     position: relative;
                     color: #333;
@@ -757,8 +769,8 @@ html .ui-button.ui-state-disabled:active {
 //分頁
 .page {
     text-align: center;
-    margin: 20px 0;
-    padding: 20px;
+    margin: 10px 0;
+    padding: 30px;
     overflow: hidden;
     display: flex;
     &.fixed {
@@ -771,11 +783,11 @@ html .ui-button.ui-state-disabled:active {
             bottom: 50px;
         }
         .pageblock {
-            box-shadow: 0 0px 20px -1px rgba(0, 0, 0, .3), 0 2px 20px 0 rgba(0, 0, 0, .2), 0 1px 20px 0 rgba(0, 0, 0, .2);
+            box-shadow: 0 0 20px -1px rgba(0, 0, 0, .3), 0 2px 20px 0 rgba(0, 0, 0, .2), 0 1px 20px 0 rgba(0, 0, 0, .2);
         }
         .subpage {
             div.number01 {
-                box-shadow: 0 0px 10px -1px rgba(0, 0, 0, .3), 0 2px 10px 0 rgba(0, 0, 0, .2), 0 1px 10px 0 rgba(0, 0, 0, .2);
+                box-shadow: 0 0 10px -1px rgba(0, 0, 0, .3), 0 2px 10px 0 rgba(0, 0, 0, .2), 0 1px 10px 0 rgba(0, 0, 0, .2);
             }
         }
     }
@@ -785,7 +797,7 @@ html .ui-button.ui-state-disabled:active {
     .pageblock {
         display: inline-block;
         margin: 0 auto;
-        box-shadow: 0 0px 4px -1px rgba(0, 0, 0, .2), 0 2px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+        box-shadow: 0 0 4px -1px rgba(0, 0, 0, .2), 0 2px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
         border-radius: 50px;
         padding: 5px 10px;
         background-color: #fff;
@@ -795,7 +807,7 @@ html .ui-button.ui-state-disabled:active {
         .last {
             padding: 5px 8px 0;
             vertical-align: middle;
-            margin: 0px;
+            margin: 0;
             float: left;
             a {
                 display: block;
@@ -813,14 +825,14 @@ html .ui-button.ui-state-disabled:active {
             // display: inline-block;
             overflow: hidden;
             margin: -32px 0 0 0;
-            padding: 10px 5px;
+            padding: 10px;
             position: absolute;
             vertical-align: middle;
             top: 0;
             left: 0;
             div.number01 {
                 text-align: center;
-                box-shadow: 0 0px 4px -1px rgba(0, 0, 0, .2), 0 2px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+                box-shadow: 0 0 4px -1px rgba(0, 0, 0, .2), 0 2px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
                 border-radius: 50px;
                 padding: 5px;
                 background-color: #fff;
@@ -896,18 +908,18 @@ html .ui-button.ui-state-disabled:active {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0px 10px;
-        .first,
-        .pre,
-        .next,
-        .last,
-        .fakespace {
-            // display: inline-block;
-            // float: none;
-        }
+        padding: 0 10px;
+        // .first,
+        // .pre,
+        // .next,
+        // .last,
+        // .fakespace {
+        //     // display: inline-block;
+        //     // float: none;
+        // }
         .fakespace {
             width: auto;
-            padding: 0px 0;
+            padding: 0 0;
         }
         .subpage {
             display: inline-block;
@@ -929,6 +941,16 @@ html .ui-button.ui-state-disabled:active {
     bottom: 0;
     left: 0;
     right: 0;
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
+}
+
+// 日期區間 20210608
+.duration{display: flex;justify-content: space-between;align-items: center;
+    &::before{content: '~'; order: 1; flex: 0 0 1em; text-align: center;}
+    input[type="date"], input[type="text"]{
+        flex: 1 1 10em; width: auto;
+        padding: 0 5px; margin:2px ;
+        &:last-child{order: 2;}
+    }
 }

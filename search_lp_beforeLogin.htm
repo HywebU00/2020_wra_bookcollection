@@ -113,23 +113,23 @@
                             <div class="searchsystem">
                                 <div class="select_left">
                                     <select name="" id="selectSample">
-                                        <option value="">電子書(EBN/GPN)編號</option>
-                                        <option value="">委辦計畫編號</option>
-                                        <option value="">出版年區間</option>
-                                        <option value="">全文</option>
-                                        <option value="">書名</option>
-                                        <option value="">作者</option>
-                                        <option value="">出版社</option>
-                                        <option value="">條碼號條碼號</option>
+                                        <option selected value="1">電子書(EBN/GPN)編號</option>
+                                        <option value="2">委辦計畫編號</option>
+                                        <option value="3">出版年區間</option>
+                                        <option value="4">全文</option>
+                                        <option value="5">書名</option>
+                                        <option value="6">作者</option>
+                                        <option value="7">出版社</option>
+                                        <option value="8">條碼號</option>
                                     </select>
                                 </div>
                                 <div class="form_search">
                                     <input type="text" name="" value="" placeholder="請輸入關鍵文字" class="keyboardInput">
+                                    <div class="duration" style="display: none;">
+                                        <input type="text">
+                                        <input type="text">
+                                    </div>
                                     <input type="submit" name="" value="" class="simple_search_btn">
-                                </div>
-                                <div class="duration">
-                                    <input type="date" name="" id="">
-                                    <input type="date" name="" id="">
                                 </div>
                                 <!--  <div class="onlysearch"><input type="checkbox" name="" value="">僅查詢目前可借閱館藏</div> -->
                                 <!-- 新增start -->
@@ -645,6 +645,28 @@
     <script src="js/hyui.js"></script>
     <!-- 客製js -->
     <script src="js/customize.js"></script>
+
+    <!-- GUI demo 日期區間與文字輸入切換，套版時請刪除 20210609 -->
+    <script>
+        $(function(){
+            var _searchsystem = $('.searchsystem');
+            var _leftSelect = _searchsystem.find('.select_left select');
+            var _inputText = _searchsystem.find('input.keyboardInput');
+            var _duration = _searchsystem.find('.duration');
+
+            _leftSelect.change(function(){
+                if ( $(this).val() == 3) {
+                    _inputText.next('img').hide();
+                    _inputText.hide();
+                    _duration.removeAttr('style');
+                } else {
+                    _duration.attr('style', 'display: none;');
+                    _inputText.show().next('img').show();
+                }
+            })
+        })
+    </script>
+    
 </body>
 
 </html>
