@@ -577,6 +577,26 @@ $(function() {
     })
 
 
+    // 20210610 影片 box hover 時
+    var _vBox = $('.special_video').find('.box>a');
+    _vBox.find('.funcIcons').find('button').click(function(e){
+        e.preventDefault();
+    })
+    _vBox.hover(
+        function(){
+            let _videofuncIcons = $(this).find('.funcIcons');
+            _videofuncIcons.show(0, function(){
+                _videofuncIcons.addClass('show');
+            });
+        },
+        function(){
+            let _videofuncIcons = $(this).find('.funcIcons');
+            _videofuncIcons.removeClass('show');
+            setTimeout( function(){ _videofuncIcons.removeAttr('style')}, 310 );
+        }
+    )
+
+
 });
 
 
