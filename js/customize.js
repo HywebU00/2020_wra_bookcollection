@@ -305,6 +305,48 @@ $(function() {
             }
         }]
     });
+
+    //燈箱中的播放清單
+    // $screen-lg: 1400px !default; //電腦
+    // $screen-md: 992px !default; //平板
+    // $screen-sm: 768px !default; //手機
+    // $screen-xs: 576px !default; //極小尺寸
+    $('.videoSlide').slick({
+        dots: false,
+        infinite: true,
+        speed: 800,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        arrow: true,
+        responsive: [{
+            breakpoint: 1400,
+            settings: {
+                slidesToShow: 3
+            }
+        }, {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 2
+            }
+        }, 
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 2
+            }
+        }
+        , 
+        {
+            breakpoint: 576,
+            settings: {
+                slidesToShow: 1
+            }
+        }
+    ]
+    });
+
+
     /*-----------------------------------*/
     /////////////modal設定/////////////
     /*-----------------------------------*/
@@ -389,10 +431,17 @@ $(function() {
 
         let _cateItem = _slideBlock.find('li');
         _slideCtrl.text(_cateItem.filter('.active').find('a').text());
-        _cateItem.find('a').click(function(){
+        // _cateItem.find('a').click(function(){
+            // _slideCtrl.text($(this).text());
+            // $(this).parent().addClass('active').siblings().removeClass('active');
+        // })
+        _cateItem.find('a').click( activeToggle );
+        _cateItem.find('a').focus( activeToggle );
+
+        function activeToggle() {
             _slideCtrl.text($(this).text());
             $(this).parent().addClass('active').siblings().removeClass('active');
-        })
+        }
     })
 
     // 燈箱
@@ -595,6 +644,17 @@ $(function() {
             setTimeout( function(){ _videofuncIcons.removeAttr('style')}, 310 );
         }
     )
+    _vBox.focusin( function(){
+        let _videofuncIcons = $(this).find('.funcIcons');
+        _videofuncIcons.show(0, function(){
+            _videofuncIcons.addClass('show');
+        });
+
+    })
+    _vBox.find('.funcIcons').focusout( function(){
+        $(this).removeClass('show');
+        setTimeout( function(){ $(this).removeAttr('style')}, 310 );
+    })
 
 
 });

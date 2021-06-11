@@ -486,8 +486,6 @@ button.submit {
         input[type="checkbox"]{position: absolute;left: 2px;top: 2px;}
     }
 
-
-
 }
 @media screen and (min-width: $screen-md){
     .lightboxblock .playList.checking{
@@ -500,11 +498,88 @@ button.submit {
     }
 }
 
+// 燈箱中的影片播放區 //////////
+.lightboxblock{
+    .playHere{
+        iframe{
+            display: block;
+            border: none; padding: 0; margin: 0 auto;
+            outline: 1px dashed #b00;
+            width: 100%;
+            height: 50vw;
+        
+            @media screen and (min-width: $screen-sm){
+                width: calc(70vw - 57px);
+                height: calc(40vw - 32px);
+            }
+            @media screen and (min-width: $screen-md){
+                max-width: 1000px;
+                max-height: 560px;
+            }
+        }
+    }
+
+    &>.content:first-child{ margin-top: 30px;}
 
 
+    
+}
+// .lightboxblock#lbx_playVideo{ display: inline-block; position: fixed; z-index: -1; }
+.videoSlide{position: relative;overflow: hidden; margin: 15px auto; padding: 0 40px;
+    .thumb{ 
+        float: left; margin: 5px; padding: 0; 
+        a{display: block;margin: 0 auto; box-shadow: #bbb 0 0 0 1px;}
+        img{display: block; object-fit: cover;margin: 0 auto; }
+    }
 
+    .slick-arrow{
+        position: absolute; top: 50%; margin-top: -20px;
+        background-size: 60px 30px;
+        background-position: center;
+        background-color: transparent;
+        width: 60px !important; height: 40px !important;
+        transform: rotate(-90deg);
+        &.slick-prev {
+            background-image: url('../vendor/slick/icon_arrow_up.svg');
+            left: -10px;
+        }
+        &.slick-next {
+            background-image: url('../vendor/slick/icon_arrow_down.svg');
+            right: -10px;
+        }
+    }
+}
+.lightboxblock .videoSlide{
+    outline: 1px dashed pink;
+    .thumb{ 
+        a{ width: 50vw;}
+        img{ width: 100%; height: 28vw; }
+    }
+    
+    @media screen and (min-width: $screen-xs ){
+        .thumb{
+            a{ width: 30vw;}
+            img{ height: 17vw;}
+        }
+    }
+    @media screen and (min-width: $screen-sm ){
+        .thumb{
+            a{ width: 24vw;}
+            img{ height: 14vw;}
+        }
+    }
+    @media screen and (min-width: $screen-md ){
+        max-width: 1000px;
+        .thumb{ 
+            a{ width: 180px;}
+            img{ height: 100px;}
+        }
+        // .thumb.slick-slide.slick-active{width: 200px;}
+    }
 
+}
 
+// 我的播放清單／連續播放
 .iframe_v{ margin: 20px -30px;
     iframe{ display: block;
         width: 100%; height: 60vw;

@@ -153,7 +153,7 @@
                         <div class="playList">
                           <ul>
                             <li class="aboutThisPlayList">
-                              <div class="thumbnail"><a>
+                              <div class="thumbnail"><a data-fancybox data-src="#lbx_playVideo">
                                 <img src="images/demo/09.jpg" alt="">
                                 <span class="length"><em>5</em>部影片</span>
                                 <span class="playbtn"></span>
@@ -214,54 +214,27 @@
                                       <input data-fancybox-close="" name="" type="reset" value="取消">
                                     </div>
                                   </form>
-<!-- 
-                                  <form action="" class="form_grid full">
-                                    <div class="form_grp">
-                                      <label for="" class="form_title">分館別</label>
-                                      <div class="form_content form_inline">
-                                        <select>
-                                          <option>台北辦公室</option>
-                                          <option>台中辦公室</option>
-                                          <option>第二河川局</option>
-                                          <option>第三河川局</option>
-                                        </select>
-                                      </div>
-                                    </div>
-                                    <div class="form_grp">
-                                      <label for="" class="form_title">科室</label>
-                                      <div class="form_content form_inline">
-                                        <select>
-                                          <option value="">科室A</option>
-                                          <option value="">科室B</option>
-                                          <option value="">科室C</option>
-                                        </select>
-                                      </div>
-                                    </div>
-                                    <div class="form_grp">
-                                      <label for="" class="form_title">姓名</label>
-                                      <div class="form_content form_inline">
-                                        <input type="text">
-                                      </div>
-                                    </div>
-                                    <div class="form_grp">
-                                      <label for="" class="form_title">E-mail</label>
-                                      <div class="form_content form_inline">
-                                        <input type="email">
-                                      </div>
-                                    </div>
-                                    <div class="form_grp">
-                                      <label for="" class="form_title">留言</label>
-                                      <div class="form_content form_inline">
-                                        <textarea></textarea>
-                                      </div>
-                                    </div>
-                                    <div class="btn_grp">
-                                      <input data-fancybox-close="" name="" type="submit" value="確定">
-                                      <input data-fancybox-close="" name="" type="reset" value="取消">
-                                    </div>
-                                  </form> -->
+
                                 </div>
                               </div>
+
+
+                              <!-- 燈箱：播放清單中的影片 -->
+                              <div class="lightboxblock commonlightbox_big" id="lbx_playVideo" >
+                                <div class="content">
+                                  <div class="playHere" src="" frameborder="0">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/XdnrmDGBO1I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                  </div>
+                                  <!-- 播放清單 slide -->
+                                  <div class="videoSlide">
+                                      <div class="thumb"><a href="javascript:;"><img src="images/demo/06.jpg" alt=""></a></div>
+                                      <div class="thumb"><a href="javascript:;"><img src="images/demo/07.jpg" alt=""></a></div>
+                                      <div class="thumb"><a href="javascript:;"><img src="images/demo/08.jpg" alt=""></a></div>
+                                      <div class="thumb"><a href="javascript:;"><img src="images/demo/09.jpg" alt=""></a></div>
+                                  </div>
+                                </div>
+                              </div>
+
                             </li>
                             <li class="aboutThisPlayList">
                               <div class="thumbnail"><a>
@@ -336,6 +309,7 @@
                             </ul>
                         </div>
                         <!-- page end-->
+
                       </div>
   
                       <div class="tabItem"><a>別人分享給我的</a></div>
@@ -482,6 +456,8 @@
     <script src="js/hyui.js"></script>
     <!-- 客製js -->
     <script src="js/customize.js"></script>
+
+
 </body>
 
 </html>
