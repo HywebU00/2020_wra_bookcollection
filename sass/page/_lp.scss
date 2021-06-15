@@ -401,8 +401,8 @@ button.submit {
 // 我的收藏 //////////////////////////////////////////
 // 加入頁籤效果和「影片收藏」頁籤。頁籤樣式沿用原設計
 .collectionTab{
-    .tabItem{ position: relative; padding-bottom: 10px;font-size: 1.125em;
-        &>a{height: 3em;line-height: 3;
+    .tabItem{ position: relative; padding-bottom: 10px;
+        &>a{height: 3em;line-height: 3;font-size: 1.125em; padding: 0 1em;
             &::before {
                 display: none;content: ''; z-index: 1;
                 position: absolute;left: 50%;  margin-left: -10px;bottom: 1px; 
