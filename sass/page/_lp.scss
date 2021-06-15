@@ -120,11 +120,12 @@
 }
 
 
-///////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
 // 2021 強化案  //////////////////////////////////////////////////////////////
 $lightGray: #dfdfdf;
 
-// 功能 button 組
+// 元件庫
+// 功能 button 組 //////////////////////////////////////////////
 .funcBtnGp{
     ul, li{margin: 0;padding: 0; list-style: none;}
     ul{ display: flex; flex-flow: row wrap;}
@@ -141,23 +142,39 @@ $lightGray: #dfdfdf;
     }
 }
 
-// 編輯圖示
+
+
+// 編輯圖示 //////////////////////////////////////////////
 button.editThis, button.submit{ padding: 0; margin: 0; min-width: 0; 
     width: 40px; line-height:40px; height: 40px; 
-    border-radius:50%; border: none !important;
+    border-radius:20px; border: none !important;cursor: pointer;
     transition: .2s;
     &:hover, &:focus{background-color: $secondaryColor;
         box-shadow: $secondaryColor 0 0 0 2px;
     }
 }
 button.editThis{ 
-    background: #eee url(../images/icon/icon_edit.svg)  no-repeat 6px 5px;
-    background-size: 72%;
+    background: $lightGray url(../images/icon/icon_edit.svg)  no-repeat 9px 8px;
+    background-size:24px;
 }
 button.submit { 
     background: $secondaryColor url(../images/icon/icon_check.svg)  no-repeat 7px 8px;
-    background-size: 65%;
+    background-size: 24px;
 }
+
+
+
+// 新增、編輯 播放清單 //////////////////////////////////////////////
+.addNewList{ 
+    // outline:1px dashed pink;
+    padding:5px 12px 10px; margin: 10px 0 10px;
+    border-radius: 6px;
+
+    label{ margin: 5px 3px 0;}
+    textarea{ height: 7em; resize: vertical;}
+}
+.addNewList.toggleArea{display: none; background-color: #eee;}
+
 
 
 .mediaList, .playList{
@@ -278,11 +295,12 @@ button.submit {
 
 
 
-// 播放清單資訊（標題、說明、縮圖等） ////////////////////////////////////////////////////////////////////////////////////
+// 播放清單資訊（標題、說明、縮圖等），可編輯 ///////////////////////////////////////////////////////////////////////////
 .aboutThisPlayList{
-    // margin: 10px -15px 30px; padding: 15px;
+    position: relative;
     margin: 0 0 30px; padding: 0 0 15px;
     border-bottom: 3px solid $lightGray;
+
    
     .thumbnail{ 
         position: relative;margin:0 0 10px;
@@ -298,49 +316,47 @@ button.submit {
         em{display: inline-block; margin-right: .2em; font-weight: bold; font-style: normal;}
     }
 
+    // 編輯圖示
+    button.editThis{position: absolute;right: 3px;bottom:10px; z-index: 9;
+        &::after{content:attr(title); display: none; margin-left: 42px;}
+        &:hover{
+            width: calc(40px + 3em); padding-right: .8em;
+            &::after{display: inline-block;}
+        }
+    }
 
     // 兩個文字編輯區，標題和說明 ////
-    .pListName, .description{ position: relative;
-        textarea{overflow: hidden; overflow-y: scroll;
-            padding: 5px; margin: 0; 
-            line-height: inherit; resize: none;
-            &:read-only{
-                display: -webkit-box;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-                background: #fff; color: $color-word; 
-                border-color: transparent; cursor: default;
-                &:focus{ border-color: transparent; box-shadow: none;}
-            }
-        }
-        button.submit{ display: none;}
-    }
+    // .pListName, .description{ position: relative;
+    //     textarea{overflow: hidden; overflow-y: scroll;
+    //         padding: 5px; margin: 0; 
+    //         line-height: inherit; resize: none;
+    //         &:read-only{
+    //             display: -webkit-box;
+    //             -webkit-box-orient: vertical;
+    //             overflow: hidden;
+    //             background: #fff; color: $color-word; 
+    //             border-color: transparent; cursor: default;
+    //             &:focus{ border-color: transparent; box-shadow: none;}
+    //         }
+    //     }
+    //     button.submit{ display: none;}
+    // }
+    // 20210615 刪除，改成在燈箱中編輯
 
     // 標題
     .pListName{
-        padding-right: 52px; min-height: 44px;
+    //    min-height: 44px;
         font-size: 1.4em; line-height: 1.4; font-weight: bold;
-        textarea{ height:3.2em; margin-left: -6px;
-            &:read-only{
-                -webkit-line-clamp: 2;
-            }
-        }
-        button.editThis, button.submit{position: absolute; right: 2px;top: 2px;}
     }
     // 播放清單說明
     .description{ 
         margin: 0 auto; padding: 15px 0 0; line-height: 1.6;
-        textarea{ height:5.3em; margin-left: -6px;
-            &:read-only{
-                -webkit-line-clamp: 3;
-            }
-        }
         &::before{
             content: attr(data-title)"：";
             display: block; margin: 0 0 .5em;
             color: $color-hr; line-height: 1;
         }
-        button.editThis, button.submit{ position: absolute; right: 2px;top: 2px;}
+        // button.editThis, button.submit{ position: absolute; right: 2px;top: 2px;}
     }
     .time{ margin-top: 1em;
         color: $color-hr; font-size: .9em;
@@ -374,6 +390,9 @@ button.submit {
         .description{margin: 0 0 0 375px; }
         .description textarea { width: 100%;}
         .tail{ margin-left: 375px;}
+        button.editThis{ top: 3px; bottom: auto;
+            & + .pListName{margin-right: 50px;}
+        }
 
     }
 }
@@ -452,7 +471,7 @@ button.submit {
 }
 
 
-// 加入我的播放清單（在燈箱中）20210604
+// 加入我的播放清單（在燈箱中）20210604 ////////////////////////////////////////
 .playList.checking{margin: 0 auto;
 
     .aboutThisPlayList{position: relative;
@@ -483,7 +502,7 @@ button.submit {
     }
 }
 
-// 燈箱中的影片播放區 //////////
+// 燈箱中的影片播放區 ////////////////////////////////////////
 .lightboxblock{
     .playHere{
         iframe{
@@ -625,16 +644,6 @@ button.submit {
                 transform: rotate(45deg); transition: .5s;
             }
         }
-
-    }
-    // 新增一個播放清單
-    .addNewList{ display: none;
-        // outline:1px dashed pink;
-        padding:5px 12px 10px; margin: 10px 0 10px;
-        background-color: #eee; border-radius: 6px;
-
-        label{ margin: 5px 3px 0;}
-        textarea{ height: 7em; resize: vertical;}
 
     }
 }

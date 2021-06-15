@@ -145,18 +145,16 @@
         <!-- sp start -->
         <div class="sp">
           <div class="aboutThisPlayList">
-            <div class="thumbnail"><img src="images/demo/09.jpg" alt="">
-              <span class="length"><em>5</em>部影片</span></div>
-            <div class="pListName editable">
-              <textarea readonly="readonly">旱災枯水期怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦？</textarea>
-              <button type="button" class="editThis" title="編輯"></button>
-              <button type="submit" class="submit" title="確定"></button>
+            <div class="thumbnail">
+              <img src="images/demo/09.jpg" alt="">
+              <span class="length"><em>5</em>部影片</span>
             </div>
-            <div class="description editable" data-title="播放清單說明">
-              <textarea readonly="readonly">點爸負地亞住月裡卻主嚴岸雄神流是日兒天，父處球過灣界我地到總，萬政驗實可裡它了家她陸麼庭的任去情關查公就的沒留，體特賽單畫有動使地講生合我不。相市光，想小時技要念成別近成？出上職義今之使筆多的了洲還。發流被不而賽學取環來對只開：人害的熱、相問學認大幾生故遠重少有。
-                            </textarea>
-              <button type="button" class="editThis" title="編輯"></button>
-              <button type="submit" class="submit" title="確定"></button>
+            <button type="button" class="editThis" data-fancybox data-src="#lbx_textEditor" title="編輯"></button>
+            <div class="pListName">
+              旱災枯水期怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦怎麼辦？
+            </div>
+            <div class="description" data-title="播放清單說明">
+              點爸負地亞住月裡卻主嚴岸雄神流是日兒天，父處球過灣界我地到總，萬政驗實可裡它了家她陸麼庭的任去情關查公就的沒留，體特賽單畫有動使地講生合我不。相市光，想小時技要念成別近成？出上職義今之使筆多的了洲還。發流被不而賽學取環來對只開：人害的熱、相問學認大幾生故遠重少有。
             </div>
             <dl class="tail">
               <div>
@@ -177,19 +175,8 @@
                 <dl class="basicInfo">
                   <div><dt>分類</dt><dd>省水節水</dd></div>
                 </dl>
-                <button type="button" class="btn btn-blue" data-fancybox="" data-src="#lbx_del_confirm">移除此筆影片</button>
+                <button type="button" class="btn btn-blue" data-fancybox data-src="#lbx_del_confirm">移除此筆影片</button>
               </li>
-              <!-- 移除影片確認燈箱 -->
-              <div class="lightboxblock commonlightbox_small" id="lbx_del_confirm">
-                <h3 class="title">移除播放清單中的影片</h3>
-                <div class="content">
-                  <p>確定要移除〈省水標章宣傳片省水大考驗版〉嗎?</p>
-                </div>
-                <div class="btn_grp">
-                  <input data-fancybox-close name="" type="reset" value="取消" />
-                  <input data-fancybox-close name="" type="submit" value="確定" />
-                </div>
-              </div>
               <li><span class="count">2</span>
                 <div class="thumbnail"><a href="#">
                     <img src="images/demo/08.jpg" alt="">
@@ -200,7 +187,7 @@
                   <div><dt>分類</dt><dd>省水節水</dd></div>
                 </dl>
 
-                <button type="button" class="btn btn-blue" data-fancybox="" data-src="#lbx_del_confirm">移除此筆影片</button>
+                <button type="button" class="btn btn-blue" data-fancybox data-src="#lbx_del_confirm">移除此筆影片</button>
               </li>
               <li><span class="count">3</span>
                 <div class="thumbnail"><a href="#">
@@ -212,7 +199,7 @@
                   <div><dt>分類</dt><dd>微電影及廣告</dd></div>
                 </dl>
 
-                <button type="button" class="btn btn-blue" data-fancybox="" data-src="#lbx_del_confirm">移除此筆影片</button>
+                <button type="button" class="btn btn-blue" data-fancybox data-src="#lbx_del_confirm">移除此筆影片</button>
               </li>
               <li><span class="count">4</span>
                 <div class="thumbnail"><a href="#">
@@ -224,7 +211,7 @@
                   <div><dt>分類</dt><dd>水利節</dd></div>
                 </dl>
 
-                <button type="button" class="btn btn-blue" data-fancybox="" data-src="#lbx_del_confirm">移除此筆影片</button>
+                <button type="button" class="btn btn-blue" data-fancybox data-src="#lbx_del_confirm">移除此筆影片</button>
               </li>
               <li><span class="count">555</span>
                 <div class="thumbnail"><a href="#">
@@ -236,7 +223,7 @@
                   <div><dt>分類</dt><dd>省水節水</dd></div>
                 </dl>
 
-                <button type="button" class="btn btn-blue" data-fancybox="" data-src="#lbx_del_confirm">移除此筆影片</button>
+                <button type="button" class="btn btn-blue" data-fancybox data-src="#lbx_del_confirm">移除此筆影片</button>
               </li>
             </ul>
           </div>
@@ -296,6 +283,37 @@
   <script src="js/hyui.js"></script>
   <!-- 客製js -->
   <script src="js/customize.js"></script>
+
+  <!-- 移除影片確認燈箱 -->
+  <div class="lightboxblock commonlightbox_small" id="lbx_del_confirm">
+    <h3 class="title">移除播放清單中的影片</h3>
+    <div class="content">
+      <p>確定要移除〈省水標章宣傳片省水大考驗版〉嗎?</p>
+    </div>
+    <div class="btn_grp">
+      <input data-fancybox-close name="" type="reset" value="取消" />
+      <input data-fancybox-close name="" type="submit" value="確定" />
+    </div>
+  </div>
+
+
+  <div class="lightboxblock commonlightbox_big" id="lbx_textEditor">
+    <h3 class="title">播放清單文案編修</h3>
+    <div class="content">
+      <div class="addNewList">
+        <label for="xxx1">播放清單名稱</label>
+        <input id="xxx1" type="text" value="旱災枯水期怎麼辦">
+        <label for="xxx2">播放清單說明</label>
+        <textarea id="xxx2">點爸負地亞住月裡卻主嚴岸雄神流是日兒天，父處球過灣界我地到總，萬政驗實可裡它了家她陸麼庭的任去情關查公就的沒留，體特賽單畫有動使地講生合我不。相市光，想小時技要念成別近成？出上職義今之使筆多的了洲還。發流被不而賽學取環來對只開：人害的熱、相問學認大幾生故遠重少有。</textarea>
+      </div>
+
+      <div class="btn_grp">
+        <input data-fancybox-close type="reset" value="取消編修" />
+        <input data-fancybox-close type="submit" value="儲存編修" />
+      </div>
+    </div>
+  </div>
+  
 </body>
 
 </html>
