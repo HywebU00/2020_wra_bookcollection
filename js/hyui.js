@@ -423,7 +423,7 @@ $(function() {
     });
     // 
     function tabSet() {
-        $('.searchtab, .collectionTab').each(function() {
+        $('.searchtab').each(function() {
             var _tab = $(this),
                 _tabItem = _tab.find('.tabItem'),
                 _tabItemA = _tabItem.children('a'),

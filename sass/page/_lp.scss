@@ -380,30 +380,15 @@ button.submit {
 
 
 // 我的收藏 //////////////////////////////////////////
-// 加入頁籤效果和「影片收藏」頁籤
-.collectionTab{position: relative;
-    .tabItem{font-size: 1.125em; padding-bottom: 10px;position: relative; 
-        a{ padding: 0; height: 3em; ; line-height: 3;
-            font-weight: normal;
-            border: none;
-            &::before{content: ''; display: none;
-                border-style: solid;
-                border-width: 10px 10px 0;
-                border-color:$primaryColor transparent transparent;
-                position: absolute; bottom: 0; left: 50%; margin-left: -10px;
-            }
-
-            &:hover{ background-color: #666;}
-        }
-
-        &.active{
-            a{
-                &:hover{background: $primaryColor;}
-                &::before{ display: block;}
-            }
-        } 
+// 加入頁籤效果和「影片收藏」頁籤。頁籤樣式沿用原設計
+.collectionTab{
+    .tabItem:last-child{ position: absolute;top: 0; right: 0; }
+    
+    @media screen and (min-width: $screen-xs + 1){
+        .tabItem:last-child{position: relative; top: auto; right: auto;}
     }
 }
+
 
 // 我的播放清單 //////////////////////////////////////////
 .playList{
@@ -502,12 +487,8 @@ button.submit {
 .lightboxblock{
     .playHere{
         iframe{
-            display: block;
-            border: none; padding: 0; margin: 0 auto;
-            outline: 1px dashed #b00;
-            width: 100%;
-            height: 50vw;
-        
+            display: block;border: none; padding: 0; margin: 0 auto;
+            width: 100%; height: 50vw;
             @media screen and (min-width: $screen-sm){
                 width: calc(70vw - 57px);
                 height: calc(40vw - 32px);
@@ -518,16 +499,14 @@ button.submit {
             }
         }
     }
-
-    &>.content:first-child{ margin-top: 30px;}
-
-
-    
+    // 燈箱沒有標題時，預留位置給「關閉」button
+    &>.content:first-child{ margin-top: 30px;} 
 }
 // .lightboxblock#lbx_playVideo{ display: inline-block; position: fixed; z-index: -1; }
+// 影像縮圖 slide
 .videoSlide{position: relative;overflow: hidden; margin: 15px auto; padding: 0 40px;
     .thumb{ 
-        float: left; margin: 5px; padding: 0; 
+        float: left; margin:5px; padding: 0; 
         a{display: block;margin: 0 auto; box-shadow: #bbb 0 0 0 1px;}
         img{display: block; object-fit: cover;margin: 0 auto; }
     }
@@ -549,20 +528,24 @@ button.submit {
         }
     }
 }
-.lightboxblock .videoSlide{
-    outline: 1px dashed pink;
+// 影像縮圖 slide 在燈箱中
+.lightboxblock .videoSlide{ 
+    // outline: 1px dashed pink;
+    height: calc(28vw + 10px) ;
     .thumb{ 
         a{ width: 50vw;}
         img{ width: 100%; height: 28vw; }
     }
     
     @media screen and (min-width: $screen-xs ){
+        height: calc(17vw + 10px) ;
         .thumb{
             a{ width: 30vw;}
             img{ height: 17vw;}
         }
     }
     @media screen and (min-width: $screen-sm ){
+        height: calc(14vw + 10px) ;
         .thumb{
             a{ width: 24vw;}
             img{ height: 14vw;}
@@ -570,11 +553,12 @@ button.submit {
     }
     @media screen and (min-width: $screen-md ){
         max-width: 1000px;
-        .thumb{ 
+        height: 110px;
+
+        .thumb{ min-width: 180px;
             a{ width: 180px;}
             img{ height: 100px;}
         }
-        // .thumb.slick-slide.slick-active{width: 200px;}
     }
 
 }

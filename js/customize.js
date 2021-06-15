@@ -329,21 +329,18 @@ $(function() {
             settings: {
                 slidesToShow: 2
             }
-        }, 
-        {
+        }, {
             breakpoint: 768,
             settings: {
                 slidesToShow: 2
             }
         }
-        , 
-        {
+        , {
             breakpoint: 576,
             settings: {
                 slidesToShow: 1
             }
-        }
-    ]
+        }]
     });
 
 
@@ -545,19 +542,69 @@ $(function() {
 
 
 
-    /*-----------------------------------*/
-    ///////////////// 20210531 ////////////
-    /*-----------------------------------*/
+
+
+    /*------------------------------------------*/
+    ///////////////// 2021 強化案新增 ////////////
+    /*------------------------------------------*/
     // 從 hyui.js 複製過來的變數
     var _window = $(window),
-        ww = _window.outerWidth(),
-        wh = _window.height(),
-        _body = $('body'),
-        wwNormal = 1400,
-        wwMedium = 992,
-        wwSmall = 768,
-        wwxs = 576;
+    ww = _window.outerWidth(),
+    wh = _window.height(),
+    _body = $('body'),
+    wwNormal = 1400,
+    wwMedium = 992,
+    wwSmall = 768,
+    wwxs = 576;
 
+    // 20210615「播放清單」切換頁籤
+    var _collectionTab = $('.collectionTab');
+    _collectionTab.each(function() {
+        let _tab = $(this),
+            _tabItem = _tab.find('.tabItem'),
+            _tabItemA = _tabItem.children('a'),
+            _tabContent = _tab.find('.tabContent'),
+            tabwidth = _tab.width(),
+            tabItemHeight = _tabItem.outerHeight(),
+            tabContentHeight = _tab.find('.active').next().innerHeight(),
+            tabItemLength = _tabItem.length;
+        _tab.find('.active').next('.tabContent').show();
+        if (ww > wwxs) {
+            _tabContent.css('top', tabItemHeight);
+            _tab.height(tabContentHeight + tabItemHeight);
+            _tabItem.width(tabwidth / tabItemLength);
+            _tabItem.last().css({ 'position': 'absolute', 'top': 0, 'right': 0 });
+        } else {
+            _tabItem.add(_tabContent).removeAttr('style');
+
+        }
+        _tabItemA.focus(tabs);
+        _tabItemA.click(tabs);
+
+        function tabs(e) {
+            let _tabItemNow = $(this).parent(),
+                tvp = _tab.offset().top,
+                tabIndex = _tabItemNow.index() / 2,
+                scollDistance = tvp + tabItemHeight * tabIndex - hh;
+            _tabItem.removeClass('active');
+            _tabItemNow.addClass('active');
+            if (ww <= wwxs) {
+                _tabItem.not('.active').next().slideUp();
+                _tabItemNow.next().slideDown();
+                $("html,body").stop(true, false).animate({ scrollTop: scollDistance });
+            } else {
+                _tabItem.not('.active').next().hide();
+                _tabItemNow.next().show();
+                tabContentHeight = _tabItemNow.next().innerHeight();
+                _tab.height(tabContentHeight + tabItemHeight);
+            }
+            e.preventDefault();
+        }
+    });
+
+
+    /* ---------------------------------------- */
+    /////////////// window resize ///////////////
     var resizeTimer;
     _window.resize(function() {
         clearTimeout(resizeTimer);
@@ -567,8 +614,30 @@ $(function() {
                 _filterByCate.find('ul').removeAttr('style');
                 _filterByCate.find('.ctrl').removeClass('toClose');
             }
-        }, 150);
+            
+            _collectionTab.each(function(){
+                let _this = $(this);
+                let _tabItem = _this.find('.tabItem');
+                let tabItemLength = _tabItem.length;
+                if (ww >= wwxs) {
+                    _tabItem.last().css('position', 'absolute');
+                    _tabItem.next().css('top', _tabItem.innerHeight());
+                    _this.height(
+                        _tabItem.filter('.active').next().innerHeight()
+                        +
+                        _tabItem.innerHeight()
+                    );
+                    _tabItem.width(_this.width() / tabItemLength);
+                } else {
+                    _this.css('height', 'auto');
+                    _tabItem.width(_this.width()).last().css('position', 'relative');
+                }
+            });
+            
+        }, 100);
     });
+    /* ---------------------------------------- */
+
 
     //////////////////////////////////////////////////////////////////
     // 20210531 新增 /////////////////////////////////////////////////

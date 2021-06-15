@@ -147,13 +147,13 @@
 
                   <div class="tabSet">
                     <section class="tabs collectionTab">
-                      <div class="tabItem active"><a>我的播放清單</a></div>
+                      <div class="tabItem active"><a href="javascript:;">我的播放清單</a></div>
                       <div class="tabContent">
 
                         <div class="playList">
                           <ul>
                             <li class="aboutThisPlayList">
-                              <div class="thumbnail"><a data-fancybox data-src="#lbx_playVideo">
+                              <div class="thumbnail"><a data-fancybox data-src="#lbx_playVideo1">
                                 <img src="images/demo/09.jpg" alt="">
                                 <span class="length"><em>5</em>部影片</span>
                                 <span class="playbtn"></span>
@@ -220,7 +220,7 @@
 
 
                               <!-- 燈箱：播放清單中的影片 -->
-                              <div class="lightboxblock commonlightbox_big" id="lbx_playVideo" >
+                              <div class="lightboxblock commonlightbox_big" id="lbx_playVideo1" >
                                 <div class="content">
                                   <div class="playHere" src="" frameborder="0">
                                     <iframe width="560" height="315" src="https://www.youtube.com/embed/XdnrmDGBO1I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -237,7 +237,7 @@
 
                             </li>
                             <li class="aboutThisPlayList">
-                              <div class="thumbnail"><a>
+                              <div class="thumbnail"><a data-fancybox data-src="#lbx_playVideo2">
                                 <img src="images/demo/01.jpg" alt="">
                                 <span class="length"><em>1</em>部影片</span>
                                 <span class="playbtn"></span>
@@ -256,6 +256,21 @@
                                 <button type="button" class="btn btn-blue share" data-fancybox data-src="#lbx_shareList">分享清單</button>
                                 <button type="button" class="btn btn-purple delete">刪除清單</button>
                               </div>
+                              <!-- 燈箱：播放清單中的影片 -->
+                              <div class="lightboxblock commonlightbox_big" id="lbx_playVideo2" >
+                                <div class="content">
+                                  <div class="playHere" src="" frameborder="0">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/-c0KZAuQDmo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                  </div>
+                                  <!-- 播放清單 slide -->
+                                  <div class="videoSlide">
+                                      <div class="thumb"><a href="javascript:;"><img src="images/demo/05.jpg" alt=""></a></div>
+                                      <div class="thumb"><a href="javascript:;"><img src="images/demo/04.jpg" alt=""></a></div>
+                                      <div class="thumb"><a href="javascript:;"><img src="images/demo/03.jpg" alt=""></a></div>
+                                  </div>
+                                </div>
+                              </div>
+                              
                             </li>
                             <li class="aboutThisPlayList">
                               <div class="thumbnail"><a>
@@ -282,9 +297,6 @@
                             </li>
   
                           </ul>
-
-
-                          
                         </div>
 
                         <!-- page start-->
@@ -310,9 +322,9 @@
                         </div>
                         <!-- page end-->
 
-                      </div>
+                      </div><!-- tabContent end -->
   
-                      <div class="tabItem"><a>別人分享給我的</a></div>
+                      <div class="tabItem"><a href="javascript:;">別人分享給我的</a></div>
                       <div class="tabContent">
                         <div class="playList">
                           <ul>
@@ -363,7 +375,6 @@
                             </li>
   
                           </ul>
-                          
                         </div>
 
                         <!-- page start-->
@@ -388,16 +399,12 @@
                             </ul>
                         </div>
                         <!-- page end-->
-                          
-                      </div>
-  
-                        
-  
+                      </div><!-- .tabContent end -->
 
+                    </section><!-- .tabs end -->
 
-                    </section>
+                  </div><!-- .tabSet end -->
 
-                  </div>
 
 
                 </div>
@@ -456,6 +463,15 @@
     <script src="js/hyui.js"></script>
     <!-- 客製js -->
     <script src="js/customize.js"></script>
+
+    <!-- 這一小段程式是為了觸發燈箱中的 slick 計算元件寬度 -->
+    <script>
+      $('.aboutThisPlayList').find('a[data-fancybox]').click(function(){
+        setTimeout( function(){
+          $(window).trigger('resize');
+        }, 300 );
+      })
+    </script>
 
 
 </body>
