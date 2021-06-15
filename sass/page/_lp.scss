@@ -401,7 +401,19 @@ button.submit {
 // 我的收藏 //////////////////////////////////////////
 // 加入頁籤效果和「影片收藏」頁籤。頁籤樣式沿用原設計
 .collectionTab{
-    .tabItem:last-child{ position: absolute;top: 0; right: 0; }
+    .tabItem{ position: relative; padding-bottom: 10px;font-size: 1.125em;
+        &>a{
+            &::before {
+                display: none;content: ''; z-index: 1;
+                position: absolute;left: 50%;  margin-left: -10px;bottom: 1px; 
+                border-style: solid;
+                border-width: 10px 10px 0;
+                border-color: $primaryColor transparent transparent;
+            }
+        }
+        &.active>a::before{ display: block;}
+    }
+    .tabItem:last-child{ position: absolute;top: 0; right: 0;}
     
     @media screen and (min-width: $screen-xs + 1){
         .tabItem:last-child{position: relative; top: auto; right: auto;}
