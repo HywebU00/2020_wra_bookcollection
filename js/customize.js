@@ -566,9 +566,11 @@ $(function() {
             _tabContent = _tab.find('.tabContent'),
             tabwidth = _tab.width(),
             tabItemHeight = _tabItem.outerHeight(),
-            tabContentHeight = _tab.find('.active').next().innerHeight(),
             tabItemLength = _tabItem.length;
-        _tab.find('.active').next('.tabContent').show();
+
+        _tabItem.filter('.active').next('.tabContent').show();
+        let tabContentHeight = _tabItem.filter('.active').next('.tabContent').innerHeight();
+
         if (ww > wwxs) {
             _tabContent.css('top', tabItemHeight);
             _tab.height(tabContentHeight + tabItemHeight);
@@ -576,8 +578,8 @@ $(function() {
             _tabItem.last().css({ 'position': 'absolute', 'top': 0, 'right': 0 });
         } else {
             _tabItem.add(_tabContent).removeAttr('style');
-
         }
+
         _tabItemA.focus(tabs);
         _tabItemA.click(tabs);
 
@@ -771,11 +773,11 @@ $(function() {
             var pageLeft = $(".page").offset().left;
             var scrollTop = $(window).scrollTop();
             var viewportHeight = $(window).height();
-            if ((scrollTop + viewportHeight) > ($("#showPage").offset().top + 50)) {
-                $(".page").removeClass("fixed");
-            } else {
-                $(".page").addClass("fixed");
-            }
+            // if ((scrollTop + viewportHeight) > ($("#showPage").offset().top + 50)) {
+            //     $(".page").removeClass("fixed");
+            // } else {
+            //     $(".page").addClass("fixed");
+            // }
         })
     }
 })
