@@ -169,13 +169,14 @@
 .commonlightbox_big {
     // max-width: 70%;
     // max-height: 70%; 20211004
-    max-width: 80%;
+    width: 80%;
     height: 80%;
     display: none;
     @include screen('mobile') {
-        min-width: 90%;
-        max-width: 90%;
-        // max-height: 90%; 20211004
+        // min-width: 90%; 20211004
+        // max-width: 90%; 20211004
+        // max-height: 90%;  20211004
+        width: 90%;
         height: 90%;
     }
 }
