@@ -1310,3 +1310,11 @@
         }
     }
 }
+// 影片賞析輪播圖改為單張
+.videoImage{
+    a, picture, img{display: block;}
+    img{ 
+        width: 100%; height: calc((100vw - 60px)*.56);
+        max-height: 638px;
+    }
+}
