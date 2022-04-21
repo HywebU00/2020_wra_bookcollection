@@ -305,7 +305,6 @@ $(function() {
             }
         }]
     });
-
     //燈箱中的播放清單
     // $screen-lg: 1400px !default; //電腦
     // $screen-md: 992px !default; //平板
@@ -334,16 +333,61 @@ $(function() {
             settings: {
                 slidesToShow: 2
             }
-        }
-        , {
+        }, {
             breakpoint: 576,
             settings: {
                 slidesToShow: 1
             }
         }]
     });
-
-
+    // 主題專區 
+    $('.theme_slider').slick({
+        dots: false,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        verticalSwiping: true,
+        vertical: true,
+        arrows: true,
+        responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 1,
+                }
+            }, {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    verticalSwiping: false,
+                    variableWidth: false,
+                    vertical: false,
+                }
+            }, {
+                breakpoint: 575,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    verticalSwiping: false,
+                    variableWidth: false,
+                    vertical: false,
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
+    // 主題專區詳目頁
+    $('.theme_area_pic_slider').slick({
+        dots: false,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 1,
+        // adaptiveHeight: true
+    });
     /*-----------------------------------*/
     /////////////modal設定/////////////
     /*-----------------------------------*/
@@ -402,7 +446,6 @@ $(function() {
         $(this).parents('.list_file').siblings().find('.bibliography').slideUp();
         $(this).parents('.list_file').siblings().find('.collapse_btn').addClass('closebtn');
     })
-
     // 分類篩選
     // 不需要做開合效果 20210531
     // $('.category_block .collapse_btn').click(function() {
@@ -411,13 +454,13 @@ $(function() {
     // })
     // 行動版時「分類篩選」做開合效果 20210607
     var _filterByCate = $('.category_block').find('.category');
-    _filterByCate.each(function(){
+    _filterByCate.each(function() {
         _this = $(this);
         _this.find('.blockHead').append('<button class="ctrl" type="button"></button>');
         let _slideCtrl = _this.find('.ctrl');
         let _slideBlock = _this.find('ul');
-        _slideCtrl.click( function(){
-            if(_slideBlock.is(':visible')){
+        _slideCtrl.click(function() {
+            if (_slideBlock.is(':visible')) {
                 _slideBlock.slideUp();
                 $(this).removeClass('toClose')
             } else {
@@ -425,22 +468,20 @@ $(function() {
                 $(this).addClass('toClose');
             }
         });
-
         let _cateItem = _slideBlock.find('li');
         _slideCtrl.text(_cateItem.filter('.active').find('a').text());
         // _cateItem.find('a').click(function(){
-            // _slideCtrl.text($(this).text());
-            // $(this).parent().addClass('active').siblings().removeClass('active');
+        // _slideCtrl.text($(this).text());
+        // $(this).parent().addClass('active').siblings().removeClass('active');
         // })
-        _cateItem.find('a').click( activeToggle );
-        _cateItem.find('a').focus( activeToggle );
+        _cateItem.find('a').click(activeToggle);
+        _cateItem.find('a').focus(activeToggle);
 
         function activeToggle() {
             _slideCtrl.text($(this).text());
             $(this).parent().addClass('active').siblings().removeClass('active');
         }
     })
-
     // 燈箱
     $('[data-fancybox]').fancybox({
         toolbar: false,
@@ -539,24 +580,18 @@ $(function() {
             mainleftcontent.height(document.documentElement.clientHeight - 120);
         }
     })
-
-
-
-
-
     /*------------------------------------------*/
     ///////////////// 2021 強化案新增 ////////////
     /*------------------------------------------*/
     // 從 hyui.js 複製過來的變數
     var _window = $(window),
-    ww = _window.outerWidth(),
-    wh = _window.height(),
-    _body = $('body'),
-    wwNormal = 1400,
-    wwMedium = 992,
-    wwSmall = 768,
-    wwxs = 576;
-
+        ww = _window.outerWidth(),
+        wh = _window.height(),
+        _body = $('body'),
+        wwNormal = 1400,
+        wwMedium = 992,
+        wwSmall = 768,
+        wwxs = 576;
     // 20210615「播放清單」切換頁籤
     var _collectionTab = $('.collectionTab');
     _collectionTab.each(function() {
@@ -567,10 +602,8 @@ $(function() {
             tabwidth = _tab.width(),
             tabItemHeight = _tabItem.outerHeight(),
             tabItemLength = _tabItem.length;
-
         _tabItem.filter('.active').next('.tabContent').show();
         let tabContentHeight = _tabItem.filter('.active').next('.tabContent').innerHeight();
-
         if (ww > wwxs) {
             _tabContent.css('top', tabItemHeight);
             _tab.height(tabContentHeight + tabItemHeight);
@@ -579,7 +612,6 @@ $(function() {
         } else {
             _tabItem.add(_tabContent).removeAttr('style');
         }
-
         _tabItemA.focus(tabs);
         _tabItemA.click(tabs);
 
@@ -603,8 +635,6 @@ $(function() {
             e.preventDefault();
         }
     });
-
-
     /* ---------------------------------------- */
     /////////////// window resize ///////////////
     var resizeTimer;
@@ -616,65 +646,52 @@ $(function() {
                 _filterByCate.find('ul').removeAttr('style');
                 _filterByCate.find('.ctrl').removeClass('toClose');
             }
-            
-            _collectionTab.each(function(){
+            _collectionTab.each(function() {
                 let _this = $(this);
                 let _tabItem = _this.find('.tabItem');
                 let tabItemLength = _tabItem.length;
                 if (ww >= wwxs) {
                     _tabItem.last().css('position', 'absolute');
                     _tabItem.next().css('top', _tabItem.innerHeight());
-                    _this.height(
-                        _tabItem.filter('.active').next().innerHeight()
-                        +
-                        _tabItem.innerHeight()
-                    );
+                    _this.height(_tabItem.filter('.active').next().innerHeight() + _tabItem.innerHeight());
                     _tabItem.width(_this.width() / tabItemLength);
                 } else {
                     _this.css('height', 'auto');
                     _tabItem.width(_this.width()).last().css('position', 'relative');
                 }
             });
-            
         }, 100);
     });
     /* ---------------------------------------- */
-
-
     //////////////////////////////////////////////////////////////////
     // 20210531 新增 /////////////////////////////////////////////////
     // 2021 編輯播放清單名稱和說明文字 ///////////////////////////////
     var _editable = $('.editable');
-    _editable.each(function(){
+    _editable.each(function() {
         let _this = $(this);
         let _textarea = _this.find('textarea');
-        let _editBtn  = _this.find('.editThis');
-        let _submitBtn  = _this.find('.submit');
-
-        _editBtn.click(function(){
+        let _editBtn = _this.find('.editThis');
+        let _submitBtn = _this.find('.submit');
+        _editBtn.click(function() {
             $(this).hide();
             _submitBtn.show();
             _textarea.removeAttr('readonly');
         })
-        _submitBtn.click(function () {
+        _submitBtn.click(function() {
             $(this).hide();
             _editBtn.show();
             _textarea.attr('readonly', 'readonly').scrollTop(0);
         })
-
     })
-
-
     // 2021 通用開合效果 ///////////////////////////////
     var _toggleCtrl = $('.toggleCtrl');
     var _toggleArea = $('.toggleArea');
     var slideSpeed = 500;
-    _toggleCtrl.each(function(){
+    _toggleCtrl.each(function() {
         let _this = $(this);
         let _target = _toggleArea.filter(_this.attr('data-targetId'));
-
-        _this.click(function(){
-            if ( _target.is(':visible') ){
+        _this.click(function() {
+            if (_target.is(':visible')) {
                 _target.stop(true, false).slideUp(slideSpeed);
                 _this.removeClass('toClose');
             } else {
@@ -682,60 +699,42 @@ $(function() {
                 _this.addClass('toClose');
             }
         })
-
         // 針對有「送出、取消」等 button 的 slide
-        if ( _target.find('.btn_grp').length > 0) {
+        if (_target.find('.btn_grp').length > 0) {
             let _otherToggleCtrl = _toggleArea.find('.btn_grp').find('input[data-toggleClose]');
-            _otherToggleCtrl.click(function(){
-                _target.slideUp(slideSpeed, function(){
+            _otherToggleCtrl.click(function() {
+                _target.slideUp(slideSpeed, function() {
                     _this.removeClass('toClose');
                 });
             })
         }
-
-
     })
-
-
     // 20210610 影片 box hover 時
     var _vBox = $('.special_video').find('.box>a');
-    _vBox.find('.funcIcons').find('button').click(function(e){
+    _vBox.find('.funcIcons').find('button').click(function(e) {
         e.preventDefault();
     })
-    _vBox.hover(
-        function(){
-            let _videofuncIcons = $(this).find('.funcIcons');
-            _videofuncIcons.show(0, function(){
-                _videofuncIcons.addClass('show');
-            });
-        },
-        function(){
-            let _videofuncIcons = $(this).find('.funcIcons');
-            _videofuncIcons.removeClass('show');
-            setTimeout( function(){ _videofuncIcons.removeAttr('style')}, 310 );
-        }
-    )
-    _vBox.focusin( function(){
+    _vBox.hover(function() {
         let _videofuncIcons = $(this).find('.funcIcons');
-        _videofuncIcons.show(0, function(){
+        _videofuncIcons.show(0, function() {
             _videofuncIcons.addClass('show');
         });
-
+    }, function() {
+        let _videofuncIcons = $(this).find('.funcIcons');
+        _videofuncIcons.removeClass('show');
+        setTimeout(function() { _videofuncIcons.removeAttr('style') }, 310);
     })
-    _vBox.find('.funcIcons').focusout( function(){
+    _vBox.focusin(function() {
+        let _videofuncIcons = $(this).find('.funcIcons');
+        _videofuncIcons.show(0, function() {
+            _videofuncIcons.addClass('show');
+        });
+    })
+    _vBox.find('.funcIcons').focusout(function() {
         $(this).removeClass('show');
-        setTimeout( function(){ $(this).removeAttr('style')}, 310 );
+        setTimeout(function() { $(this).removeAttr('style') }, 310);
     })
-
-
 });
-
-
-
-
-
-
-
 /////////////////////////////////////////
 $(function() {
     // 增加標籤
