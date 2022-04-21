@@ -17,7 +17,7 @@ $(function() {
         prevArrow: '<div type="button"  tabindex="0" class="slick-prev Btn-prev"><a href="#">魚仔《想要回家》</a></div>',
         nextArrow: '<div type="button" tabindex="0"  class="slick-next Btn-next"><a href="#">曾文之眼藝文活動</a></div>',
         responsive: [{
-            breakpoint: 767,
+            breakpoint: 768,
             settings: {
                 vertical: false,
             }
@@ -58,7 +58,7 @@ $(function() {
                     slidesToScroll: 4,
                 }
             }, {
-                breakpoint: 767,
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3,
@@ -109,7 +109,7 @@ $(function() {
                 slidesToScroll: 4
             }
         }, {
-            breakpoint: 767,
+            breakpoint: 768,
             settings: {
                 slidesToShow: 3,
                 slidesToScroll: 3
@@ -195,7 +195,7 @@ $(function() {
                     slidesToScroll: 5,
                 }
             }, {
-                breakpoint: 767,
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 4,
                     slidesToScroll: 4,
@@ -247,7 +247,7 @@ $(function() {
                     slidesToScroll: 4
                 }
             }, {
-                breakpoint: 767,
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3
@@ -292,7 +292,7 @@ $(function() {
                 slidesToScroll: 1,
             }
         }, {
-            breakpoint: 767,
+            breakpoint: 768,
             settings: {
                 slidesToShow: 2,
                 slidesToScroll: 1,
@@ -357,7 +357,7 @@ $(function() {
                     slidesToScroll: 1,
                 }
             }, {
-                breakpoint: 767,
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
