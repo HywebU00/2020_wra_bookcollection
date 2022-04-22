@@ -804,3 +804,19 @@ $(function() {
 //         $(this).removeClass('wow');
 //     }
 // });
+// 主題輪播介紹區
+$(function() {
+    $('.theme_area_introduce .open_btn a').click(function() {
+        if ($('.theme_area_introduce').hasClass('close_block')) {
+            $(this).parents('.theme_area_introduce').removeClass('close_block');
+            $(this).text('關閉');
+            $(this).parent('.open_btn').removeClass('close_btn');
+            
+        } else {
+            $(this).parents('.theme_area_introduce').addClass('close_block');
+            $(this).text('展開');
+            $(this).parent('.open_btn').addClass('close_btn');
+            
+        }
+    })
+})

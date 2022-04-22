@@ -117,6 +117,10 @@
                 font-weight: 600;
             }
         }
+        em {
+            color: $color-red;
+             font-style: normal;
+        }
         // Welcome Back
         .notice_block {
             padding: 10px 20px 0;
@@ -154,7 +158,6 @@
         }
     }
 }
-
 // 共用小燈箱
 .commonlightbox_small {
     min-width: 400px;

@@ -962,11 +962,11 @@ button.submit {
         width: 100%;
         height: 750px;
         border: 1px solid #ddd;
-        .image {
-            img {
-                object-fit: contain;
-            }
-        }
+        // .image {
+        //     img {
+        //         object-fit: contain;
+        //     }
+        // }
         .theme_slider_gorup {
             .theme_slider {
                 .slick-list {
@@ -1009,7 +1009,7 @@ button.submit {
                     background-color: transparent;
                     @include screen('mobile') {
                         right: -20px;
-                         background-image: url('../vendor/slick/icon_arrow_down2_black.png');
+                        background-image: url('../vendor/slick/icon_arrow_down2_black.png');
                         transform: rotate(-90deg);
                         top: 27px;
                     }
@@ -1030,9 +1030,11 @@ button.submit {
             .subtitle {
                 color: #c6e7fa;
             }
+            .content {
+                height: 150px;
+            }
             p {
                 color: #fff;
-                @include text-line(6, 23px);
             }
         }
     }
@@ -1144,15 +1146,22 @@ button.submit {
                 }
                 .theme_list {
                     margin-bottom: 5px;
-                    font-size: 1.125em;
+                    font-size: 1.063em;
                     a {
-                        background-color: #0e89cf;
-                        padding: 10px;
+                        // background: rgb(11, 112, 173);
+                        // background: linear-gradient(0deg, rgba(11, 112, 173, 1) 0%, rgba(10, 134, 205, 1) 100%);
+                        background-color: #057fc1;
+                        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -5px, rgba(0, 0, 0, 0.4) 0px -6px 0px inset;
+                        padding: 10px 10px 13px;
                         display: block;
                         color: #fff;
                         transition: .5s;
+                        border-radius: 5px;
                         &:hover {
-                            background-color: lighten(#0e89cf, 10);
+
+                            background-color: #0590db;
+                            // box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -5px, rgba(0, 0, 0, 0.3) 0px -4px 0px inset;
+                            
                         }
                     }
                 }
@@ -1241,9 +1250,13 @@ button.submit {
             margin-bottom: 20px;
             font-weight: bolder;
         }
+        .content {
+            height: 400px;
+            overflow-y: scroll;
+        }
         p {
             line-height: 1.55em;
-            margin-bottom: 15px;
+            margin: 0 0 15px;
             font-size: 0.938em;
         }
     }
