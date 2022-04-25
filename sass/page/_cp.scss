@@ -1373,9 +1373,9 @@ div.tag {
     }
 }
 // 主題內容
-.fancybox-button{
-    &:hover,&:focus{
-        border:none!important;
+.fancybox-button {
+    &:hover, &:focus {
+        border: none !important;
     }
 }
 .theme_area_content_block {
@@ -1443,29 +1443,42 @@ div.tag {
             border-radius: 5px;
             cursor: pointer;
             position: relative;
-             z-index: 1;
-             transition: .5s;
-             &:hover{
+            z-index: 1;
+            transition: .5s;
+           @include screen('mobile'){
+             flex-wrap: wrap;
+           }
+            &:hover {
                 background-color: #eee;
-              box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-             }
-            &.active{
-                .numbering_content{
-                    .content{
-                        p{
-                           text-overflow: inherit;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            }
+            &.active {
+                .numbering_content {
+                    .content {
+                        p {
+                            text-overflow: inherit;
                             white-space: normal;
                         }
                     }
                 }
             }
+            
             .numbering_leftblock {
                 flex: none;
-                flex-basis: 10%;
-                max-width: 10%;
+                flex-basis: 12%;
+                max-width: 12%;
+                @include screen('mobile') {
+                    flex-basis: 30%;
+                    max-width: 30%;
+                    margin-bottom: 10px;
+                }
+                @media(max-width: 500px){
+                     flex-basis: 50%;
+                    max-width:50%;
+                }
                 .numbering {
                     padding: 0;
-                    position:relative;
+                    position: relative;
                     z-index: 9;
                     a {
                         padding: 10px;
@@ -1485,6 +1498,7 @@ div.tag {
                         margin-right: 2px;
                         color: #fff;
                         text-align: center;
+                         box-sizing: border-box;
                         &:active {
                             top: 2px;
                             -moz-outline-style: none;
@@ -1499,9 +1513,18 @@ div.tag {
                 flex: auto;
                 flex-basis: 60%;
                 max-width: 60%;
-               
+                 @include screen('mobile') {
+                    flex-basis: 100%;
+                    max-width: 100%;
+                    border-bottom: 1px solid #bbb;
+                    margin-bottom: 10px;
+                }
                 .content {
                     padding: 0 20px;
+                    box-sizing: border-box;
+                    @include screen('mobile'){
+                        padding:0;
+                    }
                     .serial {
                         color: $color-red;
                     }
@@ -1515,14 +1538,18 @@ div.tag {
                         overflow: hidden;
                         white-space: nowrap;
                         text-overflow: ellipsis;
-                        transition:1s;
+                        transition: 1s;
                     }
                 }
             }
             .numbering_rightblock {
                 flex: none;
                 flex-basis: 30%;
-                 max-width: 30%;
+                max-width: 30%;
+                 @include screen('mobile') {
+                    flex-basis: 100%;
+                    max-width: 100%;
+                }
                 ul {
                     margin: 0;
                     padding: 0;
@@ -1537,7 +1564,7 @@ div.tag {
                         &.photographer {
                             background-image: url('../images/numbering_icon02.png');
                             background-repeat: no-repeat;
-                            background-position: left center;
+                            background-position: left 5px;
                             padding: 0 0 0 28px;
                         }
                     }
