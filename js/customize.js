@@ -804,6 +804,7 @@ $(function() {
 //         $(this).removeClass('wow');
 //     }
 // });
+// 2022新增
 // 主題輪播介紹區
 $(function() {
     $('.theme_area_introduce .open_btn a').click(function() {
@@ -811,12 +812,49 @@ $(function() {
             $(this).parents('.theme_area_introduce').removeClass('close_block');
             $(this).text('關閉');
             $(this).parent('.open_btn').removeClass('close_btn');
-            
         } else {
             $(this).parents('.theme_area_introduce').addClass('close_block');
             $(this).text('展開');
             $(this).parent('.open_btn').addClass('close_btn');
-            
         }
+    })
+})
+// 輪播圖片燈箱
+$(function() {
+    $('[data-fancybox="images"]').fancybox({
+        toolbar: true,
+        smallBtn: false,
+        iframe: {
+            preload: false
+        }
+    })
+})
+// 
+$('.theme_area_piclist ul li a').click(function() {
+    $('.theme_area_introduce').addClass('close_block');
+    $('.theme_area_introduce .open_btn a').text('展開');
+    $('.theme_area_introduce .open_btn a').parent('.open_btn').addClass('close_btn');
+})
+// 主題內容條列頁面
+$(function() {
+    $('.theme_area_numbering .numbering_list').click(function() {
+        $(this).addClass('active');
+        $(this).siblings().removeClass('active');
+    })
+})
+// 切換主題呈現樣式
+$(function() {
+    $('.theme_area_numbering').hide();
+    $('.theme_toggle_style ul li a.theme_list_numbering').click(function() {
+        $(this).addClass('active');
+        $(this).parent('li').siblings().find('.theme_list_pic').removeClass('active');
+        $('.theme_area_piclist').hide();
+        $('.theme_area_numbering').show();
+    })
+    $('.theme_toggle_style ul li a.theme_list_pic').click(function() {
+        $(this).addClass('active');
+        $(this).parent('li').siblings().find('.theme_list_numbering').removeClass('active');
+        $('.theme_area_numbering').hide();
+        $('.theme_area_piclist').show();
     })
 })

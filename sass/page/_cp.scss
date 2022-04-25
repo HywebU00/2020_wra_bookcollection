@@ -1250,6 +1250,9 @@ div.tag {
                 top: 45%;
                 left: 0;
             }
+            @media(max-width: 400px) {
+                top: 10%;
+            }
         }
         .slick-next {
             top: 22%;
@@ -1261,6 +1264,10 @@ div.tag {
             background-color: rgba(255, 255, 255, .4);
             @include screen('mobile') {
                 top: 45%;
+            }
+            @media(max-width: 400px) {
+                top: 10%;
+                right: 0;
             }
         }
     }
@@ -1282,7 +1289,6 @@ div.tag {
         &.close_block {
             right: -100%;
             left: auto;
-           
         }
         .open_btn {
             position: absolute;
@@ -1300,12 +1306,10 @@ div.tag {
                 font-size: 0;
                 width: 100%;
                 height: 100%;
-
             }
             &.close_btn {
                 transform: rotateY(-180deg);
                 right: 100%;
-                
             }
         }
         .sort {
@@ -1369,10 +1373,16 @@ div.tag {
     }
 }
 // 主題內容
+.fancybox-button{
+    &:hover,&:focus{
+        border:none!important;
+    }
+}
 .theme_area_content_block {
     h2 {
         margin-bottom: 20px;
     }
+    // 圖片呈現
     .theme_area_piclist {
         ul {
             margin: 0;
@@ -1382,25 +1392,29 @@ div.tag {
             flex-wrap: wrap;
             li {
                 flex: none;
-                flex-basis: 21%;
-                margin: 0 2% 20px;
+                flex-basis: 20%;
+                margin: 0 2.5% 30px;
                 @include screen('mobile') {
-                    flex-basis: 29%;
-                    margin: 0 2.16% 20px;
+                    flex-basis: 28%;
+                    margin: 0 2.66% 30px;
                 }
                 @media(max-width:500px) {
-                    flex-basis: 45%;
-                    margin: 0 2.5% 20px;
+                    flex-basis: 44%;
+                    margin: 0 3% 20px;
                 }
                 // @media(max-width:370px ){
                 //      flex-basis: 100%;
                 //     margin: 0 0% 20px;
                 // }
                 a {
+                    display: block;
+                    padding: 10px 15px;
+                    box-sizing: border-box;
                     .numbering {
                         color: #999;
                         text-align: center;
-                        margin-bottom: 0;
+                        margin-bottom: 8px;
+                        line-height: 1.2em;
                     }
                     .pic_img {
                         img {
@@ -1410,6 +1424,166 @@ div.tag {
                     .title {
                         color: #000;
                         @include text-line(2, 1.5em);
+                    }
+                    &:hover {
+                        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+                    }
+                }
+            }
+        }
+    }
+    // 條列呈現
+    .theme_area_numbering {
+        .numbering_list {
+            display: flex;
+            margin-bottom: 8px;
+            padding: 15px;
+            background-color: #ddd;
+            box-sizing: border-box;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+             z-index: 1;
+             transition: .5s;
+             &:hover{
+                background-color: #eee;
+              box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+             }
+            &.active{
+                .numbering_content{
+                    .content{
+                        p{
+                           text-overflow: inherit;
+                            white-space: normal;
+                        }
+                    }
+                }
+            }
+            .numbering_leftblock {
+                flex: none;
+                flex-basis: 10%;
+                max-width: 10%;
+                .numbering {
+                    padding: 0;
+                    position:relative;
+                    z-index: 9;
+                    a {
+                        padding: 10px;
+                        display: block;
+                        color: #fff;
+                        transition: .5s;
+                        border-radius: 5px;
+                        box-shadow: 0 0 0 1px #057fc1 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #056091, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+                        background-color: #057fc1;
+                        position: relative;
+                        top: -6px;
+                        border: 0;
+                        transition: all 40ms linear;
+                        margin-top: 10px;
+                        margin-bottom: 0px;
+                        margin-left: 2px;
+                        margin-right: 2px;
+                        color: #fff;
+                        text-align: center;
+                        &:active {
+                            top: 2px;
+                            -moz-outline-style: none;
+                            outline: medium none;
+                            box-shadow: 0 0 0 1px #0175b4 inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+                            background-color: #0175b4;
+                        }
+                    }
+                }
+            }
+            .numbering_content {
+                flex: auto;
+                flex-basis: 60%;
+                max-width: 60%;
+               
+                .content {
+                    padding: 0 20px;
+                    .serial {
+                        color: $color-red;
+                    }
+                    .title {
+                        color: $linkColor;
+                        font-weight: bolder;
+                    }
+                    p {
+                        margin-bottom: 10px;
+                        line-height: 1.5em;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        transition:1s;
+                    }
+                }
+            }
+            .numbering_rightblock {
+                flex: none;
+                flex-basis: 30%;
+                 max-width: 30%;
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                    li {
+                        &.date {
+                            background-image: url('../images/numbering_icon01.png');
+                            background-repeat: no-repeat;
+                            background-position: left center;
+                            padding: 0 0 0 25px;
+                        }
+                        &.photographer {
+                            background-image: url('../images/numbering_icon02.png');
+                            background-repeat: no-repeat;
+                            background-position: left center;
+                            padding: 0 0 0 28px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// 切換樣式
+.theme_toggle_style {
+    margin-bottom: 10px;
+    ul {
+        display: flex;
+        justify-content: flex-end;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li {
+            margin-left: 15px;
+            a {
+                display: block;
+                width: 24px;
+                height: 24px;
+                font-size: 0;
+                &.theme_list_pic {
+                    background-image: url('../images/theme_list_pic.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    &.active {
+                        background-image: url('../images/theme_list_pic_hover.png');
+                    }
+                }
+                &.theme_list_numbering {
+                    background-image: url('../images/theme_list_numbering.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    &.active {
+                        background-image: url('../images/theme_list_numbering_hover.png');
+                    }
+                }
+                &:hover {
+                    &.theme_list_pic {
+                        background-image: url('../images/theme_list_pic_hover.png');
+                    }
+                    &.theme_list_numbering {
+                        background-image: url('../images/theme_list_numbering_hover.png');
                     }
                 }
             }
