@@ -110,6 +110,12 @@ $btn-radius:.2em;
 .btn-delete {
     @extend .btn-orange;
 }
+//取消預約
+.cancel_reserve_btn{
+     @extend %btn;
+    @include btn_setting(#8c7a03, #FFF);
+    
+}
 // 按鈕大小
 .btn-xl {
     font-size: $font-size * 1.5; //24px

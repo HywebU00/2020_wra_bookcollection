@@ -210,8 +210,6 @@
         }
         @media(max-width: 400px) {
             font-size: .938em;
-            
-            
         }
     }
     .header_rightdata {
@@ -275,7 +273,7 @@
             display: none;
         }
         .name {
-            padding: 0 0 0 30px;
+            padding: 0;
             display: inline-block;
             a {
                 display: block;
@@ -290,7 +288,14 @@
                 &:hover {
                     background-color: darken($secondaryColor, 10);
                 }
+                &.bluebg{
+                    background-color: $primaryColor;
+                    &:hover {
+                        background-color: darken($primaryColor, 10);
+                    }
+                } 
             }
+            
             // &:before {
             //     content: '';
             //     width: 25px;

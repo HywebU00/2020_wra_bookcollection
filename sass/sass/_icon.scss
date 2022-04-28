@@ -161,3 +161,5 @@
 .i_minus{
     @include hyui_icon('icon_minus');
 }
+.i_hide { @include hyui_icon('icon_hide'); }
+.i_show { @include hyui_icon('icon_show'); }
