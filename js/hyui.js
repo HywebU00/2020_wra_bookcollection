@@ -249,13 +249,13 @@ $(function() {
     });
     mobileMenu();
     // resize
-    $(window).resize(function() {
-        if (_window.width() > wwMedium) {
-            $('.theme_area_introduce').removeAttr('style').addClass('close_block');
-        } else {
-            $('.theme_area_introduce').removeClass('close_block');
-        }
-    });
+    // $(window).resize(function() {
+    //     if (_window.width() > wwMedium) {
+    //         $('.theme_area_introduce').removeAttr('style').addClass('close_block');
+    //     } else {
+    //         $('.theme_area_introduce').removeClass('close_block');
+    //     }
+    // });
     // 行動版查詢
     var _searchCtrl = $('.searchCtrl');
     $('.m_search').hide();
