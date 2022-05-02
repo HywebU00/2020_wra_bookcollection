@@ -806,19 +806,31 @@ $(function() {
 // });
 // 2022新增
 // 主題輪播介紹區
-$(function() {
-    $('.theme_area_introduce .open_btn a').click(function() {
-        if ($('.theme_area_introduce').hasClass('close_block')) {
-            $(this).parents('.theme_area_introduce').removeClass('close_block');
-            $(this).text('關閉');
-            $(this).parent('.open_btn').removeClass('close_btn');
-        } else {
-            $(this).parents('.theme_area_introduce').addClass('close_block');
-            $(this).text('展開');
-            $(this).parent('.open_btn').addClass('close_btn');
-        }
-    })
-})
+// $(function() {
+//     $('.theme_open_btn a').click(function() {
+//         if ($('.theme_area_introduce').hasClass('close_block')) {
+//             $('.theme_area_introduce').removeClass('close_block');
+//             $(this).text('關閉');
+//             $(this).parent('.theme_open_btn').removeClass('close_btn');
+//         } else {
+//             $('.theme_area_introduce').addClass('close_block');
+//             $(this).text('打開');
+//             $(this).parent('.theme_open_btn').addClass('close_btn');
+//         }
+//     })
+//     // 
+//     $('.theme_open_mobilebtn a').click(function() {
+//         if ($('.theme_area_introduce').is(':hidden')) {
+//             $('.theme_area_introduce').slideDown();
+//             $(this).text('關閉');
+//             $(this).parent('.theme_open_mobilebtn').addClass('close_btn');
+//         } else {
+//             $('.theme_area_introduce').slideUp();
+//             $(this).text('打開');
+//             $(this).parent('.theme_open_mobilebtn').removeClass('close_btn');
+//         }
+//     })
+// })
 // 輪播圖片燈箱
 $(function() {
     $('[data-fancybox="images"]').fancybox({
@@ -832,8 +844,8 @@ $(function() {
 // 
 $('.theme_area_piclist ul li a').click(function() {
     $('.theme_area_introduce').addClass('close_block');
-    $('.theme_area_introduce .open_btn a').text('展開');
-    $('.theme_area_introduce .open_btn a').parent('.open_btn').addClass('close_btn');
+    $('.theme_open_btn a').text('打開');
+    $('.theme_open_btn').addClass('close_btn');
 })
 // 主題內容條列頁面
 $(function() {
@@ -876,5 +888,24 @@ $(function() {
             }
             e.preventDefault();
         });
+    });
+})
+// 提示語
+$(function(){
+    $('.numbering_list .numbering a' ).mouseover(function(){
+        $(this).parent().siblings('.hint').stop().fadeIn();
+    });
+    $('.numbering_list .numbering a' ).mouseout(function(){
+        $(this).parent().siblings('.hint').stop().fadeOut();
+    });
+})
+
+// 點圖放大提示
+$(function(){
+    $('.theme_area_pic_slider .pic_img a' ).mouseover(function(){
+        $('.enlarge_pic').stop().fadeIn();
+    });
+    $('.theme_area_pic_slider .pic_img a' ).mouseout(function(){
+        $('.enlarge_pic').stop().fadeOut();
     });
 })

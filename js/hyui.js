@@ -176,6 +176,19 @@ $(function() {
                 $('.mainleftblock').css('left', '-100%');
                 $('body').removeClass('fix');
             })
+            // 主題輪播介紹區
+            $('.theme_open_mobilebtn a').click(function() {
+                if ($('.theme_area_introduce').is(':hidden')) {
+                    $('.theme_area_introduce').slideDown();
+                    $(this).text('關閉');
+                    $(this).parent('.theme_open_mobilebtn').addClass('close_btn');
+                } else {
+                    $('.theme_area_introduce').slideUp();
+                    $(this).text('打開');
+                    $(this).parent('.theme_open_mobilebtn').removeClass('close_btn');
+                }
+            })
+            // 
         } else {
             /*-----------------------------------*/
             /////////////// PC版設定 /////////////
@@ -211,6 +224,18 @@ $(function() {
             $('.mainleftblock').css('position', 'relative');
             $('.mainleftblock').css('left', '0');
             $('.mainleftblock').show();
+            // 主題輪播介紹區
+            $('.theme_open_btn a').click(function() {
+                if ($('.theme_area_introduce').hasClass('close_block')) {
+                    $('.theme_area_introduce').removeClass('close_block');
+                    $(this).text('關閉');
+                    $(this).parent('.theme_open_btn').removeClass('close_btn');
+                } else {
+                    $('.theme_area_introduce').addClass('close_block');
+                    $(this).text('打開');
+                    $(this).parent('.theme_open_btn').addClass('close_btn');
+                }
+            });
         }
     }
     //設定resize 計時器
@@ -220,9 +245,19 @@ $(function() {
         resizeTimer = setTimeout(function() {
             search_mode = true;
             mobileMenu();
-        }, 50);
-    });
+        }, 50);         
+    }); 
     mobileMenu();
+    // resize
+    // $(window).resize(function() {
+    //     if (_window.width() > wwMedium) {
+    //         $('.theme_area_introduce').removeAttr('style').addClass('close_block');
+    //     } else {
+    //         $('.theme_area_introduce').removeClass('close_block');
+           
+    //     }
+
+    // });
     // 行動版查詢
     var _searchCtrl = $('.searchCtrl');
     $('.m_search').hide();
