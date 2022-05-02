@@ -1217,7 +1217,7 @@ div.tag {
     position: relative;
     // margin-bottom: 20px;
     overflow: hidden;
-    margin:0 25px 20px;
+    margin: 0 25px 20px;
     // outline: 1px solid red;
     .enlarge_pic {
         position: absolute;
@@ -1233,11 +1233,10 @@ div.tag {
         pointer-events: none;
         img {
             width: 20px;
-            position:absolute;
-            top:15px;
-            left:50%;
-             margin-left: -10px;
-
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            margin-left: -10px;
         }
     }
     // 輪播
@@ -1270,7 +1269,7 @@ div.tag {
             background-size: 52px 30px;
             transform: rotate(-90deg);
             background-color: rgba(255, 255, 255, .4);
-           @include screen('tablet') {
+            @include screen('tablet') {
                 top: 45%;
                 left: 0;
             }
@@ -1390,7 +1389,7 @@ div.tag {
         transition: 1s;
         display: block;
         @include screen('tablet') {
-            position:relative;
+            position: relative;
             clear: both;
             float: none;
             bottom: auto;
@@ -1511,7 +1510,6 @@ div.tag {
             }
         }
     }
-    
 }
 // 主題內容
 .fancybox-button {
@@ -1521,7 +1519,7 @@ div.tag {
 }
 .theme_area_content_block {
     h2 {
-         margin:0 25px 20px;
+        margin: 0 25px 20px;
     }
     // 圖片呈現
     .theme_area_piclist {
@@ -1575,7 +1573,7 @@ div.tag {
     }
     // 條列呈現
     .theme_area_numbering {
-        margin:0 25px;
+        margin: 0 25px;
         .numbering_list {
             display: flex;
             margin-bottom: 8px;
@@ -1738,7 +1736,7 @@ div.tag {
 }
 // 切換樣式
 .theme_toggle_style {
-    margin:0 25px 10px;
+    margin: 0 25px 10px;
     ul {
         display: flex;
         justify-content: flex-end;

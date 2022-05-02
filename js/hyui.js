@@ -245,8 +245,8 @@ $(function() {
         resizeTimer = setTimeout(function() {
             search_mode = true;
             mobileMenu();
-        }, 50);         
-    }); 
+        }, 50);
+    });
     mobileMenu();
     // resize
     // $(window).resize(function() {
@@ -254,9 +254,7 @@ $(function() {
     //         $('.theme_area_introduce').removeAttr('style').addClass('close_block');
     //     } else {
     //         $('.theme_area_introduce').removeClass('close_block');
-           
     //     }
-
     // });
     // 行動版查詢
     var _searchCtrl = $('.searchCtrl');

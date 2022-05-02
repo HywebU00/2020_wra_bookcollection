@@ -891,21 +891,20 @@ $(function() {
     });
 })
 // 提示語
-$(function(){
-    $('.numbering_list .numbering a' ).mouseover(function(){
+$(function() {
+    $('.numbering_list .numbering a').mouseover(function() {
         $(this).parent().siblings('.hint').stop().fadeIn();
     });
-    $('.numbering_list .numbering a' ).mouseout(function(){
+    $('.numbering_list .numbering a').mouseout(function() {
         $(this).parent().siblings('.hint').stop().fadeOut();
     });
 })
-
 // 點圖放大提示
-$(function(){
-    $('.theme_area_pic_slider .pic_img a' ).mouseover(function(){
+$(function() {
+    $('.theme_area_pic_slider .pic_img a').mouseover(function() {
         $('.enlarge_pic').stop().fadeIn();
     });
-    $('.theme_area_pic_slider .pic_img a' ).mouseout(function(){
+    $('.theme_area_pic_slider .pic_img a').mouseout(function() {
         $('.enlarge_pic').stop().fadeOut();
     });
 })
