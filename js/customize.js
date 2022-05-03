@@ -806,31 +806,31 @@ $(function() {
 // });
 // 2022新增
 // 主題輪播介紹區
-// $(function() {
-//     $('.theme_open_btn a').click(function() {
-//         if ($('.theme_area_introduce').hasClass('close_block')) {
-//             $('.theme_area_introduce').removeClass('close_block');
-//             $(this).text('關閉');
-//             $(this).parent('.theme_open_btn').removeClass('close_btn');
-//         } else {
-//             $('.theme_area_introduce').addClass('close_block');
-//             $(this).text('打開');
-//             $(this).parent('.theme_open_btn').addClass('close_btn');
-//         }
-//     })
-//     // 
-//     $('.theme_open_mobilebtn a').click(function() {
-//         if ($('.theme_area_introduce').is(':hidden')) {
-//             $('.theme_area_introduce').slideDown();
-//             $(this).text('關閉');
-//             $(this).parent('.theme_open_mobilebtn').addClass('close_btn');
-//         } else {
-//             $('.theme_area_introduce').slideUp();
-//             $(this).text('打開');
-//             $(this).parent('.theme_open_mobilebtn').removeClass('close_btn');
-//         }
-//     })
-// })
+$(function() {
+    $('.theme_open_btn a').click(function() {
+        if ($('.theme_area_introduce').hasClass('close_block')) {
+            $('.theme_area_introduce').removeClass('close_block');
+            $(this).text('關閉');
+            $(this).parent('.theme_open_btn').removeClass('close_btn');
+        } else {
+            $('.theme_area_introduce').addClass('close_block');
+            $(this).text('打開');
+            $(this).parent('.theme_open_btn').addClass('close_btn');
+        }
+    })
+    // 
+    $('.theme_open_mobilebtn a').click(function() {
+        if ($('.theme_area_introduce').is(':hidden')) {
+            $('.theme_area_introduce').slideDown();
+            $(this).text('關閉');
+            $(this).parent('.theme_open_mobilebtn').addClass('close_btn');
+        } else {
+            $('.theme_area_introduce').slideUp();
+            $(this).text('打開');
+            $(this).parent('.theme_open_mobilebtn').removeClass('close_btn');
+        }
+    })
+})
 // 輪播圖片燈箱
 $(function() {
     $('[data-fancybox="images"]').fancybox({
