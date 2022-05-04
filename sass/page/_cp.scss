@@ -1244,20 +1244,26 @@ div.tag {
         position: relative;
         .pic_img {
             position: relative;
-            height: 600px;
-            @include screen('mobile') {
-                height: 400px;
-            }
+            @include aspect-ratio(4,
+            3);
+            // overflow: hidden;
+            // height: 600px;
+            // @include screen('mobile') {
+            //     height: 400px;
+            // }
             img {
-                display: block;
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                right: 0;
-                left: 0;
+                // display: block;
+                // position: absolute;
+                // top: 0;
+                // bottom: 0;
+                // right: 0;
+                // left: 0;
+               width: auto;
+               height: auto;
                 max-width: 100%;
                 max-height: 100%;
-                margin: auto;
+                // margin: auto;
+                object-fit: contain;
             }
         }
         // 箭頭

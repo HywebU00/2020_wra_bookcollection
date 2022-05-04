@@ -384,10 +384,14 @@ $(function() {
     $('.theme_area_pic_slider').slick({
         dots: false,
         infinite: false,
-        speed: 300,
+        speed: 500,
         slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 1500,
         // adaptiveHeight: true
     });
+   
     /*-----------------------------------*/
     /////////////modal設定/////////////
     /*-----------------------------------*/
