@@ -683,6 +683,11 @@ button.submit {
             width: 150px;
             height: 100px;
             margin-right: 10px;
+            @media(max-width: 480px){
+                float:none;
+                width:100%;
+                height: 180px;
+            }
         }
         .tail, .pListName, .length {
             margin-left: auto;
@@ -695,6 +700,9 @@ button.submit {
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
+            @media(max-width: 480px){
+                clear: both;
+            }
         }
         .tail {
             margin-top: .3em;

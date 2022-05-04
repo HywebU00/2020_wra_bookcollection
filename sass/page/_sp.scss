@@ -1339,14 +1339,13 @@
         }
     }
 }
-
 // 註冊單
 .register_block {
-    .title{
+    .title {
         text-align: center;
         margin-bottom: 20px;
         font-size: 1.25em;
-        color:$primaryColor;
+        color: $primaryColor;
     }
     .form_grid {
         display: flex;
@@ -1468,15 +1467,15 @@
         padding: 0 30px;
         box-sizing: border-box;
         border-right: 1px solid #ccc;
-        @include screen('mobile'){
+        @include screen('mobile') {
             flex-basis: 100%;
             max-width: 100%;
-            border:none;
+            border: none;
         }
-         @include screen('xs_mobile'){
+        @include screen('xs_mobile') {
             padding: 0 30px 0 0;
         }
-         .form_grp {
+        .form_grp {
             border-bottom: none;
             label {
                 color: $primaryColor;
@@ -1492,20 +1491,17 @@
                 margin: 0 3px;
                 width: 97%;
             }
-            .account_number{
+            .account_number {
                 background-image: url('../images/icon/icon_mail_blue.svg');
                 background-repeat: no-repeat;
                 background-position: 20px 10px;
                 background-size: 20px;
-                
             }
-            .password{
-                 background-image: url('../images/icon/icon_lock_blue.svg');
+            .password {
+                background-image: url('../images/icon/icon_lock_blue.svg');
                 background-repeat: no-repeat;
                 background-position: 20px 10px;
                 background-size: 20px;
-                
-
             }
             ::placeholder {
                 color: #999;
@@ -1513,7 +1509,7 @@
             }
             .forgot_password {
                 text-align: right;
-                padding-right:25px;
+                padding-right: 25px;
                 a {
                     &:hover {
                         text-decoration: underline;
@@ -1525,8 +1521,8 @@
             button {
                 min-width: 18em;
                 border-radius: 50px;
-                @include screen('xs_mobile'){
-                     min-width: 9em;
+                @include screen('xs_mobile') {
+                    min-width: 9em;
                 }
             }
         }
@@ -1537,11 +1533,11 @@
         max-width: 40%;
         padding: 0 30px;
         box-sizing: border-box;
-        @include screen('mobile'){
+        @include screen('mobile') {
             flex-basis: 100%;
             max-width: 100%;
         }
-        @include screen('xs_mobile'){
+        @include screen('xs_mobile') {
             padding: 0 30px 0 0;
         }
         .illustrate {
@@ -1569,6 +1565,322 @@
                             color: $primaryColor;
                         }
                     }
+                }
+            }
+        }
+    }
+}
+// 水利影音資料
+.movie_data_block {
+    margin-bottom: 20px;
+    .iframe_v {
+        margin: 0;
+    }
+    .movie_data_group {
+        background-color: #eee;
+        padding: 20px 30px 30px;
+        border-radius: 0 0 4px 4px;
+        .classification {
+            color: $primaryColor;
+            font-size: 1.063em;
+            margin-bottom: 15px;
+            font-weight: bolder;
+        }
+        .title {
+            font-size: 1.75em;
+            font-weight: bolder;
+            margin-bottom: 20px;
+        }
+        .data {
+            margin-bottom: 15px;
+            ul {
+                margin: 0;
+                padding: 0;
+                li {
+                    display: inline-block;
+                    padding: 0 0 0 30px;
+                    margin-right: 20px;
+                    position: relative;
+                    font-weight: bolder;
+                    color: #333;
+                    &:before {
+                        content: '';
+                        background-color: #fff;
+                        border-radius: 50%;
+                        width: 25px;
+                        height: 25px;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        z-index: 0;
+                    }
+                    &.pepole {
+                        &:after {
+                            content: '';
+                            background-image: url('../images/icon/icon_view.svg');
+                            background-size: 16px;
+                            background-repeat: no-repeat;
+                            background-position: left center;
+                            width: 16px;
+                            height: 16px;
+                            position: absolute;
+                            left: 4px;
+                            top: 4px;
+                            z-index: 1;
+                        }
+                    }
+                    &.date {
+                        &:after {
+                            content: '';
+                            background-image: url('../images/icon/icon_calendar.svg');
+                            background-size: 14px;
+                            background-repeat: no-repeat;
+                            background-position: left center;
+                            width: 14px;
+                            height: 14px;
+                            position: absolute;
+                            left: 5px;
+                            top: 5px;
+                            z-index: 1;
+                        }
+                    }
+                    &.department {
+                        &:after {
+                            content: '';
+                            background-image: url('../images/icon/icon_man.svg');
+                            background-size: 16px;
+                            background-repeat: no-repeat;
+                            background-position: left center;
+                            width: 16px;
+                            height: 16px;
+                            position: absolute;
+                            left: 5px;
+                            top: 4px;
+                            z-index: 1;
+                        }
+                    }
+                }
+            }
+        }
+        .content {
+            font-size: 0.938em;
+            img {
+                width: 16px;
+                margin-right: 5px;
+                line-height: 1.6em;
+            }
+        }
+    }
+}
+// 影音list
+.movie_list_group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .movie_list {
+        flex: none;
+        flex-basis: 32%;
+        background-color: #eee;
+        padding: 10px 10px;
+        margin-bottom: 15px;
+        border-radius: 4px;
+        transition: .5s;
+        @media(max-width: 1100px) {
+            flex-basis: 49%;
+        }
+        @media(max-width:992px) {
+            flex-basis: 32%;
+        }
+        @media(max-width:900px) {
+            flex-basis: 49%;
+        }
+        @include screen('xs_mobile') {
+           flex-basis: 100%;
+        }
+        &:hover {
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            background-color: #ddd;
+        }
+        .title {
+            font-size: 1.125em;
+            font-weight: bolder;
+            margin-bottom: 10px;
+        }
+        .data {
+            margin-bottom: 5px;
+            ul {
+                margin: 0;
+                padding: 0;
+                li {
+                    display: inline-block;
+                    padding: 0 0 0 25px;
+                    margin-right: 2px;
+                    position: relative;
+                    font-weight: bolder;
+                    color: #333;
+                    font-size: 0.813em;
+                    &:before {
+                        content: '';
+                        background-color: #fff;
+                        border-radius: 50%;
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        z-index: 0;
+                    }
+                    &.pepole {
+                        &:after {
+                            content: '';
+                            background-image: url('../images/icon/icon_view.svg');
+                            background-size: 14px;
+                            background-repeat: no-repeat;
+                            background-position: left center;
+                            width: 14px;
+                            height: 14px;
+                            position: absolute;
+                            left: 4px;
+                            top: 4px;
+                            z-index: 1;
+                        }
+                    }
+                    &.date {
+                        &:after {
+                            content: '';
+                            background-image: url('../images/icon/icon_calendar.svg');
+                            background-size: 12px;
+                            background-repeat: no-repeat;
+                            background-position: left center;
+                            width: 12px;
+                            height: 12px;
+                            position: absolute;
+                            left: 4px;
+                            top: 4px;
+                            z-index: 1;
+                        }
+                    }
+                    &.department {
+                        &:after {
+                            content: '';
+                            background-image: url('../images/icon/icon_man.svg');
+                            background-size: 14px;
+                            background-repeat: no-repeat;
+                            background-position: left center;
+                            width: 14px;
+                            height: 14px;
+                            position: absolute;
+                            left: 3px;
+                            top: 2px;
+                            z-index: 1;
+                        }
+                    }
+                }
+            }
+        }
+        .movie_block {
+            position: relative;
+            margin-bottom: 5px;
+            @include aspect-ratio(16, 9);
+            img {
+                object-fit: cover;
+            }
+            span.playbtn {
+                background-color: rgba(0, 0, 0, .6);
+                width: 56px;
+                height: 56px;
+                border-radius: 50%;
+                display: block;
+                position: absolute;
+                transition: .5s;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                &::before {
+                    content: '';
+                    border-style: solid;
+                    border-width: 12px 0 12px 17px;
+                    border-color: transparent transparent transparent #fff;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin: -12px auto auto -5px;
+                }
+            }
+            a:hover .playbtn, a:focus .playbtn {
+                background-color: rgba(0, 0, 0, .8);
+                transform: scale(1.15);
+            }
+        }
+        .functionicon {
+            background-color: #fff;
+            margin-bottom: 5px;
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                li {
+                    margin-right: 5px;
+                    font-size: 0.875em;
+                    display: inline-block;
+                    a {
+                        display: block;
+                        color: #000;
+                        padding-left: 25px;
+                        position: relative;
+                        &:before {
+                            content: '';
+                            background-image: url('../images/funcIcon.svg');
+                            background-repeat: no-repeat;
+                            background-size: 60px;
+                            width: 25px;
+                            height: 25px;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                        }
+                        &:hover {
+                            color: $aHover;
+                        }
+                    }
+                    &.like {
+                        a {
+                            &:before {
+                                background-position: 0 -35px;
+                            }
+                        }
+                    }
+                    &.temporary {
+                        a {
+                            &:before {
+                                background-position: 0 -2px;
+                            }
+                        }
+                    }
+                    &.play {
+                        a {
+                            &:before {
+                                background-position: 0 -69px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .content {
+            font-size: 0.938em;
+            a {
+                display: block;
+                color: #333;
+                img {
+                    width: 16px;
+                    margin-right: 5px;
+                    line-height: 1.6em;
+                }
+                &:hover {
+                    color: $aHover;
                 }
             }
         }

@@ -1348,6 +1348,7 @@ div.tag {
         @include screen('tablet') {
             display: inline-block;
             float: right;
+            margin-top: 20px;
         }
         a {
             display: block;
