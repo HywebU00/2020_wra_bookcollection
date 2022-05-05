@@ -1247,11 +1247,11 @@ div.tag {
             position: relative;
             @include aspect-ratio(4,
             3);
-            // overflow: hidden;
-            // height: 600px;
-            // @include screen('mobile') {
-            //     height: 400px;
-            // }
+            overflow: hidden;
+            height: 600px;
+            @include screen('mobile') {
+                height: 400px;
+            }
             img {
                 // display: block;
                 // position: absolute;
