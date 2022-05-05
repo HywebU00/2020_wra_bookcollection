@@ -50,8 +50,8 @@
         font-size: 1em;
         text-shadow: none;
         writing-mode: vertical-lr;
-  -webkit-writing-mode: vertical-lr;
-  -ms-writing-mode: vertical-lr;
+        -webkit-writing-mode: vertical-lr;
+        -ms-writing-mode: vertical-lr;
         font-size: 0.813em;
         margin: 0 auto;
         position: absolute;
@@ -70,7 +70,6 @@
             background-size: 40px 19px;
             width: 40px !important;
             height: 40px !important;
-
         }
     }
     .slick-prev {
@@ -78,7 +77,6 @@
         background-position: left top;
         padding: 0px 0 0 18px !important;
         top: 70px !important;
-        
         @include screen('mobile') {
             top: 45% !important;
             background-position: center;
@@ -91,7 +89,7 @@
         padding: 0px 0 0px 18px !important;
         background-position: left bottom;
         top: auto;
-        bottom:-20px;
+        bottom: -20px;
         @include screen('mobile') {
             top: 45% !important;
             background-image: url('../vendor/slick/icon_arrow_right_inverse2.svg');
@@ -106,8 +104,8 @@
         transition: 0;
         @include screen('mobile') {
             font-size: 0;
-             width: 40px !important;
-             display: none;
+            width: 40px !important;
+            display: none;
         }
     }
     .slick-prev>a:focus,
@@ -171,28 +169,27 @@
         background-image: url('../vendor/slick/icon_arrow_up.svg');
         background-size: 60px 30px;
         background-position: center;
-        background-color: rgba(255, 255, 255,.5);
+        background-color: rgba(255, 255, 255, .5);
         width: 60px !important;
         height: 40px !important;
         transform: rotate(-90deg);
         right: auto;
         left: -10px;
         top: 46%;
-
     }
     .slick-next {
         background-image: url('../vendor/slick/icon_arrow_down.svg');
         background-size: 60px 30px;
         background-position: center;
-        background-color: rgba(255, 255, 255,.4);
+        background-color: rgba(255, 255, 255, .4);
         width: 60px !important;
         height: 40px !important;
         right: -10px;
         transform: rotate(-90deg);
         top: 46%;
     }
-    .slick-prev:hover, .slick-next:hover{
-        background-color: rgba(255, 255, 255,.8);
+    .slick-prev:hover, .slick-next:hover {
+        background-color: rgba(255, 255, 255, .8);
     }
     // 點點
     .slick-dots {
@@ -770,3 +767,4 @@
         // }
     }
 }
+//
