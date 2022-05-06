@@ -475,6 +475,9 @@ $(function() {
     $('.scrollDownbtn02').click(function() {
         $('body,html').stop(true, true).animate({ scrollTop: $('.publications_block').offset().top - 90 }, 0, 'easeOutExpo');
     });
+    $('.scrollDownbtn03').click(function() {
+        $('body,html').stop(true, true).animate({ scrollTop: $('.hot_movie_block').offset().top - 90 }, 0, 'easeOutExpo');
+    });
     // 收合書目table
     $('.bibliography_block .collapse_btn').click(function() {
         $(this).next('.bibliography').slideToggle()
@@ -952,4 +955,22 @@ $(function() {
     $('.theme_area_pic_slider .pic_img a').mouseout(function() {
         $('.enlarge_pic').stop().fadeOut();
     });
+})
+$(function() {
+    // 跑馬燈
+    if ($('.marquee').length > 0) {
+        $('.marquee ul').slick({
+            dots: false,
+            infinite: true,
+            vertical: true,
+            verticalSwiping: true,
+            speed: 300,
+            autoplaySpeed: 5000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            pauseOnHover: true, //滑鼠移過後暫停自動撥放
+            focusOnSelect: true,
+        });
+    }
 })

@@ -699,3 +699,476 @@
         }
     }
 }
+//  熱門影音榜
+.hot_movie_block {
+    text-align: left;
+    margin-bottom: 20px;
+    .col {
+        @include make-xs-column(12);
+        @include make-sm-column(12);
+        @include make-md-column(6);
+        @include make-lg-column(6);
+        padding: 0 2% 0 0;
+        @media(max-width: 1200px) {
+            padding: 0 1% 0 3%;
+        }
+        @include screen('tablet') {
+            padding: 0 3%;
+        }
+    }
+    .col:nth-of-type(2n) {
+        @include make-xs-column(12);
+        @include make-sm-column(12);
+        @include make-md-column(6);
+        @include make-lg-column(6);
+        padding: 0 0 0 2%;
+        @media(max-width: 1200px) {
+            padding: 0 3% 0 1%;
+        }
+        @include screen('tablet') {
+            padding: 0 3%;
+        }
+    }
+    .hot_movie_title {
+        margin: 0 0 20px 0;
+        padding: 30px 40px 40px;
+        display: block;
+        width: 16.66667%;
+        line-height: 1.4em;
+        font-size: 1.75em;
+        text-align: left;
+        color: #fff;
+        font-weight: normal;
+        @include gradient(#0045a5, #00bdf0, diagonal);
+        position: relative;
+        &:before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background-color: #fff;
+            position: absolute;
+            left: 40px;
+            bottom: 30px;
+        }
+        @include screen('tablet') {
+            padding: 30px 20px 40px;
+            &:before {
+                left: 20px;
+            }
+        }
+        @include screen('mobile') {
+            display: inline-block;
+            margin: 0 0 20px;
+            width: auto;
+            br {
+                display: none
+            }
+            padding: 20px 20px 40px 30px;
+            margin:0 0 20px;
+            &:before {
+                left: 30px;
+            }
+        }
+    }
+    .movie_data_block {
+        .iframe_v {
+            margin: 0;
+            @media screen and (min-width: $screen-sm) {
+                margin: 0;
+                iframe {
+                    height: 60vw;
+                    outline: 1px solid gray;
+                }
+            }
+            @media screen and (min-width: $screen-md) {
+                iframe {
+                    max-height: 450px;
+                }
+            }
+        }
+        .movie_data_group {
+            .data {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .hot_movie_list_group {
+        .hot_movie_list {
+            margin-bottom: 20px;
+            a {
+                display: block;
+                display: flex;
+                padding: 12px 0px 8px 12px;
+                // border-radius: 4px;
+                background-color: #fff;
+                border-bottom: 1px solid #ccc;
+                @include screen('xs_mobile') {
+                    flex-wrap: wrap;
+                    padding: 12px 0px 8px 0;
+                }
+                .movie_block {
+                    flex: none;
+                    flex-basis: 40%;
+                    max-width: 40%;
+                    position: relative;
+                    margin-bottom: 5px;
+                    margin-right: 15px;
+                    @include aspect-ratio(16, 9);
+                    @include screen('xs_mobile') {
+                        flex-basis: 100%;
+                        max-width: 100%;
+                        margin-right: 0;
+                    }
+                    img {
+                        object-fit: cover;
+                    }
+                    span.playbtn {
+                        background-color: rgba(0, 0, 0, .6);
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        display: block;
+                        position: absolute;
+                        transition: .5s;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        margin: auto;
+                        &::before {
+                            content: '';
+                            border-style: solid;
+                            border-width: 10px 0 10px 15px;
+                            border-color: transparent transparent transparent #fff;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            margin: -10px auto auto -5px;
+                        }
+                    }
+                }
+                .movie_content {
+                    flex: auto;
+                    flex-basis: calc(100% - 40% - 15px);
+                    max-width: calc(100% - 40% - 15px);
+                    @include screen('xs_mobile') {
+                        flex-basis: 100%;
+                        max-width: 100%;
+                    }
+                    .title {
+                        font-size: 1.125em;
+                        font-weight: bolder;
+                        margin-bottom: 10px;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+                    .content {
+                        font-size: 0.875em;
+                        line-height: 1.5em;
+                        color: #333;
+                        margin-bottom: 5px;
+                        img {
+                            width: 16px;
+                            margin-right: 5px;
+                        }
+                    }
+                    .data {
+                        margin-bottom: 0;
+                        ul {
+                            margin: 0;
+                            padding: 0;
+                            li {
+                                display: inline-block;
+                                padding: 0 0 0 25px;
+                                margin-right: 4px;
+                                position: relative;
+                                font-weight: bolder;
+                                color: #333;
+                                font-size: 0.813em;
+                                &:before {
+                                    content: '';
+                                    background-color: #ddd;
+                                    border-radius: 50%;
+                                    width: 22px;
+                                    height: 22px;
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    z-index: 0;
+                                }
+                                &.pepole {
+                                    &:after {
+                                        content: '';
+                                        background-image: url('../images/icon/icon_view.svg');
+                                        background-size: 14px;
+                                        background-repeat: no-repeat;
+                                        background-position: left center;
+                                        width: 14px;
+                                        height: 14px;
+                                        position: absolute;
+                                        left: 4px;
+                                        top: 4px;
+                                        z-index: 1;
+                                    }
+                                }
+                                &.date {
+                                    &:after {
+                                        content: '';
+                                        background-image: url('../images/icon/icon_calendar.svg');
+                                        background-size: 12px;
+                                        background-repeat: no-repeat;
+                                        background-position: left center;
+                                        width: 12px;
+                                        height: 12px;
+                                        position: absolute;
+                                        left: 4px;
+                                        top: 4px;
+                                        z-index: 1;
+                                    }
+                                }
+                                &.department {
+                                    &:after {
+                                        content: '';
+                                        background-image: url('../images/icon/icon_man.svg');
+                                        background-size: 14px;
+                                        background-repeat: no-repeat;
+                                        background-position: left center;
+                                        width: 14px;
+                                        height: 14px;
+                                        position: absolute;
+                                        left: 3px;
+                                        top: 2px;
+                                        z-index: 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+                    background-color: #eee;
+                    border-bottom: none;
+                    .movie_block {
+                        span.playbtn {
+                            background-color: rgba(0, 0, 0, .8);
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+        }
+        .more {
+            float: right;
+            margin-right: 10px;
+        }
+    }
+}
+// 出版品２
+.publications2_block {
+    margin-bottom: 40px;
+    .publications2_group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        @media(max-width: 1200px) {
+            padding: 0 3%;
+        }
+        .publications2_list {
+            flex: none;
+            flex-basis: 48%;
+            max-width: 48%;
+            margin-bottom: 30px;
+            .publications2_title {
+                margin: 0 0 20px 0;
+                padding: 15px 40px 20px;
+                display: block;
+                line-height: 1.4em;
+                font-size: 1.625em;
+                text-align: left;
+                color: #fff;
+                font-weight: normal;
+                @include gradient(#0045a5, #00bdf0, diagonal);
+                position: relative;
+                &:before {
+                    content: '';
+                    width: 30px;
+                    height: 2px;
+                    background-color: #fff;
+                    position: absolute;
+                    left: 40px;
+                    bottom: 10px;
+                }
+                @include screen('tablet') {
+                    padding: 30px 20px 40px;
+                    &:before {
+                        left: 20px;
+                    }
+                }
+                @include screen('mobile') {
+                    display: inline-block;
+                    margin: 0 0 20px;
+                    width: auto;
+                    br {
+                        display: none
+                    }
+                    padding: 20px 20px 40px 30px;
+                    margin:0 0 20px;
+                    &:before {
+                        left: 30px;
+                    }
+                }
+            }
+            .book_group {
+                display: flex;
+                justify-content: space-between;
+                .book_list_group {
+                    flex: none;
+                    flex-basis: 48%;
+                    max-width: 48%;
+                    justify-content: space-between;
+                    display: flex;
+                    margin-bottom: 15px;
+                    .book {
+                        flex: none;
+                        flex-basis: 30%;
+                        max-width: 30%;
+                        margin-right: 10px;
+                        img {
+                            max-width: 100%;
+                            max-height: 100%;
+                            border: 1px solid #ccc;
+                        }
+                    }
+                    .book_content {
+                        flex: auto;
+                        text-align: left;
+                        .title {
+                            color: #000;
+                            font-size: 1.063em;
+                            margin-bottom: 5px;
+                            font-weight: bolder;
+                        }
+                        ul {
+                            list-style-type: none;
+                            margin: 0 0 5px;
+                            padding: 0;
+                            font-size: 0.875em;
+                            line-height: 1.5em;
+                            li {
+                                margin-bottom: 0;
+                                color: #666;
+                            }
+                        }
+                        .detailed {
+                            display: inline-block;
+                            a {
+                                padding: 0px 10px;
+                                font-size: 0.813em;
+                                background-color: #999;
+                                color: #fff;
+                                border-radius: 4px;
+                                display: block;
+                                transition: .5s;
+                                &:hover {
+                                    background-color: #666;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .book_list {
+                text-align: left;
+                margin-bottom: 15px;
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                    li {
+                        margin: 0;
+                        padding: 0;
+                        a {
+                            display: block;
+                            padding: 5px;
+                            border-bottom: 1px solid #cccc;
+                            color: darken($linkColor, 5);
+                            font-size: 0.983em;
+                            span {
+                                font-size: 0.875em;
+                                color: #666;
+                                display: block;
+                                margin-top: 0;
+                            }
+                            &:hover {
+                                color: $aHover;
+                            }
+                        }
+                    }
+                }
+            }
+            .more {
+                float: right;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+// 跑馬燈 
+.marquee_block {
+    margin: 0 0 10px;
+    @include screen('tablet') {
+        margin: 0 0 20px;
+    }
+    @include screen('xs_mobile'){
+        margin: 30px 0 30px;
+    }
+    .marquee_group {
+        display: flex;
+        align-items: center;
+       @include screen('xs_mobile') {
+            display: block;
+        }
+        .title {
+            margin: 0 0 0 70px;
+            padding: 15px;
+            flex: none;
+            flex-basis: 200px;
+            box-sizing: border-box;
+            background-color: #666;
+            color: #fff;
+            font-size: 1.125em;
+            text-align: center;
+            border-radius: 50px;
+            letter-spacing: 0.05em;
+            // font-family: Lato, 'PingFang TC', 'Helvetica Neue', Helvetica, 微軟正黑體, Arial, sans-serif;
+            font-weight: bold;
+            @include screen('mobile') {
+                padding: 15px 10px;
+                flex-basis: 120px;
+                margin: 0 0 0 30px;
+            }
+            @include screen('xs_mobile') {
+                flex-basis: 100%;
+                margin: 0 40px 0 30px;
+            }
+        }
+        .marquee {
+            flex: auto;
+            flex-basis: calc(100% - 270px);
+            margin: 2em 0em 2em 3em;
+            @media(max-width: 1200px) {
+                margin: 2em 3em 2em 3em;
+            }
+            @include screen('mobile') {
+                flex-basis: calc(100% - 120px);
+                margin: 2em 3em 2em 0em;
+            }
+            @include screen('xs_mobile') {
+                flex-basis: auto;
+                margin: 1em 3em;
+            }
+        }
+    }
+}
