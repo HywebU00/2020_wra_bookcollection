@@ -8,7 +8,6 @@ $btn-radius:.2em;
     text-align: center;
     padding: 1em 0;
 }
-
 // 按鈕的共用設定
 @mixin btn_setting($btn-bg:#d9d9d9, $btn-font-color:$btn-font-color) {
     background-color: $btn-bg;
@@ -23,7 +22,7 @@ $btn-radius:.2em;
         border: 1px solid darken($btn-bg, 10) !important;
         cursor: pointer;
         color: #FFF;
-        outline:none;
+        outline: none;
         // @include gradient(lighten($btn-bg, 10), darken($btn-bg, 18), vertical);
     }
     &.active {
@@ -46,8 +45,6 @@ $btn-radius:.2em;
     padding: $btn-padding;
     min-width: 4em;
     margin: .25em .1em;
-
-    
     i {
         margin-right: .3em;
         margin-left: .3em;
@@ -58,7 +55,7 @@ $btn-radius:.2em;
     @extend %btn;
     @include box-sizing;
     @include btn_setting;
-    text-shadow:none;
+    text-shadow: none;
     &:hover,
     &:focus {
         color: $btn-font-color;
@@ -101,8 +98,7 @@ $btn-radius:.2em;
 }
 .btn-reset {
     @extend %btn;
-    color:lighten($color-word,15);
-
+    color: lighten($color-word, 15);
 }
 .btn-primary {
     @extend .btn-orange;
@@ -111,10 +107,9 @@ $btn-radius:.2em;
     @extend .btn-orange;
 }
 //取消預約
-.cancel_reserve_btn{
-     @extend %btn;
-    @include btn_setting(#8c7a03, #FFF);
-    
+.cancel_reserve_btn {
+    @extend %btn;
+    @include btn_setting(#bda60a, #FFF);
 }
 // 按鈕大小
 .btn-xl {
