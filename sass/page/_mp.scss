@@ -980,6 +980,10 @@
             flex-basis: 48%;
             max-width: 48%;
             margin-bottom: 30px;
+            @include screen('mobile') {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
             .publications2_title {
                 margin: 0 0 20px 0;
                 padding: 15px 40px 20px;
@@ -1000,29 +1004,13 @@
                     left: 40px;
                     bottom: 10px;
                 }
-                @include screen('tablet') {
-                    padding: 30px 20px 40px;
-                    &:before {
-                        left: 20px;
-                    }
-                }
-                @include screen('mobile') {
-                    display: inline-block;
-                    margin: 0 0 20px;
-                    width: auto;
-                    br {
-                        display: none
-                    }
-                    padding: 20px 20px 40px 30px;
-                    margin:0 0 20px;
-                    &:before {
-                        left: 30px;
-                    }
-                }
             }
             .book_group {
                 display: flex;
                 justify-content: space-between;
+                @include screen('tablet') {
+                    flex-wrap: wrap;
+                }
                 .book_list_group {
                     flex: none;
                     flex-basis: 48%;
@@ -1030,11 +1018,39 @@
                     justify-content: space-between;
                     display: flex;
                     margin-bottom: 15px;
+                    @include screen('tablet') {
+                        flex-basis: 100%;
+                        max-width: 100%;
+                    }
+                    @include screen('mobile') {
+                        flex-basis: 48%;
+                        max-width: 48%;
+                    }
+                    @media(max-width: 580px) {
+                        flex-basis: 100%;
+                        max-width: 100%;
+                    }
                     .book {
                         flex: none;
                         flex-basis: 30%;
                         max-width: 30%;
                         margin-right: 10px;
+                        @include screen('tablet') {
+                            flex-basis: 20%;
+                            max-width: 20%;
+                        }
+                        @include screen('mobile') {
+                            flex-basis: 30%;
+                            max-width: 30%;
+                        }
+                         @media(max-width: 580px){
+                            flex-basis: 20%;
+                            max-width: 20%;
+                         }
+                         @media(max-width: 400px){
+                            flex-basis: 30%;
+                            max-width: 30%;
+                         }
                         img {
                             max-width: 100%;
                             max-height: 100%;
@@ -1121,13 +1137,13 @@
     @include screen('tablet') {
         margin: 0 0 20px;
     }
-    @include screen('xs_mobile'){
+    @include screen('xs_mobile') {
         margin: 30px 0 30px;
     }
     .marquee_group {
         display: flex;
         align-items: center;
-       @include screen('xs_mobile') {
+        @include screen('xs_mobile') {
             display: block;
         }
         .title {
