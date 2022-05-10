@@ -215,11 +215,7 @@ $(function() {
             $('.mainleftblock').css('position', 'relative');
             $('.mainleftblock').css('left', '0');
             $('.mainleftblock').show();
-            // 會員選單
-            $('.name_login a').click(function() {
-                $('.member_menu').stop().slideToggle();
-                $(this).parent().stop().toggleClass('open');
-            })
+            
         }
     }
     //設定resize 計時器

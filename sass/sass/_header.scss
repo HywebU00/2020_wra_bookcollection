@@ -304,6 +304,7 @@
             font-weight: 500;
             a {
                 color: darken($primaryColor, 10);
+                display: block;
                 &:hover {
                     color: $primaryColor;
                 }
@@ -365,7 +366,7 @@
         }
         @include screen('tablet') {
             .datablock {
-                display: block;
+                display: none;
             }
         }
         ul {
