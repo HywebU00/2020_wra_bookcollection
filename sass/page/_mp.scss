@@ -802,9 +802,27 @@
                 // border-radius: 4px;
                 background-color: #fff;
                 border-bottom: 1px solid #ccc;
+                position:relative;
                 @include screen('xs_mobile') {
                     flex-wrap: wrap;
                     padding: 12px 0px 8px 0;
+                }
+                .ranking{
+                    padding:2px 15px;
+                    max-width: 100px;
+                    background-color:#666;
+                    color:#fff;
+                    position:absolute;
+                    top:0;
+                    left:0;
+                    z-index: 9;
+                    font-size: 0.813em;
+                    font-weight: bolder;
+                    em{
+                        font-style: normal;
+                        color:#fff;
+                        padding:0 2px;
+                    }
                 }
                 .movie_block {
                     flex: none;
