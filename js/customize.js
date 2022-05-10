@@ -457,11 +457,11 @@ $(function() {
     $('.modal_overlay').click(closeModal);
     $('.modal .close').click(closeModal);
     $('.modal .btn_grp input[type="submit"]').click(closeModal);
-    // 會員選單
-    $('.name_login').click(function() {
-        $('.member_menu').stop().slideToggle();
-        $(this).stop().toggleClass('open');
-    })
+    // // 會員選單
+    // $('.name_login').click(function() {
+    //     $('.member_menu').stop().slideToggle();
+    //     $(this).stop().toggleClass('open');
+    // })
     // 如果點在外面
     $('.main').off().on('click touchend', function(e) {
         $('.member_menu').stop().slideUp();

@@ -39,16 +39,18 @@ $(function() {
     ////////////// 行動版選單切換////////////
     /*-----------------------------------*/
     _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
-    $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="memberCtrl">會員專區</button><button type="button" class="colleaguesCtrl">本署同仁</button>');
-    // $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
+    $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button>');
+    // $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="memberCtrl">會員專區</button><button type="button" class="colleaguesCtrl">本署同仁</button>');
     var menu_status = false;
     var _sidebar = $('.sidebar'),
         _search = $('.search'),
         _nav = $('.navigation'),
         _sidebarClose = $('.sidebarClose'),
         _sidebarCtrl = $('.sidebarCtrl'),
-        _overlay = $('.menu_overlay');
-    _mArea = $('.m_area');
+        _overlay = $('.menu_overlay'),
+        _memberblock = $('.member_block'),
+        _membermenu = $('.member_menu'),
+        _mArea = $('.m_area');
     _sidebarCtrl.append('<span></span><span></span><span></span>');
     var search_mode = false;
     // 打開選單 function
@@ -97,6 +99,8 @@ $(function() {
         _menu.find('li ul').hide();
     });
     // 先複製過去
+    _membermenu.clone().prependTo(_mArea);
+    _memberblock.clone().prependTo(_mArea);
     _nav.clone().prependTo(_mArea);
     _menu.clone().prependTo(_mArea);
     // _search.clone().prependTo(_body).addClass('m_search');
@@ -211,6 +215,11 @@ $(function() {
             $('.mainleftblock').css('position', 'relative');
             $('.mainleftblock').css('left', '0');
             $('.mainleftblock').show();
+            // 會員選單
+            $('.name_login a').click(function() {
+                $('.member_menu').stop().slideToggle();
+                $(this).parent().stop().toggleClass('open');
+            })
         }
     }
     //設定resize 計時器
