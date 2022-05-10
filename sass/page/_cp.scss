@@ -1243,7 +1243,6 @@ div.tag {
     // 輪播
     .theme_area_pic_slider {
         position: relative;
-
         .pic_img {
             position: relative;
             @include aspect-ratio(4,
@@ -1689,9 +1688,9 @@ div.tag {
                 }
             }
             .numbering_content {
-                flex: auto;
-                flex-basis: 60%;
-                max-width: 60%;
+                flex: none;
+                flex-basis: calc(100% - 12% - 30%);
+                max-width: calc(100% - 12% - 30%);
                 @include screen('mobile') {
                     flex-basis: 100%;
                     max-width: 100%;
@@ -1732,11 +1731,13 @@ div.tag {
                 }
                 ul {
                     margin: 20px 0 0 0;
-                    padding: 0;
+                    padding: 0 20px;
+                    box-sizing: border-box;
                     list-style-type: none;
                     line-height: 1.7em;
-                    @include screen('mobile'){
+                    @include screen('mobile') {
                         margin: 0;
+                        padding: 0;
                     }
                     li {
                         &.date {

@@ -1546,7 +1546,7 @@
                 min-width: 18em;
                 border-radius: 50px;
                 @include screen('xs_mobile') {
-                    min-width: 9em;
+                    min-width: 13em;
                 }
             }
         }
@@ -1569,6 +1569,9 @@
                 margin-bottom: 15px;
                 border-bottom: 1px solid #ccc;
                 padding: 0 0 15px;
+                @include screen('mobile'){
+                    text-align: center;
+                }
                 a {
                     font-size: 1.125em;
                     display: inline-block;
