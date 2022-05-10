@@ -71,7 +71,7 @@
     // Buttons will be created using templates from `btnTpl` option
     // and they will be placed into toolbar (class="fancybox-toolbar"` element)
     buttons: [
-      "zoom",
+      // "zoom",
       //"share",
       "slideShow",
       //"fullScreen",

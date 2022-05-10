@@ -1243,6 +1243,7 @@ div.tag {
     // 輪播
     .theme_area_pic_slider {
         position: relative;
+
         .pic_img {
             position: relative;
             @include aspect-ratio(4,
@@ -1734,11 +1735,14 @@ div.tag {
                     padding: 0;
                     list-style-type: none;
                     line-height: 1.7em;
+                    @include screen('mobile'){
+                        margin: 0;
+                    }
                     li {
                         &.date {
                             background-image: url('../images/numbering_icon01.png');
                             background-repeat: no-repeat;
-                            background-position: left center;
+                            background-position: left 3px;
                             padding: 0 0 0 25px;
                         }
                         &.photographer {

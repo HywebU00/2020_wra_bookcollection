@@ -637,3 +637,26 @@ abbr[title] {
         }
     }
 }
+// 按鈕距離
+.btn_grp {
+    input {
+        margin: 0 5px;
+    }
+}
+// 帳號密碼
+.account_password {
+   
+    input[type="text"], select {
+        width: auto !important;
+        min-width: 49% !important;
+        // float: left;
+        display: inline-block;
+        @include screen('xs_mobile') {
+            width: 100%;
+            display: block;
+        }
+    }
+    *[class^="notice"] {
+        display: inline-block;
+    }
+}

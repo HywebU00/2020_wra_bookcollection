@@ -139,14 +139,18 @@
                 <!-- sp start -->
                 <div class="sp">
                     <div class="register_block">
-                        <div class="title">申請資料填寫</div>
+                        <div class="title apply">申請資料填寫</div>
+                        <div class="title forget">忘記密碼</div>
+                        <div class="title reset">重設密碼</div>
                         <form action="" class="form_grid">
                             <div class="remind"><abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr>號表示必填欄位，需全數填寫完成才能存檔</div>
-                            <div class="form_grp ">
+                            <div class="form_grp form_inline">
                                 <label for="" class="form_title">申請帳號(Email)<abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr></label>
-                                <div class="form_content">
-                                    <input type="text" name="" id="" value="" placeholder="12345@gmail.com.tw">
-                                    <div class="notice_success">帳號可用</div>
+                                <div class="form_content ">
+                                    <div class="account_password">
+                                        <input type="text" name="" id="" value="" placeholder="12345@gmail.com.tw">
+                                        <div class="notice_success">&nbsp;</div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form_grp form_grp_inline">
@@ -156,10 +160,12 @@
                                         <input name="password" type="password" placeholder="請輸入密碼" value="1234">
                                         <button type="button" class="btn btn-icon"><i class="i_hide"></i></button>
                                     </div>
+                                    <div class="notice_success">&nbsp;</div>
                                     <div class="notice_success">包含英文字母大小寫</div>
                                     <div class="notice_success">至少包含1個數字</div>
                                     <div class="notice_error">至少包含1個符號</div>
                                     <div class="notice_error">長度大於5個字元</div>
+                                    <div class="notice_error">&nbsp;</div>
                                 </div>
                             </div>
                             <div class="form_grp form_grp_inline">

@@ -25,6 +25,10 @@
         float: left;
         width: 30%;
         margin: 0;
+        @media(max-width: 480px) {
+            width: 100%;
+            float: none;
+        }
         select {
             height: 40px;
             line-height: 2.2em;
@@ -36,6 +40,9 @@
             &:focus {
                 box-shadow: 0 0 0 2px #fdb300 inset;
                 border-color: #fdb300;
+            }
+            @media(max-width: 480px) {
+                border-radius: 4px;
             }
         }
     }
@@ -54,6 +61,12 @@
         border-left: none;
         border-radius: 0 4px 4px 0;
         box-shadow: none;
+        @media(max-width: 480px) {
+            width: 100%;
+            float: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
         input[type="text"] {
             border-radius: 0;
             border: none;
@@ -65,6 +78,7 @@
             height: 39px;
             color: #333;
             background: transparent;
+            height: 40px;
             &.nobtn {
                 width: 89%;
             }
@@ -254,6 +268,7 @@
                 @media(max-width: 480px) {
                     flex-basis: 100%;
                     width: 100%;
+                    border-radius: 4px;
                 }
             }
             .advanced_content {
@@ -281,6 +296,13 @@
                         width: 80% !important;
                         max-width: 80% !important;
                         min-width: 80% !important;
+                        height: 40px;
+                        @include screen('xs_mobile') {
+                            flex-basis: 70%;
+                            width: 70% !important;
+                            max-width: 70% !important;
+                            min-width: 70% !important;
+                        }
                     }
                     em {
                         font-style: normal;
@@ -304,23 +326,35 @@
                 vertical-align: top;
                 float: left;
                 &:nth-child(1), &:nth-child(2) {
-                    width: 15%;
+                    width: 21.7%;
                 }
                 &:nth-child(3) {
-                    width: 70%;
+                    width: 56.6%;
                 }
-                @include screen('xs_mobile') {
-                    &:nth-child(1), &:nth-child(2) {
+                @include screen('mobile') {
+                    &:nth-child(1) {
                         width: 25%;
                     }
+                    &:nth-child(2) {
+                        width: 30%;
+                    }
                     &:nth-child(3) {
-                        width: 50%;
+                        width: 45%;
+                    }
+                }
+                @media(max-width: 480px) {
+                    &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+                        width: 100%;
                     }
                 }
                 &:nth-child(2) {
                     .select_left>select {
                         border-radius: 0;
                         border-left: none !important;
+                        @media(max-width: 480px) {
+                            border: 1px solid #ccc !important;
+                            border-radius: 4px;
+                        }
                     }
                 }
                 &.adddelbtn {
@@ -346,6 +380,9 @@
                 &:focus {
                     box-shadow: 0 0 0 3px #fdb300 inset;
                 }
+                @media(max-width: 480px) {
+                    border-radius: 4px;
+                }
             }
         }
         .form_search {
@@ -358,6 +395,10 @@
             line-height: 2em;
             display: flex;
             @include box-sizing(border-box);
+            @media(max-width: 480px) {
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
             input[type="text"] {
                 border-radius: 0;
                 border: none;
@@ -367,6 +408,11 @@
                 margin: 0;
                 color: #333;
                 flex: 1 1 auto;
+                height: 40px;
+                // @media(max-width: 480px) {
+                //     border: 1px solid #ccc!important;
+                //     border-radius: 4px;
+                // }
             }
             .keyboardInputInitiator {
                 margin: 12px 4px 0;
@@ -696,57 +742,41 @@ html .ui-button.ui-state-disabled:active {
 // 時間區塊
 .time_block {
     border: 1px solid #d2d2d2;
-    padding: 15px ;
+    padding: 15px 10px;
     margin: 0 0 25px;
     border-radius: 4px;
     text-align: center;
-    box-sizing:border-box;
+    box-sizing: border-box;
     @include screen('tablet') {
         padding: 15px;
     }
     .title {
-        margin: 0 0 10px;
+        margin: 0 0 10px 5px;
         padding: 0;
         font-size: 1em;
         text-align: left;
         font-weight: bolder;
     }
+    .scope_block {
+        display: flex;
+        align-items: center;
+    }
     .datepick {
-        padding-right: .5em;
         position: relative;
         >input[type="text"] {
-            width: 9em;
-            padding-right: 3em;
-            @include screen('xs_mobile') {
-                width: 100%;
-            }
+            width: 90%;
+            margin: 0 5px;
         }
-        i {
-            position: absolute;
-            padding: .37em .1em !important;
-            right: 1em;
-            top: .2em;
-            min-width: 1em;
-            background: none;
-            border: none;
-            width: auto;
-            pointer-events: none;
-            &:hover, &:focus {
-                box-shadow: none;
-                border: none !important;
-            }
-        }
-        .to{
+        .to {
             text-align: center;
-            padding:3px;
             font-size: 0.875em;
+            width: 10%;
         }
-
     }
-    button{
-            font-size: 0.938em;
-            margin:10px 0 0 0;
-        }
+    button {
+        font-size: 0.938em;
+        margin: 10px 0 0 0;
+    }
 }
 //分類區塊
 .sort_block {
@@ -1108,7 +1138,6 @@ html .ui-button.ui-state-disabled:active {
         display: block;
         width: 100%;
         height: 60vw;
-        
     }
     @media screen and (min-width: $screen-sm) {
         margin: 20px auto;

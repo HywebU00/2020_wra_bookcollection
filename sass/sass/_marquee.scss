@@ -1,5 +1,5 @@
 .marquee {
-    height: 45px;
+    height: 5em;
     display: block;
     overflow: hidden;
     background: #FFF;
@@ -14,7 +14,7 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-bottom: 1px solid #dadada;
-    @media(max-width:991px) {
+    @media(max-width: 991px) {
         margin: 1.5em 0em;
     }
     ul {
@@ -49,7 +49,8 @@
         height: 10px;
         transform: rotate(-90deg);
         right: 0px !important;
-        top: 22px !important;
+        bottom: -6px !important;
+        top: auto;
         left: auto;
         opacity: .5;
         width: 20px !important;
@@ -72,20 +73,26 @@
     }
     a {
         display: block;
-        line-height: 40px;
+        line-height: 1.6em;
         margin-right: 3em;
         font-weight: bold;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+        padding-left:120px;
+        @include text-line(3, 23px);
         color: #000;
-      text-decoration: none;
+        text-decoration: none;
         span {
-            color:#7cb52f;
+            color: #7cb52f;
             margin-right: 15px;
+            margin-left: -111px;
         }
         &:hover {
-            color: #7cb52f  ;
+            color: #7cb52f;
         }
+    }
+    //
+    .slick-slide {
+        min-height: auto !important;
+        float: none;
+        white-space: normal;
     }
 }

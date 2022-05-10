@@ -350,6 +350,7 @@ $(function() {
         verticalSwiping: true,
         vertical: true,
         arrows: true,
+        variableHeight: false,
         responsive: [{
                 breakpoint: 1200,
                 settings: {
