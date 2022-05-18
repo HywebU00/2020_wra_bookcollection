@@ -1357,7 +1357,7 @@
         &.forget {
             background-image: url('../images/register_icon02.svg');
         }
-        &.reset{
+        &.reset {
             background-image: url('../images/register_icon03.svg');
         }
     }
@@ -1569,7 +1569,7 @@
                 margin-bottom: 15px;
                 border-bottom: 1px solid #ccc;
                 padding: 0 0 15px;
-                @include screen('mobile'){
+                @include screen('mobile') {
                     text-align: center;
                 }
                 a {
@@ -1607,7 +1607,7 @@
     }
     .movie_data_group {
         background-color: #eee;
-        padding: 20px 20px 30px;
+        padding: 20px;
         border-radius: 0;
         .classification {
             color: $primaryColor;
@@ -1616,12 +1616,14 @@
             font-weight: bolder;
         }
         .title {
-            font-size: 1.75em;
+            display: block;
+            font-size: 1.625em;
             font-weight: bolder;
             margin-bottom: 15px;
             padding-bottom: 5px;
             border-bottom: 1px solid #ccc;
-            line-height: 1.4em;
+            @include text-line(2, 1.4em);
+            line-height: 1.3em;
         }
         .data {
             margin-bottom: 15px;

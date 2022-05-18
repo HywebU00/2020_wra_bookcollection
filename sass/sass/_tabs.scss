@@ -76,6 +76,8 @@
         position: relative;
         font-weight: 400;
         font-size: 1.125em;
+        letter-spacing: 0.05em;
+        font-weight: bold;
         @include screen('xs_mobile') {
             background-color: #ccc;
         }
@@ -102,7 +104,8 @@
         color: #fff;
     }
     .tabItem.active>a {
-        background-color: #535353;
+        background-color: $primaryColor;
+        
         @include screen('xs_mobile') {
             background-color: $secondaryColor;
         }

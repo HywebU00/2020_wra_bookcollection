@@ -314,6 +314,7 @@
             span {
                 border-bottom: 1px solid #333;
                 display: inline-block;
+                font-size: 1.125em;
             }
         }
         .moviesbtn {
@@ -357,6 +358,7 @@
     .explain {
         color: #333;
         margin-bottom: 5px;
+        font-size: 1.125em;
     }
     .keywordHot {
         overflow: hidden;
@@ -432,7 +434,7 @@
         &:before {
             content: '';
             width: 30px;
-            height: 2px;
+            height: 1px;
             background-color: #fff;
             position: absolute;
             left: 40px;
@@ -702,7 +704,7 @@
 //  熱門影音榜
 .hot_movie_block {
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     .col {
         @include make-xs-column(12);
         @include make-sm-column(12);
@@ -744,7 +746,7 @@
         &:before {
             content: '';
             width: 30px;
-            height: 2px;
+            height: 1px;
             background-color: #fff;
             position: absolute;
             left: 40px;
@@ -776,19 +778,21 @@
             @media screen and (min-width: $screen-sm) {
                 margin: 0;
                 iframe {
-                    height: 60vw;
-                    outline: 1px solid gray;
+                    height: 50vw;
                 }
             }
             @media screen and (min-width: $screen-md) {
                 iframe {
-                    max-height: 450px;
+                    max-height: 320px;
                 }
             }
         }
         .movie_data_group {
-            .data {
+            .content {
                 margin-bottom: 10px;
+            }
+            .data {
+                margin-bottom: 0px;
             }
         }
     }
@@ -798,36 +802,36 @@
             a {
                 display: block;
                 display: flex;
-                padding: 12px 0px 8px 12px;
+                padding: 12px 0px 20px 12px;
                 // border-radius: 4px;
                 background-color: #fff;
                 border-bottom: 1px solid #ccc;
-                position:relative;
+                position: relative;
                 @include screen('xs_mobile') {
                     flex-wrap: wrap;
                     padding: 12px 0px 8px 0;
                 }
-                .ranking{
-                    padding:2px 15px;
+                .ranking {
+                    padding: 2px 15px;
                     max-width: 100px;
-                    background-color:#666;
-                    color:#fff;
-                    position:absolute;
-                    top:0;
-                    left:0;
+                    background-color: red;
+                    color: #fff;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
                     z-index: 9;
                     font-size: 0.813em;
                     font-weight: bolder;
-                    em{
+                    em {
                         font-style: normal;
-                        color:#fff;
-                        padding:0 2px;
+                        color: #fff;
+                        padding: 0 2px;
                     }
                 }
                 .movie_block {
                     flex: none;
-                    flex-basis: 40%;
-                    max-width: 40%;
+                    flex-basis: 60%;
+                    max-width: 60%;
                     position: relative;
                     margin-bottom: 5px;
                     margin-right: 15px;
@@ -867,8 +871,8 @@
                 }
                 .movie_content {
                     flex: auto;
-                    flex-basis: calc(100% - 40% - 15px);
-                    max-width: calc(100% - 40% - 15px);
+                    flex-basis: calc(100% - 60% - 15px);
+                    max-width: calc(100% - 60% - 15px);
                     @include screen('xs_mobile') {
                         flex-basis: 100%;
                         max-width: 100%;
@@ -897,9 +901,9 @@
                             margin: 0;
                             padding: 0;
                             li {
-                                display: inline-block;
+                                display: block;
                                 padding: 0 0 0 25px;
-                                margin-right: 4px;
+                                margin: 0 0 10px;
                                 position: relative;
                                 font-weight: bolder;
                                 color: #333;
@@ -1004,23 +1008,87 @@
             }
             .publications2_title {
                 margin: 0 0 20px 0;
-                padding: 15px 40px 20px;
+                padding: 15px 40px 20px 90px;
                 display: block;
                 line-height: 1.4em;
-                font-size: 1.625em;
+                font-size: 1.5em;
                 text-align: left;
                 color: #fff;
                 font-weight: normal;
-                @include gradient(#0045a5, #00bdf0, diagonal);
+                background-color: #0094e0;
                 position: relative;
                 &:before {
                     content: '';
                     width: 30px;
-                    height: 2px;
+                    height: 1px;
                     background-color: #fff;
                     position: absolute;
-                    left: 40px;
-                    bottom: 10px;
+                    left: 90px;
+                    bottom: 13px;
+                }
+                &.annual_report {
+                    position: relative;
+                    &:after {
+                        content: '';
+                        background-image: url('../images/publications_icon01.svg');
+                        background-repeat: no-repeat;
+                        background-position: 0 0;
+                        background-size: 58px 38px;
+                        width: 58px;
+                        height: 38px;
+                        opacity: .8;
+                        position: absolute;
+                        left: 17px;
+                        top: 18px;
+                    }
+                }
+                &.book {
+                    position: relative;
+                    &:after {
+                        content: '';
+                        background-image: url('../images/publications_icon02.svg');
+                        background-repeat: no-repeat;
+                        background-position: 0 0;
+                        background-size: 58px 38px;
+                        width: 58px;
+                        height: 38px;
+                        opacity: .8;
+                        position: absolute;
+                        left: 17px;
+                        top: 16px;
+                    }
+                }
+                &.collection {
+                    position: relative;
+                    &:after {
+                        content: '';
+                        background-image: url('../images/publications_icon03.svg');
+                        background-repeat: no-repeat;
+                        background-position: 0 0;
+                        background-size: 58px 38px;
+                        width: 58px;
+                        height: 38px;
+                        opacity: .8;
+                        position: absolute;
+                        left: 17px;
+                        top: 17px;
+                    }
+                }
+                &.newbook {
+                    position: relative;
+                    &:after {
+                        content: '';
+                        background-image: url('../images/publications_icon04.svg');
+                        background-repeat: no-repeat;
+                        background-position: 0 0;
+                        background-size: 68px 44px;
+                        width: 68px;
+                        height: 44px;
+                        opacity: .8;
+                        position: absolute;
+                        left: 17px;
+                        top: 13px;
+                    }
                 }
             }
             .book_group {
@@ -1061,14 +1129,14 @@
                             flex-basis: 30%;
                             max-width: 30%;
                         }
-                         @media(max-width: 580px){
+                        @media(max-width: 580px) {
                             flex-basis: 20%;
                             max-width: 20%;
-                         }
-                         @media(max-width: 400px){
+                        }
+                        @media(max-width: 400px) {
                             flex-basis: 30%;
                             max-width: 30%;
-                         }
+                        }
                         img {
                             max-width: 100%;
                             max-height: 100%;
@@ -1081,7 +1149,7 @@
                         .title {
                             color: #000;
                             font-size: 1.063em;
-                            margin-bottom: 5px;
+                            margin-bottom: 8px;
                             font-weight: bolder;
                         }
                         ul {
@@ -1091,7 +1159,7 @@
                             font-size: 0.875em;
                             line-height: 1.5em;
                             li {
-                                margin-bottom: 0;
+                                margin-bottom: 4px;
                                 color: #666;
                             }
                         }
@@ -1122,21 +1190,27 @@
                     list-style-type: none;
                     li {
                         margin: 0;
-                        padding: 0;
+                        padding: 8px 5px;
+                        border-bottom: 1px solid #cccc;
                         a {
                             display: block;
-                            padding: 5px;
-                            border-bottom: 1px solid #cccc;
+                            padding: 0 0 5px;
                             color: darken($linkColor, 5);
                             font-size: 0.983em;
+                            @include text-line(2, 1.5em);
+                            line-height: 1.4em;
+                            &:hover {
+                                color: $aHover;
+                            }
+                        }
+                        .data {
+                            display: block;
                             span {
                                 font-size: 0.875em;
                                 color: #666;
-                                display: block;
+                                display: inline-block;
                                 margin-top: 0;
-                            }
-                            &:hover {
-                                color: $aHover;
+                                padding: 0 10px 0 0;
                             }
                         }
                     }
@@ -1170,7 +1244,7 @@
             flex: none;
             flex-basis: 200px;
             box-sizing: border-box;
-            background-color: #666;
+            background-color: $secondaryColor;
             color: #fff;
             font-size: 1.125em;
             text-align: center;

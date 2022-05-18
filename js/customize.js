@@ -464,7 +464,7 @@ $(function() {
     })
     // 如果點在外面
     $('.main').off().on('click touchend', function(e) {
-        $('.member_menu').stop().slideUp();
+        $('.header .member_menu').stop().slideUp();
     });
     $('.memberCtrl').click(function() {
         $('.member_menu').stop().slideToggle();
