@@ -17,6 +17,9 @@
     @media(max-width: 991px) {
         margin: 1.5em 0em;
     }
+    @media(max-width: 480px){
+        height: 6.5em;
+    }
     ul {
         margin: 0;
         padding: 0;
@@ -80,10 +83,19 @@
         @include text-line(3, 23px);
         color: #000;
         text-decoration: none;
+        @media(max-width: 480px){
+            padding-left:0;
+             @include text-line(4, 23px);
+        }
         span {
             color: #7cb52f;
             margin-right: 15px;
             margin-left: -111px;
+            @media(max-width: 480px){
+                margin-right:0;
+                margin-left: 0;
+                display: block;
+            }
         }
         &:hover {
             color: #7cb52f;
