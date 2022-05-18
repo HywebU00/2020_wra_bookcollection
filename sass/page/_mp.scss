@@ -705,6 +705,12 @@
 .hot_movie_block {
     text-align: left;
     margin-bottom: 30px;
+    background-image:url('../images/hot_bg01.png');
+    background-repeat: no-repeat;
+   background-position: center -60px;
+   @include screen('mobile'){
+     background-position: center -76px;
+   }
     .col {
         @include make-xs-column(12);
         @include make-sm-column(12);
