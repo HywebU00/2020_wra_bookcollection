@@ -705,12 +705,12 @@
 .hot_movie_block {
     text-align: left;
     margin-bottom: 30px;
-    background-image:url('../images/hot_bg01.png');
+    background-image: url('../images/hot_bg01.png');
     background-repeat: no-repeat;
-   background-position: center -60px;
-   @include screen('mobile'){
-     background-position: center -76px;
-   }
+    background-position: center -60px;
+    @include screen('mobile') {
+        background-position: center -76px;
+    }
     .col {
         @include make-xs-column(12);
         @include make-sm-column(12);
@@ -781,6 +781,32 @@
     .movie_data_block {
         .iframe_v {
             margin: 0;
+            position: relative;
+            .ranking {
+                padding: 6px 15px;
+                max-width: 100px;
+                background-color: red;
+                color: #fff;
+                position: absolute;
+                top: -10px;
+                left: -1px;
+                z-index: 9;
+                font-size: 0.813em;
+                font-weight: bolder;
+                @media(max-width: 1200px) {
+                    top: -12px;
+                    left: -12px;
+                }
+                @include screen('xs_mobile'){
+                    top: -12px;
+                    left: 0px;
+                }
+                em {
+                    font-style: normal;
+                    color: #fff;
+                    padding: 0 2px;
+                }
+            }
             @media screen and (min-width: $screen-sm) {
                 margin: 0;
                 iframe {
@@ -1283,7 +1309,7 @@
                 flex-basis: auto;
                 margin: 1em 3em;
             }
-            @media(max-width: 480px){
+            @media(max-width: 480px) {
                 margin: 1em 2em;
             }
         }
