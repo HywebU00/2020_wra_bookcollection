@@ -397,67 +397,55 @@
     text-align: left;
     .col {
         @include make-xs-column(12);
-        @include make-sm-column(2);
-        @include make-md-column(2);
-        @include make-lg-column(2);
+        @include make-sm-column(12);
+        @include make-md-column(12);
+        @include make-lg-column(12);
+        text-align: center;
     }
     .col:nth-child(2) {
         @include make-xs-column(12);
-        @include make-sm-column(5);
-        @include make-md-column(5);
-        padding: 0 10px 0 30px;
+        @include make-sm-column(6);
+        @include make-md-column(6);
+        @include make-lg-column(6);
+        padding: 0 20px 0 20px;
+        text-align: left;
         @include screen('mobile') {
             padding: 0 30px 30px;
         }
     }
     .col:nth-child(3) {
         @include make-xs-column(12);
-        @include make-sm-column(5);
-        @include make-md-column(5);
-        @include make-lg-column(5);
-        padding: 0 30px 0 10px;
+        @include make-sm-column(6);
+        @include make-md-column(6);
+        @include make-lg-column(6);
+        padding: 0 20px 0 20px;
+        text-align: left;
         @include screen('mobile') {
             padding: 0 30px 30px;
         }
     }
     .tag_cloud_title {
-        margin: 0 20px 0 0;
-        padding: 30px 40px 40px;
-        width: 100%;
+        margin: 0 0 30px;
+        padding: 16px 40px 25px;
+        width: auto;
         line-height: 1.4em;
         font-size: 1.75em;
-        text-align: left;
+        text-align: center;
         color: #fff;
         font-weight: normal;
+        display: inline-block;
         @include gradient(#0045a5, #00bdf0, diagonal);
         position: relative;
+        letter-spacing: 0.05em;
         &:before {
             content: '';
             width: 30px;
             height: 1px;
             background-color: #fff;
             position: absolute;
-            left: 40px;
-            bottom: 30px;
-        }
-        @include screen('tablet') {
-            padding: 30px 20px 40px;
-            &:before {
-                left: 20px;
-            }
-        }
-        @include screen('mobile') {
-            display: inline-block;
-            margin: 0 0 20px;
-            width: auto;
-            br {
-                display: none
-            }
-            padding: 20px 20px 40px 30px;
-            margin:0 0 20px;
-            &:before {
-                left: 30px;
-            }
+            left: 50%;
+            bottom: 15px;
+            margin-left: -15px;
         }
     }
     .tag_cloud {
@@ -482,7 +470,7 @@
             font-size: 1.5em;
         }
         ul {
-            margin: 0 0 10px;
+            margin: 0 0 20px;
             padding: 0;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -705,13 +693,16 @@
 .hot_movie_block {
     text-align: left;
     margin-bottom: 30px;
-    background-image: url('../images/hot_bg01.png');
-    background-repeat: no-repeat;
-    background-position: center -60px;
-    @include screen('mobile') {
-        background-position: center -76px;
-    }
+    
+    
     .col {
+        @include make-xs-column(12);
+        @include make-sm-column(12);
+        @include make-md-column(12);
+        @include make-lg-column(12);
+        text-align: center;
+    }
+    .col:nth-of-type(2) {
         @include make-xs-column(12);
         @include make-sm-column(12);
         @include make-md-column(6);
@@ -724,7 +715,7 @@
             padding: 0 3%;
         }
     }
-    .col:nth-of-type(2n) {
+    .col:nth-of-type(3) {
         @include make-xs-column(12);
         @include make-sm-column(12);
         @include make-md-column(6);
@@ -738,15 +729,15 @@
         }
     }
     .hot_movie_title {
-        margin: 0 0 20px 0;
-        padding: 30px 40px 40px;
-        display: block;
-        width: 16.66667%;
+        margin: 0 0 40px;
+        padding: 16px 40px 25px;
+        width: auto;
         line-height: 1.4em;
         font-size: 1.75em;
-        text-align: left;
+        text-align: center;
         color: #fff;
         font-weight: normal;
+        display: inline-block;
         @include gradient(#0045a5, #00bdf0, diagonal);
         position: relative;
         &:before {
@@ -755,30 +746,13 @@
             height: 1px;
             background-color: #fff;
             position: absolute;
-            left: 40px;
-            bottom: 30px;
-        }
-        @include screen('tablet') {
-            padding: 30px 20px 40px;
-            &:before {
-                left: 20px;
-            }
-        }
-        @include screen('mobile') {
-            display: inline-block;
-            margin: 0 0 20px;
-            width: auto;
-            br {
-                display: none
-            }
-            padding: 20px 20px 40px 30px;
-            margin:0 0 20px;
-            &:before {
-                left: 30px;
-            }
+            left: 50%;
+            bottom: 15px;
+            margin-left: -15px;
         }
     }
     .movie_data_block {
+         text-align: left;
         .iframe_v {
             margin: 0;
             position: relative;
@@ -797,7 +771,7 @@
                     top: -12px;
                     left: -12px;
                 }
-                @include screen('xs_mobile'){
+                @include screen('xs_mobile') {
                     top: -12px;
                     left: 0px;
                 }
@@ -829,6 +803,7 @@
         }
     }
     .hot_movie_list_group {
+        text-align: left;
         .hot_movie_list {
             margin-bottom: 20px;
             a {
@@ -934,12 +909,13 @@
                             padding: 0;
                             li {
                                 display: block;
-                                padding: 0 0 0 25px;
+                                padding: 0 0 0 28px;
                                 margin: 0 0 10px;
                                 position: relative;
                                 font-weight: bolder;
                                 color: #333;
                                 font-size: 0.813em;
+                               
                                 &:before {
                                     content: '';
                                     background-color: #ddd;
