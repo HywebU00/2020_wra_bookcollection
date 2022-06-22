@@ -241,6 +241,108 @@
             }
         }
     }
+    .form_easy {
+        display: flex;
+        flex-wrap: wrap;
+        .easy_group {
+            display: flex;
+            flex-basis: 100%;
+            @media(max-width: 480px) {
+                flex-wrap: wrap;
+                margin-bottom: 5px;
+            }
+            select {
+                height: 40px;
+                line-height: 2.2em;
+                font-size: 1em;
+                background-color: #fff;
+                border-radius: 4px 0 0 4px;
+                border: 1px solid #ccc;
+                box-shadow: none;
+                flex: none;
+                flex-basis: 30%;
+                width: 30%;
+                @media(max-width: 480px) {
+                    flex-basis: 100%;
+                    width: 100%;
+                    border-radius: 4px;
+                }
+            }
+            .easy_content {
+                width: 70%;
+                display: flex;
+                margin: -5px 0 0 -1px;
+                padding: 0;
+                @media(max-width: 480px) {
+                    flex-basis: 100%;
+                    width: 100%;
+                    margin: 0;
+                }
+                span {
+                    // float: left;
+                    flex: auto;
+                    width: auto !important;
+                    display: flex;
+                    align-items: center;
+                    input {
+                        flex: auto;
+                        flex-basis: 80%;
+                        border-radius: 0 !important;
+                        vertical-align: middle;
+                        margin: 0;
+                        width: 80% !important;
+                        max-width: 80% !important;
+                        min-width: 80% !important;
+                        height: 40px;
+                        @include screen('xs_mobile') {
+                            flex-basis: 70%;
+                            width: 70% !important;
+                            max-width: 70% !important;
+                            min-width: 70% !important;
+                        }
+                    }
+                    em {
+                        font-style: normal;
+                        flex: none;
+                        flex-basis: 20%;
+                        text-align: center;
+                    }
+                    // input[type="text"]{
+                    //     width: 80% !important;
+                    //     max-width:  80%!important;
+                    //     min-width:  80%!important;
+                    // }
+                }
+            }
+            input.simple_search_btn {
+                margin: 2px;
+                padding: 0 !important;
+                background-color: $secondaryColor;
+                border: none !important;
+                flex: 0 0 36px;
+                border-radius: 4px;
+                min-width: 0;
+                background-image: url('../images/search_icon2.svg');
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 20px 20px;
+                transition: .2s;
+                @media(max-width: 480px){
+                    flex-basis:100%;
+                    padding:5px !important;
+                    margin: 5px 0 ;
+                }
+                &:hover {
+                    border: 1px solid darken($secondaryColor, 5) !important;
+                    background-color: darken($secondaryColor, 5);
+                }
+                &:focus {
+                    box-shadow: 0 0 0 3px #fdb300 inset;
+                    border: none !important;
+                }
+            }
+        }
+    }
     // 
     .form_advanced {
         margin: 0;
