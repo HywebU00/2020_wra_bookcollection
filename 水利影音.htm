@@ -144,43 +144,78 @@
                 <!-- 水利影音查詢 start-->
                 <!-- 查詢內容start -->
                 <div class="searchsystem">
-                    <div class="form_easy">
-                        <!-- <div class="select_left">
-                            <select name="" id="selectSample">
-                                <option value="">關鍵字查詢</option>
-                                <option value="">影片名稱</option>
-                                <option value="">上架單位</option>
-                                <option value="">上架時間</option>
-                            </select>
-                        </div>
-                        <div class="form_search">
-                            <input type="text" name="" value="" placeholder="請輸入關鍵文字" class="keyboardInput">
-                            <input type="submit" name="" value="" class="simple_search_btn">
-                        </div> -->
-                        <div class="easy_group">
-                            <select name="" id="selectSample">
-                                <option value="">關鍵字查詢</option>
-                                <option value="">影片名稱</option>
-                                <option value="">上架單位</option>
-                                <option value="">上架時間</option>
-                            </select>
-                            <div class="easy_content">
-                                <span><input type="text" name="" value="" placeholder="110"><em>年</em></span><span><input type="text" name="" value="" placeholder="01"><em>月</em></span><span><em>～</em></span><span><input type="text" name="" value="" placeholder="111"><em>年</em></span><span><input type="text" name="" value="" placeholder="01"><em>月</em></span>
+                    <!-- 簡易查詢start -->
+                    <div class="easy_group">
+                        <!-- 1 -->
+                        <div class="form_easy">
+                            <div class="select_left">
+                                <select name="" id="selectSample">
+                                    <option value="">關鍵字查詢</option>
+                                    <option value="">影片名稱</option>
+                                    <option value="">上架單位</option>
+                                    <option value="">上架時間</option>
+                                </select>
                             </div>
-                            <input type="submit" name="" value="" class="simple_search_btn">
+                            <!-- 關鍵字查詢 內容-->
+                            <div class="form_search">
+                                <input type="text" name="" value="" placeholder="請輸入關鍵文字" class="keyboardInput">
+                                <input type="submit" name="" value="" class="simple_search_btn">
+                            </div>
+                        </div>
+                        <!-- 2 -->
+                        <div class="form_easy">
+                            <div class="select_left">
+                                <select name="" id="selectSample">
+                                    <option value="">關鍵字查詢</option>
+                                    <option value="">影片名稱</option>
+                                    <option value="">上架單位</option>
+                                    <option value="">上架時間</option>
+                                </select>
+                            </div>
+                            <!-- 上架時間 內容-->
+                            <div class="added_time_group">
+                                <div class="added_time_content">
+                                    <span><input type="text" name="" value="" placeholder="110"><em>年</em></span><span><input type="text" name="" value="" placeholder="01"><em>月</em></span><span><em>～</em></span><span><input type="text" name="" value="" placeholder="111"><em>年</em></span><span><input type="text" name="" value="" placeholder="01"><em>月</em></span>
+                                </div>
+                                <input type="submit" name="" value="" class="simple_search_btn">
+                            </div>
                         </div>
                     </div>
-                    <!-- 新增start -->
-                    <div class="form_advanced">
-                        <div class="advanced_group">
-                            <select name="" id="selectSample">
-                                <option value="">關鍵字查詢</option>
-                                <option value="">影片名稱</option>
-                                <option value="">上架單位</option>
-                                <option value="">上架時間</option>
-                            </select>
-                            <div class="advanced_content">
-                                <span><input type="text" name="" value="" placeholder="110"><em>年</em></span><span><input type="text" name="" value="" placeholder="01"><em>月</em></span><span><em>～</em></span><span><input type="text" name="" value="" placeholder="111"><em>年</em></span><span><input type="text" name="" value="" placeholder="01"><em>月</em></span>
+                    <!-- 簡易查詢end -->
+                    <!-- 進階查詢start -->
+                    <div class="advanced_group">
+                        <!-- 1 -->
+                        <div class="form_advanced">
+                            <div class="select_left">
+                                <select name="" id="selectSample">
+                                    <option value="">關鍵字查詢</option>
+                                    <option value="">影片名稱</option>
+                                    <option value="">上架單位</option>
+                                    <option value="">上架時間</option>
+                                </select>
+                            </div>
+                            <!-- 關鍵字查詢 內容-->
+                            <div class="form_search">
+                                <input type="text" name="" value="" placeholder="請輸入關鍵文字" class="keyboardInput">
+                                <!-- <input type="submit" name="" value="" class="simple_search_btn"> -->
+                            </div>
+                        </div>
+                        <!-- 2 -->
+                        <div class="form_advanced">
+                            <div class="select_left">
+                                <select name="" id="selectSample">
+                                    <option value="">關鍵字查詢</option>
+                                    <option value="">影片名稱</option>
+                                    <option value="">上架單位</option>
+                                    <option value="">上架時間</option>
+                                </select>
+                            </div>
+                            <!-- 上架時間 內容-->
+                            <div class="added_time_group">
+                                <div class="added_time_content">
+                                    <span><input type="text" name="" value="" placeholder="110"><em>年</em></span><span><input type="text" name="" value="" placeholder="01"><em>月</em></span><span><em>～</em></span><span><input type="text" name="" value="" placeholder="111"><em>年</em></span><span><input type="text" name="" value="" placeholder="01"><em>月</em></span>
+                                </div>
+                                <!-- <input type="submit" name="" value="" class="simple_search_btn"> -->
                             </div>
                         </div>
                         <table>
@@ -225,11 +260,11 @@
                             <button class="btn btn-submit">查詢</button>
                         </div>
                     </div>
-                    <!-- 新增end -->
+                    <!-- 進階查詢end -->
+                    <!-- 切換按鈕 -->
                     <div class="btn_grp">
                         <a href="javascript:;" class="simplebtn">簡易查詢</a>
                         <a href="javascript:;" class="advancedbtn">進階查詢</a>
-                        <!--   <a href="javascript:;" class="">分館查詢</a> -->
                     </div>
                     <div class="query_word "><span>查詢詞：</span>關鍵詞 <b>這裡是查詢詞，使用粗體字區分</b> <i>OR</i> ，字數太多自動往下新增一行</div>
                 </div>

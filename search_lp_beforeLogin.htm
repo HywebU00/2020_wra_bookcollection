@@ -25,9 +25,7 @@
     <link rel="stylesheet" href="css/hyui.css">
     <!-- favicon -->
     <link href="images/favicon.png" rel="icon" type="image/x-icon">
-
     <!-- ///// 原檔名：館藏查詢lp_未登入.htm ///// -->
-
 </head>
 
 <body>
@@ -112,76 +110,105 @@
                         <div class="search_content">
                             <!-- 查詢內容start -->
                             <div class="searchsystem">
-                                <div class="select_left">
-                                    <select name="" id="selectSample">
-                                        <option selected value="1">電子書(EBN/GPN)編號</option>
-                                        <option value="2">委辦計畫編號</option>
-                                        <option value="3">出版年區間</option>
-                                        <option value="4">全文</option>
-                                        <option value="5">書名</option>
-                                        <option value="6">作者</option>
-                                        <option value="7">出版社</option>
-                                        <option value="8">條碼號</option>
-                                    </select>
-                                </div>
-                                <div class="form_search">
-                                    <input type="text" name="" value="" placeholder="請輸入關鍵文字" class="keyboardInput">
-                                    <div class="duration" style="display: none;">
-                                        <input type="text" placeholder="開始年">
-                                        <input type="text" placeholder="結束年">
+                                <!-- 簡易查詢start -->
+                                <div class="easy_group">
+                                    <div class="form_easy">
+                                        <div class="select_left">
+                                            <select name="" id="selectSample">
+                                                <option selected value="1">電子書(EBN/GPN)編號</option>
+                                                <option value="2">委辦計畫編號</option>
+                                                <option value="3">出版年區間</option>
+                                                <option value="4">全文</option>
+                                                <option value="5">書名</option>
+                                                <option value="6">作者</option>
+                                                <option value="7">出版社</option>
+                                                <option value="8">條碼號</option>
+                                            </select>
+                                        </div>
+                                        <div class="form_search">
+                                            <input type="text" name="" value="" placeholder="請輸入關鍵文字" class="keyboardInput">
+                                            <div class="duration" style="display: none;">
+                                                <input type="text" placeholder="開始年">
+                                                <input type="text" placeholder="結束年">
+                                            </div>
+                                            <input type="submit" name="" value="" class="simple_search_btn">
+                                        </div>
                                     </div>
-                                    <input type="submit" name="" value="" class="simple_search_btn">
+                                    <!--  <div class="onlysearch"><input type="checkbox" name="" value="">僅查詢目前可借閱館藏</div> -->
                                 </div>
-                                <!--  <div class="onlysearch"><input type="checkbox" name="" value="">僅查詢目前可借閱館藏</div> -->
-                                <!-- 新增start -->
-                                <div class="form_advanced">
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <div class="select_left">
-                                                    <select name="" id="selectSample">
-                                                        <option value="">AND</option>
-                                                        <option value="">OR</option>
-                                                        <option value="">NOT</option>
-                                                    </select>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="select_left">
-                                                    <select name="" id="selectSample">
-                                                        <option value="">電子書(EBN/GPN)編號</option>
-                                                        <option value="">委辦計畫編號</option>
-                                                        <option value="">出版年區間</option>
-                                                        <option value="">全文</option>
-                                                        <option value="">書名</option>
-                                                        <option value="">作者</option>
-                                                        <option value="">出版社</option>
-                                                        <option value="">條碼號</option>
-                                                    </select>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="form_search">
-                                                    <input type="text" name="" value="" placeholder="請輸入關鍵文字" class="keyboardInput">
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="3" class="adddelbtn">
-                                                <!--  <div class="onlysearchin"><input type="checkbox" name="" value="">僅查詢目前可借閱館藏</div> -->
-                                                <ul>
-                                                    <li><a href="#"><img src="images/advanced_add.png" alt="增加"></a></li>
-                                                    <li><a href="#"><img src="images/advanced_del.png" alt="刪除"></a></li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <div class="btn_grp">
-                                        <button class="btn btn-reset">清除</button>
-                                        <button class="btn btn-submit">查詢</button>
+                                <!-- 簡易查詢end -->
+                                <!-- 進階查詢start -->
+                                <div class="advanced_group">
+                                    <div class="form_advanced">
+                                        <div class="select_left">
+                                            <select name="" id="selectSample">
+                                                <option selected value="1">電子書(EBN/GPN)編號</option>
+                                                <option value="2">委辦計畫編號</option>
+                                                <option value="3">出版年區間</option>
+                                                <option value="4">全文</option>
+                                                <option value="5">書名</option>
+                                                <option value="6">作者</option>
+                                                <option value="7">出版社</option>
+                                                <option value="8">條碼號</option>
+                                            </select>
+                                        </div>
+                                        <div class="form_search">
+                                            <input type="text" name="" value="" placeholder="請輸入關鍵文字" class="keyboardInput">
+                                            <div class="duration" style="display: none;">
+                                                <input type="text" placeholder="開始年">
+                                                <input type="text" placeholder="結束年">
+                                            </div>
+                                            <!-- <input type="submit" name="" value="" class="simple_search_btn"> -->
+                                        </div>
                                     </div>
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <div class="select_left">
+                                                        <select name="" id="selectSample">
+                                                            <option value="">AND</option>
+                                                            <option value="">OR</option>
+                                                            <option value="">NOT</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="select_left">
+                                                        <select name="" id="selectSample">
+                                                            <option value="">電子書(EBN/GPN)編號</option>
+                                                            <option value="">委辦計畫編號</option>
+                                                            <option value="">出版年區間</option>
+                                                            <option value="">全文</option>
+                                                            <option value="">書名</option>
+                                                            <option value="">作者</option>
+                                                            <option value="">出版社</option>
+                                                            <option value="">條碼號</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="form_search">
+                                                        <input type="text" name="" value="" placeholder="請輸入關鍵文字" class="keyboardInput">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3" class="adddelbtn">
+                                                    <!--  <div class="onlysearchin"><input type="checkbox" name="" value="">僅查詢目前可借閱館藏</div> -->
+                                                    <ul>
+                                                        <li><a href="#"><img src="images/advanced_add.png" alt="增加"></a></li>
+                                                        <li><a href="#"><img src="images/advanced_del.png" alt="刪除"></a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <div class="btn_grp">
+                                            <button class="btn btn-reset">清除</button>
+                                            <button class="btn btn-submit">查詢</button>
+                                        </div>
+                                   
                                 </div>
-                                <!-- 新增end -->
+                                <!-- 進階查詢end -->
                                 <div class="btn_grp">
                                     <a href="javascript:;" class="simplebtn">簡易查詢</a>
                                     <a href="javascript:;" class="advancedbtn">進階查詢</a>
@@ -235,7 +262,6 @@
                                 <div class="range"><input type="tel" placeholder="開始年"><span>至</span><label for="amount"></label><input type="tel" placeholder="結束年"></div>
                                 <input type="button" value="出版年度查詢"></input>
                             </div>
-
                             <!-- 出版年度 end -->
                             <!-- 分類區塊 start -->
                             <div class="sort_block">
@@ -646,28 +672,25 @@
     <script src="js/hyui.js"></script>
     <!-- 客製js -->
     <script src="js/customize.js"></script>
-
     <!-- GUI demo 日期區間與文字輸入切換，套版時請刪除 20210609 -->
     <script>
-        $(function(){
-            var _searchsystem = $('.searchsystem');
-            var _leftSelect = _searchsystem.find('.select_left select');
-            var _inputText = _searchsystem.find('input.keyboardInput');
-            var _duration = _searchsystem.find('.duration');
-
-            _leftSelect.change(function(){
-                if ( $(this).val() == 3) {
-                    _inputText.next('img').hide();
-                    _inputText.hide();
-                    _duration.removeAttr('style');
-                } else {
-                    _duration.attr('style', 'display: none;');
-                    _inputText.show().next('img').show();
-                }
-            })
+    $(function() {
+        var _searchsystem = $('.searchsystem');
+        var _leftSelect = _searchsystem.find('.select_left select');
+        var _inputText = _searchsystem.find('input.keyboardInput');
+        var _duration = _searchsystem.find('.duration');
+        _leftSelect.change(function() {
+            if ($(this).val() == 3) {
+                _inputText.next('img').hide();
+                _inputText.hide();
+                _duration.removeAttr('style');
+            } else {
+                _duration.attr('style', 'display: none;');
+                _inputText.show().next('img').show();
+            }
         })
+    })
     </script>
-    
 </body>
 
 </html>

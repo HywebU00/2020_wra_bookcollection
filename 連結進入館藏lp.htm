@@ -107,22 +107,44 @@
                         <div class="search_content">
                             <!-- 查詢內容start -->
                             <div class="searchsystem">
-                                <div class="select_left">
-                                    <select name="" id="selectSample">
-                                        <option value="">全文</option>
-                                        <option value="">書名</option>
-                                        <option value="">作者</option>
-                                        <option value="">出版社</option>
-                                        <option value="">條碼號條碼號</option>
-                                    </select>
+                                <!-- 簡易查詢start -->
+                                <div class="easy_group">
+                                    <div class="form_easy">
+                                        <div class="select_left">
+                                            <select name="" id="selectSample">
+                                                <option value="">全文</option>
+                                                <option value="">書名</option>
+                                                <option value="">作者</option>
+                                                <option value="">出版社</option>
+                                                <option value="">條碼號條碼號</option>
+                                            </select>
+                                        </div>
+                                        <div class="form_search">
+                                            <input type="text" name="" value="" placeholder="請輸入關鍵文字" class="keyboardInput">
+                                            <input type="submit" name="" value="" class="simple_search_btn">
+                                        </div>
+                                    </div>
+                                    <!--  <div class="onlysearch"><input type="checkbox" name="" value="">僅查詢目前可借閱館藏</div> -->
                                 </div>
-                                <div class="form_search">
-                                    <input type="text" name="" value="" placeholder="請輸入關鍵文字" class="keyboardInput">
-                                    <input type="submit" name="" value="" class="simple_search_btn">
-                                </div>
-                                <!--  <div class="onlysearch"><input type="checkbox" name="" value="">僅查詢目前可借閱館藏</div> -->
-                                <!-- 新增start -->
-                                <div class="form_advanced">
+                                <!-- 簡易查詢end -->
+                                <!-- 進階查詢start -->
+                                <div class="advanced_group">
+                                    <div class="form_advanced">
+                                        <div class="select_left">
+                                            <select name="" id="selectSample">
+                                                <option value="">全文</option>
+                                                <option value="">書名</option>
+                                                <option value="">作者</option>
+                                                <option value="">出版社</option>
+                                                <option value="">條碼號條碼號</option>
+                                            </select>
+                                        </div>
+                                        <!-- 關鍵字查詢 內容-->
+                                        <div class="form_search">
+                                            <input type="text" name="" value="" placeholder="請輸入關鍵文字" class="keyboardInput">
+                                            <!-- <input type="submit" name="" value="" class="simple_search_btn"> -->
+                                        </div>
+                                    </div>
                                     <table>
                                         <tr>
                                             <td>
@@ -166,7 +188,8 @@
                                         <button class="btn btn-submit">查詢</button>
                                     </div>
                                 </div>
-                                <!-- 新增end -->
+                                <!-- 進階查詢end -->
+                                <!-- 切換按鈕 -->
                                 <div class="btn_grp">
                                     <a href="javascript:;" class="simplebtn">簡易查詢</a>
                                     <a href="javascript:;" class="advancedbtn">進階查詢</a>

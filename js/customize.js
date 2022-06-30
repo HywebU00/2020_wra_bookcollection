@@ -541,22 +541,24 @@ $(function() {
     $.fancybox.open($("#lightbox_style03"))
     //進階查詢資料 
     $('.advancedbtn').click(function() {
-        $('.form_advanced').stop().slideDown(700);
+        $('.advanced_group').stop().slideDown(700);
+        $('.searchsystem .easy_group').stop().slideUp();
         $('.searchsystem .onlysearch').hide();
         $('.searchsystem .onlysearchin').show();
-        $('.searchsystem .simple_search_btn').hide();
+        
         $('.searchsystem .simplebtn').show();
         $('.searchsystem .advancedbtn').hide();
-        $('.searchsystem .form_easy').hide();
+        // $('.searchsystem .form_easy').hide();
     })
     $('.simplebtn').click(function() {
-        $('.form_advanced').stop().slideUp(700);
+        $('.easy_group').stop().slideDown(700);
+        $('.searchsystem .advanced_group').stop().slideUp();
         $('.searchsystem .onlysearch').show();
         $('.searchsystem .onlysearchin').hide();
         $('.searchsystem .simple_search_btn').show();
         $('.searchsystem .simplebtn').hide();
         $('.searchsystem .advancedbtn').show();
-        $('.searchsystem .form_easy').show();
+        // $('.searchsystem .form_easy').show();
     })
     // 出版年度
     $("#slider-range").slider({
