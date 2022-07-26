@@ -135,6 +135,54 @@ $(function() {
         ease: 'ease',
         lazy: true
     });
+    // 
+    $('.cppic_slider').slick({
+        dots: true,
+        infinite: true,
+        autoplay: true, //自動播放
+        speed: 1000,
+        slidesToShow: 6,
+        slidesToScroll: 6,
+        autoplay: false,
+        autoplaySpeed: 1500,
+        // pauseOnHover: true,
+        // pauseOnFocus: true,
+        // focusOnSelect: true,
+        // accessibility: true,
+        // lazyLoad: 'ondemand',
+        // ease: 'ease',
+        responsive: [{
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 5,
+                slidesToScroll: 5,
+            }
+        }, {
+            breakpoint: 991,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4,
+            }
+        }, {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+            }
+        }, {
+            breakpoint: 575,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        }, {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            }
+        }]
+    });
     // cp_photo
     $('.Slider-for').on('init reInit afterChange', function(event, slick, currentSlide) {
         var i = (currentSlide ? currentSlide : 0) + 1;
@@ -545,7 +593,6 @@ $(function() {
         $('.searchsystem .easy_group').stop().slideUp();
         $('.searchsystem .onlysearch').hide();
         $('.searchsystem .onlysearchin').show();
-        
         $('.searchsystem .simplebtn').show();
         $('.searchsystem .advancedbtn').hide();
         // $('.searchsystem .form_easy').hide();
@@ -977,40 +1024,32 @@ $(function() {
         });
     }
 })
-
 // svg
-$(function(){
-    jQuery('img.svg').each(function(){
-    var $img = jQuery(this);
-    var imgID = $img.attr('id');
-    var imgClass = $img.attr('class');
-    var imgURL = $img.attr('src');
-
-    jQuery.get(imgURL, function(data) {
-        // Get the SVG tag, ignore the rest
-        var $svg = jQuery(data).find('svg');
-
-        // Add replaced image's ID to the new SVG
-        if(typeof imgID !== 'undefined') {
-            $svg = $svg.attr('id', imgID);
-        }
-        // Add replaced image's classes to the new SVG
-        if(typeof imgClass !== 'undefined') {
-            $svg = $svg.attr('class', imgClass+' replaced-svg');
-        }
-
-        // Remove any invalid XML tags as per http://validator.w3.org
-        $svg = $svg.removeAttr('xmlns:a');
-
-        // Check if the viewport is set, if the viewport is not set the SVG wont't scale.
-        if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
-            $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
-        }
-
-        // Replace image with new SVG
-        $img.replaceWith($svg);
-
-    }, 'xml');
-
-});
+$(function() {
+    jQuery('img.svg').each(function() {
+        var $img = jQuery(this);
+        var imgID = $img.attr('id');
+        var imgClass = $img.attr('class');
+        var imgURL = $img.attr('src');
+        jQuery.get(imgURL, function(data) {
+            // Get the SVG tag, ignore the rest
+            var $svg = jQuery(data).find('svg');
+            // Add replaced image's ID to the new SVG
+            if (typeof imgID !== 'undefined') {
+                $svg = $svg.attr('id', imgID);
+            }
+            // Add replaced image's classes to the new SVG
+            if (typeof imgClass !== 'undefined') {
+                $svg = $svg.attr('class', imgClass + ' replaced-svg');
+            }
+            // Remove any invalid XML tags as per http://validator.w3.org
+            $svg = $svg.removeAttr('xmlns:a');
+            // Check if the viewport is set, if the viewport is not set the SVG wont't scale.
+            if (!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+                $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
+            }
+            // Replace image with new SVG
+            $img.replaceWith($svg);
+        }, 'xml');
+    });
 })
