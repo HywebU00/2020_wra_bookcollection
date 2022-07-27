@@ -1710,7 +1710,7 @@
 .movie_list_group {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    // justify-content: space-between;
     @include screen('xs_mobile') {
         display: block;
     }
@@ -1720,25 +1720,30 @@
         max-width: 32%;
         background-color: #eee;
         padding: 10px 10px;
-        margin-bottom: 15px;
+        margin: 0 0.66% 15px;
+        // margin-bottom: 15px;
         border-radius: 4px;
         transition: .5s;
         box-sizing: border-box;
         @media(max-width: 1100px) {
             flex-basis: 49%;
             max-width: 49%;
+            margin: 0 0.5% 15px;
         }
         @media(max-width:992px) {
             flex-basis: 32%;
             max-width: 32%;
+            margin: 0 0.66% 15px;
         }
         @media(max-width:900px) {
             flex-basis: 49%;
             max-width: 49%;
+            margin: 0 0.5% 15px;
         }
         @include screen('xs_mobile') {
             flex-basis: 100%;
             max-width: 100%;
+            margin: 0 0 15px;
         }
         &:hover {
             box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
