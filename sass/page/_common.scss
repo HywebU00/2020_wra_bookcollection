@@ -562,6 +562,7 @@
         flex: auto;
         padding: 10px 0 30px 30px;
         @include box-sizing;
+        min-height: 800px;
         @include screen('tablet') {
             padding: 10px 0 30px;
         }
