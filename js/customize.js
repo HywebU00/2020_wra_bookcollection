@@ -21,7 +21,11 @@ $(function() {
             settings: {
                 vertical: false,
             }
-        }]
+        }],
+        customPaging: function(slider, i) {
+            var title = $(slider.$slides[i]).find('img').attr('alt').trim();
+            return $('<button type="button" aria-label="' + title + '"/>').text(title);
+        },
     });
     // 水利故事輪播
     // 
