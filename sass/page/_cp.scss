@@ -604,6 +604,13 @@ div.tag {
             .GPNEBN_num {
                 float: left;
                 font-size: 0.938em;
+                span{
+                    background-color:#333;
+                    color:#fff;
+                    padding:.2em 1em;
+                    margin-right: 10px;
+                    font-size: 0.938em;
+                }
             }
             .project_num {
                 float: right;
@@ -681,6 +688,9 @@ div.tag {
                 &:last-of-type {
                     margin-right: 30px;
                 }
+            }
+            button{
+               margin-right: 30px; 
             }
             .frequency_block {
                 display: inline-block;
@@ -1104,7 +1114,7 @@ div.tag {
         }
         li {
             list-style-type: none;
-            margin: 0 5px 8px 0;
+            margin: 0 2px 8px 0;
             padding: 0;
             display: block;
             position: relative;

@@ -53,6 +53,7 @@
             }
         }
     }
+    
     >.container {
         max-width: $container-max;
         overflow: visible;
@@ -87,6 +88,7 @@
                 z-index: 9;
             }
         }
+
         .memberCtrl {
             display: none;
             right: 61px;
@@ -133,9 +135,10 @@
         // search
         .searchCtrl {
             display: none;
-            right: 0px;
+            right: 60px;
             font-size: 0em;
             @extend %mobileCtrlBtn;
+            background: #ccc;
             &:before {
                 width: 40px;
                 height: 40px;
@@ -147,6 +150,10 @@
                 top: 10px;
                 left: 10px;
                 display: block;
+            }
+            @include screen('tablet') {
+                display: none!important;
+                z-index: 9;
             }
         }
     }
@@ -288,12 +295,12 @@
                 &:hover {
                     background-color: darken($secondaryColor, 10);
                 }
-                &.bluebg{
+                &.bluebg {
                     background-color: $primaryColor;
                     &:hover {
                         background-color: darken($primaryColor, 10);
                     }
-                } 
+                }
             }
         }
         .name_login {
@@ -349,7 +356,7 @@
     .member_menu {
         position: absolute;
         width: 100%;
-        padding: 30px 30px;
+        padding: 30px 10px;
         top: 80px;
         left: 0;
         background-color: #eee;
@@ -371,7 +378,7 @@
         }
         ul {
             display: inline-block;
-            margin: 0 20px;
+            margin: 0 5px 10px;
             padding: 0;
             position: relative;
             @include screen('tablet') {
@@ -384,9 +391,9 @@
                 content: '';
                 width: 1px;
                 height: 40px;
-                background-color: #ccc;
+                background-color: #999;
                 position: absolute;
-                right: -20px;
+                right: -10px;
                 @include screen('tablet') {
                     right: -12px;
                 }
@@ -503,7 +510,7 @@
                 top: 50px;
             }
         }
-        @include screen('tablet'){
+        @include screen('tablet') {
             display: none;
         }
     }
@@ -530,15 +537,35 @@
         position: relative;
         background-color: #fff;
         border-radius: 4px;
+        display: flex;
+        @media(max-width: 400px) {
+            flex-wrap: wrap;
+        }
+        .select_left {
+            flex: 0 0 auto;
+            margin-right: 5px;
+            height: 100%;
+            select {
+                border: 1px solid #333;
+                margin: 0;
+            }
+            @media(max-width: 400px) {
+                flex-basis: 100%;
+                max-width: 100%;
+                margin-bottom: 5px;
+            }
+        }
         input {
+            flex: 1 1 auto;
             margin: 0;
             padding: .4em .5em .3em;
             box-shadow: none;
             border-radius: none;
             border: none;
+            // border: 1px solid #333;
             &[type="text"] {
                 margin: 0;
-                width: 85%;
+                width: 80%;
                 &:focus {
                     box-shadow: 0px 0px 0px 3px $lightColor inset;
                     outline: none;
@@ -547,6 +574,11 @@
             }
         }
         button {
+            flex: 0 0 auto;
+            @media(max-width: 400px) {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
             &[type="submit"], &[type="button"] {
                 font-size: 0em;
                 width: 50px !important;
@@ -573,6 +605,11 @@
                 }
                 &:focus {
                     box-shadow: 0 0px 0px 3px $lightColor inset;
+                }
+                @media(max-width: 400px) {
+                    height: 35px;
+                    top: auto;
+                    bottom: 0;
                 }
             }
         }
@@ -639,6 +676,204 @@
             margin-top: 0;
             text-align: right;
             float: left;
+            height: 50px;
+            position: relative;
+            @include box-sizing();
+            label {
+                display: none;
+            }
+            input {
+                width: 100%;
+                margin: 0;
+                padding: .5em 45px .4em .5em;
+                &[type="submit"] {
+                    font-size: 0em;
+                    width: 36px !important;
+                    height: 36px;
+                    padding: 0;
+                    // max-width:none;
+                    // min-width:none;
+                    background: url(../images/basic/icon_search.png) no-repeat center center;
+                    background-size: 24px 24px;
+                    border: none;
+                    display: inline-block;
+                    // margin-left: -50px !important;
+                    position: absolute;
+                    right: 5px;
+                    top: 0px;
+                    opacity: .8;
+                    // outline:1px solid red;
+                    &:hover, &:focus {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .btn_grp {
+            padding: .1em 5% .1em 0;
+            margin-bottom: 0;
+            width: 26%;
+            text-align: left;
+            @include box-sizing();
+            input {
+                width: 100% !important;
+                padding: .6em .5em !important;
+                margin: 0;
+            }
+        }
+        .keywordHot {
+            padding-left: 5%;
+            margin-top: 10px;
+            @extend %clearfix;
+            a {
+                color: #FFF;
+                &:hover,
+                &:focus {
+                    color: $primaryColor;
+                }
+            }
+        }
+    }
+}
+//search_ebook
+.search_ebook {
+    width: 100%;
+    vertical-align: middle;
+    margin-top: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    @include box-sizing;
+    @include screen('tablet'){
+        display: none;
+    }
+
+    label {
+        font-size: 0em;
+        height: 0;
+        padding: 0;
+        margin: 0;
+        float: left;
+    }
+    .form_grp {
+        margin-bottom: 0;
+        border: 1px solid #999;
+        margin-right: 0.5em;
+        width: 35%;
+        position: relative;
+        background-color: #fff;
+        border-radius: 4px;
+        display: flex;
+        @media(max-width: 400px) {
+            flex-wrap: wrap;
+        }
+        .select_left {
+            flex: 0 0 auto;
+            margin-right: 5px;
+            height: 100%;
+            select {
+                border: 1px solid #333;
+                margin: 0;
+            }
+            @media(max-width: 400px) {
+                flex-basis: 100%;
+                max-width: 100%;
+                margin-bottom: 5px;
+            }
+        }
+        input {
+            flex: 1 1 auto;
+            margin: 0;
+            padding: .4em .5em .3em;
+            box-shadow: none;
+            border-radius: none;
+            border: none;
+            // border: 1px solid #333;
+            &[type="text"] {
+                margin: 0;
+                width: 80%;
+                &:focus {
+                    box-shadow: 0px 0px 0px 3px $lightColor inset;
+                    outline: none;
+                    border: none;
+                }
+            }
+        }
+        button {
+            flex: 0 0 auto;
+            @media(max-width: 400px) {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+            &[type="submit"], &[type="button"] {
+                font-size: 0em;
+                width: 50px !important;
+                height: 100%;
+                background-image: url('../images/search_icon2.svg');
+                background-color: $secondaryColor;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 20px 20px;
+                border: 1px solid $secondaryColor;
+                display: block;
+                min-width: 0em !important;
+                position: absolute;
+                right: 0;
+                top: 0;
+                border-radius: 0 4px 4px 0;
+                transition: .5s;
+                @include box-sizing;
+                &:hover,
+                &:focus {
+                    background-color: darken($secondaryColor, 5);
+                    border: 1px darken($secondaryColor, 5) solid !important;
+                    border-radius: 0 4px 4px 0;
+                }
+                &:focus {
+                    box-shadow: 0 0px 0px 3px $lightColor inset;
+                }
+                @media(max-width: 400px) {
+                    height: 35px;
+                    top: auto;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+    .btn_grp {
+        padding: .2em;
+        margin-bottom: 0;
+        float: right;
+        input, input[type="submit"] {
+            margin: 0;
+            padding: .4em 1em .4em !important;
+            font-size: .813em;
+        }
+    }
+    // m_search
+    &.m_search {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: auto;
+        padding: .8em .3em;
+        display: block;
+        height: auto;
+        position: fixed;
+        top: 55px;
+        left: 0;
+        z-index: 98;
+        background: #ccc;
+        label {
+            font-size: 0em;
+            line-height: 0;
+        }
+        .form_grp {
+            width:98%;
+            height: auto;
+            padding: 0 1%  !important;
+            margin: 0 auto;
+            text-align: right;
+            float:none;
             height: 50px;
             position: relative;
             @include box-sizing();

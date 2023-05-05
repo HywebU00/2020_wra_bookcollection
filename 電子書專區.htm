@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="zh-Hant" class="no-js">
+
+<head>
+    <meta name="robots" content="noindex" />
+    <!-- 使用 noindex 禁止 Google 搜尋建立索引，套版時請工程師刪掉這行 -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>經濟部水利署電子書典藏</title>
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- slick css-->
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.css" />
+    <!-- wow -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- 燈箱facybox -->
+    <link rel="stylesheet" type="text/css" href="vendor/facybox/dist/jquery.fancybox.min.css">
+    <!-- 小鍵盤 -->
+    <link rel="stylesheet" href="vendor/keyboard/keyboard.css">
+    <!-- 出版年度css -->
+    <link rel="stylesheet" href="vendor/jquery-ui.css">
+    <!-- hyUI css -->
+    <link rel="stylesheet" href="css/hyui.css">
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon">
+</head>
+<!-- 電子書典藏版的時候要加 class="ebook_collection_style"-->
+
+<body class="ebook_collection_style">
+    <!-- 直接跳主內容區 -->
+    <a class="goCenter" href="#center" tabindex="1">按Enter到主內容區</a>
+    <!-- wrapper Start -->
+    <div class="wrapper">
+        <!-- header Start -->
+        <header class="header ">
+            <div class="container ">
+                <a class="accesskey" href="#aU" id="aU" accesskey="U" title="網站標題" tabindex="2">:::</a>
+                <h1>
+                    <a href="index.htm"><img src="images/logo.svg" alt="網站標題" /><span>電子書典藏</span></a>
+                </h1>
+                <!-- noscript -->
+                <noscript> 您的瀏覽器不支援JavaScript語法，JavaScript語法並不影響內容的陳述。您可使用按鍵盤上的Ctrl鍵+ (+)鍵放大/(-)鍵縮小來改變字型大小；回到上一頁可使用瀏覽器提供的 Alt+左方向鍵(←) 快速鍵功能；列印可使用瀏覽器提供的(Ctrl+P)功能。您的瀏覽器，不支援script語法，若您的瀏覽器無法支援請點選此超連結 <a href="#">網站導覽</a>
+                </noscript>
+                <div class="header_rightdata">
+                    <!-- navigation Start -->
+                    <nav class="navigation">
+                        <!-- 一組ul預設靠右 -->
+                        <!-- 兩組ul已寫JQ靠左靠右 -->
+                        <ul>
+                            <li><a href="#">回首頁</a></li>
+                            <li><a href="#">網站導覽</a></li>
+                            <li><a href="#">回圖書典藏及影音數位平台</a></li>
+                        </ul>
+                    </nav>
+                    <!-- navigation End -->
+                </div>
+                <!-- Search Start -->
+                <div class="search_ebook" role="search">
+                    <div class="form_grp">
+                        <label for="mustSameAsId">搜尋</label>
+                        <input name="username" id="mustSameAsId" type="text" placeholder="請輸入文字" accesskey="S" title="請輸入文字" aria-label="搜尋網站內容">
+                        <button type="button" class="btn btn-search">查詢</button>
+                    </div>
+                </div>
+                <!-- Search End -->
+            </div>
+        </header>
+        <!-- header End -->
+        <!-- main Start -->
+        <div id="center" class="main">
+            <!-- 任何一個section下一層都要包下一層都要包div container作對齊 -->
+            <!-- //// class 都可以隨意命名 !!! ///// -->
+            <section class="demosection col-12 ebook_collection_menu">
+                <div class="container">
+                    <div class="col">
+                        <div class="collection_group">
+                            <ul>
+                                <li><a href="#" class="active">電子書</a></li>
+                                <li><a href="#">出版品</a></li>
+                                <li><a href="#">主題特展</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 熱門點閱榜 start-->
+            <section class="demosection col-12 popular_views_block">
+                <div class="container">
+                    <div class="col">
+                        <h2 class="popular_views_title">熱門點閱榜</h2>
+                       <!--  <div class="collapse_btn">開合</div> -->
+                    </div>
+                    <div class="col">
+                        <!-- 熱門點閱榜 電子書 start-->
+                        <div class="popular_views_group wow fadeIn" data-wow-duration="1s" data-wow-delay="0">
+                            <div class="more"><a href="#">更多</a></div>
+                            <div class="popular_views_books">
+                                <div><a href="#">
+                                        <div class="bookimage"><img src="images/book_01.jpg" alt=""></div>
+                                        <h3>回顧七十前瞻永續 70年水利建設回顧七十前瞻永續 70年水利建設</h3>
+                                        <div class="unit">經濟部水利署北區水資源局</div>
+                                        <ul>
+                                            <li>編號：1011101422</li>
+                                            <li>出版年：111.12</li>
+                                            <li>點閱次數：1,234</li>
+                                        </ul>
+                                    </a>
+                                </div>
+                                <div><a href="#">
+                                        <div class="bookimage"><img src="images/movies_pic01.jpg" alt=""></div>
+                                        <h3>回顧七十前瞻永續 70年水利建設</h3>
+                                        <div class="unit">經濟部水利署北區水資源局</div>
+                                        <ul>
+                                            <li>編號：1011101422</li>
+                                            <li>出版年：111.12</li>
+                                            <li>點閱次數：1,234</li>
+                                        </ul>
+                                    </a>
+                                </div>
+                                <div><a href="#">
+                                        <div class="bookimage"><img src="images/book_03.jpg" alt=""></div>
+                                        <h3>106水利年報</h3>
+                                        <div class="unit">經濟部水利署北區水資源局</div>
+                                        <ul>
+                                            <li>編號：1011101422</li>
+                                            <li>出版年：111.12</li>
+                                            <li>點閱次數：1,234</li>
+                                        </ul>
+                                    </a>
+                                </div>
+                                <div><a href="#">
+                                        <div class="bookimage"><img src="images/book_04.jpg" alt=""></div>
+                                        <h3>水利專刊 第16期</h3>
+                                        <div class="unit">經濟部水利署北區水資源局</div>
+                                        <ul>
+                                            <li>編號：1011101422</li>
+                                            <li>出版年：111.12</li>
+                                            <li>點閱次數：1,234</li>
+                                        </ul>
+                                    </a>
+                                </div>
+                                <div><a href="#">
+                                        <div class="bookimage"><img src="images/book_05.jpg" alt=""></div>
+                                        <h3>2011 水利防災年報</h3>
+                                        <div class="unit">經濟部水利署北區水資源局</div>
+                                        <ul>
+                                            <li>編號：1011101422</li>
+                                            <li>出版年：111.12</li>
+                                            <li>點閱次數：1,234</li>
+                                        </ul>
+                                    </a>
+                                </div>
+                                <div><a href="#">
+                                        <div class="bookimage"><img src="images/book_06.jpg" alt=""></div>
+                                        <h3>107 水利年報</h3>
+                                        <div class="unit">經濟部水利署北區水資源局</div>
+                                        <ul>
+                                            <li>編號：1011101422</li>
+                                            <li>出版年：111.12</li>
+                                            <li>點閱次數：1,234</li>
+                                        </ul>
+                                    </a>
+                                </div>
+                                <div><a href="#">
+                                        <div class="bookimage"><img src="images/book_07.jpg" alt=""></div>
+                                        <h3>101 水利年報</h3>
+                                        <div class="unit">經濟部水利署北區水資源局</div>
+                                        <ul>
+                                            <li>編號：1011101422</li>
+                                            <li>出版年：111.12</li>
+                                            <li>點閱次數：1,234</li>
+                                        </ul>
+                                    </a>
+                                </div>
+                                <div><a href="#">
+                                        <div class="bookimage"><img src="images/book_08.jpg" alt=""></div>
+                                        <h3>105 水利年報</h3>
+                                        <div class="unit">經濟部水利署北區水資源局</div>
+                                        <ul>
+                                            <li>編號：1011101422</li>
+                                            <li>出版年：111.12</li>
+                                            <li>點閱次數：1,234</li>
+                                        </ul>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 熱門點閱榜 電子書end-->
+                    </div>
+                </div>
+            </section>
+            <!-- 熱門點閱榜 end-->
+            <!-- 最新上架 start-->
+            <section class="demosection col-12 popular_views_block">
+                <div class="container">
+                    <div class="col">
+                        <h2 class="popular_views_title">最新上架</h2>
+                         <div class="collapse_btn">開合</div>
+                         <!-- 電子書內容需要關起來時，請在後面再加上 closebtn ，如：class="collapse_btn  closebtn"-->
+                    </div>
+                    <div class="col">
+                        <!-- 熱門點閱榜 電子書 start-->
+                        <div class="popular_views_group wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                            <div class="more"><a href="#">更多</a></div>
+                            <div class="popular_views_books">
+                                <div><a href="#">
+                                        <div class="bookimage"><img src="images/book_01.jpg" alt=""></div>
+                                        <h3>回顧七十前瞻永續 70年水利建設回顧七十前瞻永續 70年水利建設</h3>
+                                        <div class="unit">經濟部水利署北區水資源局</div>
+                                        <ul>
+                                            <li>編號：1011101422</li>
+                                            <li>出版年：111.12</li>
+                                            <li>點閱次數：1,234</li>
+                                        </ul>
+                                    </a>
+                                </div>
+                                <div><a href="#">
+                                        <div class="bookimage"><img src="images/movies_pic01.jpg" alt=""></div>
+                                        <h3>回顧七十前瞻永續 70年水利建設</h3>
+                                        <div class="unit">經濟部水利署北區水資源局</div>
+                                        <ul>
+                                            <li>編號：1011101422</li>
+                                            <li>出版年：111.12</li>
+                                            <li>點閱次數：1,234</li>
+                                        </ul>
+                                    </a>
+                                </div>
+                                <div><a href="#">
+                                        <div class="bookimage"><img src="images/book_03.jpg" alt=""></div>
+                                        <h3>106水利年報</h3>
+                                        <div class="unit">經濟部水利署北區水資源局</div>
+                                        <ul>
+                                            <li>編號：1011101422</li>
+                                            <li>出版年：111.12</li>
+                                            <li>點閱次數：1,234</li>
+                                        </ul>
+                                    </a>
+                                </div>
+                                <div><a href="#">
+                                        <div class="bookimage"><img src="images/book_04.jpg" alt=""></div>
+                                        <h3>水利專刊 第16期</h3>
+                                        <div class="unit">經濟部水利署北區水資源局</div>
+                                        <ul>
+                                            <li>編號：1011101422</li>
+                                            <li>出版年：111.12</li>
+                                            <li>點閱次數：1,234</li>
+                                        </ul>
+                                    </a>
+                                </div>
+                                <div><a href="#">
+                                        <div class="bookimage"><img src="images/book_05.jpg" alt=""></div>
+                                        <h3>2011 水利防災年報</h3>
+                                        <div class="unit">經濟部水利署北區水資源局</div>
+                                        <ul>
+                                            <li>編號：1011101422</li>
+                                            <li>出版年：111.12</li>
+                                            <li>點閱次數：1,234</li>
+                                        </ul>
+                                    </a>
+                                </div>
+                                <div><a href="#">
+                                        <div class="bookimage"><img src="images/book_06.jpg" alt=""></div>
+                                        <h3>107 水利年報</h3>
+                                        <div class="unit">經濟部水利署北區水資源局</div>
+                                        <ul>
+                                            <li>編號：1011101422</li>
+                                            <li>出版年：111.12</li>
+                                            <li>點閱次數：1,234</li>
+                                        </ul>
+                                    </a>
+                                </div>
+                                <div><a href="#">
+                                        <div class="bookimage"><img src="images/book_07.jpg" alt=""></div>
+                                        <h3>101 水利年報</h3>
+                                        <div class="unit">經濟部水利署北區水資源局</div>
+                                        <ul>
+                                            <li>編號：1011101422</li>
+                                            <li>出版年：111.12</li>
+                                            <li>點閱次數：1,234</li>
+                                        </ul>
+                                    </a>
+                                </div>
+                                <div><a href="#">
+                                        <div class="bookimage"><img src="images/book_08.jpg" alt=""></div>
+                                        <h3>105 水利年報</h3>
+                                        <div class="unit">經濟部水利署北區水資源局</div>
+                                        <ul>
+                                            <li>編號：1011101422</li>
+                                            <li>出版年：111.12</li>
+                                            <li>點閱次數：1,234</li>
+                                        </ul>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 熱門點閱榜 end-->
+                    </div>
+                </div>
+            </section>
+            <!-- 最新上架end -->
+        </div>
+        <!-- footer Start-->
+        <footer>
+            <div class="container">
+                <a class="accesskey" href="#aZ" id="aZ" accesskey="Z" title="頁尾區">:::</a>
+                <!-- <div class="footer_logo">
+                    <img src="images/logo.png" alt="" class="img-responsive">
+                </div> -->
+                <div class="footer_info">
+                    </ul>
+                    <p class="Copyright"> © 2020 經濟部水利署暨所屬機關圖書室 版權所有</p>
+                    <span class="update">網站更新日期：<em>2018/01/01</em></span>
+                    <span class="counter">參觀人次：<em>46476653</em></span>
+                    <span class="counter">瀏覽人次：<em>46476653</em></span>
+                    <span class="counter">線上電子資源：<em>9999999</em></span>
+                </div>
+                <div class="footer_icon">
+                    <a target="_blank" href="javascript:;" title="另開視窗">
+                        <img src="images/basic/accessibility.jpg" alt="">
+                    </a>
+                    <!-- <a target="_blank" href="javascript:;" title="另開視窗">
+                        <img src="images/basic/egov.png" alt="">
+                    </a> -->
+                    <div class="qrcode"><a href="#"><img src="images/qrcode.jpg" alt=""></a></div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer End -->
+    </div>
+    <a href="javascript:;" class="scrollToTop">回頁首</a>
+    <!-- JQ -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- 外掛 plugin js -->
+    <script src="vendor/jquery.easing.min.js"></script><!-- ease -->
+    <!-- 小鍵盤 -->
+    <script type='text/javascript' src='vendor/keyboard/keyboard.js'></script>
+    <script src="vendor/slick/slick.min.js "></script><!-- slick -->
+    <script src="vendor/slick/slick-lightbox.js "></script><!-- slick lightbox -->
+    <script src="vendor/lazyload/lazyload.js"></script><!-- lazyload -->
+    <script src="vendor/picturefill/picturefill.min.js" async></script><!-- picturefill -->
+    <script src="vendor/scrolltable/jquery.scroltable.min.js"></script><!-- scrolltable -->
+    <!-- wow js -->
+    <script src="js/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
+    <!-- 燈箱facybox -->
+    <script src="vendor/facybox/dist/jquery.fancybox.min.js"></script>
+    <!-- 出版年度js -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- hyUI -->
+    <script src="js/hyui.js"></script>
+    <!-- 客製js -->
+    <script src="js/customize.js"></script>
+</body>
+
+</html>

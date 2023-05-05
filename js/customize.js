@@ -276,6 +276,7 @@ $(function() {
             // instead of a settings object
         ]
     });
+
     // cp圖片輪播
     // 請放置customize.js
     // 廣告輪播
@@ -482,6 +483,51 @@ $(function() {
         autoplay: false,
         autoplaySpeed: 1500,
         // adaptiveHeight: true
+    });
+    // 2023/5 新增js
+    // 熱門點閱榜
+    $('.popular_views_books').slick({
+        dots: false,
+        infinite: true,
+        autoplay:false, //自動播放
+        autoplaySpeed: 3000,
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        responsive: [{
+                breakpoint: 1100,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                }
+            }, {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            }, {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            }, {
+                breakpoint: 680,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            }, {
+                breakpoint: 560,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
     });
     // 
     /*-----------------------------------*/
@@ -1055,5 +1101,34 @@ $(function() {
             // Replace image with new SVG
             $img.replaceWith($svg);
         }, 'xml');
+    });
+})
+
+// 2023/5 新增js
+// 步驟
+function stepblockClick(id) { if ($("#" + id).length > 0) { $("html, body").animate({ scrollTop: $("#" + id).offset().top - 100 }, 600); } }
+
+// 提示
+$(function(){
+    $('.hint_btn>a').click(function(){
+        $('.hint_content').fadeIn();
+        $(this).parents('.form_grp').siblings().find('.hint_content').hide();
+    })
+})
+$(function() {
+    $(document).on('touchend click', function(e) {
+        var container = $(".hint_btn>a");//點這些以外的區塊
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            $('.hint_content').slideUp();//要被收起來的區塊
+        }
+    });
+})
+// 手機版search
+$(function() {
+    $(document).on('touchend click', function(e) {
+        var container = $(".searchCtrl");//點這些以外的區塊
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            $('.m_search').slideUp();//要被收起來的區塊
+        }
     });
 })

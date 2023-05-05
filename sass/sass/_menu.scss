@@ -293,6 +293,47 @@
                 }
             }
         }
+        .ebook_collection_menu {
+            padding:0;
+            background-color: #eee;
+            margin-bottom: 2em;
+            display: block;
+            .collection_group {
+                text-align: left;
+                margin-left: 0;
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                    li {
+                        display: block;
+                        margin-right: 0;
+                       
+                        a {
+                            display: block;
+                             padding: .8em 1em;
+                            background-color: #fff;
+                            color: #333;
+                            font-size: 1em;
+                            font-weight:normal;
+                            border-radius: 0;
+                            border-bottom: 1px solid #CCC;
+                            &:hover {
+                               background-color: #ddd;;
+                               color: #333;
+                            }
+                            &.active {
+                               background-color: #fff;
+                                color: #333;
+                               font-size: 1em;
+                                padding: .8em 1em;
+                                box-shadow: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     .navigation {
         position: relative;
@@ -466,34 +507,31 @@
             }
         }
         ul {
-            display: inline-block;
-            margin: 0 0 20px;
+            display: block;
+            margin: 0 10px 20px;
             padding: 0;
             position: relative;
             &:before {
                 display: none;
             }
-            &:first-of-type {
-                display: block;
-                margin: 0 10px 20px;
-                &:before {
-                    display: none;
-                }
-                li {
-                    display: block;
-                    margin: 0 0 10px;
-                }
-                
-               
-            }
+            // &:first-of-type {
+            //     display: block;
+            //     margin: 0 10px 20px;
+            //     &:before {
+            //         display: none;
+            //     }
+            //     li {
+            //         display: block;
+            //         margin: 0 0 10px;
+            //     }
+            // }
             &:last-of-type {
-                margin: 0;
-                
+                margin: 0 10px 20px;
             }
             li {
-                display: inline-block;
+                display: block;
                 list-style-type: none;
-                margin: 0 5px;
+                margin: 0 0 10px;
                 a {
                     display: block;
                     padding: 8px 15px;
@@ -528,7 +566,6 @@
             }
         }
         .name_login {
-           
             padding: 0 0 0 40px;
             color: darken($primaryColor, 10);
             margin-bottom: 20px;

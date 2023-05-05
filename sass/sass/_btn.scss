@@ -92,6 +92,10 @@ $btn-radius:.2em;
     @extend %btn;
     @include btn_setting(darken($color-gray, 20), #FFF);
 }
+.btn-black {
+    @extend %btn;
+    @include btn_setting($color-dark, #FFF);
+}
 .btn-submit {
     @extend %btn;
     @include btn_setting(lighten($primaryColor, 5), #FFF);

@@ -39,7 +39,7 @@ $(function() {
     ////////////// 行動版選單切換////////////
     /*-----------------------------------*/
     _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
-    $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button>');
+    $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');   
     // $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="memberCtrl">會員專區</button><button type="button" class="colleaguesCtrl">本署同仁</button>');
     var menu_status = false;
     var _sidebar = $('.sidebar'),
@@ -51,6 +51,8 @@ $(function() {
         _memberblock = $('.member_block'),
         _membermenu = $('.member_menu'),
         _mArea = $('.m_area');
+        _ebookmenu = $('.ebook_collection_menu');
+        _searchebook = $('.search_ebook'),
     _sidebarCtrl.append('<span></span><span></span><span></span>');
     var search_mode = false;
     // 打開選單 function
@@ -103,7 +105,9 @@ $(function() {
     _memberblock.clone().prependTo(_mArea);
     _nav.clone().prependTo(_mArea);
     _menu.clone().prependTo(_mArea);
+    _ebookmenu.clone().prependTo(_mArea);
     // _search.clone().prependTo(_body).addClass('m_search');
+    _searchebook.clone().prependTo(_body).addClass('m_search');
     var liHasChild_level1 = $('aside .menu ul').children('li.hasChild'),
         liHasChild_level2 = $('aside .menu ul ul').children('li.hasChild'),
         liHasChild_level3 = $('aside .menu ul ul ul').children('li.hasChild'),
@@ -432,6 +436,7 @@ $(function() {
             tabSet1();
             tabSet2();
             tabSet3();
+            tabSet4();
         }, 50);
     });
     // 
@@ -649,6 +654,56 @@ $(function() {
         });
     }
     // 
+    function tabSet4() {
+        $('.movie_service').each(function() {
+            var _tab = $(this),
+                _tabItem = _tab.find('.tabItem'),
+                _tabItemA = _tabItem.children('a'),
+                _tabContent = _tab.find('.tabContent'),
+                tabwidth = _tab.width(),
+                tabItemHeight = _tabItem.outerHeight(),
+                tabContentHeight = _tab.find('.active').next().innerHeight(),
+                tiGap = 5,
+                tabItemLength = _tabItem.length,
+                tabItemWidth;
+            _tab.find('.active').next('.tabContent').show();
+            if (ww >= wwSmall) {
+                _tabContent.css('top', tabItemHeight);
+                _tab.height(tabContentHeight + tabItemHeight);
+                tabItemWidth = (tabwidth - (tabItemLength - 1) * tiGap) / tabItemLength;
+                _tabItem.width(tabItemWidth).css('margin-left', tiGap);
+                _tabItem.first().css('margin-left', 0);
+                _tabItem.last().css({ 'position': 'absolute', 'top': 0, 'right': 0 }).width(tabItemWidth);
+            } else {
+                _tab.css('height', 'auto');
+                _tabItem.width(tabwidth);
+                _tabItem.css('margin-left', 0).last().css('position', 'relative');
+            }
+            _tabItemA.focus(tabs);
+            _tabItemA.click(tabs);
+
+            function tabs(e) {
+                var _tabItemNow = $(this).parent(),
+                    tvp = _tab.offset().top,
+                    tabIndex = _tabItemNow.index() / 2,
+                    scollDistance = tvp + tabItemHeight * tabIndex - hh;
+                _tabItem.removeClass('active');
+                _tabItemNow.addClass('active');
+                if (ww <= wwSmall) {
+                    _tabItem.not('.active').next().slideUp();
+                    _tabItemNow.next().slideDown();
+                    $("html,body").stop(true, false).animate({ scrollTop: scollDistance });
+                } else {
+                    _tabItem.not('.active').next().hide();
+                    _tabItemNow.next().show();
+                    tabContentHeight = _tabItemNow.next().innerHeight();
+                    _tab.height(tabContentHeight + tabItemHeight);
+                }
+                e.preventDefault();
+            }
+        });
+    }
+    // 
     $('.searchtab>.tabItem:first-child>a').trigger('click');
     tabSet();
     $('.publications>.tabItem:first-child>a').trigger('click');
@@ -657,6 +712,8 @@ $(function() {
     tabSet2();
     $('.eBook_service>.tabItem:first-child>a').trigger('click');
     tabSet3();
+    $('.movie_service>.tabItem:first-child>a').trigger('click');
+    tabSet4();
     /*-----------------------------------*/
     ///////////////置頂go to top////////////
     /*-----------------------------------*/

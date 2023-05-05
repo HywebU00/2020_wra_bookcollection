@@ -165,12 +165,12 @@
             &:first-child {
                 &:before {
                     content: '';
-                    background-image: url('../images/story_collection_icon01.svg');
+                    background-image: url('../images/story_collection_icon05.svg');
                     background-repeat: no-repeat;
                     background-position: 0 0;
-                    background-size: 50px 35px;
-                    width: 50px;
-                    height: 35px;
+                    background-size: 38px;
+                    width: 38px;
+                    height: 38px;
                     position: absolute;
                     left: 0;
                     opacity: .8;
@@ -185,12 +185,12 @@
             &:nth-child(2) {
                 &:before {
                     content: '';
-                    background-image: url('../images/story_collection_icon02.svg');
+                    background-image: url('../images/story_collection_icon06.svg');
                     background-repeat: no-repeat;
                     background-position: 0 0;
-                    background-size: 50px 35px;
-                    width: 50px;
-                    height: 35px;
+                    background-size: 38px;
+                    width: 38px;
+                    height: 38px;
                     position: absolute;
                     left: 0;
                     opacity: .8;
@@ -205,20 +205,20 @@
             &:nth-child(3) {
                 &:before {
                     content: '';
-                    background-image: url('../images/story_collection_icon03.svg');
+                    background-image: url('../images/story_collection_icon04.svg');
                     background-repeat: no-repeat;
                     background-position: 0 0;
-                    background-size: 50px 35px;
-                    width: 50px;
-                    height: 35px;
+                    background-size: 38px;
+                    width: 38px;
+                    height: 38px;
                     position: absolute;
                     left: 0;
-                    opacity: .5;
+                    opacity: .8;
                     transition: .5s;
                 }
                 &:hover {
                     &:before {
-                        opacity: .8;
+                        opacity: 1;
                     }
                 }
             }
@@ -354,6 +354,14 @@
     }
     @include screen('xs_mobile') {
         margin: 0 0 50px 0;
+    }
+    .searchtab {
+        .form_grp {
+            border: none;
+            input {
+                border: 1px solid #333;
+            }
+        }
     }
     .explain {
         color: #333;
@@ -699,6 +707,7 @@
         @include make-md-column(12);
         @include make-lg-column(12);
         text-align: center;
+        position: relative;
     }
     .col:nth-of-type(2) {
         @include make-xs-column(12);
@@ -747,6 +756,25 @@
             left: 50%;
             bottom: 15px;
             margin-left: -15px;
+        }
+        +.latestvideos_btn {
+            position: absolute;
+            right: 0;
+            bottom: 40px;
+            padding: .5em 1em 0.5em 2em;
+            background-image: url('../images/icon/icon_video_white.svg');
+            background-repeat: no-repeat;
+            background-position: .5em center;
+            background-size: 15px;
+            margin: 0 1em 0 0;
+            font-size: 1.125em;
+            @include screen('xs_mobile') {
+                position: relative;
+                display: block;
+                margin: 0 auto 2em;
+                bottom: auto;
+                width: 128px;
+            }
         }
     }
     .movie_data_block {
@@ -1027,7 +1055,7 @@
             }
             .publications2_title {
                 margin: 0 0 20px 0;
-                padding: 15px 40px 20px 90px;
+                padding: 15px 40px 20px 40px;
                 display: block;
                 line-height: 1.4em;
                 font-size: 1.5em;
@@ -1042,73 +1070,73 @@
                     height: 1px;
                     background-color: #fff;
                     position: absolute;
-                    left: 90px;
+                    left: 40px;
                     bottom: 13px;
                 }
-                &.annual_report {
-                    position: relative;
-                    &:after {
-                        content: '';
-                        background-image: url('../images/publications_icon01.svg');
-                        background-repeat: no-repeat;
-                        background-position: 0 0;
-                        background-size: 58px 38px;
-                        width: 58px;
-                        height: 38px;
-                        opacity: .8;
-                        position: absolute;
-                        left: 17px;
-                        top: 18px;
-                    }
-                }
-                &.book {
-                    position: relative;
-                    &:after {
-                        content: '';
-                        background-image: url('../images/publications_icon02.svg');
-                        background-repeat: no-repeat;
-                        background-position: 0 0;
-                        background-size: 58px 38px;
-                        width: 58px;
-                        height: 38px;
-                        opacity: .8;
-                        position: absolute;
-                        left: 17px;
-                        top: 16px;
-                    }
-                }
-                &.collection {
-                    position: relative;
-                    &:after {
-                        content: '';
-                        background-image: url('../images/publications_icon03.svg');
-                        background-repeat: no-repeat;
-                        background-position: 0 0;
-                        background-size: 58px 38px;
-                        width: 58px;
-                        height: 38px;
-                        opacity: .8;
-                        position: absolute;
-                        left: 17px;
-                        top: 17px;
-                    }
-                }
-                &.newbook {
-                    position: relative;
-                    &:after {
-                        content: '';
-                        background-image: url('../images/publications_icon04.svg');
-                        background-repeat: no-repeat;
-                        background-position: 0 0;
-                        background-size: 68px 44px;
-                        width: 68px;
-                        height: 44px;
-                        opacity: .8;
-                        position: absolute;
-                        left: 17px;
-                        top: 13px;
-                    }
-                }
+                // &.annual_report {
+                //     position: relative;
+                //     &:after {
+                //         content: '';
+                //         background-image: url('../images/publications_icon01.svg');
+                //         background-repeat: no-repeat;
+                //         background-position: 0 0;
+                //         background-size: 58px 38px;
+                //         width: 58px;
+                //         height: 38px;
+                //         opacity: .8;
+                //         position: absolute;
+                //         left: 17px;
+                //         top: 18px;
+                //     }
+                // }
+                // &.book {
+                //     position: relative;
+                //     &:after {
+                //         content: '';
+                //         background-image: url('../images/publications_icon02.svg');
+                //         background-repeat: no-repeat;
+                //         background-position: 0 0;
+                //         background-size: 58px 38px;
+                //         width: 58px;
+                //         height: 38px;
+                //         opacity: .8;
+                //         position: absolute;
+                //         left: 17px;
+                //         top: 16px;
+                //     }
+                // }
+                // &.collection {
+                //     position: relative;
+                //     &:after {
+                //         content: '';
+                //         background-image: url('../images/publications_icon03.svg');
+                //         background-repeat: no-repeat;
+                //         background-position: 0 0;
+                //         background-size: 58px 38px;
+                //         width: 58px;
+                //         height: 38px;
+                //         opacity: .8;
+                //         position: absolute;
+                //         left: 17px;
+                //         top: 17px;
+                //     }
+                // }
+                // &.newbook {
+                //     position: relative;
+                //     &:after {
+                //         content: '';
+                //         background-image: url('../images/publications_icon04.svg');
+                //         background-repeat: no-repeat;
+                //         background-position: 0 0;
+                //         background-size: 68px 44px;
+                //         width: 68px;
+                //         height: 44px;
+                //         opacity: .8;
+                //         position: absolute;
+                //         left: 17px;
+                //         top: 13px;
+                //     }
+                // }
             }
             .book_group {
                 display: flex;
