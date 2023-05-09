@@ -128,16 +128,6 @@
                     <a class="accesskey" href="#aC" id="aC" accesskey="C" title="主要內容區">:::</a>
                     <div class="content">
                         <h2 class="unit_title">水利影音上稿</h2>
-                        <div class="search_content">
-                            <div class="search">
-                                <div class="form_grp">
-                                    <label for="mustSameAsId">搜尋</label>
-                                    <input name="username" id="mustSameAsId" type="text" placeholder="請輸入文字" accesskey="S">
-                                    <button type="submit" href="javascript;:">查詢</button>
-                                </div>
-                                <div class="collection_searchbtn"><a href="#">館藏查詢</a></div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -352,8 +342,7 @@
                                 <!--影音table end -->
                                 <!-- page start-->
                                 <div class="pagination">
-                                    <div class="total"> 共<span>308</span>筆資料，第<span>1/18</span>頁，</div>
-                                    <div class="items">每頁顯示 <a href="#">20</a> <a href="#">40</a> <a href="#">60</a> 筆 </div>
+                                    <div class="total"> 共<span>308</span>筆資料，第<span>1/18</span>頁</div>
                                     <ul class="page">
                                         <li class="first"><a href="#" title="第一頁">第一頁</a></li>
                                         <li class="prev"><a href="#" title="回上一頁">回上一頁 </a></li>
@@ -491,10 +480,23 @@
                                             </div>
                                         </div>
                                         <div class="btn_grp">
-                                            <button class="btn btn-green">儲存，立即上傳</button>
+                                            <button class="btn btn-green" data-fancybox data-src="#lightbox_upload">儲存，立即上傳</button>
                                             <button class="btn btn-reset">清除重填</button>
                                             <button class="btn btn-submit">儲存，隔天上傳</button>
                                         </div>
+                                        <!-- 續借燈箱 start-->
+                                        <div class="lightboxblock commonlightbox_small" id="lightbox_upload">
+                                            <h3 class="title">確定立即上傳YouTube?</h3>
+                                            <div class="content">
+                                                <p>請確認是否為<span class="word_red">重要緊急</span>需立即上傳YouTube影片，如非重要緊急影片請勿立即上傳。
+                                                </p>
+                                            </div>
+                                            <div class="btn_grp">
+                                                <input data-fancybox-close name="" type="reset" value="取消" />
+                                                <input data-fancybox-close name="" type="submit" value="確定" />
+                                            </div>
+                                        </div>
+                                        <!-- 續借燈箱 end-->
                                     </form>
                                 </div>
                             </div>
