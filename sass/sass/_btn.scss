@@ -1,130 +1,132 @@
 // 按鈕設定
-$btn-font-color:$color-word;
-$btn-border:darken($color-word, 5);
-$btn-padding:.5em 1em;
-$btn-radius:.2em;
+$btn-font-color: $color-word;
+$btn-border: darken($color-word, 5);
+$btn-padding: 0.5em 1em;
+$btn-radius: 0.2em;
 // 按鈕外框
 .btn_grp {
-    text-align: center;
-    padding: 1em 0;
+  text-align: center;
+  padding: 1em 0;
 }
 // 按鈕的共用設定
-@mixin btn_setting($btn-bg:#d9d9d9, $btn-font-color:$btn-font-color) {
-    background-color: $btn-bg;
-    border: 1px solid $btn-bg;
-    color: $btn-font-color;
-    transition: .5s;
-    // text-shadow:1px 1px 1px RGBA(0,0,0,.3);
-    @include border-radius($btn-radius);
-    // @include gradient(lighten($btn-bg, 5), darken($btn-bg, 15), vertical);
-    &:hover, &:focus {
-        background-color: darken($btn-bg, 10); // Old browsers
-        border: 1px solid darken($btn-bg, 10) !important;
-        cursor: pointer;
-        color: #FFF;
-        outline: none;
-        // @include gradient(lighten($btn-bg, 10), darken($btn-bg, 18), vertical);
-    }
-    &.active {
-        background: lighten($btn-bg, 5);
-        cursor: pointer;
-    }
+@mixin btn_setting($btn-bg: #d9d9d9, $btn-font-color: $btn-font-color) {
+  background-color: $btn-bg;
+  border: 1px solid $btn-bg;
+  color: $btn-font-color;
+  transition: 0.5s;
+  // text-shadow:1px 1px 1px RGBA(0,0,0,.3);
+  @include border-radius($btn-radius);
+  // @include gradient(lighten($btn-bg, 5), darken($btn-bg, 15), vertical);
+  &:hover,
+  &:focus {
+    background-color: darken($btn-bg, 10); // Old browsers
+    // border: 1px solid darken($btn-bg, 10) !important;
+    box-shadow: 0 0px 0px 3px #fdb300 inset;
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    // @include gradient(lighten($btn-bg, 10), darken($btn-bg, 18), vertical);
+  }
+  &.active {
+    background: lighten($btn-bg, 5);
+    cursor: pointer;
+  }
 }
 // 按鈕預設陰影
 %btn {
-    font-size: $font-size;
-    touch-action: manipulation;
-    background-image: none; //修正firefox
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    text-decoration: none;
-    white-space: nowrap;
-    line-height: normal;
-    width: auto;
-    padding: $btn-padding;
-    min-width: 4em;
-    margin: .25em .1em;
-    i {
-        margin-right: .3em;
-        margin-left: .3em;
-    }
+  font-size: $font-size;
+  touch-action: manipulation;
+  background-image: none; //修正firefox
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: normal;
+  width: auto;
+  padding: $btn-padding;
+  min-width: 4em;
+  margin: 0.25em 0.1em;
+  i {
+    margin-right: 0.3em;
+    margin-left: 0.3em;
+  }
 }
 // 按鈕基本樣式
 .btn {
-    @extend %btn;
-    @include box-sizing;
-    @include btn_setting;
-    text-shadow: none;
-    &:hover,
-    &:focus {
-        color: $btn-font-color;
-        outline: none;
-    }
+  @extend %btn;
+  @include box-sizing;
+  @include btn_setting;
+  text-shadow: none;
+  &:hover,
+  &:focus {
+    color: $btn-font-color;
+    outline: none;
+  }
 }
 //按鈕顏色
 //@include btn_setting(按鈕顏色,字的顏色);
 .btn-green {
-    @extend %btn;
-    @include btn_setting($color-green, #FFF);
+  @extend %btn;
+  @include btn_setting($color-green, #fff);
 }
 .btn-blue {
-    @extend %btn;
-    @include btn_setting($color-blue, #FFF);
+  @extend %btn;
+  @include btn_setting($color-blue, #fff);
 }
 .btn-yellow {
-    @extend %btn;
-    @include btn_setting(lighten($color-yellow, 5), #FFF);
+  @extend %btn;
+  @include btn_setting(lighten($color-yellow, 5), #fff);
 }
 .btn-orange {
-    @extend %btn;
-    @include btn_setting(lighten($color-orange, 10), #FFF);
+  @extend %btn;
+  @include btn_setting(lighten($color-orange, 10), #fff);
 }
 .btn-red {
-    @extend %btn;
-    @include btn_setting($color-red, #FFF);
+  @extend %btn;
+  @include btn_setting($color-red, #fff);
 }
 .btn-purple {
-    @extend %btn;
-    @include btn_setting(lighten($color-purple, 5), #FFF);
+  @extend %btn;
+  @include btn_setting(lighten($color-purple, 5), #fff);
 }
 .btn-gray {
-    @extend %btn;
-    @include btn_setting(darken($color-gray, 20), #FFF);
+  @extend %btn;
+  @include btn_setting(darken($color-gray, 20), #fff);
 }
 .btn-black {
-    @extend %btn;
-    @include btn_setting($color-dark, #FFF);
+  @extend %btn;
+  @include btn_setting($color-dark, #fff);
 }
 .btn-submit {
-    @extend %btn;
-    @include btn_setting(lighten($primaryColor, 5), #FFF);
+  @extend %btn;
+  @include btn_setting(lighten($primaryColor, 5), #fff);
 }
 .btn-reset {
-    @extend %btn;
-    color: lighten($color-word, 15);
+  @extend %btn;
+  color: lighten($color-word, 15);
 }
 .btn-primary {
-    @extend .btn-orange;
+  @extend .btn-orange;
 }
 .btn-delete {
-    @extend .btn-orange;
+  @extend .btn-orange;
 }
 //取消預約
 .cancel_reserve_btn {
-    @extend %btn;
-    @include btn_setting(#bda60a, #FFF);
+  @extend %btn;
+  @include btn_setting(#bda60a, #fff);
 }
 // 按鈕大小
 .btn-xl {
-    font-size: $font-size * 1.5; //24px
+  font-size: $font-size * 1.5; //24px
 }
 .btn-lg {
-    font-size: $font-size * 1.25; //20px
+  font-size: $font-size * 1.25; //20px
 }
 .btn-sm {
-    font-size: $font-size * .938; //15px
+  font-size: $font-size * 0.938; //15px
 }
 .btn-xs {
-    font-size: $font-size * .875; //14px
+  font-size: $font-size * 0.875; //14px
 }
