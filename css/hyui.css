@@ -10918,6 +10918,10 @@ button.submit {
   box-shadow: 0 0 0 1px #66bd00 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #51a551, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
   background-color: #66bd00;
 }
+.theme_data_block .theme_slider_gorup .theme_sliderA .theme_slider_content .theme_list a:focus-visible,
+.theme_data_block .theme_slider_gorup .theme_sliderB .theme_slider_content .theme_list a:focus-visible {
+  outline: 3px dashed #fdb300;
+}
 .theme_data_block .theme_slider_gorup .theme_sliderA .slick-prev,
 .theme_data_block .theme_slider_gorup .theme_sliderB .slick-prev {
   top: 80px;

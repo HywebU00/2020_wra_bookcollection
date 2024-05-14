@@ -1187,6 +1187,12 @@ button.submit {
               box-shadow: 0 0 0 1px $secondaryColor inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #51a551, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
               background-color: $secondaryColor;
             }
+            // &:focus {
+            //   outline: 2px solid $lightColor;
+            // }
+            &:focus-visible {
+              outline: 3px dashed $lightColor;
+            }
           }
         }
       }
