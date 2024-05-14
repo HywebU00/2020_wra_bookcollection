@@ -1,2605 +1,3138 @@
-// 分館別 
+// 分館別
 .annex_block {
-    width: 40%;
-    border-radius: 4px;
-    margin: 0 auto 30px;
-    text-align: center;
-    background-color: $primaryColor;
-    border: 1px solid #ccc;
-    padding: 8px;
-    color: #fff;
-    font-size: 1.125em;
-    transition: .5s;
-    @include screen('tablet') {
-        width: 60%;
+  width: 40%;
+  border-radius: 4px;
+  margin: 0 auto 30px;
+  text-align: center;
+  background-color: $primaryColor;
+  border: 1px solid #ccc;
+  padding: 8px;
+  color: #fff;
+  font-size: 1.125em;
+  transition: 0.5s;
+  @include screen('tablet') {
+    width: 60%;
+  }
+  @include screen('mobile') {
+    width: 80%;
+  }
+  @include screen('xs_mobile') {
+    width: 100%;
+  }
+  label {
+    margin: 10px 0 0.5em 0;
+    display: inline-block;
+  }
+  .annex {
+    display: inline-block;
+    select {
+      width: 200px;
     }
-    @include screen('mobile') {
-        width: 80%;
-    }
-    @include screen('xs_mobile') {
-        width: 100%;
-    }
-    label {
-        margin: 10px 0 .5em 0;
-        display: inline-block;
-    }
-    .annex {
-        display: inline-block;
-        select {
-            width: 200px;
-        }
-    }
+  }
 }
 // 水利地理諮詢平台
 .information_platform {
-    // margin-bottom: 30px;
-    iframe {
-        width: 100%;
-        height: 500px;
-    }
+  // margin-bottom: 30px;
+  iframe {
+    width: 100%;
+    height: 500px;
+  }
 }
 .connection_data {
-    padding: 10px 0 20px;
-    border-bottom: 1px solid #ccc;
-    h3 {
-        font-size: 1.125em;
-        font-weight: 500;
-        padding-left: 20px;
-        position: relative;
-        color: #333;
-        &:before {
-            content: '';
-            width: 5px;
-            height: 25px;
-            background-color: lighten($primaryColor, 20);
-            position: absolute;
-            left: 0;
-            top: 0px;
-        }
+  padding: 10px 0 20px;
+  border-bottom: 1px solid #ccc;
+  h3 {
+    font-size: 1.125em;
+    font-weight: 500;
+    padding-left: 20px;
+    position: relative;
+    color: #333;
+    &:before {
+      content: '';
+      width: 5px;
+      height: 25px;
+      background-color: lighten($primaryColor, 20);
+      position: absolute;
+      left: 0;
+      top: 0px;
     }
-    ul {
-        li {
-            color: #666;
-            margin-bottom: 8px;
-        }
+  }
+  ul {
+    li {
+      color: #666;
+      margin-bottom: 8px;
     }
+  }
 }
 // 資料數量
 .data_quantity {
-    display: block;
-    overflow: hidden;
-    text-align: right;
-    margin: 10px 0;
-    padding: 0;
-    span {
-        display: inline-block;
-        margin-right: 8px;
-        em {
-            color: $color-orange;
-            padding: 0 3px;
-            font-style: normal;
-            font-weight: 600;
-        }
+  display: block;
+  overflow: hidden;
+  text-align: right;
+  margin: 10px 0;
+  padding: 0;
+  span {
+    display: inline-block;
+    margin-right: 8px;
+    em {
+      color: $color-orange;
+      padding: 0 3px;
+      font-style: normal;
+      font-weight: 600;
     }
-    select {
-        display: inline-block;
-        width: auto;
-    }
+  }
+  select {
+    display: inline-block;
+    width: auto;
+  }
 }
+// 歷史時期查詢
+.historical_search_group {
+  display: flex;
+  margin: 1em 0;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .historical_period_search {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+
+    select {
+      margin-right: 0.3em;
+    }
+    input[type='text'] {
+      margin-right: 0.3em;
+    }
+    button {
+      margin: 0 0.3em 0.3em 0;
+      padding: 0.5em;
+    }
+    @include screen('xs_mobile') {
+      flex-wrap: wrap;
+      flex: 1 1 auto;
+      select,
+      input[type='text'] {
+        margin-right: 0;
+      }
+      button {
+        margin: 0 auto 0.3em;
+      }
+    }
+  }
+  .data_quantity {
+    flex: 0 0 auto;
+    @include screen('xs_mobile') {
+      flex: 1 1 auto;
+      select {
+        width: 100%;
+      }
+    }
+  }
+}
+
 // 條列文件
 .list_file_block {
-    clear: both;
-    margin-bottom: 50px;
-    .list_file {
-        display: block;
-        padding: 0px 0 30px;
-        margin-bottom: 30px;
-        border-bottom: 1px solid #ccc;
-        position: relative;
-        overflow: hidden;
-        &:first-child {
-            .bibliography_block2 {
-                .bibliography {
-                    display: block;
-                }
-            }
-        }
-    }
-    // 文件編號
-    .datatop {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        margin-bottom: 10px;
-        font-size: .938em;
-        @include screen('mobile') {
-            flex-wrap: wrap;
-        }
-        @media(max-width: 380px) {
-            display: block;
-        }
-        .data_sort {
-            padding: 3px 10px;
-            background-color: #333;
-            color: #fff;
-            margin: 0 10px 0 0;
-            flex: none;
-            display: inline-block;
-            border-radius: 4px;
-            @media(max-width: 380px) {
-                margin: 0 0 10px;
-                display: inline-block;
-            }
-        }
-        .GPNEBN_num {
-            flex: none;
-            @media(max-width: 380px) {
-                display: block;
-            }
-        }
-        .project_num {
-            text-align: right;
-            flex: auto;
-            @include screen('mobile') {
-                display: block;
-                width: 100%;
-                text-align: left;
-                margin-top: 10px;
-                padding: 5px 10px;
-                background-color: #eee;
-                border-radius: 4px;
-            }
-        }
-    }
-    // 書名連結
-    .booklink {
-        margin-bottom: 10px;
-        @include screen('mobile') {
-            margin-bottom: 20px;
-        }
-        a {
-            display: block;
-            font-size: 1.25em;
-            line-height: 1.5em;
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
-    // 作者出處
-    .databottom {
-        // display: flex;
-        // flex-wrap: wrap;
-        margin-bottom: 10px;
-        font-size: .938em;
-        >div {
-            display: inline-block;
-            position: relative;
-            @include screen('mobile') {
-                margin-bottom: 10px;
-                display: block;
-            }
-            &:before {
-                content: '';
-                width: 1px;
-                height: 15px;
-                background-color: #ccc;
-                position: absolute;
-                right: 0px;
-                top: 5px;
-            }
-            &:last-child {
-                &:before {
-                    display: none;
-                    @include screen('mobile') {
-                        display: block;
-                    }
-                }
-            }
-        }
-        .author {
-            padding: 0 15px 0 0;
-        }
-        .publishing {
-            padding: 0 15px;
-        }
-        .publication_years {
-            padding: 0 15px;
-        }
-        @include screen('mobile') {
-            .author, .publishing, .publication_years {
-                float: auto;
-                width: 100%;
-                padding-left: 15px;
-                position: relative;
-                &:before {
-                    content: '';
-                    width: 8px;
-                    height: 8px;
-                    background-color: #666;
-                    border-radius: 50%;
-                    position: absolute;
-                    left: 0px;
-                    right: auto;
-                    top: 7px;
-                    display: block;
-                }
-            }
-        }
-    }
-    // 點閱次數
-    .hits{
-        color:#666;
-        padding:0.3em 1em;
-        text-align: center;
-        // background-color:#eee;
-        // border-radius:50px;
-        display: inline-block;
-        margin-top: 8px;
-
-    }
-    // 書目table
-    .bibliography_block, .bibliography_block2 {
-        margin: 0;
-        padding: 39px 0 0 0;
-        position: relative;
-        clear:both;
-    }
-    .bibliography_block2 {
-
+  clear: both;
+  margin-bottom: 50px;
+  .list_file {
+    display: block;
+    padding: 0px 0 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    overflow: hidden;
+    &:first-child {
+      .bibliography_block2 {
         .bibliography {
-            display: none;
+          display: block;
         }
+      }
     }
-    .collapse_btn {
-        position: absolute;
-        width: 50px;
-        height: 40px;
-        border: 1px solid #ccc;
-        display: block;
-        right: 0px;
-        top: 0px;
-        cursor: pointer;
-        &:before {
-            content: '';
-            border: 1px solid #666;
-            width: 16px;
-            height: 16px;
-            border-bottom-color: transparent;
-            border-left-color: transparent;
-            transform: rotate(-45deg);
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            transition: .5s;
-        }
-        &.closebtn {
-            &:before {
-                transform: rotate(135deg);
-                top: 5px;
-                left: 15px;
-            }
-        }
+  }
+  // 文件編號
+  .datatop {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.938em;
+    @include screen('mobile') {
+      flex-wrap: wrap;
     }
-    // 按鈕區
-    .btn_block {
-        margin-bottom: 10px;
+    @media (max-width: 380px) {
+      display: block;
+    }
+    .data_sort {
+      padding: 3px 10px;
+      background-color: #333;
+      color: #fff;
+      margin: 0 10px 0 0;
+      flex: none;
+      display: inline-block;
+      border-radius: 4px;
+      @media (max-width: 380px) {
+        margin: 0 0 10px;
         display: inline-block;
-        float:left;
-        margin-right: 10px;
-        input[type="button"] {
-            background-color: $secondaryColor;
-            border: 1px solid $secondaryColor;
-            transition: .5s !important;
-            margin-right: 5px;
-            &:hover {
-                border: 1px solid darken($secondaryColor, 5) !important;
-                background-color: darken($secondaryColor, 5);
-            }
-        }
+      }
     }
-    //標籤雲
-    .tagblock {
-        line-height: 2em;
-        clear:both;
-        .book_collect {
-            float: left;
-            margin-right: 10px;
-            img {
-                width: 30px;
-            }
-        }
+    .GPNEBN_num {
+      flex: none;
+      @media (max-width: 380px) {
+        display: block;
+      }
     }
-    // 相關資料
-    .related_data {
-        width: 50%;
-        // background-color:#eee;
-        border: 1px solid #ccc;
+    .project_num {
+      text-align: right;
+      flex: auto;
+      @include screen('mobile') {
+        display: block;
+        width: 100%;
+        text-align: left;
+        margin-top: 10px;
+        padding: 5px 10px;
+        background-color: #eee;
         border-radius: 4px;
-        padding: 20px;
-        margin: 10px 0 0;
-        clear: both;
-        @include box-sizing(border-box);
-        @include screen('mobile') {
-            width: 100%;
-        }
-        ul {
-            margin: 0 0 0 20px;
-            padding: 0;
-            li {
-                margin-bottom: 5px;
-                em {
-                    font-style: normal;
-                    padding: 0 5px;
-                    color: $color-orange;
-                }
-            }
-        }
+      }
     }
-    // 按鈕靠右
-    .btn_right {
-        text-align: right;
-        margin: 0;
-        padding: 0;
+  }
+  // 書名連結
+  .booklink {
+    margin-bottom: 10px;
+    @include screen('mobile') {
+      margin-bottom: 20px;
     }
+    a {
+      display: block;
+      font-size: 1.25em;
+      line-height: 1.5em;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  // 作者出處
+  .databottom {
+    // display: flex;
+    // flex-wrap: wrap;
+    margin-bottom: 10px;
+    font-size: 0.938em;
+    > div {
+      display: inline-block;
+      position: relative;
+      @include screen('mobile') {
+        margin-bottom: 10px;
+        display: block;
+      }
+      &:before {
+        content: '';
+        width: 1px;
+        height: 15px;
+        background-color: #ccc;
+        position: absolute;
+        right: 0px;
+        top: 5px;
+      }
+      &:last-child {
+        &:before {
+          display: none;
+          @include screen('mobile') {
+            display: block;
+          }
+        }
+      }
+    }
+    .author {
+      padding: 0 15px 0 0;
+    }
+    .publishing {
+      padding: 0 15px;
+    }
+    .publication_years {
+      padding: 0 15px;
+    }
+    @include screen('mobile') {
+      .author,
+      .publishing,
+      .publication_years {
+        float: auto;
+        width: 100%;
+        padding-left: 15px;
+        position: relative;
+        &:before {
+          content: '';
+          width: 8px;
+          height: 8px;
+          background-color: #666;
+          border-radius: 50%;
+          position: absolute;
+          left: 0px;
+          right: auto;
+          top: 7px;
+          display: block;
+        }
+      }
+    }
+  }
+  // 點閱次數
+  .hits {
+    color: #666;
+    padding: 0.3em 1em;
+    text-align: center;
+    // background-color:#eee;
+    // border-radius:50px;
+    display: inline-block;
+    margin-top: 8px;
+  }
+  // 書目table
+  .bibliography_block,
+  .bibliography_block2 {
+    margin: 0;
+    padding: 39px 0 0 0;
+    position: relative;
+    clear: both;
+  }
+  .bibliography_block2 {
+    .bibliography {
+      display: none;
+    }
+  }
+  .collapse_btn {
+    position: absolute;
+    width: 50px;
+    height: 40px;
+    border: 1px solid #ccc;
+    display: block;
+    right: 0px;
+    top: 0px;
+    cursor: pointer;
+    &:before {
+      content: '';
+      border: 1px solid #666;
+      width: 16px;
+      height: 16px;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      transform: rotate(-45deg);
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      transition: 0.5s;
+    }
+    &.closebtn {
+      &:before {
+        transform: rotate(135deg);
+        top: 5px;
+        left: 15px;
+      }
+    }
+  }
+  // 按鈕區
+  .btn_block {
+    margin-bottom: 10px;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+    input[type='button'] {
+      background-color: $secondaryColor;
+      border: 1px solid $secondaryColor;
+      transition: 0.5s !important;
+      margin-right: 5px;
+      &:hover {
+        border: 1px solid darken($secondaryColor, 5) !important;
+        background-color: darken($secondaryColor, 5);
+      }
+    }
+  }
+  //標籤雲
+  .tagblock {
+    line-height: 2em;
+    clear: both;
+    .book_collect {
+      float: left;
+      margin-right: 10px;
+      img {
+        width: 30px;
+      }
+    }
+  }
+  // 相關資料
+  .related_data {
+    width: 50%;
+    // background-color:#eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 10px 0 0;
+    clear: both;
+    @include box-sizing(border-box);
+    @include screen('mobile') {
+      width: 100%;
+    }
+    ul {
+      margin: 0 0 0 20px;
+      padding: 0;
+      li {
+        margin-bottom: 5px;
+        em {
+          font-style: normal;
+          padding: 0 5px;
+          color: $color-orange;
+        }
+      }
+    }
+  }
+  // 按鈕靠右
+  .btn_right {
+    text-align: right;
+    margin: 0;
+    padding: 0;
+  }
 }
 // 刪除收藏
 .del_collect_btn {
-    position: absolute;
-    right: 0;
-    bottom: 30px;
-    @include screen('mobile') {
-        position: relative;
-        text-align: right;
-        right: auto;
-        bottom: auto;
-    }
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+  @include screen('mobile') {
+    position: relative;
+    text-align: right;
+    right: auto;
+    bottom: auto;
+  }
 }
 // 書目表格
 .bibliography {
-    border: 1px solid #ccc;
-    padding: 10px 0;
-    margin: 0;
-    clear: both;
-    float: none;
-    // display: none;
-    table {
-        border: none;
-        th {
-            border: none;
-            border-bottom: 1px solid #ccc;
-            background-color: transparent;
-        }
-        td {
-            border: none;
-            border-bottom: 1px solid #ccc;
-            max-width: 100px;
-            @include text-overflow;
-            padding: .8em .2em;
-            br {
-                @include screen('mobile') {
-                    display: none;
-                }
-            }
-        }
-        tr:last-child {
-            td {
-                border: none;
-            }
-        }
+  border: 1px solid #ccc;
+  padding: 10px 0;
+  margin: 0;
+  clear: both;
+  float: none;
+  // display: none;
+  table {
+    border: none;
+    th {
+      border: none;
+      border-bottom: 1px solid #ccc;
+      background-color: transparent;
     }
-    @include screen('mobile') {
-        padding: 0;
-        border: none;
-        tr {
-            border: 1px solid #ccc;
-            margin-bottom: 20px; // background-color: #333;
+    td {
+      border: none;
+      border-bottom: 1px solid #ccc;
+      max-width: 100px;
+      @include text-overflow;
+      padding: 0.8em 0.2em;
+      br {
+        @include screen('mobile') {
+          display: none;
         }
-        td {
-            border-bottom: 1px solid #e5e5e5 !important;
-            max-width: 100% !important;
-            &:last-child {
-                border: none !important;
-            }
-        }
+      }
     }
+    tr:last-child {
+      td {
+        border: none;
+      }
+    }
+  }
+  @include screen('mobile') {
+    padding: 0;
+    border: none;
+    tr {
+      border: 1px solid #ccc;
+      margin-bottom: 20px; // background-color: #333;
+    }
+    td {
+      border-bottom: 1px solid #e5e5e5 !important;
+      max-width: 100% !important;
+      &:last-child {
+        border: none !important;
+      }
+    }
+  }
 }
 // 表格中的按鈕
 // btnstyle
 .stylebtn {
-    display: inline-block;
-    padding: 0.5em 1em;
-    color: #fff;
-    background-color: #999;
-    border-radius: 4px;
-    @include text-overflow;
-    max-width: 120px;
-    transition: .5s;
+  display: inline-block;
+  padding: 0.5em 1em;
+  color: #fff;
+  background-color: #999;
+  border-radius: 4px;
+  @include text-overflow;
+  max-width: 120px;
+  transition: 0.5s;
+  @include screen('mobile') {
+    max-width: 100%;
+  }
+  &:hover {
+    max-width: 500px;
+    white-space: normal;
     @include screen('mobile') {
-        max-width: 100%
+      max-width: 100%;
     }
-    &:hover {
-        max-width: 500px;
-        white-space: normal;
-        @include screen('mobile') {
-            max-width: 100%
-        }
-    }
+  }
 }
 // 借閱中btn
 .borrowing_btn {
-    background-color: #f29d39;
+  background-color: #f29d39;
 }
 // 逾期btn
 .overdue_btn {
-    background-color: $color-red;
+  background-color: $color-red;
 }
 // 預借btn
 .advance_btn {
-    background-color: $color-purple;
+  background-color: $color-purple;
 }
 // 預約btn
 .reservation_btn {
-    background-color: #963;
+  background-color: #963;
 }
 // 順位btn
 .rank_btn {
-    background-color: #c09;
+  background-color: #c09;
 }
 // 順位btn2
 .rank_btn2 {
-    background-color: #f99621;
+  background-color: #f99621;
 }
 // 在館btn
 .inlibrary_btn {
-    background-color: darken($color-green, 10);
+  background-color: darken($color-green, 10);
 }
 // 傳遞btn
 .transfer_btn {
-    background-color: #4d70c7;
+  background-color: #4d70c7;
 }
 // 傳遞btn
 .wait_transfer_btn {
-    background-color: #04bbbd;
+  background-color: #04bbbd;
 }
 // 借出
 .lend_btn {
-    background-color: #f16b65;
+  background-color: #f16b65;
 }
 // 遺失
 .lost_btn {
-    background-color: #333;
+  background-color: #333;
 }
 // 說明書單
 .explanation {
-    background-color: #e5e5e5;
-    padding: 30px 40px;
-    border-radius: 4px;
-    margin-bottom: 30px;
-    h3 {
-        margin: 0 0 20px;
-        padding: 0;
-    }
-    ol {
-        margin: 0px 0 0 20px;
-        padding: 0;
+  background-color: #e5e5e5;
+  padding: 30px 40px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  h3 {
+    margin: 0 0 20px;
+    padding: 0;
+  }
+  ol {
+    margin: 0px 0 0 20px;
+    padding: 0;
+    li {
+      margin-bottom: 8px;
+      ul {
+        margin: 10px 0;
         li {
-            margin-bottom: 8px;
-            ul {
-                margin: 10px 0;
-                li {
-                    list-style-type: disc;
-                }
-            }
+          list-style-type: disc;
         }
+      }
     }
+  }
 }
 // 條件選擇
 .conditional_choice {
-    margin-bottom: 20px;
-    input, select {
-        width: auto;
-        vertical-align: middle;
-        margin: 0;
-    }
-    input[type="button"] {
-        padding: 0.4em 1.5em;
-    }
+  margin-bottom: 20px;
+  input,
+  select {
+    width: auto;
+    vertical-align: middle;
+    margin: 0;
+  }
+  input[type='button'] {
+    padding: 0.4em 1.5em;
+  }
 }
 // 水利故事
 .special_pic {
-    margin: 20px 0 50px;
-    .img-container {
-        @include aspect-ratio(16, 9);
-        height: auto;
+  margin: 20px 0 50px;
+  .img-container {
+    @include aspect-ratio(16, 9);
+    height: auto;
+  }
+  span.playbtn {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    // margin-top: calc(50% - 30px);
+    // margin-left: calc(50% - 30px);
+    display: block;
+    position: absolute;
+    transition: 0.5s;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    &::before {
+      content: '';
+      // border: 15px solid #fff;
+      // border-top-color: transparent;
+      // border-right-color: transparent;
+      // border-bottom-color: transparent;
+      border-style: solid;
+      border-width: 15px 0 15px 20px;
+      border-color: transparent transparent transparent #fff;
+      position: absolute;
+      top: calc(50% - 15px);
+      left: calc(50% - 6px);
     }
-    span.playbtn {
-        background-color: rgba(0, 0, 0, .6);
-        width: 70px;
-        height: 70px;
+  }
+  a:hover .playbtn,
+  a:focus .playbtn {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.15);
+  }
+  // 影片
+  video {
+    width: 100%;
+    min-height: 500px;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// 圖文影片list
+.special,
+.special_video {
+  margin-bottom: 2em;
+  // float 排版
+  @include clearfix;
+  position: relative;
+  .box {
+    display: block;
+    float: left;
+    width: 33.333%;
+    height: 300px;
+    // ------------------------------- test start
+    // width: calc(100% / 3);
+    // height: calc(100% / 3 * 3 / 4);
+    // ------------------------------- test end
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 1);
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    // 色塊
+    &:before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      z-index: 1;
+      width: 100%;
+      height: 0;
+      background: rgba(102, 189, 0, 0.9);
+      // 上右下左
+      // clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      transform: skew(0, 0);
+      transition: height 0.6s ease, transform 0.6s ease;
+    }
+    a {
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      span.cube {
+        display: inline-block;
+        width: 42px;
+        height: 42px;
+        background: rgba(102, 189, 0, 0.9);
+        position: relative;
+        font-size: 0;
+        left: 42px;
+        transition: 0.5s;
+        // transition: background .4s ease;
+        &:before,
+        &:after {
+          content: '';
+          display: block;
+          background: #fff;
+          position: absolute;
+        }
+        &:before {
+          width: 22px;
+          height: 2px;
+          left: calc(50% - 11px);
+          top: calc(50% - 1px);
+        }
+        &:after {
+          width: 2px;
+          height: 22px;
+          left: calc(50% - 1px);
+          top: calc(50% - 11px);
+        }
+      }
+      span.counter,
+      span.play {
+        display: block;
+        margin-left: 2.8em;
+        color: #fff;
+      }
+      span.counter {
+        padding-left: 1.75em;
+        background: url(../images/icon/icon_view_white.svg) left 50% no-repeat;
+        background-size: contain;
+        display: none;
+      }
+      span.play {
+        // box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,1);
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 4px;
+        margin-top: 1.25em;
+        padding: 0.5em 2em;
+        width: 150px;
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out 0.4s;
+        display: none;
+        &:after {
+          content: '';
+          background: url(../images/icon/icon_arrow_right_white.svg) left 0 top 50% no-repeat;
+          background-size: contain;
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          vertical-align: middle;
+          margin-left: 0.5em;
+        }
+      }
+      span.playbtn {
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
         // margin-top: calc(50% - 30px);
         // margin-left: calc(50% - 30px);
         display: block;
         position: absolute;
-        transition: .5s;
+        transition: 0.5s;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
         margin: auto;
         &::before {
-            content: '';
-            // border: 15px solid #fff;
-            // border-top-color: transparent;
-            // border-right-color: transparent;
-            // border-bottom-color: transparent;
-            border-style: solid;
-            border-width: 15px 0 15px 20px;
-            border-color: transparent transparent transparent #fff;
-            position: absolute;
-            top: calc(50% - 15px);
-            left: calc(50% - 6px);
+          content: '';
+          // border: 12px solid #fff;
+          // border-top-color: transparent;
+          // border-right-color: transparent;
+          // border-bottom-color: transparent;
+          border-style: solid;
+          border-width: 12px 0 12px 16px;
+          border-color: transparent transparent transparent #fff;
+          position: absolute;
+          top: calc(50% - 12px);
+          left: calc(50% - 5px);
         }
-    }
-    a:hover .playbtn, a:focus .playbtn {
-        background-color: rgba(0, 0, 0, .8);
-        transform: scale(1.15);
-    }
-    // 影片
-    video {
-        width: 100%;
-        min-height: 500px;
-        margin: 0;
-        padding: 0;
-    }
-}
-// 圖文影片list
-.special, .special_video {
-    margin-bottom: 2em;
-    // float 排版
-    @include clearfix;
-    position: relative;
-    .box {
-        display: block;
-        float: left;
-        width: 33.333%;
-        height: 300px;
-        // ------------------------------- test start
-        // width: calc(100% / 3);
-        // height: calc(100% / 3 * 3 / 4);
-        // ------------------------------- test end
-        box-shadow: 0 0 0 1px rgba(255, 255, 255, 1);
-        background: #000;
-        position: relative;
-        overflow: hidden;
-        // 色塊
+      }
+      h3 {
+        padding: 1em 2em 0;
+        margin: 1.25em 0 0.75em;
+        font-size: 1.35em;
+        line-height: 1.4;
+        color: #fff;
+        text-shadow: 0 0 2px rgba(58, 103, 6, 0.9);
+        transition: 0.5s;
         &:before {
+          content: '';
+          display: block;
+          width: 30px;
+          height: 3px;
+          background: #fff;
+          margin-bottom: 1em;
+          position: absolute;
+          left: 2em;
+          top: 1.7em;
+          transition: height 0.4s ease width 0.2s ease 0.4s;
+          // transition: width .2s ease .4s;
+        }
+      }
+      &:hover,
+      &:focus {
+        transition: 0.5s;
+        span.cube {
+          background: #fff;
+          left: 65px;
+          &:before,
+          &:after {
+            background: rgba(102, 189, 0, 0.9);
+          }
+        }
+        span.play {
+          opacity: 1;
+        }
+        span.playbtn {
+          opacity: 1;
+        }
+        h3 {
+          padding: 1em 2em 0 3em;
+          &:before {
             content: '';
-            position: absolute;
-            top: -60px;
-            z-index: 1;
-            width: 100%;
-            height: 0;
-            background: rgba(102, 189, 0, .9);
-            // 上右下左
-            // clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-            transform: skew(0, 0);
-            transition: height .6s ease,
-                transform .6s ease;
+            width: 3px;
+            height: 50%;
+            transition: width 0.2s ease, height 0.4s ease 0.4s;
+            // transition: width .2s ease;
+          }
         }
-        a {
-            position: absolute;
-            z-index: 2;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            span.cube {
-                display: inline-block;
-                width: 42px;
-                height: 42px;
-                background: rgba(102, 189, 0, 0.9);
-                position: relative;
-                font-size: 0;
-                left: 42px;
-                transition: .5s;
-                // transition: background .4s ease;
-                &:before, &:after {
-                    content: "";
-                    display: block;
-                    background: #fff;
-                    position: absolute;
-                }
-                &:before {
-                    width: 22px;
-                    height: 2px;
-                    left: calc(50% - 11px);
-                    top: calc(50% - 1px);
-                }
-                &:after {
-                    width: 2px;
-                    height: 22px;
-                    left: calc(50% - 1px);
-                    top: calc(50% - 11px);
-                }
-            }
-            span.counter, span.play {
-                display: block;
-                margin-left: 2.8em;
-                color: #fff;
-            }
-            span.counter {
-                padding-left: 1.75em;
-                background: url(../images/icon/icon_view_white.svg) left 50% no-repeat;
-                background-size: contain;
-                display: none;
-            }
-            span.play {
-                // box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,1);
-                background: rgba(0, 0, 0, .6);
-                border-radius: 4px;
-                margin-top: 1.25em;
-                padding: .5em 2em;
-                width: 150px;
-                opacity: 0;
-                transition: opacity .4s ease-in-out .4s;
-                display: none;
-                &:after {
-                    content: '';
-                    background: url(../images/icon/icon_arrow_right_white.svg) left 0 top 50% no-repeat;
-                    background-size: contain;
-                    display: inline-block;
-                    width: 16px;
-                    height: 16px;
-                    vertical-align: middle;
-                    margin-left: .5em;
-                }
-            }
-            span.playbtn {
-                background-color: rgba(0, 0, 0, .6);
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                // margin-top: calc(50% - 30px);
-                // margin-left: calc(50% - 30px);
-                display: block;
-                position: absolute;
-                transition: .5s;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                margin: auto;
-                &::before {
-                    content: '';
-                    // border: 12px solid #fff;
-                    // border-top-color: transparent;
-                    // border-right-color: transparent;
-                    // border-bottom-color: transparent;
-                    border-style: solid;
-                    border-width: 12px 0 12px 16px;
-                    border-color: transparent transparent transparent #fff;
-                    position: absolute;
-                    top: calc(50% - 12px);
-                    left: calc(50% - 5px);
-                }
-            }
-            h3 {
-                padding: 1em 2em 0;
-                margin: 1.25em 0 .75em;
-                font-size: 1.35em;
-                line-height: 1.4;
-                color: #fff;
-                text-shadow: 0 0 2px rgba(58, 103, 6, 0.9);
-                transition: .5s;
-                &:before {
-                    content: "";
-                    display: block;
-                    width: 30px;
-                    height: 3px;
-                    background: #fff;
-                    margin-bottom: 1em;
-                    position: absolute;
-                    left: 2em;
-                    top: 1.7em;
-                    transition: height .4s ease width .2s ease .4s;
-                    // transition: width .2s ease .4s;
-                }
-            }
-            &:hover, &:focus {
-                transition: .5s;
-                span.cube {
-                    background: #fff;
-                    left: 65px;
-                    &:before, &:after {
-                        background: rgba(102, 189, 0, .9);
-                    }
-                }
-                span.play {
-                    opacity: 1;
-                }
-                span.playbtn {
-                    opacity: 1;
-                }
-                h3 {
-                    padding: 1em 2em 0 3em;
-                    &:before {
-                        content: "";
-                        width: 3px;
-                        height: 50%;
-                        transition: width .2s ease,
-                            height .4s ease .4s;
-                        // transition: width .2s ease;
-                    }
-                }
-            }
-        }
-        .img-container {
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            background: none;
-            // height: 100%;
-            // @include aspect-ratio(4, 3);
-            img {
-                opacity: .6;
-            }
-        }
-        &:nth-child(1) {
-            height: 600px;
-        }
-        &:nth-child(2) {}
-        &:nth-child(3) {}
-        &:nth-child(4) {}
-        &:nth-child(5) {
-            width: 66.666%;
-            // ------------------------------- test start
-            // width: calc(100% / 3);
-            // height: calc(100% / 3 * 3 / 4);
-            // ------------------------------- test end
-            // 色塊
-            &:before {
-                top: -120px;
-            }
-        }
-        &:nth-child(6) {
-            height: 600px;
-            // ------------------------------- test start
-            // width: calc(100% / 3);
-            // height: calc(100% / 3 * 3 / 4 * 2);
-            // ------------------------------- test end
-            position: absolute;
-            bottom: 0;
-            left: 66.666%;
-            // .img-container{
-            //     @include aspect-ratio(1, 1.8);
-            // }
-        }
-        // hover
-        &:hover, &:focus {
-            .img-container {
-                img {
-                    opacity: 1;
-                }
-            }
-            // 色塊
-            &:before {
-                // 上右下左
-                // clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
-                height: 76%;
-                transform: skew(0, -15deg);
-            }
-        }
+      }
     }
+    .img-container {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background: none;
+      // height: 100%;
+      // @include aspect-ratio(4, 3);
+      img {
+        opacity: 0.6;
+      }
+    }
+    &:nth-child(1) {
+      height: 600px;
+    }
+    &:nth-child(2) {
+    }
+    &:nth-child(3) {
+    }
+    &:nth-child(4) {
+    }
+    &:nth-child(5) {
+      width: 66.666%;
+      // ------------------------------- test start
+      // width: calc(100% / 3);
+      // height: calc(100% / 3 * 3 / 4);
+      // ------------------------------- test end
+      // 色塊
+      &:before {
+        top: -120px;
+      }
+    }
+    &:nth-child(6) {
+      height: 600px;
+      // ------------------------------- test start
+      // width: calc(100% / 3);
+      // height: calc(100% / 3 * 3 / 4 * 2);
+      // ------------------------------- test end
+      position: absolute;
+      bottom: 0;
+      left: 66.666%;
+      // .img-container{
+      //     @include aspect-ratio(1, 1.8);
+      // }
+    }
+    // hover
+    &:hover,
+    &:focus {
+      .img-container {
+        img {
+          opacity: 1;
+        }
+      }
+      // 色塊
+      &:before {
+        // 上右下左
+        // clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
+        height: 76%;
+        transform: skew(0, -15deg);
+      }
+    }
+  }
 }
 .special_video {
-    .funcIcons {
-        display: none;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        z-index: 4;
-        padding: 8px;
-        transform: translateY(100%);
-        transition: .3s;
-        ul, li {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        ul {
-            overflow: hidden;
-        }
-        li {
-            float: left;
-            padding: 3px;
-            &>button {
-                display: block;
-                width: 42px;
-                height: 42px;
-                border-radius: 50%;
-                background: #fff url(../images/funcIcon.svg) no-repeat 1px 1px;
-                background-size: 90px;
-                border: none !important;
-                padding: 0;
-                margin: 0;
-                min-width: 0;
-                transition: box-shadow .25s;
-                &:hover, &:focus {
-                    box-shadow: $secondaryColor 0 0 0 3px;
-                    border: none !important;
-                }
-            }
-            &.active {
-                &>button {
-                    background-color: $secondaryColor;
-                    &:hover, &:focus {
-                        box-shadow: #fff 0 0 0 3px;
-                    }
-                }
-            }
-            &.rList>button {
-                background-position: 1px 1px;
-            }
-            &.like>button {
-                background-position: 1px -49px;
-            }
-            &.pList>button {
-                background-position: 1px -99px;
-            }
-            &.rList.active>button {
-                background-position: -49px 1px;
-            }
-            &.like.active>button {
-                background-position: -49px -49px;
-            }
-            &.pList.active>button {
-                background-position: -49px -99px;
-            }
-        }
-        &.show {
-            transform: translateY(0);
-        }
+  .funcIcons {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+    padding: 8px;
+    transform: translateY(100%);
+    transition: 0.3s;
+    ul,
+    li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
-    // a:hover .funcIcons,
-    // a:focus .funcIcons{ 
-    //     transform: translateY(0);
-    // }
+    ul {
+      overflow: hidden;
+    }
+    li {
+      float: left;
+      padding: 3px;
+      & > button {
+        display: block;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: #fff url(../images/funcIcon.svg) no-repeat 1px 1px;
+        background-size: 90px;
+        border: none !important;
+        padding: 0;
+        margin: 0;
+        min-width: 0;
+        transition: box-shadow 0.25s;
+        &:hover,
+        &:focus {
+          box-shadow: $secondaryColor 0 0 0 3px;
+          border: none !important;
+        }
+      }
+      &.active {
+        & > button {
+          background-color: $secondaryColor;
+          &:hover,
+          &:focus {
+            box-shadow: #fff 0 0 0 3px;
+          }
+        }
+      }
+      &.rList > button {
+        background-position: 1px 1px;
+      }
+      &.like > button {
+        background-position: 1px -49px;
+      }
+      &.pList > button {
+        background-position: 1px -99px;
+      }
+      &.rList.active > button {
+        background-position: -49px 1px;
+      }
+      &.like.active > button {
+        background-position: -49px -49px;
+      }
+      &.pList.active > button {
+        background-position: -49px -99px;
+      }
+    }
+    &.show {
+      transform: translateY(0);
+    }
+  }
+  // a:hover .funcIcons,
+  // a:focus .funcIcons{
+  //     transform: translateY(0);
+  // }
+}
+// 書籍文物list
+.special_book {
+  margin-bottom: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  // float 排版
+  @include clearfix;
+  position: relative;
+  .box {
+    flex: 1 0 auto;
+    flex-basis: 50%;
+    height: 300px;
+    // ------------------------------- test start
+    // width: calc(100% / 3);
+    // height: calc(100% / 3 * 3 / 4);
+    // ------------------------------- test end
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 1);
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    // 色塊
+    &:before {
+      content: '';
+      position: absolute;
+      top: -90px;
+      z-index: 1;
+      width: 100%;
+      height: 0;
+      background: rgba(102, 189, 0, 0.9);
+      // 上右下左
+      // clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      transform: skew(0, 0);
+      transition: height 0.6s ease, transform 0.6s ease;
+    }
+    a {
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      span.cube {
+        display: inline-block;
+        width: 42px;
+        height: 42px;
+        background: rgba(102, 189, 0, 0.9);
+        position: relative;
+        font-size: 0;
+        left: 42px;
+        transition: 0.5s;
+        position: relative;
+        // transition: background .4s ease;
+        &:before,
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+        }
+        &:before {
+          width: 22px;
+          height: 2px;
+          left: calc(50% - 11px);
+          top: calc(50% - 1px);
+          background: #fff;
+        }
+        &:after {
+          border: 2px solid #fff;
+          border-top-color: #fff;
+          border-right-color: #fff;
+          border-bottom-color: transparent;
+          border-left-color: transparent;
+          width: 10px;
+          height: 10px;
+          transform: rotate(45deg);
+          position: absolute;
+          top: 14px;
+          right: 10px;
+        }
+      }
+      span.counter {
+        display: block;
+        margin-left: 2.8em;
+        color: #fff;
+      }
+      span.counter {
+        padding-left: 1.75em;
+        background: url(../images/icon/icon_view_white.svg) left 50% no-repeat;
+        background-size: contain;
+        display: none;
+      }
+
+      h3 {
+        padding: 1em 2em 0;
+        margin: 1.25em 0 0.75em;
+        font-size: 1.35em;
+        line-height: 1.4;
+        color: #fff;
+        text-shadow: 0 0 2px rgba(58, 103, 6, 0.9);
+        transition: 0.5s;
+        &:before {
+          content: '';
+          display: block;
+          width: 30px;
+          height: 3px;
+          background: #fff;
+          margin-bottom: 1em;
+          position: absolute;
+          left: 2em;
+          top: 1.7em;
+          transition: height 0.4s ease width 0.2s ease 0.4s;
+          // transition: width .2s ease .4s;
+        }
+      }
+      &:hover,
+      &:focus {
+        transition: 0.5s;
+        span.cube {
+          background: #fff;
+          left: 65px;
+
+          &:before {
+            width: 22px;
+            height: 2px;
+            left: calc(50% - 11px);
+            top: calc(50% - 1px);
+            background: rgba(102, 189, 0, 0.9);
+          }
+          &:after {
+            border: 2px solid rgba(102, 189, 0, 0.9);
+            border-top-color: rgba(102, 189, 0, 0.9);
+            border-right-color: rgba(102, 189, 0, 0.9);
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 14px;
+            right: 10px;
+          }
+        }
+
+        h3 {
+          padding: 1em 2em 0 3em;
+          &:before {
+            content: '';
+            width: 3px;
+            height: 50%;
+            transition: width 0.2s ease, height 0.4s ease 0.4s;
+            // transition: width .2s ease;
+          }
+        }
+      }
+    }
+    .img-container {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background: none;
+      // height: 100%;
+      // @include aspect-ratio(4, 3);
+      img {
+        opacity: 0.6;
+      }
+    }
+
+    &.doubleblock {
+      // ------------------------------- test start
+      // width: calc(100% / 3);
+      // height: calc(100% / 3 * 3 / 4);
+      // ------------------------------- test end
+      // 色塊
+      &:before {
+        top: -75px;
+      }
+    }
+
+    // hover
+    &:hover,
+    &:focus {
+      .img-container {
+        img {
+          opacity: 1;
+        }
+      }
+      // 色塊
+      &:before {
+        // 上右下左
+        // clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
+        height: 90%;
+        transform: skew(0, -15deg);
+      }
+      &.doubleblock {
+        &:before {
+          transform: skew(0, -6deg);
+        }
+      }
+    }
+  }
 }
 @include screen('tablet') {
-    .special, .special_video {
-        .box {
-            height: 200px;
-            &:nth-child(1) {
-                height: 400px;
-            }
-            &:nth-child(2) {}
-            &:nth-child(3) {}
-            &:nth-child(4) {
-                width: 66.666%;
-            }
-            &:nth-child(5) {}
-            &:nth-child(6) {
-                height: 200px;
-            }
-            &:nth-child(4), &:nth-child(5) {
-                // 色塊
-                &:before {
-                    top: -90px;
-                }
-            }
+  .special,
+  .special_video {
+    .box {
+      height: 200px;
+      &:nth-child(1) {
+        height: 400px;
+      }
+      &:nth-child(2) {
+      }
+      &:nth-child(3) {
+      }
+      &:nth-child(4) {
+        width: 66.666%;
+      }
+      &:nth-child(5) {
+      }
+      &:nth-child(6) {
+        height: 200px;
+      }
+      &:nth-child(4),
+      &:nth-child(5) {
+        // 色塊
+        &:before {
+          top: -90px;
         }
+      }
     }
-    .special {
-        .box {
-            a {
-                span.cube {
-                    float: right;
-                    left: 2em;
-                    top: 1.7em;
-                }
-                h3 {
-                    width: calc(100% - 42px);
-                    padding: 1em 2em 0;
-                    float: left;
-                    margin: 1.25em 0 .75em;
-                }
-                &:hover, &:focus {
-                    span.cube {}
-                    h3 {
-                        &:before {
-                            width: 30px;
-                            height: 3px;
-                        }
-                    }
-                    // 色塊
-                    &:before {
-                        height: 80%;
-                    }
-                }
-            }
+  }
+  .special_book {
+    .box {
+      height: 200px;
+      &:before {
+        top: -50px;
+      }
+      a {
+        h3 {
         }
-    }
-    .special_video {
-        .box {
-            a {
-                span.counter {}
-                span.play {
-                    opacity: 1;
-                    font-size: 0;
-                    width: 42px;
-                    height: 42px;
-                    border-radius: 0;
-                    background: rgba(102, 189, 0, .9);
-                    transition: background .4s ease;
-                    position: absolute;
-                    right: 1px;
-                    top: 76px;
-                    &:after {
-                        width: 42px;
-                        height: 42px;
-                        background: url(../images/icon/icon-play-whtie.svg) 50% 50% no-repeat;
-                    }
-                }
-                span.playbtn {
-                    right: 30px;
-                    left: auto;
-                    bottom: 30px;
-                    top: auto;
-                }
-                h3 {
-                    padding: 1em 3.2em 0 2em;
-                }
-                &:hover, &:focus {
-                    span.play {
-                        background: #fff;
-                        &:after {
-                            background: url(../images/icon/icon-play-green.svg) 50% 50% no-repeat;
-                        }
-                    }
-                    h3 {
-                        &:before {
-                            width: 30px;
-                            height: 3px;
-                        }
-                    }
-                }
-            }
+        &:hover,
+        &:focus {
+          h3 {
+            padding: 0.5em 2em 0 3em;
+          }
         }
+      }
+      &.doubleblock {
+        &:before {
+          top: -50px;
+        }
+      }
     }
+  }
+  .special {
+    .box {
+      a {
+        span.cube {
+          float: right;
+          left: 2em;
+          top: 1.7em;
+        }
+        h3 {
+          width: calc(100% - 42px);
+          padding: 1em 2em 0;
+          float: left;
+          margin: 1.25em 0 0.75em;
+        }
+        &:hover,
+        &:focus {
+          span.cube {
+          }
+          h3 {
+            &:before {
+              width: 30px;
+              height: 3px;
+            }
+          }
+          // 色塊
+          &:before {
+            height: 80%;
+          }
+        }
+      }
+    }
+  }
+  .special_video {
+    .box {
+      a {
+        span.counter {
+        }
+        span.play {
+          opacity: 1;
+          font-size: 0;
+          width: 42px;
+          height: 42px;
+          border-radius: 0;
+          background: rgba(102, 189, 0, 0.9);
+          transition: background 0.4s ease;
+          position: absolute;
+          right: 1px;
+          top: 76px;
+          &:after {
+            width: 42px;
+            height: 42px;
+            background: url(../images/icon/icon-play-whtie.svg) 50% 50% no-repeat;
+          }
+        }
+        span.playbtn {
+          right: 30px;
+          left: auto;
+          bottom: 30px;
+          top: auto;
+        }
+        h3 {
+          padding: 1em 3.2em 0 2em;
+        }
+        &:hover,
+        &:focus {
+          span.play {
+            background: #fff;
+            &:after {
+              background: url(../images/icon/icon-play-green.svg) 50% 50% no-repeat;
+            }
+          }
+          h3 {
+            &:before {
+              width: 30px;
+              height: 3px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 @include screen('mobile') {
-    .special, .special_video {
-        .box {
-            width: 100% !important;
-            height: 200px !important;
-            &:nth-child(1),
-            &:nth-child(2),
-            &:nth-child(3),
-            &:nth-child(4),
-            &:nth-child(5),
-            &:nth-child(6) {
-                // 色塊
-                &:before {
-                    top: -90px;
-                }
-            }
-            &:nth-child(6) {
-                position: sticky;
-                height: 200px;
-            }
+  .special,
+  .special_video {
+    .box {
+      width: 100% !important;
+      height: 200px !important;
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6) {
+        // 色塊
+        &:before {
+          top: -90px;
         }
+      }
+      &:nth-child(6) {
+        position: sticky;
+        height: 200px;
+      }
     }
+  }
+  .special_book {
+    .box {
+      width: 100% !important;
+      height: 200px !important;
+      flex-basis: 100% !important;
+      // 色塊
+      &:before {
+        top: -90px;
+      }
+
+      &.doubleblock {
+        &:before {
+          top: -90px;
+        }
+        &:hover {
+          &:before {
+            transform: skew(0, -15deg);
+          }
+        }
+      }
+    }
+  }
 }
 //我的書房
 .manual {
-    display: inline-block;
-    float: right;
-    margin: 15px 0;
-    a {
-        display: block;
-        background-color: $secondaryColor;
-        color: #fff;
-        padding: 5px 20px 5px 50px;
-        border-radius: 4px;
-        background-image: url('../images/manual_icon.svg');
-        background-size: 18px 18px;
-        background-repeat: no-repeat;
-        background-position: 20px 8px;
-        &:hover {
-            background-color: darken($secondaryColor, 10);
-        }
+  display: inline-block;
+  float: right;
+  margin: 15px 0;
+  a {
+    display: block;
+    background-color: $secondaryColor;
+    color: #fff;
+    padding: 5px 20px 5px 50px;
+    border-radius: 4px;
+    background-image: url('../images/manual_icon.svg');
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: 20px 8px;
+    &:hover {
+      background-color: darken($secondaryColor, 10);
     }
+  }
 }
 // 借閱紀錄
 .bookrecord_block {
-    clear: both;
-    float: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    margin-bottom: 50px;
+  clear: both;
+  float: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-bottom: 50px;
+  @include screen('mobile') {
+    display: block;
+  }
+  .borrow_record {
+    flex: 0 0 43%;
     @include screen('mobile') {
-        display: block;
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: 20px;
     }
-    .borrow_record {
-        flex: 0 0 43%;
-        @include screen('mobile') {
-            width: 100%;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
+  }
+  .reservation_record {
+    flex: 0 0 55%;
+    @include screen('mobile') {
+      width: 100%;
+      overflow: hidden;
     }
-    .reservation_record {
-        flex: 0 0 55%;
-        @include screen('mobile') {
-            width: 100%;
-            overflow: hidden;
-        }
-    }
-    a {
-        display: block;
-        background-color: #eee;
-        border-radius: 4px;
-        padding: 20px 20px 30px 0;
-        h3 {
-            color: #333;
-        }
-        &:focus {
-            box-shadow: 0 0px 0px 3px $lightColor;
-        }
-    }
+  }
+  a {
+    display: block;
+    background-color: #eee;
+    border-radius: 4px;
+    padding: 20px 20px 30px 0;
     h3 {
-        font-size: 1.375em;
-        position: relative;
-        padding: 0 0 0 40px;
-        margin: 10px 0 20px;
-        &:before {
-            content: '';
-            width: 22px;
-            height: 22px;
-            background-color: $primaryColor;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
+      color: #333;
     }
-    .data {
-        text-align: center;
-        color: #666;
-        display: flex;
-        margin: 0 20px 0 35px;
-        @include screen('tablet') {
-            flex-wrap: wrap;
-        }
-        div {
-            vertical-align: top;
-            margin: 0 5px 15px;
-            padding: 30px 20px 20px;
-            position: relative;
-            line-height: 1.8em;
-            font-size: 1.125em;
-            background-color: #fff;
-            border-radius: 10px;
-            text-align: center;
-            flex: auto;
-            @include box-sizing;
-            // @include screen('tablet'){
-            //     flex:0 0 45%;
-            // }
-            @media(max-width: 480px) {
-                display: block;
-                margin-bottom: 30px
-            }
-            em {
-                font-style: normal;
-                display: inline-block;
-            }
-            em.number {
-                font-size: 3.7em;
-                margin: 0 10px 25px;
-                font-style: normal;
-                font-weight: 700;
-                display: inlinblock;
-            }
-            span {
-                display: block;
-                padding: 2px 10px;
-                background-color: #ddd;
-            }
-        }
+    &:focus {
+      box-shadow: 0 0px 0px 3px $lightColor;
     }
+  }
+  h3 {
+    font-size: 1.375em;
+    position: relative;
+    padding: 0 0 0 40px;
+    margin: 10px 0 20px;
+    &:before {
+      content: '';
+      width: 22px;
+      height: 22px;
+      background-color: $primaryColor;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+  .data {
+    text-align: center;
+    color: #666;
+    display: flex;
+    margin: 0 20px 0 35px;
+    @include screen('tablet') {
+      flex-wrap: wrap;
+    }
+    div {
+      vertical-align: top;
+      margin: 0 5px 15px;
+      padding: 30px 20px 20px;
+      position: relative;
+      line-height: 1.8em;
+      font-size: 1.125em;
+      background-color: #fff;
+      border-radius: 10px;
+      text-align: center;
+      flex: auto;
+      @include box-sizing;
+      // @include screen('tablet'){
+      //     flex:0 0 45%;
+      // }
+      @media (max-width: 480px) {
+        display: block;
+        margin-bottom: 30px;
+      }
+      em {
+        font-style: normal;
+        display: inline-block;
+      }
+      em.number {
+        font-size: 3.7em;
+        margin: 0 10px 25px;
+        font-style: normal;
+        font-weight: 700;
+        display: inlinblock;
+      }
+      span {
+        display: block;
+        padding: 2px 10px;
+        background-color: #ddd;
+      }
+    }
+  }
 }
 // 歷史紀錄
 .historical_record {
-    text-align: center;
-    margin-bottom: 50px;
-    clear: both;
+  text-align: center;
+  margin-bottom: 50px;
+  clear: both;
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 0 -10px;
+    padding: 0;
+    list-style: none;
+    line-height: 1.3;
+    li {
+      flex: 0 0 50%;
+      padding: 3vw 0;
+      margin: 0;
+      font-size: 1.25em;
+      a {
+        display: block;
+        position: relative;
+        // width: 190px; height: 190px;
+        padding: 20px;
+        margin: 0 auto;
+        width: 40vw;
+        height: 40vw;
+        max-width: 210px;
+        max-height: 210px;
+        border-radius: 50%;
+        background-color: $primaryColor;
+        color: #fff;
+        transition: 0.35s;
+        img {
+          display: block;
+          position: relative;
+          top: 50%;
+          margin: 0 auto 20%;
+          width: 55%;
+          height: 55%;
+          object-fit: contain;
+          transform: translateY(-72%);
+        }
+        &:hover {
+          transform: scale(1.1);
+          background-color: darken($primaryColor, 10);
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 360px) {
+    ul li {
+      flex-basis: 100%;
+      a {
+        width: 70vw;
+        height: 70vw;
+      }
+    }
+  }
+  @media screen and (min-width: $screen-xs + 50px) {
     ul {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        margin: 0 -10px;
-        padding: 0;
-        list-style: none;
-        line-height: 1.3;
-        li {
-            flex: 0 0 50%;
-            padding: 3vw 0;
-            margin: 0;
-            font-size: 1.25em;
-            a {
-                display: block;
-                position: relative;
-                // width: 190px; height: 190px;
-                padding: 20px;
-                margin: 0 auto;
-                width: 40vw;
-                height: 40vw;
-                max-width: 210px;
-                max-height: 210px;
-                border-radius: 50%;
-                background-color: $primaryColor;
-                color: #fff;
-                transition: .35s;
-                img {
-                    display: block;
-                    position: relative;
-                    top: 50%;
-                    margin: 0 auto 20%;
-                    width: 55%;
-                    height: 55%;
-                    object-fit: contain;
-                    transform: translateY(-72%);
-                }
-                &:hover {
-                    transform: scale(1.1);
-                    background-color: darken($primaryColor, 10);
-                }
-            }
+      li {
+        flex-basis: 33%;
+        padding: 2vw 0;
+        a {
+          width: 28vw;
+          height: 28vw;
         }
+      }
     }
-    @media screen and (max-width: 360px) {
-        ul li {
-            flex-basis: 100%;
-            a {
-                width: 70vw;
-                height: 70vw;
-            }
+  }
+  @media screen and (min-width: $screen-md) {
+    ul {
+      li {
+        flex-basis: 20%;
+        padding: 20px 0;
+        font-size: 1.125em;
+        a {
+          width: 17vw;
+          height: 17vw;
         }
+      }
     }
-    @media screen and (min-width: $screen-xs + 50px) {
-        ul {
-            li {
-                flex-basis: 33%;
-                padding: 2vw 0;
-                a {
-                    width: 28vw;
-                    height: 28vw;
-                }
-            }
-        }
-    }
-    @media screen and (min-width: $screen-md) {
-        ul {
-            li {
-                flex-basis: 20%;
-                padding: 20px 0;
-                font-size: 1.125em;
-                a {
-                    width: 17vw;
-                    height: 17vw;
-                }
-            }
-        }
-    }
+  }
 }
 // 我的書房
 .mystudy_block {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  @include screen('mobile') {
+    flex-wrap: wrap;
+  }
+  div {
+    flex: 0 0 23%;
+    border: 1px solid #b5b5b5;
+    padding: 0px;
+    border-radius: 4px;
+    height: 300px;
+    @include screen('tablet') {
+      height: 330px;
+    }
     @include screen('mobile') {
-        flex-wrap: wrap;
+      flex: 0 0 48%;
+      margin-bottom: 20px;
+      height: 300px;
     }
-    div {
-        flex: 0 0 23%;
-        border: 1px solid #b5b5b5;
-        padding: 0px;
-        border-radius: 4px;
-        height: 300px;
-        @include screen('tablet') {
-            height: 330px;
-        }
-        @include screen('mobile') {
-            flex: 0 0 48%;
-            margin-bottom: 20px;
-            height: 300px;
-        }
-        @media(max-width: 500px) {
-            height: 330px;
-        }
-        @media(max-width: 400px) {
-            flex: 0 0 100%;
-            height: 300px;
-        }
-        a {
-            display: block;
-            text-align: center;
-            width: 100%;
-            height: 100%;
-            color: #333;
-            padding: 20px;
-            @include box-sizing;
-            img {
-                width: 100px;
-                margin-bottom: 5px;
-                transition: .5s;
-            }
-            h3 {
-                margin: 0 0 10px;
-                padding: 10px;
-                border-bottom: 1px solid #ccc;
-            }
-            p {
-                color: #666;
-            }
-            &:hover {
-                img {
-                    width: 115px;
-                }
-            }
-        }
-        &:first-child {
-            a {
-                &:hover {
-                    color: $primaryColor;
-                }
-            }
-        }
-        &:nth-child(2) {
-            a {
-                &:hover {
-                    color: darken($secondaryColor, 10);
-                }
-            }
-        }
-        &:nth-child(3) {
-            a {
-                &:hover {
-                    color: darken($lightColor, 10);
-                }
-            }
-        }
-        &:nth-child(4) {
-            a {
-                &:hover {
-                    color: $color-red;
-                }
-            }
-        }
+    @media (max-width: 500px) {
+      height: 330px;
     }
+    @media (max-width: 400px) {
+      flex: 0 0 100%;
+      height: 300px;
+    }
+    a {
+      display: block;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      color: #333;
+      padding: 20px;
+      @include box-sizing;
+      img {
+        width: 100px;
+        margin-bottom: 5px;
+        transition: 0.5s;
+      }
+      h3 {
+        margin: 0 0 10px;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+      p {
+        color: #666;
+      }
+      &:hover {
+        img {
+          width: 115px;
+        }
+      }
+    }
+    &:first-child {
+      a {
+        &:hover {
+          color: $primaryColor;
+        }
+      }
+    }
+    &:nth-child(2) {
+      a {
+        &:hover {
+          color: darken($secondaryColor, 10);
+        }
+      }
+    }
+    &:nth-child(3) {
+      a {
+        &:hover {
+          color: darken($lightColor, 10);
+        }
+      }
+    }
+    &:nth-child(4) {
+      a {
+        &:hover {
+          color: $color-red;
+        }
+      }
+    }
+  }
 }
 // 標籤結果
 .tag_result {
-    margin-bottom: 40px;
-    font-size: 1.25em;
-    position: relative;
-    padding-left: 20px;
-    &:before {
-        content: '';
-        border: 10px solid #000;
-        border-top-color: transparent;
-        border-right-color: transparent;
-        border-bottom-color: transparent;
-        position: absolute;
-        left: 0;
-        top: 1px;
-    }
-    span {
-        padding: 5px 15px;
-        border: 1px solid #666;
-        border-radius: 4px;
-        font-size: 0.813em;
-    }
+  margin-bottom: 40px;
+  font-size: 1.25em;
+  position: relative;
+  padding-left: 20px;
+  &:before {
+    content: '';
+    border: 10px solid #000;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    position: absolute;
+    left: 0;
+    top: 1px;
+  }
+  span {
+    padding: 5px 15px;
+    border: 1px solid #666;
+    border-radius: 4px;
+    font-size: 0.813em;
+  }
 }
 // 電子書服務
 .eBook_service_block {
-    .form_grid {
-        display: flex;
-        flex-wrap: wrap;
-        .form_grp {
-            flex: 0 0 100%;
-            border-bottom: none;
-            &.form_grp_inline {
-                flex: 0 0 50%;
-                @include screen('xs_mobile') {
-                    flex: 0 0 100%;
-                }
-            }
-            .form_title {
-                display: block;
-                float: none;
-                width: 100%;
-                font-weight: bolder;
-                @include screen('xs_mobile') {
-                    padding-right: 0;
-                    padding-left: 0;
-                }
-            }
-            .form_content {
-                float: none;
-                width: 100%;
-                @include screen('xs_mobile') {
-                    padding-right: 0;
-                    padding-left: 0;
-                }
-            }
+  .form_grid {
+    display: flex;
+    flex-wrap: wrap;
+    .form_grp {
+      flex: 0 0 100%;
+      border-bottom: none;
+      &.form_grp_inline {
+        flex: 0 0 50%;
+        @include screen('xs_mobile') {
+          flex: 0 0 100%;
         }
-        .btn_grp {
-            text-align: center;
-            flex: 0 0 100%;
-            padding: .5em 0;
-            &.lean_right {
-                text-align: right;
-                flex: 0 0 50%;
-            }
-            &.lean_left {
-                text-align: left;
-                flex: 0 0 50%;
-            }
-            @include screen('xs_mobile') {
-                &.lean_right, &.lean_left {
-                    flex: 0 0 100%;
-                }
-            }
+      }
+      .form_title {
+        display: block;
+        float: none;
+        width: 100%;
+        font-weight: bolder;
+        @include screen('xs_mobile') {
+          padding-right: 0;
+          padding-left: 0;
         }
-        .remind {
-            flex: 0 0 100%;
-            padding: 5px 15px;
-            background-color: lighten($lightColor, 45);
+      }
+      .form_content {
+        float: none;
+        width: 100%;
+        @include screen('xs_mobile') {
+          padding-right: 0;
+          padding-left: 0;
         }
+      }
     }
+    .btn_grp {
+      text-align: center;
+      flex: 0 0 100%;
+      padding: 0.5em 0;
+      &.lean_right {
+        text-align: right;
+        flex: 0 0 50%;
+      }
+      &.lean_left {
+        text-align: left;
+        flex: 0 0 50%;
+      }
+      @include screen('xs_mobile') {
+        &.lean_right,
+        &.lean_left {
+          flex: 0 0 100%;
+        }
+      }
+    }
+    .remind {
+      flex: 0 0 100%;
+      padding: 5px 15px;
+      background-color: lighten($lightColor, 45);
+    }
+  }
 }
 // 註冊單
 .register_block {
-    .title {
-        text-align: center;
-        margin-bottom: 20px;
-        font-size: 1.25em;
-        color: $primaryColor;
+  .title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.25em;
+    color: $primaryColor;
+    font-weight: bolder;
+    padding-top: 55px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 44px;
+    &.apply {
+      background-image: url('../images/register_icon01.svg');
+    }
+    &.forget {
+      background-image: url('../images/register_icon02.svg');
+    }
+    &.reset {
+      background-image: url('../images/register_icon03.svg');
+    }
+  }
+  .form_grid {
+    display: flex;
+    flex-wrap: wrap;
+    .form_grp {
+      flex: 0 0 100%;
+      border-bottom: none;
+      &.form_grp_inline {
+        flex: 0 0 50%;
+        @include screen('xs_mobile') {
+          flex: 0 0 100%;
+        }
+      }
+      .form_title {
+        display: block;
+        float: none;
+        width: 100%;
         font-weight: bolder;
-        padding-top: 55px;
-        background-repeat: no-repeat;
-        background-position: center top;
-        background-size: 44px;
-        &.apply {
-            background-image: url('../images/register_icon01.svg');
+        @include screen('xs_mobile') {
+          padding-right: 0;
+          padding-left: 0;
         }
-        &.forget {
-            background-image: url('../images/register_icon02.svg');
+      }
+      .form_content {
+        float: none;
+        width: 100%;
+        @include screen('xs_mobile') {
+          padding-right: 0;
+          padding-left: 0;
         }
-        &.reset {
-            background-image: url('../images/register_icon03.svg');
-        }
+      }
     }
-    .form_grid {
-        display: flex;
-        flex-wrap: wrap;
-        .form_grp {
-            flex: 0 0 100%;
-            border-bottom: none;
-            &.form_grp_inline {
-                flex: 0 0 50%;
-                @include screen('xs_mobile') {
-                    flex: 0 0 100%;
-                }
-            }
-            .form_title {
-                display: block;
-                float: none;
-                width: 100%;
-                font-weight: bolder;
-                @include screen('xs_mobile') {
-                    padding-right: 0;
-                    padding-left: 0;
-                }
-            }
-            .form_content {
-                float: none;
-                width: 100%;
-                @include screen('xs_mobile') {
-                    padding-right: 0;
-                    padding-left: 0;
-                }
-            }
+    .btn_grp {
+      text-align: center;
+      flex: 0 0 100%;
+      padding: 0.5em 0;
+      &.lean_right {
+        text-align: right;
+        flex: 0 0 50%;
+      }
+      &.lean_left {
+        text-align: left;
+        flex: 0 0 50%;
+      }
+      @include screen('xs_mobile') {
+        &.lean_right,
+        &.lean_left {
+          flex: 0 0 100%;
         }
-        .btn_grp {
-            text-align: center;
-            flex: 0 0 100%;
-            padding: .5em 0;
-            &.lean_right {
-                text-align: right;
-                flex: 0 0 50%;
-            }
-            &.lean_left {
-                text-align: left;
-                flex: 0 0 50%;
-            }
-            @include screen('xs_mobile') {
-                &.lean_right, &.lean_left {
-                    flex: 0 0 100%;
-                }
-            }
-        }
-        .remind {
-            flex: 0 0 100%;
-            padding: 5px 15px;
-            background-color: lighten($lightColor, 45);
-        }
+      }
     }
+    .remind {
+      flex: 0 0 100%;
+      padding: 5px 15px;
+      background-color: lighten($lightColor, 45);
+    }
+  }
 }
 // 沒有相關資料
 .no_data {
-    text-align: center;
-    width: 80%;
-    margin: 50px auto 0;
-    padding: 20px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ebecf3;
-    @include gradient(#fff, #ebecf3, diagonal);
-    box-shadow: 1px 1px 8px #c9c9c9;
+  text-align: center;
+  width: 80%;
+  margin: 50px auto 0;
+  padding: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ebecf3;
+  @include gradient(#fff, #ebecf3, diagonal);
+  box-shadow: 1px 1px 8px #c9c9c9;
+  @include screen('mobile') {
+    display: block;
+  }
+  @include screen('xs_mobile') {
+    width: 100%;
+  }
+  img {
+    width: 40%;
+    margin-right: 30px;
     @include screen('mobile') {
-        display: block;
+      width: 60%;
+      margin: 0;
     }
     @include screen('xs_mobile') {
-        width: 100%;
+      width: 80%;
     }
-    img {
-        width: 40%;
-        margin-right: 30px;
-        @include screen('mobile') {
-            width: 60%;
-            margin: 0;
-        }
-        @include screen('xs_mobile') {
-            width: 80%;
-        }
-        @media(max-width: 400px) {
-            width: 100%;
-        }
+    @media (max-width: 400px) {
+      width: 100%;
     }
-    p {
-        font-size: 1.375em;
-        color: #333;
-        font-weight: 500;
-        @include screen('xs_mobile') {
-            font-size: 1.25em;
-        }
+  }
+  p {
+    font-size: 1.375em;
+    color: #333;
+    font-weight: 500;
+    @include screen('xs_mobile') {
+      font-size: 1.25em;
     }
+  }
 }
 // 影片賞析輪播圖改為單張
 .videoImage {
-    a, picture, img {
-        display: block;
-    }
-    img {
-        width: 100%;
-        height: calc((100vw - 60px)*.56);
-        max-height: 638px;
-    }
+  a,
+  picture,
+  img {
+    display: block;
+  }
+  img {
+    width: 100%;
+    height: calc((100vw - 60px) * 0.56);
+    max-height: 638px;
+  }
 }
 // 登入註冊頁面
 .login_block {
-    display: flex;
+  display: flex;
+  @include screen('mobile') {
+    flex-wrap: wrap;
+  }
+  .login_group {
+    flex: auto;
+    padding: 0 30px;
+    box-sizing: border-box;
+    border-right: 1px solid #ccc;
     @include screen('mobile') {
-        flex-wrap: wrap;
+      flex-basis: 100%;
+      max-width: 100%;
+      border: none;
     }
-    .login_group {
-        flex: auto;
-        padding: 0 30px;
-        box-sizing: border-box;
-        border-right: 1px solid #ccc;
-        @include screen('mobile') {
-            flex-basis: 100%;
-            max-width: 100%;
-            border: none;
+    @include screen('xs_mobile') {
+      padding: 0 30px 0 0;
+    }
+    .form_grp {
+      border-bottom: none;
+      label {
+        color: $primaryColor;
+        padding-left: 20px;
+        font-size: 1.125em;
+      }
+      .form_content {
+        float: none;
+        width: 100%;
+        position: relative;
+        .labelEffect {
+          .btn-icon {
+            right: 1em;
+          }
         }
+      }
+      input {
+        background-color: #e3f5fe;
+        border: 1px solid #e3f5fe;
+        padding: 10px 50px 10px 50px;
+        border-radius: 50px;
+        color: #333;
+        margin: 0 3px;
+        width: 97%;
+      }
+      .account_number {
+        background-image: url('../images/icon/icon_mail_blue.svg');
+        background-repeat: no-repeat;
+        background-position: 20px 10px;
+        background-size: 20px;
+      }
+      .password {
+        background-image: url('../images/icon/icon_lock_blue.svg');
+        background-repeat: no-repeat;
+        background-position: 20px 10px;
+        background-size: 20px;
+      }
+      ::placeholder {
+        color: #999;
+        // padding-left: 30px;
+      }
+      .forgot_password {
+        text-align: right;
+        padding-right: 25px;
+        a {
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    .btn_grp {
+      button {
+        min-width: 18em;
+        border-radius: 50px;
         @include screen('xs_mobile') {
-            padding: 0 30px 0 0;
+          min-width: 13em;
         }
-        .form_grp {
-            border-bottom: none;
-            label {
-                color: $primaryColor;
-                padding-left: 20px;
-                font-size: 1.125em;
-            }
-            .form_content {
-                float: none;
-                width: 100%;
-                position: relative;
-                .labelEffect {
-                    .btn-icon {
-                        right: 1em;
-                    }
-                }
-            }
-            input {
-                background-color: #e3f5fe;
-                border: 1px solid #e3f5fe;
-                padding: 10px 50px 10px 50px;
-                border-radius: 50px;
-                color: #333;
-                margin: 0 3px;
-                width: 97%;
-            }
-            .account_number {
-                background-image: url('../images/icon/icon_mail_blue.svg');
-                background-repeat: no-repeat;
-                background-position: 20px 10px;
-                background-size: 20px;
-            }
-            .password {
-                background-image: url('../images/icon/icon_lock_blue.svg');
-                background-repeat: no-repeat;
-                background-position: 20px 10px;
-                background-size: 20px;
-            }
-            ::placeholder {
-                color: #999;
-                // padding-left: 30px;
-            }
-            .forgot_password {
-                text-align: right;
-                padding-right: 25px;
-                a {
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
-            }
-        }
-        .btn_grp {
-            button {
-                min-width: 18em;
-                border-radius: 50px;
-                @include screen('xs_mobile') {
-                    min-width: 13em;
-                }
-            }
-        }
+      }
     }
-    .illustrate_group {
-        flex: none;
-        flex-basis: 40%;
-        max-width: 40%;
-        padding: 0 30px;
-        box-sizing: border-box;
+  }
+  .illustrate_group {
+    flex: none;
+    flex-basis: 40%;
+    max-width: 40%;
+    padding: 0 30px;
+    box-sizing: border-box;
+    @include screen('mobile') {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+    @include screen('xs_mobile') {
+      padding: 0 30px 0 0;
+    }
+    .illustrate {
+      .apply_btn {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ccc;
+        padding: 0 0 15px;
         @include screen('mobile') {
-            flex-basis: 100%;
-            max-width: 100%;
+          text-align: center;
         }
-        @include screen('xs_mobile') {
-            padding: 0 30px 0 0;
+        a {
+          font-size: 1.125em;
+          display: inline-block;
         }
-        .illustrate {
-            .apply_btn {
-                margin-bottom: 15px;
-                border-bottom: 1px solid #ccc;
-                padding: 0 0 15px;
-                @include screen('mobile') {
-                    text-align: center;
-                }
-                a {
-                    font-size: 1.125em;
-                    display: inline-block;
-                }
+      }
+      .subtitle {
+        font-size: 1.375em;
+        color: #888;
+        margin-bottom: 15px;
+        letter-spacing: 0.1em;
+      }
+      .content {
+        ul {
+          margin: 0 0 0 30px;
+          padding: 0;
+          li {
+            margin-bottom: 8px;
+            em {
+              font-style: normal;
+              color: $primaryColor;
             }
-            .subtitle {
-                font-size: 1.375em;
-                color: #888;
-                margin-bottom: 15px;
-                letter-spacing: 0.1em;
-            }
-            .content {
-                ul {
-                    margin: 0 0 0 30px;
-                    padding: 0;
-                    li {
-                        margin-bottom: 8px;
-                        em {
-                            font-style: normal;
-                            color: $primaryColor;
-                        }
-                    }
-                }
-            }
+          }
         }
+      }
     }
+  }
 }
 // 水利影音資料
 .movie_data_block {
-    margin-bottom: 20px;
-    .iframe_v {
+  margin-bottom: 20px;
+  .iframe_v {
+    margin: 0;
+  }
+  .movie_data_group {
+    background-color: #eee;
+    padding: 20px;
+    border-radius: 0;
+    .classification {
+      color: $primaryColor;
+      font-size: 1.063em;
+      margin-bottom: 15px;
+      font-weight: bolder;
+    }
+    .title {
+      display: block;
+      font-size: 1.625em;
+      font-weight: bolder;
+      margin-bottom: 15px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #ccc;
+      @include text-line(2, 1.4em);
+      line-height: 1.3em;
+    }
+    .data {
+      margin-bottom: 15px;
+      ul {
         margin: 0;
-    }
-    .movie_data_group {
-        background-color: #eee;
-        padding: 20px;
-        border-radius: 0;
-        .classification {
-            color: $primaryColor;
-            font-size: 1.063em;
-            margin-bottom: 15px;
-            font-weight: bolder;
-        }
-        .title {
-            display: block;
-            font-size: 1.625em;
-            font-weight: bolder;
-            margin-bottom: 15px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #ccc;
-            @include text-line(2, 1.4em);
-            line-height: 1.3em;
-        }
-        .data {
-            margin-bottom: 15px;
-            ul {
-                margin: 0;
-                padding: 0;
-                li {
-                    display: inline-block;
-                    padding: 0 0 0 30px;
-                    margin-right: 20px;
-                    position: relative;
-                    font-weight: bolder;
-                    color: #333;
-                    &:before {
-                        content: '';
-                        background-color: #fff;
-                        border-radius: 50%;
-                        width: 25px;
-                        height: 25px;
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        z-index: 0;
-                    }
-                    &.pepole {
-                        &:after {
-                            content: '';
-                            background-image: url('../images/icon/icon_view.svg');
-                            background-size: 16px;
-                            background-repeat: no-repeat;
-                            background-position: left center;
-                            width: 16px;
-                            height: 16px;
-                            position: absolute;
-                            left: 4px;
-                            top: 4px;
-                            z-index: 1;
-                        }
-                    }
-                    &.date {
-                        &:after {
-                            content: '';
-                            background-image: url('../images/icon/icon_calendar.svg');
-                            background-size: 14px;
-                            background-repeat: no-repeat;
-                            background-position: left center;
-                            width: 14px;
-                            height: 14px;
-                            position: absolute;
-                            left: 5px;
-                            top: 5px;
-                            z-index: 1;
-                        }
-                    }
-                    &.department {
-                        &:after {
-                            content: '';
-                            background-image: url('../images/icon/icon_man.svg');
-                            background-size: 16px;
-                            background-repeat: no-repeat;
-                            background-position: left center;
-                            width: 16px;
-                            height: 16px;
-                            position: absolute;
-                            left: 5px;
-                            top: 4px;
-                            z-index: 1;
-                        }
-                    }
-                }
+        padding: 0;
+        li {
+          display: inline-block;
+          padding: 0 0 0 30px;
+          margin-right: 20px;
+          position: relative;
+          font-weight: bolder;
+          color: #333;
+          &:before {
+            content: '';
+            background-color: #fff;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 0;
+          }
+          &.pepole {
+            &:after {
+              content: '';
+              background-image: url('../images/icon/icon_view.svg');
+              background-size: 16px;
+              background-repeat: no-repeat;
+              background-position: left center;
+              width: 16px;
+              height: 16px;
+              position: absolute;
+              left: 4px;
+              top: 4px;
+              z-index: 1;
             }
-        }
-        .content {
-            font-size: 0.938em;
-            line-height: 1.6em;
-            img {
-                width: 16px;
-                margin-right: 5px;
+          }
+          &.date {
+            &:after {
+              content: '';
+              background-image: url('../images/icon/icon_calendar.svg');
+              background-size: 14px;
+              background-repeat: no-repeat;
+              background-position: left center;
+              width: 14px;
+              height: 14px;
+              position: absolute;
+              left: 5px;
+              top: 5px;
+              z-index: 1;
             }
+          }
+          &.department {
+            &:after {
+              content: '';
+              background-image: url('../images/icon/icon_man.svg');
+              background-size: 16px;
+              background-repeat: no-repeat;
+              background-position: left center;
+              width: 16px;
+              height: 16px;
+              position: absolute;
+              left: 5px;
+              top: 4px;
+              z-index: 1;
+            }
+          }
         }
+      }
     }
+    .content {
+      font-size: 0.938em;
+      line-height: 1.6em;
+      img {
+        width: 16px;
+        margin-right: 5px;
+      }
+    }
+  }
 }
 // 影音list
 .movie_list_group {
-    display: flex;
-    flex-wrap: wrap;
-    // justify-content: space-between;
-    @include screen('xs_mobile') {
-        display: block;
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+  @include screen('xs_mobile') {
+    display: block;
+  }
+  .movie_list {
+    flex: none;
+    flex-basis: 32%;
+    max-width: 32%;
+    background-color: #eee;
+    padding: 10px 10px;
+    margin: 0 0.66% 15px;
+    // margin-bottom: 15px;
+    border-radius: 4px;
+    transition: 0.5s;
+    box-sizing: border-box;
+    @media (max-width: 1100px) {
+      flex-basis: 49%;
+      max-width: 49%;
+      margin: 0 0.5% 15px;
     }
-    .movie_list {
-        flex: none;
-        flex-basis: 32%;
-        max-width: 32%;
-        background-color: #eee;
-        padding: 10px 10px;
-        margin: 0 0.66% 15px;
-        // margin-bottom: 15px;
-        border-radius: 4px;
-        transition: .5s;
-        box-sizing: border-box;
-        @media(max-width: 1100px) {
-            flex-basis: 49%;
-            max-width: 49%;
-            margin: 0 0.5% 15px;
-        }
-        @media(max-width:992px) {
-            flex-basis: 32%;
-            max-width: 32%;
-            margin: 0 0.66% 15px;
-        }
-        @media(max-width:900px) {
-            flex-basis: 49%;
-            max-width: 49%;
-            margin: 0 0.5% 15px;
-        }
-        @include screen('xs_mobile') {
-            flex-basis: 100%;
-            max-width: 100%;
-            margin: 0 0 15px;
-        }
-        &:hover {
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-            background-color: #ddd;
-        }
-        .title {
-            font-size: 1.125em;
-            font-weight: bolder;
-            margin-bottom: 10px;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            @include screen('xs_mobile') {
-                white-space: normal;
-            }
-        }
-        .data {
-            margin-bottom: 5px;
-            ul {
-                margin: 0;
-                padding: 0;
-                li {
-                    display: inline-block;
-                    padding: 0 0 0 25px;
-                    margin-right: 2px;
-                    position: relative;
-                    font-weight: bolder;
-                    color: #333;
-                    font-size: 0.813em;
-                    &:before {
-                        content: '';
-                        background-color: #fff;
-                        border-radius: 50%;
-                        width: 20px;
-                        height: 20px;
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        z-index: 0;
-                    }
-                    &.pepole {
-                        &:after {
-                            content: '';
-                            background-image: url('../images/icon/icon_view.svg');
-                            background-size: 14px;
-                            background-repeat: no-repeat;
-                            background-position: left center;
-                            width: 14px;
-                            height: 14px;
-                            position: absolute;
-                            left: 4px;
-                            top: 4px;
-                            z-index: 1;
-                        }
-                    }
-                    &.date {
-                        &:after {
-                            content: '';
-                            background-image: url('../images/icon/icon_calendar.svg');
-                            background-size: 12px;
-                            background-repeat: no-repeat;
-                            background-position: left center;
-                            width: 12px;
-                            height: 12px;
-                            position: absolute;
-                            left: 4px;
-                            top: 4px;
-                            z-index: 1;
-                        }
-                    }
-                    &.department {
-                        &:after {
-                            content: '';
-                            background-image: url('../images/icon/icon_man.svg');
-                            background-size: 14px;
-                            background-repeat: no-repeat;
-                            background-position: left center;
-                            width: 14px;
-                            height: 14px;
-                            position: absolute;
-                            left: 3px;
-                            top: 2px;
-                            z-index: 1;
-                        }
-                    }
-                }
-            }
-        }
-        .movie_block {
-            position: relative;
-            margin-bottom: 5px;
-            @include aspect-ratio(16, 9);
-            img {
-                object-fit: cover;
-            }
-            span.playbtn {
-                background-color: rgba(0, 0, 0, .6);
-                width: 56px;
-                height: 56px;
-                border-radius: 50%;
-                display: block;
-                position: absolute;
-                transition: .5s;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                margin: auto;
-                &::before {
-                    content: '';
-                    border-style: solid;
-                    border-width: 12px 0 12px 17px;
-                    border-color: transparent transparent transparent #fff;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    margin: -12px auto auto -5px;
-                }
-            }
-            a:hover .playbtn, a:focus .playbtn {
-                background-color: rgba(0, 0, 0, .8);
-                transform: scale(1.15);
-            }
-        }
-        .functionicon {
+    @media (max-width: 992px) {
+      flex-basis: 32%;
+      max-width: 32%;
+      margin: 0 0.66% 15px;
+    }
+    @media (max-width: 900px) {
+      flex-basis: 49%;
+      max-width: 49%;
+      margin: 0 0.5% 15px;
+    }
+    @include screen('xs_mobile') {
+      flex-basis: 100%;
+      max-width: 100%;
+      margin: 0 0 15px;
+    }
+    &:hover {
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      background-color: #ddd;
+    }
+    .title {
+      font-size: 1.125em;
+      font-weight: bolder;
+      margin-bottom: 10px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      @include screen('xs_mobile') {
+        white-space: normal;
+      }
+    }
+    .data {
+      margin-bottom: 5px;
+      ul {
+        margin: 0;
+        padding: 0;
+        li {
+          display: inline-block;
+          padding: 0 0 0 25px;
+          margin-right: 2px;
+          position: relative;
+          font-weight: bolder;
+          color: #333;
+          font-size: 0.813em;
+          &:before {
+            content: '';
             background-color: #fff;
-            margin-bottom: 5px;
-            ul {
-                margin: 0;
-                padding: 0;
-                list-style: none;
-                li {
-                    margin-right: 5px;
-                    font-size: 0.875em;
-                    display: inline-block;
-                    a {
-                        display: block;
-                        color: #000;
-                        padding-left: 25px;
-                        position: relative;
-                        &:before {
-                            content: '';
-                            background-image: url('../images/funcIcon2.svg');
-                            background-repeat: no-repeat;
-                            background-size: 70px;
-                            width: 25px;
-                            height: 25px;
-                            position: absolute;
-                            left: 0;
-                            top: 0;
-                        }
-                        &:hover {
-                            color: $aHover;
-                        }
-                    }
-                    &.like {
-                        a {
-                            &:before {
-                                background-position: -4px -35px;
-                            }
-                        }
-                        &.have {
-                            a {
-                                color: $secondaryColor;
-                                &:before {
-                                    background-position: -38px -35px;
-                                }
-                                &:hover {
-                                    color: $aHover;
-                                }
-                            }
-                        }
-                    }
-                    &.temporary {
-                        a {
-                            &:before {
-                                background-position: -4px -2px
-                            }
-                        }
-                        &.have {
-                            a {
-                                color: $secondaryColor;
-                                &:before {
-                                    background-position: -38px -2px;
-                                }
-                                &:hover {
-                                    color: $aHover;
-                                }
-                            }
-                        }
-                    }
-                    &.play {
-                        a {
-                            &:before {
-                                background-position: -7px -69px;
-                            }
-                        }
-                    }
-                }
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 0;
+          }
+          &.pepole {
+            &:after {
+              content: '';
+              background-image: url('../images/icon/icon_view.svg');
+              background-size: 14px;
+              background-repeat: no-repeat;
+              background-position: left center;
+              width: 14px;
+              height: 14px;
+              position: absolute;
+              left: 4px;
+              top: 4px;
+              z-index: 1;
             }
+          }
+          &.date {
+            &:after {
+              content: '';
+              background-image: url('../images/icon/icon_calendar.svg');
+              background-size: 12px;
+              background-repeat: no-repeat;
+              background-position: left center;
+              width: 12px;
+              height: 12px;
+              position: absolute;
+              left: 4px;
+              top: 4px;
+              z-index: 1;
+            }
+          }
+          &.department {
+            &:after {
+              content: '';
+              background-image: url('../images/icon/icon_man.svg');
+              background-size: 14px;
+              background-repeat: no-repeat;
+              background-position: left center;
+              width: 14px;
+              height: 14px;
+              position: absolute;
+              left: 3px;
+              top: 2px;
+              z-index: 1;
+            }
+          }
         }
-        .content {
-            font-size: 0.938em;
+      }
+    }
+    .movie_block {
+      position: relative;
+      margin-bottom: 5px;
+      @include aspect-ratio(16, 9);
+      img {
+        object-fit: cover;
+      }
+      span.playbtn {
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        transition: 0.5s;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        &::before {
+          content: '';
+          border-style: solid;
+          border-width: 12px 0 12px 17px;
+          border-color: transparent transparent transparent #fff;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin: -12px auto auto -5px;
+        }
+      }
+      a:hover .playbtn,
+      a:focus .playbtn {
+        background-color: rgba(0, 0, 0, 0.8);
+        transform: scale(1.15);
+      }
+    }
+    .functionicon {
+      background-color: #fff;
+      margin-bottom: 5px;
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+          margin-right: 5px;
+          font-size: 0.875em;
+          display: inline-block;
+          a {
+            display: block;
+            color: #000;
+            padding-left: 25px;
+            position: relative;
+            &:before {
+              content: '';
+              background-image: url('../images/funcIcon2.svg');
+              background-repeat: no-repeat;
+              background-size: 70px;
+              width: 25px;
+              height: 25px;
+              position: absolute;
+              left: 0;
+              top: 0;
+            }
+            &:hover {
+              color: $aHover;
+            }
+          }
+          &.like {
             a {
-                display: block;
-                color: #333;
-                line-height: 1.6em;
-                img {
-                    width: 16px;
-                    margin-right: 5px;
+              &:before {
+                background-position: -4px -35px;
+              }
+            }
+            &.have {
+              a {
+                color: $secondaryColor;
+                &:before {
+                  background-position: -38px -35px;
                 }
                 &:hover {
-                    color: $aHover;
+                  color: $aHover;
                 }
+              }
             }
+          }
+          &.temporary {
+            a {
+              &:before {
+                background-position: -4px -2px;
+              }
+            }
+            &.have {
+              a {
+                color: $secondaryColor;
+                &:before {
+                  background-position: -38px -2px;
+                }
+                &:hover {
+                  color: $aHover;
+                }
+              }
+            }
+          }
+          &.play {
+            a {
+              &:before {
+                background-position: -7px -69px;
+              }
+            }
+          }
         }
+      }
     }
+    .content {
+      font-size: 0.938em;
+      a {
+        display: block;
+        color: #333;
+        line-height: 1.6em;
+        img {
+          width: 16px;
+          margin-right: 5px;
+        }
+        &:hover {
+          color: $aHover;
+        }
+      }
+    }
+  }
 }
 // 影音列表table
 .movieTblist {
-    margin-bottom: 20px;
-    .movie_group {
-        display: flex;
-        align-items: center;
-        @include screen('xs_mobile'){
-            flex-wrap: wrap;
-        }
-        .movie_img {
-            position: relative;
-            margin-bottom: 0;
-            flex: 0 0 auto;
-            flex-basis: 140px;
-            width: 140px;
-            margin-right: 15px;
-            @include aspect-ratio(16, 9);
-            @include screen('xs_mobile') {
-                flex-basis: 100%;
-                width: 100%;
-                margin-bottom:10px;
-            }
-            img {
-                object-fit: cover;
-            }
-            span.playbtn {
-                background-color: rgba(0, 0, 0, .6);
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                display: block;
-                position: absolute;
-                transition: .5s;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                margin: auto;
-                &::before {
-                    content: '';
-                    border-style: solid;
-                    border-width: 8px 0 8px 12px;
-                    border-color: transparent transparent transparent #fff;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    margin: -8px auto auto -4px;
-                }
-            }
-        }
+  margin-bottom: 20px;
+  .movie_group {
+    display: flex;
+    align-items: center;
+    @include screen('xs_mobile') {
+      flex-wrap: wrap;
     }
+    .movie_img {
+      position: relative;
+      margin-bottom: 0;
+      flex: 0 0 auto;
+      flex-basis: 140px;
+      width: 140px;
+      margin-right: 15px;
+      @include aspect-ratio(16, 9);
+      @include screen('xs_mobile') {
+        flex-basis: 100%;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      img {
+        object-fit: cover;
+      }
+      span.playbtn {
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        transition: 0.5s;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        &::before {
+          content: '';
+          border-style: solid;
+          border-width: 8px 0 8px 12px;
+          border-color: transparent transparent transparent #fff;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin: -8px auto auto -4px;
+        }
+      }
+    }
+  }
 }
 // 影音列表
 .movie_condition_block {
-    background-color: #F3F3F3;
-    border-bottom: #ddd 1px solid;
-    // border-radius: 4px;
-    margin-bottom: 20px;
-    padding: 20px 20px 0;
-    .form_grid {
-        display: flex;
-        flex-wrap: wrap;
-        .form_grp {
-            flex: 0 0 100%;
-            border-bottom: none;
-            padding: 0;
-            display: flex;
-            @include screen('xs_mobile') {
-                display: block;
-            }
-            &.form_grp_inline {
-                flex: 0 0 50%;
-                @include screen('mobile') {
-                    flex: 0 0 100%;
-                }
-            }
-            .form_title {
-                display: block;
-                float: none;
-                width: 100%;
-                font-weight: bolder;
-                flex: 0 0 auto;
-                flex-basis: 130px;
-                @include screen('mobile') {
-                    padding-right: 0;
-                    padding-left: 0;
-                }
-                @include screen('xs_mobile') {
-                    flex-basis: 100%;
-                }
-            }
-            .form_content {
-                flex: 1 1 auto;
-                float: none;
-                width: 100%;
-                @include screen('mobile') {
-                    padding-right: 0;
-                    padding-left: 0;
-                }
-            }
+  background-color: #f3f3f3;
+  border-bottom: #ddd 1px solid;
+  // border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 20px 20px 0;
+  .form_grid {
+    display: flex;
+    flex-wrap: wrap;
+    .form_grp {
+      flex: 0 0 100%;
+      border-bottom: none;
+      padding: 0;
+      display: flex;
+      @include screen('xs_mobile') {
+        display: block;
+      }
+      &.form_grp_inline {
+        flex: 0 0 50%;
+        @include screen('mobile') {
+          flex: 0 0 100%;
         }
-        .btn_grp {
-            text-align: center;
-            flex: 0 0 100%;
-            padding: 0 0 1em;
-            &.lean_right {
-                text-align: right;
-                flex: 0 0 50%;
-            }
-            &.lean_left {
-                text-align: left;
-                flex: 0 0 50%;
-            }
-            @include screen('xs_mobile') {
-                &.lean_right, &.lean_left {
-                    flex: 0 0 100%;
-                }
-            }
+      }
+      .form_title {
+        display: block;
+        float: none;
+        width: 100%;
+        font-weight: bolder;
+        flex: 0 0 auto;
+        flex-basis: 130px;
+        @include screen('mobile') {
+          padding-right: 0;
+          padding-left: 0;
         }
-        .remind {
-            flex: 0 0 100%;
-            padding: 5px 15px;
-            background-color: lighten($lightColor, 45);
+        @include screen('xs_mobile') {
+          flex-basis: 100%;
         }
+      }
+      .form_content {
+        flex: 1 1 auto;
+        float: none;
+        width: 100%;
+        @include screen('mobile') {
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
     }
+    .btn_grp {
+      text-align: center;
+      flex: 0 0 100%;
+      padding: 0 0 1em;
+      &.lean_right {
+        text-align: right;
+        flex: 0 0 50%;
+      }
+      &.lean_left {
+        text-align: left;
+        flex: 0 0 50%;
+      }
+      @include screen('xs_mobile') {
+        &.lean_right,
+        &.lean_left {
+          flex: 0 0 100%;
+        }
+      }
+    }
+    .remind {
+      flex: 0 0 100%;
+      padding: 5px 15px;
+      background-color: lighten($lightColor, 45);
+    }
+  }
 }
 // 步驟
 .stepblock {
-    margin-bottom: 2em;
-    ul {
-        display: flex;
-        justify-content: center;
-        list-style-type: none;
-        position: relative;
-        margin: 0;
-        padding: 0;
-        @include screen('mobile') {
-            display: block;
-        }
-        li {
-            position: relative;
-            margin: 0 2%;
-            @include screen('mobile') {
-                margin: 0 0 1em;
-            }
-            &:after {
-                content: '';
-                width: 100%;
-                height: 1px;
-                background-color: $primaryColor;
-                position: absolute;
-                top: 49%;
-                right: -100%;
-                @include screen('mobile') {
-                    width: 1px;
-                    height: 100%;
-                    top: auto;
-                    right: 49%;
-                    bottom: -100%;
-                }
-            }
-            &:last-child {
-                &:after {
-                    display: none;
-                }
-            }
-            a {
-                display: flex;
-                align-items: center;
-                font-size: 1.125em;
-                padding: 0.3em 1em .3em 0.3em;
-                background-color: #fff;
-                border: 1px solid $primaryColor;
-                border-radius: 50px;
-                transition: .5s;
-                span {
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 50%;
-                    color: #fff;
-                    line-height: 20px;
-                    background-color: $primaryColor;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin-right: .5em;
-                    transition: .5s;
-                }
-                &:hover, &:focus {
-                    background-color: $primaryColor;
-                    color: #fff;
-                    span {
-                        background-color: #fff;
-                        color: $primaryColor;
-                    }
-                }
-            }
-        }
+  margin-bottom: 2em;
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    @include screen('mobile') {
+      display: block;
     }
+    li {
+      position: relative;
+      margin: 0 2%;
+      @include screen('mobile') {
+        margin: 0 0 1em;
+      }
+      &:after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: $primaryColor;
+        position: absolute;
+        top: 49%;
+        right: -100%;
+        @include screen('mobile') {
+          width: 1px;
+          height: 100%;
+          top: auto;
+          right: 49%;
+          bottom: -100%;
+        }
+      }
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+      a {
+        display: flex;
+        align-items: center;
+        font-size: 1.125em;
+        padding: 0.3em 1em 0.3em 0.3em;
+        background-color: #fff;
+        border: 1px solid $primaryColor;
+        border-radius: 50px;
+        transition: 0.5s;
+        span {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          color: #fff;
+          line-height: 20px;
+          background-color: $primaryColor;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 0.5em;
+          transition: 0.5s;
+        }
+        &:hover,
+        &:focus {
+          background-color: $primaryColor;
+          color: #fff;
+          span {
+            background-color: #fff;
+            color: $primaryColor;
+          }
+        }
+      }
+    }
+  }
 }
 // 編輯影片 form
 .edit_video_block {
-    margin-bottom: 2em;
-    .form_title {
-        font-weight: bolder;
-    }
+  margin-bottom: 2em;
+  .form_title {
+    font-weight: bolder;
+  }
 }
 .edit_video_block2 {
-    .form_grid {
-        display: flex;
-        flex-wrap: wrap;
-        .form_grp {
-            flex: 0 0 100%;
-            &.form_grp_inline {
-                flex: 0 0 50%;
-                @include screen('xs_mobile') {
-                    flex: 0 0 100%;
-                }
-            }
-            .form_title {
-                display: block;
-                float: none;
-                width: 100%;
-                font-weight: bolder;
-                @include screen('xs_mobile') {
-                    padding-right: 0;
-                    padding-left: 0;
-                }
-                // 
-                .hint_btn {
-                    display: inline-block;
-                    img {
-                        width: 22px;
-                        vertical-align: middle;
-                    }
-                }
-                .hint_content {
-                    display: inline-block;
-                    background-color: $primaryColor;
-                    color: #fff;
-                    padding: 10px;
-                    font-size: 0.938em;
-                    margin-left: 10px;
-                    border-radius: 5px;
-                    position: absolute;
-                    z-index: 2;
-                    display: none;
-                }
-            }
-            .form_content {
-                float: none;
-                width: 100%;
-                @include screen('xs_mobile') {
-                    padding-right: 0;
-                    padding-left: 0;
-                }
-            }
+  .form_grid {
+    display: flex;
+    flex-wrap: wrap;
+    .form_grp {
+      flex: 0 0 100%;
+      &.form_grp_inline {
+        flex: 0 0 50%;
+        @include screen('xs_mobile') {
+          flex: 0 0 100%;
         }
-        .btn_grp {
-            text-align: center;
-            flex: 0 0 100%;
-            padding: .5em 0;
-            &.lean_right {
-                text-align: right;
-                flex: 0 0 50%;
-            }
-            &.lean_left {
-                text-align: left;
-                flex: 0 0 50%;
-            }
-            @include screen('xs_mobile') {
-                &.lean_right, &.lean_left {
-                    flex: 0 0 100%;
-                }
-            }
+      }
+      .form_title {
+        display: block;
+        float: none;
+        width: 100%;
+        font-weight: bolder;
+        @include screen('xs_mobile') {
+          padding-right: 0;
+          padding-left: 0;
         }
-        .remind {
-            flex: 0 0 100%;
-            padding: 5px 15px;
-            background-color: lighten($lightColor, 45);
+        //
+        .hint_btn {
+          display: inline-block;
+          img {
+            width: 22px;
+            vertical-align: middle;
+          }
         }
-    }
-    .fileDragDrop {
-        position: relative;
-        height: 10em;
-        text-align: center;
-        border-radius: 4px;
-        border: 1px dashed #d7dfdd;
-        margin-bottom: 0.4em;
-        padding: 10px 0;
-        &:after {
-            content: '上傳影片';
-            display: inline-block;
-            padding: 0 0.8em;
-            height: 2.4em;
-            line-height: 2.4;
-            background: #21baff;
-            color: #fff;
-            border-radius: 4px;
-            cursor: pointer;
-            -webkit-transition: .2s;
-            transition: .2s;
-            margin-left: 3px;
+        .hint_content {
+          display: inline-block;
+          background-color: $primaryColor;
+          color: #fff;
+          padding: 10px;
+          font-size: 0.938em;
+          margin-left: 10px;
+          border-radius: 5px;
+          position: absolute;
+          z-index: 2;
+          display: none;
         }
-    }
-    .movie_group {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        width: 280px;
-        margin: 0 auto;
-        .movie_img {
-            position: relative;
-            margin-bottom: 10px;
-            flex: 0 0 auto;
-            flex-basis: 280px;
-            width: 280px;
-            @include aspect-ratio(16, 9);
-            img {
-                object-fit: cover;
-            }
-            span.playbtn {
-                background-color: rgba(0, 0, 0, .6);
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                display: block;
-                position: absolute;
-                transition: .5s;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                margin: auto;
-                &::before {
-                    content: '';
-                    border-style: solid;
-                    border-width: 8px 0 8px 12px;
-                    border-color: transparent transparent transparent #fff;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    margin: -8px auto auto -4px;
-                }
-            }
+      }
+      .form_content {
+        float: none;
+        width: 100%;
+        @include screen('xs_mobile') {
+          padding-right: 0;
+          padding-left: 0;
         }
-        .btnblock {
-            flex: 0 0 auto;
-            flex-basis: 280px;
-            button {
-                width: 100%;
-            }
-        }
+      }
     }
     .btn_grp {
-        margin-top: 2em;
+      text-align: center;
+      flex: 0 0 100%;
+      padding: 0.5em 0;
+      &.lean_right {
+        text-align: right;
+        flex: 0 0 50%;
+      }
+      &.lean_left {
+        text-align: left;
+        flex: 0 0 50%;
+      }
+      @include screen('xs_mobile') {
+        &.lean_right,
+        &.lean_left {
+          flex: 0 0 100%;
+        }
+      }
     }
+    .remind {
+      flex: 0 0 100%;
+      padding: 5px 15px;
+      background-color: lighten($lightColor, 45);
+    }
+  }
+  .fileDragDrop {
+    position: relative;
+    height: 10em;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px dashed #d7dfdd;
+    margin-bottom: 0.4em;
+    padding: 10px 0;
+    &:after {
+      content: '上傳影片';
+      display: inline-block;
+      padding: 0 0.8em;
+      height: 2.4em;
+      line-height: 2.4;
+      background: #21baff;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      -webkit-transition: 0.2s;
+      transition: 0.2s;
+      margin-left: 3px;
+    }
+  }
+  .movie_group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 280px;
+    margin: 0 auto;
+    .movie_img {
+      position: relative;
+      margin-bottom: 10px;
+      flex: 0 0 auto;
+      flex-basis: 280px;
+      width: 280px;
+      @include aspect-ratio(16, 9);
+      img {
+        object-fit: cover;
+      }
+      span.playbtn {
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        transition: 0.5s;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        &::before {
+          content: '';
+          border-style: solid;
+          border-width: 8px 0 8px 12px;
+          border-color: transparent transparent transparent #fff;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin: -8px auto auto -4px;
+        }
+      }
+    }
+    .btnblock {
+      flex: 0 0 auto;
+      flex-basis: 280px;
+      button {
+        width: 100%;
+      }
+    }
+  }
+  .btn_grp {
+    margin-top: 2em;
+  }
 }
 
 // 電子書專區menu
 .ebook_collection_menu {
-    padding: 30px 0 0;
-    background-color: #eee;
-    margin-bottom: 0;
-    @include screen('tablet') {
-        display: none;
-    }
-    .collection_group {
-        text-align: left;
-        margin-left: 20px;
-        ul {
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-            li {
-                display: inline-block;
-                margin-right: 2px;
-                a {
-                    display: block;
-                    padding: 12px 30px 15px;
-                    background-color: #bbb;
-                    color: #fff;
-                    font-size: 1.125em;
-                    font-weight: bolder;
-                    border-radius: 5px 5px 0 0;
-                    &:hover {
-                        background-color: $primaryColor;
-                        color: #fff;
-                    }
-                    &.active {
-                        background-color: #fff;
-                        color: $primaryColor;
-                        font-size: 1.375em;
-                        padding: 14px 30px 16px;
-                        box-shadow: rgba(0, 148, 224, 1) 0px -4px 0px 0px, rgba(0, 148, 224, 0.1) 0px -1px 0px 0px;
-                    }
-                }
-            }
+  padding: 30px 0 0;
+  // background-color: #eee;
+  margin-bottom: 0;
+  @include screen('tablet') {
+    display: none;
+  }
+  .collection_group {
+    text-align: left;
+    margin-left: 20px;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      li {
+        display: inline-block;
+        margin-right: 2px;
+        a {
+          display: block;
+          padding: 12px 30px 15px;
+          background-color: #bbb;
+          color: #fff;
+          font-size: 1.125em;
+          font-weight: bolder;
+          border-radius: 5px 5px 0 0;
+          &:hover {
+            background-color: $primaryColor;
+            color: #fff;
+          }
+          &.active {
+            background-color: #fff;
+            color: $primaryColor;
+            font-size: 1.375em;
+            padding: 14px 30px 16px;
+            box-shadow: rgba(0, 148, 224, 1) 0px -4px 0px 0px, rgba(0, 148, 224, 0.1) 0px -1px 0px 0px;
+          }
         }
+      }
     }
+  }
 }
 // 熱門點閱榜
 .popular_views_block {
-    margin-bottom: 60px;
-    padding-top: 40px;
+  margin-bottom: 60px;
+  padding-top: 0;
+  background-color: #fff;
+  @include screen('xs_mobile') {
+    text-align: left;
+  }
+
+  .popular_views_title {
+    margin: 30px 0 40px;
+    padding: 16px 40px 25px;
+    width: auto;
+    line-height: 1.4em;
+    font-size: 1.75em;
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+    display: inline-block;
+    @include gradient(#0045a5, #00bdf0, diagonal);
+    position: relative;
+    &:before {
+      content: '';
+      width: 30px;
+      height: 1px;
+      background-color: #fff;
+      position: absolute;
+      left: 50%;
+      bottom: 15px;
+      margin-left: -15px;
+    }
     @include screen('xs_mobile') {
-        text-align: left;
+      margin-left: 30px;
     }
-    .popular_views_title {
-        margin: 0 0 40px;
-        padding: 16px 40px 25px;
-        width: auto;
-        line-height: 1.4em;
-        font-size: 1.75em;
-        text-align: center;
-        color: #fff;
-        font-weight: normal;
-        display: inline-block;
-        @include gradient(#0045a5, #00bdf0, diagonal);
-        position: relative;
-        &:before {
-            content: '';
-            width: 30px;
-            height: 1px;
-            background-color: #fff;
-            position: absolute;
-            left: 50%;
-            bottom: 15px;
-            margin-left: -15px;
-        }
-        @include screen('xs_mobile') {
-            margin-left: 30px;
-        }
+  }
+  .collapse_btn {
+    position: absolute;
+    width: 50px;
+    height: 40px;
+    border: 1px solid #ccc;
+    display: block;
+    right: 30px;
+    top: 42px;
+    cursor: pointer;
+    font-size: 0;
+    display: none;
+    @include screen('tablet') {
+      display: block;
     }
-    .collapse_btn {
-        position: absolute;
-        width: 50px;
-        height: 40px;
-        border: 1px solid #ccc;
+    &:before {
+      content: '';
+      border: 1px solid #666;
+      width: 16px;
+      height: 16px;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      transform: rotate(-45deg);
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      transition: 0.5s;
+    }
+    &.closebtn {
+      &:before {
+        transform: rotate(135deg);
+        top: 5px;
+        left: 15px;
+      }
+    }
+  }
+  .popular_views_group {
+    position: relative;
+    padding: 80px 0 0;
+    overflow: hidden;
+    @include box-sizing;
+    @include screen('xs_mobile') {
+      margin: 0 30px;
+    }
+    &:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background-color: #dde1e7;
+      background-image: url('../images/publications_block_bg.jpg');
+      background-repeat: repeat;
+    }
+    .more {
+      position: absolute;
+      right: 75px;
+      top: 30px;
+      @include screen('mobile') {
+        right: 68px;
+      }
+      @media (max-width: 400px) {
+        right: 35px;
+      }
+    }
+    .popular_views_books {
+      padding: 0 60px 60px;
+      position: relative;
+      @media (max-width: 400px) {
+        padding: 0 30px 60px;
+      }
+      > div {
+        margin: 0;
         display: block;
-        right: 30px;
-        top: 42px;
-        cursor: pointer;
-        font-size: 0;
-        display: none;
-        @include screen('tablet'){
-            display: block;
+        .slick-slide {
+          padding: 0 14px;
+          @include screen('mobile') {
+            padding: 0 7px;
+          }
         }
-        &:before {
-            content: '';
-            border: 1px solid #666;
-            width: 16px;
-            height: 16px;
-            border-bottom-color: transparent;
-            border-left-color: transparent;
-            transform: rotate(-45deg);
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            transition: .5s;
-        }
-        &.closebtn {
-            &:before {
-                transform: rotate(135deg);
-                top: 5px;
-                left: 15px;
-            }
-        }
-    }
-    .popular_views_group {
-        position: relative;
-        padding: 80px 0 0;
-        overflow: hidden;
-        @include box-sizing;
-        @include screen('xs_mobile') {
-            margin: 0 30px;
-        }
-        &:before {
-            content: '';
-            width:100%;
-            height: 100%;
-            position: absolute;
-            right: 0;
-            top: 0;
-            background-color: #dde1e7;
-            background-image: url('../images/publications_block_bg.jpg');
-            background-repeat: repeat;
-           
-        }
-        .more {
-            position: absolute;
-            right: 75px;
-            top: 30px;
-            @include screen('mobile') {
-                right: 68px;
-            }
-            @media(max-width: 400px) {
-                right: 35px;
-            }
-        }
-        .popular_views_books {
-            padding: 0 60px 60px;
+        a {
+          display: block;
+          background-color: #fff;
+          border: 1px solid #ddd;
+          font-size: 1em;
+          padding: 10px 20px;
+          text-align: left;
+          .bookimage {
+            margin-bottom: 10px;
+            height: 188px;
             position: relative;
-            @media(max-width: 400px) {
-                padding: 0 30px 60px;
+            img {
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              max-width: 130px;
+              max-height: 188px;
+              margin: auto;
+              border: 1px solid #ccc;
             }
-            >div {
-                margin: 0;
-                display: block;
-                .slick-slide {
-                    padding: 0 14px;
-                    @include screen('mobile') {
-                        padding: 0 7px;
-                    }
-                }
-                a {
-                    display: block;
-                    background-color: #fff;
-                    border: 1px solid #ddd;
-                    font-size: 1em;
-                    padding: 10px 20px;
-                    text-align: left;
-                    .bookimage {
-                        margin-bottom: 10px;
-                        height: 188px;
-                        position: relative;
-                        img {
-                            position: absolute;
-                            top: 0;
-                            right: 0;
-                            bottom: 0;
-                            left: 0;
-                            max-width: 130px;
-                            max-height: 188px;
-                            margin: auto;
-                            border: 1px solid #ccc;
-                        }
-                    }
-                    h3 {
-                        color: #333;
-                        margin: 0 0 5px;
-                        padding: 0;
-                        font-size: 1em;
-                        font-weight: bolder;
-                        text-align: left;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                    }
-                    .unit {
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        color: #666;
-                        margin: 0 0 8px;
-                    }
-                    ul {
-                        margin: 0;
-                        padding: 0;
-                        list-style-type: none;
-                        font-size: 0.938em;
-                        li {
-                            margin: 0 0 3px;
-                            color: #333;
-                        }
-                    }
-                    &:hover, &:focus {
-                        box-shadow: 0 0px 0px 3px $lightColor inset;
-                    }
-                }
+          }
+          h3 {
+            color: #333;
+            margin: 0 0 5px;
+            padding: 0;
+            font-size: 1em;
+            font-weight: bolder;
+            text-align: left;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          .unit {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: #666;
+            margin: 0 0 8px;
+          }
+          ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            font-size: 0.938em;
+            li {
+              margin: 0 0 3px;
+              color: #333;
             }
-            .slick-prev {
-                background-image: url('../vendor/slick/icon_arrow_up.svg');
-                background-size: 60px 30px;
-                background-position: center;
-                background-color: transparent;
-                width: 60px !important;
-                height: 40px !important;
-                transform: rotate(-90deg);
-                right: auto;
-                left: 0px;
-                top: 35%;
-            }
-            .slick-next {
-                background-image: url('../vendor/slick/icon_arrow_down.svg');
-                background-size: 60px 30px;
-                background-position: center;
-                background-color: transparent;
-                width: 60px !important;
-                height: 40px !important;
-                right: 0px;
-                transform: rotate(-90deg);
-                top: 35%;
-                z-index: 10;
-            }
-            // 點點
-            .slick-dots li button:before {
-                background-color: #999;
-            }
-            .slick-dots li.slick-active button:before {
-                background: #fdb300;
-            }
-            .more {
-                position: absolute;
-            }
+          }
+          &:hover,
+          &:focus {
+            box-shadow: 0 0px 0px 3px $lightColor inset;
+          }
         }
+      }
+      .slick-prev {
+        background-image: url('../vendor/slick/icon_arrow_up.svg');
+        background-size: 60px 30px;
+        background-position: center;
+        background-color: transparent;
+        width: 60px !important;
+        height: 40px !important;
+        transform: rotate(-90deg);
+        right: auto;
+        left: 0px;
+        top: 35%;
+      }
+      .slick-next {
+        background-image: url('../vendor/slick/icon_arrow_down.svg');
+        background-size: 60px 30px;
+        background-position: center;
+        background-color: transparent;
+        width: 60px !important;
+        height: 40px !important;
+        right: 0px;
+        transform: rotate(-90deg);
+        top: 35%;
+        z-index: 10;
+      }
+      // 點點
+      .slick-dots li button:before {
+        background-color: #999;
+      }
+      .slick-dots li.slick-active button:before {
+        background: #fdb300;
+      }
+      .more {
+        position: absolute;
+      }
     }
+  }
 }
-.ebook_title{
-    font-size: 2em;
-    font-weight: bolder;
-    margin:.8em 0 0;
+.ebook_title {
+  font-size: 2em;
+  font-weight: bolder;
+  margin: 0.8em 0 0;
+  padding: 0;
+}
+
+// 口述主題
+.respondents {
+  color: #333;
+  font-size: 1.5em;
+  margin: 1em 0;
+  span {
+    color: #666;
+    font-size: 1.25rem;
+    display: block;
+    margin-right: 0.8em;
+    float: left;
+  }
+}
+.listen_online_block {
+  display: flex;
+  align-items: center;
+  font-size: 1.25em;
+  margin-bottom: 1em;
+  padding: 0.5em 2em;
+  background-color: $primaryColor;
+  border-radius: 50px;
+  span {
+    flex: 0 0 auto;
+    margin-right: 0.8em;
+    color: #fff;
+    padding-right: 1.5em;
+    background-image: url('../images/icon_sound.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 20px;
+  }
+  @include screen('xs_mobile') {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1em 1em;
+    border-radius: 20px;
+    span {
+      margin-bottom: 0.5em;
+      text-align: center;
+    }
+    audio {
+      flex: 1 1 auto;
+      flex-basis: 100%;
+    }
+  }
+}
+.screentext_block {
+  padding: 2em;
+  background-color: #eee;
+  color: #777;
+  line-height: 2.2em;
+  font-size: 1.063em;
+  margin-bottom: 3em;
+  span {
+    color: #000;
+  }
+}
+.respondent_information {
+  .title {
+    font-size: 1.25em;
+    font-weight: bold;
+    color: $primaryColor;
+    margin-bottom: 1em;
+  }
+  table {
+    th {
+      &:first-child {
+        background-color: #666;
+        color: #fff;
+        border-bottom: 1px solid #777;
+      }
+      &:nth-child(2) {
+        text-align: left;
+      }
+    }
+    td {
+      ol {
+        li {
+          margin-bottom: 0.5em;
+        }
+      }
+    }
+  }
+}
+.remark_block {
+  margin-bottom: 1em;
+  ol {
+    margin: 1em 1em 1em 1em;
     padding: 0;
+    li {
+      color: $color-red;
+      margin-bottom: 0.5em;
+    }
+  }
+}
+// 口述人物
+.personal_records_block {
+  margin: 2em 0;
+  .personal_records_group {
+    display: flex;
+    align-items: center;
+    font-size: 1.125em;
+    border-bottom: 1px solid #ddd;
+    padding: 1em 0;
+    @include screen('mobile') {
+      flex-wrap: wrap;
+    }
+    .name {
+      flex: 0 0 auto;
+      margin-right: 1.5em;
+      font-weight: bold;
+      @media (max-width: 430px) {
+        flex-basis: 100%;
+        margin: 0 0 8px;
+      }
+    }
+    .datatype {
+      flex: 0 0 auto;
+      flex-basis: 150px;
+      margin-right: 1em;
+      @include screen('mobile') {
+        flex-basis: auto;
+      }
+      span {
+        display: block;
+        margin-bottom: 0.4em;
+        @include screen('mobile') {
+          display: inline-block;
+          margin: 0 0.2em 0.5em;
+        }
+        @media (max-width: 430px) {
+          margin: 0 0.2em 0.5em 0;
+        }
+        a {
+          display: block;
+          color: #fff;
+          padding: 0.4em 2em 0.4em 0.4em;
+          transition: 0.5s;
+        }
+        &.audio_video {
+          background-color: $secondaryColor;
+
+          background-image: url('../images/icon_sound.svg');
+          background-repeat: no-repeat;
+          background-position: right 8px center;
+          background-size: 20px;
+        }
+        &.footprints {
+          background-color: $primaryColor;
+          background-image: url('../images/icon_footprints.svg');
+          background-repeat: no-repeat;
+          background-position: right 8px center;
+          background-size: 16px;
+        }
+        &:hover {
+          &.audio_video {
+            background-color: darken($color: $secondaryColor, $amount: 5);
+          }
+          &.footprints {
+            background-color: darken($color: $primaryColor, $amount: 5);
+          }
+        }
+      }
+    }
+    .dataitem {
+      flex: 1 1 auto;
+      @include screen('mobile') {
+        flex-basis: 100%;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          flex: 0 0 auto;
+          flex-basis: 31%;
+          margin: 0 1.16% 8px;
+          @include screen('tablet') {
+            flex-basis: 48%;
+            margin: 0 1% 8px;
+          }
+          @media (max-width: 500px) {
+            flex-basis: 100%;
+            margin: 0 0 8px;
+          }
+          a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1em 0.5em;
+            background-color: #eee;
+            color: #333;
+            transition: 0.5s;
+            &:hover {
+              background-color: #ddd;
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+  }
 }
