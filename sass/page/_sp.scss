@@ -2987,29 +2987,57 @@
     color: #000;
   }
 }
+.respondents_subtitle {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: $primaryColor;
+  margin-bottom: 1em;
+}
 .respondent_information {
   .title {
     font-size: 1.25em;
     font-weight: bold;
-    color: $primaryColor;
-    margin-bottom: 1em;
+    color: $color-green;
+    margin-bottom: 0.5em;
+    padding-left: 1em;
+    position: relative;
+    &:before {
+      content: '';
+      border: 8px solid $color-green;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      position: absolute;
+      left: 0;
+      top: 0.2em;
+    }
   }
   table {
+    margin-bottom: 2em;
     th {
-      &:first-child {
-        background-color: #666;
-        color: #fff;
-        border-bottom: 1px solid #777;
-      }
-      &:nth-child(2) {
-        text-align: left;
-      }
+      width: 180px;
+      text-align: right;
+      vertical-align: top;
+      background-color: #666;
+      color: #fff;
+      padding: 0.8em;
     }
     td {
       ol {
+        margin: 0;
         li {
           margin-bottom: 0.5em;
         }
+      }
+    }
+    @include screen('xs_mobile') {
+      th,
+      td {
+        display: block;
+        width: 100%;
+      }
+      th {
+        text-align: left;
       }
     }
   }

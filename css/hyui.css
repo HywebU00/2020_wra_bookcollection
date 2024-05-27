@@ -16001,22 +16001,57 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   color: #000;
 }
 
-.respondent_information .title {
-  font-size: 1.25em;
+.respondents_subtitle {
+  font-size: 1.5em;
   font-weight: bold;
   color: #0094e0;
   margin-bottom: 1em;
 }
-.respondent_information table th:first-child {
+
+.respondent_information .title {
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #5cb85c;
+  margin-bottom: 0.5em;
+  padding-left: 1em;
+  position: relative;
+}
+.respondent_information .title:before {
+  content: "";
+  border: 8px solid #5cb85c;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+}
+.respondent_information table {
+  margin-bottom: 2em;
+}
+.respondent_information table th {
+  width: 180px;
+  text-align: right;
+  vertical-align: top;
   background-color: #666;
   color: #fff;
-  border-bottom: 1px solid #777;
+  padding: 0.8em;
 }
-.respondent_information table th:nth-child(2) {
-  text-align: left;
+.respondent_information table td ol {
+  margin: 0;
 }
 .respondent_information table td ol li {
   margin-bottom: 0.5em;
+}
+@media screen and (max-width: 575px) {
+  .respondent_information table th,
+  .respondent_information table td {
+    display: block;
+    width: 100%;
+  }
+  .respondent_information table th {
+    text-align: left;
+  }
 }
 
 .remark_block {
