@@ -1210,6 +1210,287 @@
     }
   }
 }
+
+// 書籍文物list
+.special_book2 {
+  margin-bottom: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  // float 排版
+  @include clearfix;
+  position: relative;
+  .box {
+    flex: 1 0 auto;
+    flex-basis: 50%;
+    height: 260px;
+    // ------------------------------- test start
+    // width: calc(100% / 3);
+    // height: calc(100% / 3 * 3 / 4);
+    // ------------------------------- test end
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 1);
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    // 色塊
+    &:before {
+      content: '';
+      position: absolute;
+      top: -90px;
+      z-index: 1;
+      width: 100%;
+      height: 0;
+      background: rgba(102, 189, 0, 0.9);
+      // 上右下左
+      // clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      transform: skew(0, 0);
+      transition: height 0.6s ease, transform 0.6s ease;
+    }
+    .box_group {
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      span.cube {
+        display: inline-block;
+        width: 42px;
+        height: 42px;
+        background: rgba(102, 189, 0, 0.9);
+        position: relative;
+        font-size: 0;
+        left: 42px;
+        transition: 0.5s;
+        position: relative;
+        // transition: background .4s ease;
+        &:before,
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+        }
+        &:before {
+          width: 22px;
+          height: 2px;
+          left: calc(50% - 11px);
+          top: calc(50% - 1px);
+          background: #fff;
+        }
+        &:after {
+          border: 2px solid #fff;
+          border-top-color: #fff;
+          border-right-color: #fff;
+          border-bottom-color: transparent;
+          border-left-color: transparent;
+          width: 10px;
+          height: 10px;
+          transform: rotate(45deg);
+          position: absolute;
+          top: 14px;
+          right: 10px;
+        }
+      }
+      span.counter {
+        display: block;
+        margin-left: 2.8em;
+        color: #fff;
+      }
+      span.counter {
+        padding-left: 1.75em;
+        background: url(../images/icon/icon_view_white.svg) left 50% no-repeat;
+        background-size: contain;
+        display: none;
+      }
+
+      h3 {
+        padding: 1em 2em 0;
+        margin: 1.25em 0 0.75em;
+        font-size: 1.35em;
+        line-height: 1.4;
+        color: #fff;
+        text-shadow: 0 0 2px rgba(58, 103, 6, 0.9);
+        transition: 0.5s;
+        &:before {
+          content: '';
+          display: block;
+          width: 30px;
+          height: 3px;
+          background: #fff;
+          margin-bottom: 1em;
+          position: absolute;
+          left: 2em;
+          top: 1.7em;
+          transition: height 0.4s ease width 0.2s ease 0.4s;
+          // transition: width .2s ease .4s;
+        }
+      }
+      .river_list {
+        margin: 0;
+        padding: 0;
+        color: #fff;
+        list-style-type: none;
+        position: relative;
+        left: 100px;
+        top: -44px;
+        width: 70%;
+        overflow: hidden;
+        text-overflow: -o-ellipsis-lastline;
+        text-overflow: ellipsis; // ellipsis＝省略
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        line-height: 1.6; // X 填入行高 px 值
+        height: calc(1.6 * 3);
+        transition: 0.5s;
+        li {
+          display: inline-block;
+          color: #fff;
+          position: relative;
+          padding: 0 10px;
+          &:after {
+            content: '';
+            width: 1px;
+            height: 15px;
+            background-color: #fff;
+            position: absolute;
+            right: -5px;
+            top: 5px;
+          }
+        }
+      }
+      .more {
+        position: absolute;
+        right: 3em;
+        bottom: 2em;
+
+        a {
+          display: block;
+          background: darken($color: rgba(102, 189, 0, 0.9), $amount: 5);
+          color: #fff;
+          padding: 0.3em 1em;
+          border-radius: 5px;
+          transition: 0.5s;
+          &:after {
+            background-color: #fff;
+          }
+          &:hover,
+          &:focus {
+            background: rgba(102, 189, 0, 0.9);
+            color: #fff;
+            padding: 0.3em 1.5em;
+          }
+        }
+      }
+      &:hover,
+      &:focus {
+        transition: 0.5s;
+        span.cube {
+          background: #fff;
+          left: 65px;
+
+          &:before {
+            width: 22px;
+            height: 2px;
+            left: calc(50% - 11px);
+            top: calc(50% - 1px);
+            background: rgba(102, 189, 0, 0.9);
+          }
+          &:after {
+            border: 2px solid rgba(102, 189, 0, 0.9);
+            border-top-color: rgba(102, 189, 0, 0.9);
+            border-right-color: rgba(102, 189, 0, 0.9);
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 14px;
+            right: 10px;
+          }
+        }
+
+        h3 {
+          padding: 1em 2em 0 3em;
+          &:before {
+            content: '';
+            width: 3px;
+            height: 50%;
+            transition: width 0.2s ease, height 0.4s ease 0.4s;
+            // transition: width .2s ease;
+          }
+        }
+        .river_list {
+          left: 120px;
+        }
+      }
+    }
+    .img-container {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background: none;
+      // height: 100%;
+      // @include aspect-ratio(4, 3);
+      img {
+        opacity: 0.6;
+      }
+    }
+
+    &.doubleblock {
+      // ------------------------------- test start
+      // width: calc(100% / 3);
+      // height: calc(100% / 3 * 3 / 4);
+      // ------------------------------- test end
+      // 色塊
+      &:before {
+        top: -75px;
+      }
+    }
+
+    // hover
+    &:hover,
+    &:focus {
+      .img-container {
+        img {
+          opacity: 1;
+        }
+      }
+      // 色塊
+      &:before {
+        // 上右下左
+        // clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
+        height: 90%;
+        transform: skew(0, -15deg);
+      }
+      &.doubleblock {
+        &:before {
+          transform: skew(0, -6deg);
+        }
+      }
+    }
+  }
+  &.history_book {
+    .box {
+      flex: 1 0 auto;
+      flex-basis: 100%;
+      width: 100% !important;
+      height: 200px !important;
+      &:before {
+        top: -150px;
+      }
+      &:hover,
+      &:focus {
+        &:before {
+          height: 110%;
+        }
+      }
+    }
+  }
+}
+
 @include screen('tablet') {
   .special,
   .special_video {
@@ -1387,6 +1668,12 @@
           }
         }
       }
+    }
+  }
+  .special_book2 {
+    .box {
+      width: 100% !important;
+      flex-basis: 100% !important;
     }
   }
 }

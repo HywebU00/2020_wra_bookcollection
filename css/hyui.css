@@ -7101,6 +7101,10 @@ body.ebook_collection_style .sidebar .m_area .navigation ul li a {
   color: #ccc !important;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .searchsystem {
   margin: 0 auto;
   padding: 20px;
@@ -14188,6 +14192,248 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   height: 110%;
 }
 
+.special_book2 {
+  margin-bottom: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  clear: both;
+  zoom: 1;
+  position: relative;
+}
+.special_book2:before, .special_book2:after {
+  content: "";
+  display: table;
+}
+.special_book2:after {
+  clear: both;
+}
+.special_book2 .box {
+  flex: 1 0 auto;
+  flex-basis: 50%;
+  height: 260px;
+  box-shadow: 0 0 0 1px rgb(255, 255, 255);
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+.special_book2 .box:before {
+  content: "";
+  position: absolute;
+  top: -90px;
+  z-index: 1;
+  width: 100%;
+  height: 0;
+  background: rgba(102, 189, 0, 0.9);
+  transform: skew(0, 0);
+  transition: height 0.6s ease, transform 0.6s ease;
+}
+.special_book2 .box .box_group {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.special_book2 .box .box_group span.cube {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  background: rgba(102, 189, 0, 0.9);
+  position: relative;
+  font-size: 0;
+  left: 42px;
+  transition: 0.5s;
+  position: relative;
+}
+.special_book2 .box .box_group span.cube:before, .special_book2 .box .box_group span.cube:after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+.special_book2 .box .box_group span.cube:before {
+  width: 22px;
+  height: 2px;
+  left: calc(50% - 11px);
+  top: calc(50% - 1px);
+  background: #fff;
+}
+.special_book2 .box .box_group span.cube:after {
+  border: 2px solid #fff;
+  border-top-color: #fff;
+  border-right-color: #fff;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 14px;
+  right: 10px;
+}
+.special_book2 .box .box_group span.counter {
+  display: block;
+  margin-left: 2.8em;
+  color: #fff;
+}
+.special_book2 .box .box_group span.counter {
+  padding-left: 1.75em;
+  background: url(../images/icon/icon_view_white.svg) left 50% no-repeat;
+  background-size: contain;
+  display: none;
+}
+.special_book2 .box .box_group h3 {
+  padding: 1em 2em 0;
+  margin: 1.25em 0 0.75em;
+  font-size: 1.35em;
+  line-height: 1.4;
+  color: #fff;
+  text-shadow: 0 0 2px rgba(58, 103, 6, 0.9);
+  transition: 0.5s;
+}
+.special_book2 .box .box_group h3:before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  margin-bottom: 1em;
+  position: absolute;
+  left: 2em;
+  top: 1.7em;
+  transition: height 0.4s ease width 0.2s ease 0.4s;
+}
+.special_book2 .box .box_group .river_list {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  list-style-type: none;
+  position: relative;
+  left: 100px;
+  top: -44px;
+  width: 70%;
+  overflow: hidden;
+  text-overflow: -o-ellipsis-lastline;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 1.6;
+  height: 4.8;
+  transition: 0.5s;
+}
+.special_book2 .box .box_group .river_list li {
+  display: inline-block;
+  color: #fff;
+  position: relative;
+  padding: 0 10px;
+}
+.special_book2 .box .box_group .river_list li:after {
+  content: "";
+  width: 1px;
+  height: 15px;
+  background-color: #fff;
+  position: absolute;
+  right: -5px;
+  top: 5px;
+}
+.special_book2 .box .box_group .more {
+  position: absolute;
+  right: 3em;
+  bottom: 2em;
+}
+.special_book2 .box .box_group .more a {
+  display: block;
+  background: rgba(88, 164, 0, 0.9);
+  color: #fff;
+  padding: 0.3em 1em;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.special_book2 .box .box_group .more a:after {
+  background-color: #fff;
+}
+.special_book2 .box .box_group .more a:hover, .special_book2 .box .box_group .more a:focus {
+  background: rgba(102, 189, 0, 0.9);
+  color: #fff;
+  padding: 0.3em 1.5em;
+}
+.special_book2 .box .box_group:hover, .special_book2 .box .box_group:focus {
+  transition: 0.5s;
+}
+.special_book2 .box .box_group:hover span.cube, .special_book2 .box .box_group:focus span.cube {
+  background: #fff;
+  left: 65px;
+}
+.special_book2 .box .box_group:hover span.cube:before, .special_book2 .box .box_group:focus span.cube:before {
+  width: 22px;
+  height: 2px;
+  left: calc(50% - 11px);
+  top: calc(50% - 1px);
+  background: rgba(102, 189, 0, 0.9);
+}
+.special_book2 .box .box_group:hover span.cube:after, .special_book2 .box .box_group:focus span.cube:after {
+  border: 2px solid rgba(102, 189, 0, 0.9);
+  border-top-color: rgba(102, 189, 0, 0.9);
+  border-right-color: rgba(102, 189, 0, 0.9);
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 14px;
+  right: 10px;
+}
+.special_book2 .box .box_group:hover h3, .special_book2 .box .box_group:focus h3 {
+  padding: 1em 2em 0 3em;
+}
+.special_book2 .box .box_group:hover h3:before, .special_book2 .box .box_group:focus h3:before {
+  content: "";
+  width: 3px;
+  height: 50%;
+  transition: width 0.2s ease, height 0.4s ease 0.4s;
+}
+.special_book2 .box .box_group:hover .river_list, .special_book2 .box .box_group:focus .river_list {
+  left: 120px;
+}
+.special_book2 .box .img-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: none;
+}
+.special_book2 .box .img-container img {
+  opacity: 0.6;
+}
+.special_book2 .box.doubleblock:before {
+  top: -75px;
+}
+.special_book2 .box:hover .img-container img, .special_book2 .box:focus .img-container img {
+  opacity: 1;
+}
+.special_book2 .box:hover:before, .special_book2 .box:focus:before {
+  height: 90%;
+  transform: skew(0, -15deg);
+}
+.special_book2 .box:hover.doubleblock:before, .special_book2 .box:focus.doubleblock:before {
+  transform: skew(0, -6deg);
+}
+.special_book2.history_book .box {
+  flex: 1 0 auto;
+  flex-basis: 100%;
+  width: 100% !important;
+  height: 200px !important;
+}
+.special_book2.history_book .box:before {
+  top: -150px;
+}
+.special_book2.history_book .box:hover:before, .special_book2.history_book .box:focus:before {
+  height: 110%;
+}
+
 @media screen and (max-width: 991px) {
   .special .box,
   .special_video .box {
@@ -14310,6 +14556,10 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   }
   .special_book .box.doubleblock:hover:before {
     transform: skew(0, -15deg);
+  }
+  .special_book2 .box {
+    width: 100% !important;
+    flex-basis: 100% !important;
   }
 }
 .manual {
