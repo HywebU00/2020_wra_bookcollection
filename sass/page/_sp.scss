@@ -1042,6 +1042,56 @@
           // transition: width .2s ease .4s;
         }
       }
+      .river_list {
+        margin: 0;
+        padding: 0;
+        color: #fff;
+        list-style-type: none;
+        position: relative;
+        left: 100px;
+        top: -44px;
+        width: 70%;
+        overflow: hidden;
+        text-overflow: -o-ellipsis-lastline;
+        text-overflow: ellipsis; // ellipsis＝省略
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        line-height: 1.6; // X 填入行高 px 值
+        height: calc(1.6 * 3);
+        transition: 0.5s;
+        li {
+          display: inline-block;
+          color: #fff;
+          position: relative;
+          padding: 0 10px;
+          &:after {
+            content: '';
+            width: 1px;
+            height: 15px;
+            background-color: #fff;
+            position: absolute;
+            right: -5px;
+            top: 5px;
+          }
+        }
+      }
+      .more {
+        position: absolute;
+        right: 3em;
+        bottom: 2em;
+        background: #333;
+        color: #fff;
+        padding: 0.3em 0.5em;
+        border-radius: 5px;
+        transition: 0.5s;
+        opacity: 0;
+        @include screen('tablet') {
+          bottom: auto;
+          top: 2em;
+          right: 1em;
+        }
+      }
       &:hover,
       &:focus {
         transition: 0.5s;
@@ -1079,6 +1129,18 @@
             height: 50%;
             transition: width 0.2s ease, height 0.4s ease 0.4s;
             // transition: width .2s ease;
+          }
+        }
+        .river_list {
+          left: 120px;
+        }
+        .more {
+          background: rgba(102, 189, 0, 0.9);
+          color: #fff;
+          padding: 0.3em 1em;
+          opacity: 1;
+          @include screen('tablet') {
+            background: darken($color: rgba(102, 189, 0, 0.9), $amount: 10);
           }
         }
       }
@@ -1126,6 +1188,23 @@
       &.doubleblock {
         &:before {
           transform: skew(0, -6deg);
+        }
+      }
+    }
+  }
+  &.history_book {
+    .box {
+      flex: 1 0 auto;
+      flex-basis: 100%;
+      width: 100% !important;
+      height: 200px !important;
+      &:before {
+        top: -150px;
+      }
+      &:hover,
+      &:focus {
+        &:before {
+          height: 110%;
         }
       }
     }
@@ -1311,6 +1390,7 @@
     }
   }
 }
+
 //我的書房
 .manual {
   display: inline-block;
@@ -2961,6 +3041,7 @@
     background-position: right center;
     background-size: 20px;
   }
+
   @include screen('xs_mobile') {
     flex-wrap: wrap;
     justify-content: center;

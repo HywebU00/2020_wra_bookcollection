@@ -14049,6 +14049,58 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   top: 1.7em;
   transition: height 0.4s ease width 0.2s ease 0.4s;
 }
+.special_book .box a .river_list {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  list-style-type: none;
+  position: relative;
+  left: 100px;
+  top: -44px;
+  width: 70%;
+  overflow: hidden;
+  text-overflow: -o-ellipsis-lastline;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 1.6;
+  height: 4.8;
+  transition: 0.5s;
+}
+.special_book .box a .river_list li {
+  display: inline-block;
+  color: #fff;
+  position: relative;
+  padding: 0 10px;
+}
+.special_book .box a .river_list li:after {
+  content: "";
+  width: 1px;
+  height: 15px;
+  background-color: #fff;
+  position: absolute;
+  right: -5px;
+  top: 5px;
+}
+.special_book .box a .more {
+  position: absolute;
+  right: 3em;
+  bottom: 2em;
+  background: #333;
+  color: #fff;
+  padding: 0.3em 0.5em;
+  border-radius: 5px;
+  transition: 0.5s;
+  opacity: 0;
+}
+@media screen and (max-width: 991px) {
+  .special_book .box a .more {
+    bottom: auto;
+    top: 2em;
+    right: 1em;
+  }
+}
 .special_book .box a:hover, .special_book .box a:focus {
   transition: 0.5s;
 }
@@ -14085,6 +14137,20 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   height: 50%;
   transition: width 0.2s ease, height 0.4s ease 0.4s;
 }
+.special_book .box a:hover .river_list, .special_book .box a:focus .river_list {
+  left: 120px;
+}
+.special_book .box a:hover .more, .special_book .box a:focus .more {
+  background: rgba(102, 189, 0, 0.9);
+  color: #fff;
+  padding: 0.3em 1em;
+  opacity: 1;
+}
+@media screen and (max-width: 991px) {
+  .special_book .box a:hover .more, .special_book .box a:focus .more {
+    background: rgba(74, 138, 0, 0.9);
+  }
+}
 .special_book .box .img-container {
   position: absolute;
   left: 0;
@@ -14108,6 +14174,18 @@ div.tag ul li a:hover, div.tag ul li a:focus {
 }
 .special_book .box:hover.doubleblock:before, .special_book .box:focus.doubleblock:before {
   transform: skew(0, -6deg);
+}
+.special_book.history_book .box {
+  flex: 1 0 auto;
+  flex-basis: 100%;
+  width: 100% !important;
+  height: 200px !important;
+}
+.special_book.history_book .box:before {
+  top: -150px;
+}
+.special_book.history_book .box:hover:before, .special_book.history_book .box:focus:before {
+  height: 110%;
 }
 
 @media screen and (max-width: 991px) {

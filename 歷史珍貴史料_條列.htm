@@ -102,81 +102,141 @@
         </div> -->
         <!-- sp start -->
         <div class="sp">
-          <!-- 歷史珍貴史料list start-->
-          <div class="special_book history_book">
-            <div class="box">
-              <a href="#">
-                <h3>明治時期(1895-1911)</h3>
-                <span class="cube">連結</span>
-              </a>
-
-              <div class="img-container">
-                <!-- 此範例圖片未設比例 -->
-                <picture>
-                  <source media="(min-width: 1200px)" data-srcset="images/history_bookbg01.jpg" srcset="images/history_bookbg01.jpg">
-                  <source media="(min-width: 992px)" data-srcset="images/history_bookbg01.jpg" srcset="images/history_bookbg01.jpg">
-                  <source media="(min-width: 576px)" data-srcset="images/history_bookbg01.jpg" srcset="images/history_bookbg01.jpg">
-                  <source media="(max-width: 575px)" data-srcset="images/history_bookbg01.jpg" srcset="images/history_bookbg01.jpg">
-                  <img data-src="images/history_bookbg01.jpg" class="lazy loaded cover" alt="第1張圖說" src="images/history_bookbg01.jpg" data-was-processed="true">
-                  <noscript><img src="images/history_bookbg01.jpg"></noscript>
-                </picture>
-              </div>
+          <div class="historical_search_group">
+            <!-- 歷史時期查詢 start -->
+            <div class="historical_period_search">
+              <select name="" id="selectSample">
+                <option value="">全部時期</option>
+                <option value="">明治時期(1895-1911)</option>
+                <option value="">大正時期(1912-1925)</option>
+                <option value="">昭和時期(1926-1945)</option>
+                <option value="">民國時期(1946-1988)</option>
+              </select>
+              <input type="text" name="" id="" value="">
+              <button type="button" class="btn  btn-green">搜尋</button>
             </div>
-            <div class="box">
-              <a href="#">
-                <h3>大正時期(1912-1925)</h3>
-                <span class="cube">連結</span>
-              </a>
-              <div class="img-container">
-                <!-- 此範例圖片未設比例 -->
-                <picture>
-                  <source media="(min-width: 1200px)" data-srcset="images/history_bookbg02.jpg" srcset="images/history_bookbg02.jpg">
-                  <source media="(min-width: 992px)" data-srcset="images/history_bookbg02.jpg" srcset="images/history_bookbg02.jpg">
-                  <source media="(min-width: 576px)" data-srcset="images/history_bookbg02.jpg" srcset="images/history_bookbg02.jpg">
-                  <source media="(max-width: 575px)" data-srcset="images/history_bookbg02.jpg" srcset="images/history_bookbg02.jpg">
-                  <img data-src="images/history_bookbg02.jpg" class="lazy loaded cover" alt="第2張圖說" src="images/history_bookbg02.jpg" data-was-processed="true">
-                  <noscript><img src="images/history_bookbg02.jpg"></noscript>
-                </picture>
-              </div>
+            <!-- 歷史時期查詢 end -->
+            <!-- 資料數量 start-->
+            <div class="data_quantity"><select name="" id="selectSample">
+                <option value="">排序方式</option>
+                <option value="">依時期</option>
+                <option value="">依文物名稱</option>
+                <option value="">依製作時代</option>
+              </select>
             </div>
-            <div class="box">
-              <a href="#">
-                <h3>昭和時期(1926-1945)</h3>
-                <span class="cube">連結</span>
-              </a>
-              <div class="img-container">
-                <!-- 此範例圖片未設比例 -->
-                <picture>
-                  <source media="(min-width: 1200px)" data-srcset="images/history_bookbg03.jpg" srcset="images/history_bookbg03.jpg">
-                  <source media="(min-width: 992px)" data-srcset="images/history_bookbg03.jpg" srcset="images/history_bookbg03.jpg">
-                  <source media="(min-width: 576px)" data-srcset="images/history_bookbg03.jpg" srcset="images/history_bookbg03.jpg">
-                  <source media="(max-width: 575px)" data-srcset="images/history_bookbg03.jpg" srcset="images/history_bookbg03.jpg">
-                  <img data-src="images/history_bookbg03.jpg" class="lazy loaded cover" alt="第3張圖說" src="images/history_bookbg03.jpg" data-was-processed="true">
-                  <noscript><img src="images/history_bookbg03.jpg"></noscript>
-                </picture>
-              </div>
-            </div>
-            <div class="box">
-              <a href="#">
-                <h3>民國時期(1946-1988)</h3>
-                <span class="cube">連結</span>
-              </a>
-              <div class="img-container">
-                <!-- 此範例圖片未設比例 -->
-                <picture>
-                  <source media="(min-width: 1200px)" data-srcset="images/history_bookbg04.jpg" srcset="images/history_bookbg04.jpg">
-                  <source media="(min-width: 992px)" data-srcset="images/history_bookbg04.jpg" srcset="images/history_bookbg04.jpg">
-                  <source media="(min-width: 576px)" data-srcset="images/history_bookbg04.jpg" srcset="images/history_bookbg04.jpg">
-                  <source media="(max-width: 575px)" data-srcset="images/history_bookbg04.jpg" srcset="images/history_bookbg04.jpg">
-                  <img data-src="images/history_bookbg04.jpg" class="lazy loaded cover" alt="第4張圖說" src="images/history_bookbg04.jpg" data-was-processed="true">
-                  <noscript><img src="images/history_bookbg04.jpg"></noscript>
-                </picture>
-              </div>
-            </div>
-
-
+            <!-- 資料數量 end-->
           </div>
-          <!-- 歷史珍貴史料list end-->
+          <div class="table_list">
+            <table summary="">
+              <thead>
+                <tr>
+
+                  <th>時期</th>
+                  <th>文物名稱</th>
+                  <th>原製作時代</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>明治時期</td>
+                  <td><a href="#">七股地圖</a></td>
+                  <td>民國前17年至民國34年(日治時期)，1859-1945</td>
+                </tr>
+                <tr>
+                  <td>明治時期</td>
+                  <td><a href="#">三星地方灌溉排水計畫平面圖</a></td>
+                  <td>民國前17年至民國34年(日治時期)，1859-1945</td>
+                </tr>
+                <tr>
+                  <td>明治時期</td>
+                  <td><a href="#">七股地圖</a></td>
+                  <td>民國前17年至民國34年(日治時期)，1859-1945</td>
+                </tr>
+                <tr>
+                  <td>明治時期</td>
+                  <td><a href="#">三星地方灌溉排水計畫平面圖</a></td>
+                  <td>民國前17年至民國34年(日治時期)，1859-1945</td>
+                </tr>
+                <tr>
+                  <td>明治時期</td>
+                  <td><a href="#">七股地圖</a></td>
+                  <td>民國前17年至民國34年(日治時期)，1859-1945</td>
+                </tr>
+                <tr>
+                  <td>明治時期</td>
+                  <td><a href="#">三星地方灌溉排水計畫平面圖</a></td>
+                  <td>民國前17年至民國34年(日治時期)，1859-1945</td>
+                </tr>
+                <tr>
+                  <td>明治時期</td>
+                  <td><a href="#">七股地圖</a></td>
+                  <td>民國前17年至民國34年(日治時期)，1859-1945</td>
+                </tr>
+                <tr>
+                  <td>明治時期</td>
+                  <td><a href="#">三星地方灌溉排水計畫平面圖</a></td>
+                  <td>民國前17年至民國34年(日治時期)，1859-1945</td>
+                </tr>
+                <tr>
+                  <td>明治時期</td>
+                  <td><a href="#">七股地圖</a></td>
+                  <td>民國前17年至民國34年(日治時期)，1859-1945</td>
+                </tr>
+                <tr>
+                  <td>明治時期</td>
+                  <td><a href="#">三星地方灌溉排水計畫平面圖</a></td>
+                  <td>民國前17年至民國34年(日治時期)，1859-1945</td>
+                </tr>
+                <tr>
+                  <td>明治時期</td>
+                  <td><a href="#">三星地方灌溉排水計畫平面圖</a></td>
+                  <td>民國前17年至民國34年(日治時期)，1859-1945</td>
+                </tr>
+                <tr>
+                  <td>明治時期</td>
+                  <td><a href="#">七股地圖</a></td>
+                  <td>民國前17年至民國34年(日治時期)，1859-1945</td>
+                </tr>
+                <tr>
+                  <td>明治時期</td>
+                  <td><a href="#">三星地方灌溉排水計畫平面圖</a></td>
+                  <td>民國前17年至民國34年(日治時期)，1859-1945</td>
+                </tr>
+                <tr>
+                  <td>明治時期</td>
+                  <td><a href="#">七股地圖</a></td>
+                  <td>民國前17年至民國34年(日治時期)，1859-1945</td>
+                </tr>
+                <tr>
+                  <td>明治時期</td>
+                  <td><a href="#">三星地方灌溉排水計畫平面圖</a></td>
+                  <td>民國前17年至民國34年(日治時期)，1859-1945</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- page start-->
+          <div class="pagination">
+            <div class="total"> 共<span>308</span>筆資料，第<span>1/18</span>頁，</div>
+            <div class="items">每頁顯示 <a href="#">20</a> <a href="#">40</a> <a href="#">60</a> 筆 </div>
+            <ul class="page">
+              <li class="first"><a href="#" title="第一頁">第一頁</a></li>
+              <li class="prev"><a href="#" title="回上一頁">回上一頁 </a></li>
+              <li class="active"><a href="#">1</a></li>
+              <li class="xs_hidden"><a href="#">2</a></li>
+              <li class="xs_hidden"><a href="#">3</a></li>
+              <li class="xs_hidden"><a href="#">4</a></li>
+              <li class="xs_hidden"><a href="#">5</a></li>
+              <li class="xs_hidden"><a href="#">6</a></li>
+              <li class="xs_hidden"><a href="#">7</a></li>
+              <li class="xs_hidden"><a href="#">8</a></li>
+              <li class="xs_hidden"><a href="#">9</a></li>
+              <li class="xs_hidden"><a href="#">10</a></li>
+              <li class="next"><a href="#" title="下一頁">下一頁</a></li>
+              <li class="last"><a href="#" title="最後一頁">最後一頁</a></li>
+            </ul>
+          </div>
+          <!-- page end-->
         </div>
         <!-- sp end  -->
       </div>
