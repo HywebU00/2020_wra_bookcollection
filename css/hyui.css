@@ -14343,6 +14343,7 @@ div.tag ul li a:hover, div.tag ul li a:focus {
 .special_book2 .box .box_group .river_list li:hover {
   transform: scale(1.15);
   font-weight: bold;
+  color: #fcc211;
 }
 .special_book2 .box .box_group .river_list li:hover:after {
   right: 0px;

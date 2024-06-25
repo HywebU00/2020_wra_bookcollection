@@ -1363,6 +1363,7 @@
           &:hover {
             transform: scale(1.15);
             font-weight: bold;
+            color: $color-yellow;
             &:after {
               right: 0px;
             }
