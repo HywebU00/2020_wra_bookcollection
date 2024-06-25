@@ -1361,9 +1361,10 @@
             transition: 0.5s;
           }
           &:hover {
-            transform: scale(1.35);
+            transform: scale(1.15);
+            font-weight: bold;
             &:after {
-              right: 5px;
+              right: 0px;
             }
           }
         }

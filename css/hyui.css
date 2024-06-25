@@ -14341,10 +14341,11 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   transition: 0.5s;
 }
 .special_book2 .box .box_group .river_list li:hover {
-  transform: scale(1.35);
+  transform: scale(1.15);
+  font-weight: bold;
 }
 .special_book2 .box .box_group .river_list li:hover:after {
-  right: 5px;
+  right: 0px;
 }
 .special_book2 .box .box_group .more {
   position: absolute;
