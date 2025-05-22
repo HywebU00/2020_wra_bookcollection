@@ -36,6 +36,29 @@ table {
       text-align: center;
       width: 10%;
     }
+    .labelstickers {
+      padding: 0.2em 1em;
+      background-color: $color-blue;
+      color: #fff;
+      text-align: center;
+      display: block;
+      max-width: 100px;
+      margin: 0 0 8px;
+    }
+    .instrument_img {
+      max-width: 130px;
+      margin: 0 auto;
+      line-height: 0;
+      @include screen('mobile') {
+        margin: 0;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+    .rownumber_control {
+      @include text-line(2, 23px);
+    }
   }
   th {
     background-color: #f3f3f3;
